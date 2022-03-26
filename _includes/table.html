@@ -1,0 +1,30 @@
+<div id="search">
+    <input type="text" id="search-input">
+</div>
+<div id="table"></div>
+
+<script src="/assets/js/filter.js"></script>
+<script>
+    const elemSearchInput = document.getElementById('search-input');
+    const elemTable = document.getElementById('table');
+
+    const defaultTable = `
+        {% for fruit in site.fruits %}
+            <div>
+                <h2><a href="{{ fruit.url }}">{{ fruit.title }}</a></h2>
+                {{ fruit.excerpt | markdownify }}
+            </div>
+        {% endfor %}
+    `;
+
+    window.onload = () => {
+        elemTable.innerHTML = defaultTable;
+    }
+
+    addEventListener('keyup', event => {
+        if (document.activeElement === elemSearchInput) {
+            let query = elemSearchInput.value;
+            filter(query)
+        }
+    });
+</script>

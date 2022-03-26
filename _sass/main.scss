@@ -1,0 +1,19 @@
+:root {
+    // Colors
+    --color-richblack: #000;
+    --color-black: #222;
+    --color-darkgrey: #555;
+    --color-grey: #999;
+    --color-lightgrey: #ddd;
+    --color-pink: #df2fff;
+    --color-white: #fff;
+}
+
+body {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+a {
+    color: var(--color-pink);
+}

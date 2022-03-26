@@ -1,0 +1,14 @@
+collections:
+  fruits:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "fruits"
+    values:
+      layout: "fruit"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

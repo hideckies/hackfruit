@@ -1,0 +1,11 @@
+---
+---
+@import "main";
+
+nav a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+nav a.current {
+    color: var(--color-pink);
+}
