@@ -2,11 +2,19 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{{ page.title }}</title>
+        <title>
+            {% if page.url == "/" %}
+                {{ page.title }} - Find hacking tools, commands, technics
+            {% else %}
+                {{ page.title }} | Hackfruit
+            {% endif %}
+        </title>
         <link rel="stylesheet" href="/assets/css/styles.css">
     </head>
     <body>
-        {% include nav.html %}
-        {{ content }}
+        <div id="container">
+            {% include nav.html %}
+            {{ content }}
+        </div>
     </body>
 </html>

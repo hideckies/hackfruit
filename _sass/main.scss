@@ -1,19 +1,51 @@
+@import "highlight_github.css";
+
 :root {
     // Colors
     --color-richblack: #000;
     --color-black: #222;
     --color-darkgrey: #555;
     --color-grey: #999;
-    --color-lightgrey: #ddd;
+    --color-lightgrey: #efeaef;
+    --color-darkpink: #bf1fdf;
     --color-pink: #df2fff;
     --color-white: #fff;
+    // Fonts
+    --font-family-main:  Garamond, 'Courier New', Tahoma, sans-serif;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    box-sizing: border-box;
     background: var(--color-black);
     color: var(--color-white);
+    font-family: var(--font-family-main);
 }
 
 a {
     color: var(--color-pink);
+}
+
+input {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    background: var(--color-lightgrey);
+    padding: 8px;
+    font-size: 1.1em;
+}
+
+.highlighter-rouge {
+    overflow-x: scroll;
+    background: var(--color-richblack);
+    border-radius: 6px;
+    padding: 8px 16px;
+    line-height: 1.4em;
 }
