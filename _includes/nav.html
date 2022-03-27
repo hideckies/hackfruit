@@ -1,7 +1,10 @@
 <nav>
-    {% for item in site.data.nav %}
-        <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
-            {{ item.name }}
+    <div id="left">
+        <a href="/">Hackfruit</a>
+    </div>
+    <div id="right">
+        <a href="https://github.com/hideckies/hackfruit" target="_blank" rel="noopener noreferrer">
+            /Src
         </a>
-    {% endfor %}
+    </div>
 </nav>

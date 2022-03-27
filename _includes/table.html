@@ -1,30 +1,55 @@
-<div id="search">
-    <input type="text" id="search-input">
+<div id="table">
+    <div id="search">
+        <input type="text" placeholder="Find tools, commands, technics." id="search-input">
+    </div>
+    <div id="tags">
+        {% for tag in site.tags %}
+            <span>{{ tag[0] }}</span>
+        {% endfor %}
+    </div>
+    <div id="results"></div>
 </div>
-<div id="table"></div>
 
 <script src="/assets/js/filter.js"></script>
 <script>
     const elemSearchInput = document.getElementById('search-input');
-    const elemTable = document.getElementById('table');
+    const elemResults = document.getElementById('results');
 
-    const defaultTable = `
-        {% for fruit in site.fruits %}
-            <div>
-                <h2><a href="{{ fruit.url }}">{{ fruit.title }}</a></h2>
-                {{ fruit.excerpt | markdownify }}
+    const defaultResults = `
+        {% assign sorted_fruits = site.fruits | sort: "title" %}
+        {% for fruit in sorted_fruits %}
+            <div class="result">
+                <div class="head">
+                    <a href="{{ fruit.url }}" class="title">
+                        {{ fruit.title }}
+                    </a>
+                    <div class="tags">
+                        {% for tag in fruit.tags %}
+                            <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="desc">
+                    {{ fruit.desc }}
+                </div>
             </div>
         {% endfor %}
     `;
 
     window.onload = () => {
-        elemTable.innerHTML = defaultTable;
+        elemResults.innerHTML = defaultResults;
     }
 
     addEventListener('keyup', event => {
         if (document.activeElement === elemSearchInput) {
             let query = elemSearchInput.value;
-            filter(query)
+            setUrlHash(query);
+
+            if (query === "") {
+                elemResults.innerHTML = defaultResults;
+            } else {
+                filter(elemResults);
+            }
         }
     });
 </script>
