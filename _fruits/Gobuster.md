@@ -1,7 +1,7 @@
 ---
 title: Gobuster
 desc: Scans web contents.
-tags: [Linux, DirectoryDiscovery, Recon]
+tags: [ActiveRecon, DirectoryDiscovery, Linux]
 alts: [Dirb]
 ---
 

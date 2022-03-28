@@ -4,3 +4,7 @@ desc: Views contents of text files.
 tags: [Linux, PrivEsc]
 alts: [Cat, ]
 ---
+
+```sh
+less sample.txt
+```
