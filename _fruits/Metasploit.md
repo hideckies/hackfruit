@@ -1,10 +1,10 @@
 ---
 title: Metasploit
-desc: aaa
+desc: Provides security vulnerabilities and exploit using payloads.
 tags: [ActiveRecon, Linux]
-alts: [Gobuster]
+alts: [ExploitDB, Gobuster, Searchsploit]
 ---
 
 ```sh
-dirb https://example.com /usr/share/seclists/Discovery/Web-Content/common.txt
+msfconsole
 ```

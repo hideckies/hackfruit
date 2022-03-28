@@ -1,8 +1,6 @@
 ---
 title: Wireshark
-desc: aaa
+desc: Network protocol analyzer.
 tags: [PassiveRecon]
 alts: []
 ---
-
-Sample text.

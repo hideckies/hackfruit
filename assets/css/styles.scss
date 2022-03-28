@@ -30,6 +30,18 @@ nav a {
     color: var(--color-white);
     text-decoration: none;
 }
+nav a #icon {
+    width: 50px;
+}
+
+// Intro
+#intro {
+    margin: 32px 0 12px 0;
+    width: 100%;
+}
+#intro p {
+    line-height: 1.6em;
+}
 
 // Table
 #table {
@@ -46,6 +58,26 @@ nav a {
     width: 100%;
     padding: 14px 12px;
     font-size: 1.2em;
+}
+#table #tags {
+    margin: 18px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+#table #tags .tag {
+    margin: 0 8px 8px 0;
+    background: var(--color-darkgrey);
+    border-radius: 12px;
+    padding: 3px 7px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+#table #tags .tag:hover {
+    background: var(--color-grey);
 }
 #table #results {
     margin-top: 32px;
@@ -133,7 +165,7 @@ nav a {
     align-items: center;
 }
 #fruit #alts #items .item {
-    margin-right: 6px;
+    margin-right: 10px;
     font-size: 1.1em;
     font-weight: bold;
     color: var(--color-white);
@@ -150,6 +182,13 @@ nav a {
         width: 90%;
     }
 
+    #intro {
+        margin: 24px 0 6px 0;
+    }
+
+    #table {
+        margin: 20px 0;
+    }
     #table #results .result .head {
         display: flex;
         flex-direction: column;

@@ -1,8 +1,8 @@
 ---
 title: Nmap
 desc: Port scanner.
-tags: [ActiveRecon, Linux]
-alts: []
+tags: [ActiveRecon, Linux, SQLi]
+alts: [Sqlmap]
 ---
 
 ## Host discovery
