@@ -3,6 +3,7 @@ title: Ncat
 desc: General-purpose networking tool. 
 tags: [Linux, PrivEsc, ReverseShell]
 alts: [Netcat, Telnet]
+website:
 ---
 
 ```sh

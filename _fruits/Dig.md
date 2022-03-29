@@ -3,6 +3,7 @@ title: Dig
 desc: DNS resolution.
 tags: [Linux]
 alts: [Nslookup]
+website:
 ---
 
 ## Domain -> IP address

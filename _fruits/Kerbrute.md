@@ -3,6 +3,7 @@ title: Kerbrute
 desc: Bruteforcing Kerberos pre-auth.
 tags: [ActiveDirectory, Linux, Windows]
 alts: []
+website:
 ---
 
 ## Enumerate users

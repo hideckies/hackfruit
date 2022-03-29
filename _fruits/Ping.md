@@ -3,6 +3,7 @@ title: Ping
 desc: Tests reachability, connectivity of hosts.
 tags: [ActiveRecon, Linux]
 alts: []
+website:
 ---
 
 ## Basic

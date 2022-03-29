@@ -10,16 +10,26 @@ layout: default
         {% endfor %}
     </div>
     <p id="desc">{{ page.desc }}</p>
-    <div id="alts">
-        {% if page.alts.size > 0 %}
-        <span>Alternatives:</span>
-        <div id="items">
-            {% for alt in page.alts %}
-                <a href="{{ site.baseurl }}/fruits/{{ alt }}" class="item">{{ alt }}</a>
-            {% endfor %}
+    {% if page.alts.size > 0 %}
+        <div id="alts">
+            <span>Alternatives:</span>
+            <div id="items">
+                {% for alt in page.alts %}
+                    <a href="{{ site.baseurl }}/fruits/{{ alt }}" class="item">{{ alt }}</a>
+                {% endfor %}
+            </div>
         </div>
-        {% endif %}
-    </div>
+    {% endif %}
+    {% if page.website %}
+        <div id="website">
+            <span>
+                Website:
+            </span>
+            <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer">
+                {{ page.website }}
+            </a>
+        </div>
+    {% endif %}
 
     <hr />
     

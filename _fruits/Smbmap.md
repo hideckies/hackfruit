@@ -3,6 +3,7 @@ title: Smbmap
 desc: SMB enumeration tool.
 tags: [Linux, SMB, Windows]
 alts: [Smbclient, Smbget]
+website:
 ---
 
 ```sh

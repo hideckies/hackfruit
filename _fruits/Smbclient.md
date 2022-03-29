@@ -3,6 +3,7 @@ title: Smbclient
 desc: Connects Samba client.
 tags: [Linux, SMB, Windows]
 alts: [Smbget, Smbmap]
+website:
 ---
 
 ```sh

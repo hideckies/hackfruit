@@ -3,6 +3,7 @@ title: MITRE
 desc: Provides MITRE ATT&CK, Cyber Analytics Repository, etc.
 tags: [OSINT]
 alts: [GoogleHackingDatabase]
+website:
 ---
 
 <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer">

@@ -3,6 +3,7 @@ title: Gobuster
 desc: Scans web contents.
 tags: [ActiveRecon, DirectoryDiscovery, Linux]
 alts: [Dirb]
+website:
 ---
 
 ## Using SecLists

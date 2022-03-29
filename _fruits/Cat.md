@@ -3,6 +3,7 @@ title: Cat
 desc: Reads contents from files.
 tags: [Linux, PrivEsc]
 alts: [Less]
+website:
 ---
 
 ## Cron jobs

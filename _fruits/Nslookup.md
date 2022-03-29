@@ -3,6 +3,7 @@ title: Nslookup
 desc: DNS resolution.
 tags: [ActiveRecon, Linux]
 alts: [Dig]
+website:
 ---
 
 ```sh

@@ -1,15 +1,10 @@
 ---
 title: SecLists
 desc: Wordlists for security testing.
-tags: [ActiveRecon, Cryptography, DirectoryDiscovery, Linux, Password]
+tags: [ActiveRecon, Cryptography, DirectoryDiscovery, Linux, Password, Wordlists]
 alts: []
+website: https://github.com/danielmiessler/SecLists
 ---
-
-HP:
-<a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener noreferrer">
-    https://github.com/danielmiessler/SecLists
-</a>
-
 
 ```sh
 audo apt install seclists
