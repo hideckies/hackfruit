@@ -3,6 +3,7 @@ title: Hostname
 desc: Gets and sets hosname or DNS domain name.
 tags: [Linux]
 alts: [Uname]
+website:
 ---
 
 ## Get

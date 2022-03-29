@@ -1,5 +1,6 @@
 - name: ActiveDirectory
 - name: ActiveRecon
+- name: BrokenAccessControl
 - name: CRLF
 - name: CSRF
 - name: Cryptography

@@ -3,6 +3,7 @@ title: Hydra
 desc: Cracks username/password.
 tags: [Cryptography, Linux, Password]
 alts: [CrackStation, Hashcat, JohnTheRipper]
+website:
 ---
 
 ```sh

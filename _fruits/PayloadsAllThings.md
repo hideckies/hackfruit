@@ -3,6 +3,7 @@ title: PayloadsAllThings
 desc: A list of useful payloads.
 tags: [CRLF, CSRF, OAuth, SQLi, XSS]
 alts: []
+website:
 ---
 
 HP:

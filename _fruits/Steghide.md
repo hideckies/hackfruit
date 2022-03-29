@@ -3,6 +3,7 @@ title: Steghide
 desc: Steganography tool that hide data into image files, and extract hidden data from files.
 tags: [Linux]
 alts: []
+website:
 ---
 
 ## Embed hidden data

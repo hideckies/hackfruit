@@ -153,8 +153,8 @@ nav a #icon {
     margin: 32px 0;
     font-size: 1.2em;
 }
-#fruit #alts {}
-#fruit #alts span {
+#fruit #alts {
+    margin: 12px 0;
     font-size: 1em;
 }
 #fruit #alts #items {
@@ -169,6 +169,12 @@ nav a #icon {
     font-size: 1.1em;
     font-weight: bold;
     color: var(--color-white);
+}
+#fruit #website {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
 }
 #fruit hr {
     margin: 24px 0;

@@ -3,6 +3,7 @@ title: Netcat
 desc: Manages network connections.
 tags: [Linux, PrivEsc, ReverseShell]
 alts: [Ncat, Telnet]
+website:
 ---
 
 ## HTTP request

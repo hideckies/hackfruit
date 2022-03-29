@@ -3,6 +3,7 @@ title: Find
 desc: Searches files and directories.
 tags: [Linux, PrivEsc, SUID]
 alts: [Getcap]
+website:
 ---
 
 ## SUID/SGID files

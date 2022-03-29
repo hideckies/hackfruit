@@ -3,9 +3,5 @@ title: Wappalyzer
 desc: Identifies technologies on websites.
 tags: [OSINT, PassiveRecon]
 alts: [Shodan]
+website: https://www.wappalyzer.com/
 ---
-
-HP:
-<a href="https://www.wappalyzer.com/" target="_blank" rel="noopener noreferrer">
-    https://www.wappalyzer.com/
-</a>

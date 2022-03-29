@@ -3,9 +3,5 @@ title: DNSdumpster
 desc: Search DNS records.
 tags: [OSINT, PassiveRecon]
 alts: [Shodan]
+website: https://dnsdumpster.com/
 ---
-
-HP: 
-<a href="https://dnsdumpster.com/" target="_blank" rel="noopener noreferrer">
-    https://dnsdumpster.com/
-</a>

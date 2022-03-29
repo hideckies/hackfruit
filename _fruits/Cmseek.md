@@ -1,8 +1,9 @@
 ---
 title: Cmseek
-desc: CMS detection.
+desc: Detects CMS like WordPress, Joomla, Drupal, etc. And exploits.
 tags: [Linux]
 alts: []
+website: https://github.com/Tuhinshubhra/CMSeeK
 ---
 
 ```sh

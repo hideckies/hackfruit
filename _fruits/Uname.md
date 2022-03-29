@@ -3,6 +3,7 @@ title: Uname
 desc: Displays system informations.
 tags: [Linux]
 alts: [Hostname]
+website:
 ---
 
 ## All information

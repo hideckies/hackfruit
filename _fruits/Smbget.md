@@ -3,6 +3,7 @@ title: Smbget
 desc: Downloads SMB shares.
 tags: [Linux, SMB, Windows]
 alts: [Smbclient, Smbmap]
+website:
 ---
 
 ```sh

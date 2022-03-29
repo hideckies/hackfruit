@@ -3,9 +3,5 @@ title: VirusTotal
 desc: Detects malware for files, domains.
 tags: [Malware]
 alts: []
+website: https://www.virustotal.com/gui/home/upload
 ---
-
-HP:  
-<a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer">
-    https://www.virustotal.com/gui/home/upload
-</a>

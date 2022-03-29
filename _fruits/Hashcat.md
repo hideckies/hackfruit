@@ -2,7 +2,8 @@
 title: Hashcat
 desc: Password recovery.
 tags: [Cryptography, Linux, Password]
-alts: [CrackStation, Hydra, JohnTheRipper]
+alts: [CrackStation, Hydra, JohnTheRipper, Md5sum]
+website:
 ---
 
 ## Bruteforce
