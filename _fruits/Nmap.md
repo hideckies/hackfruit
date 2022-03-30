@@ -1,7 +1,7 @@
 ---
 title: Nmap
-desc: Port scanner.
-tags: [ActiveRecon, Linux, SQLi]
+desc: Network scanner. Discovers open ports and services.
+tags: [ActiveRecon, Linux, SMB, SQLi, Windows]
 alts: [Sqlmap]
 website:
 ---
@@ -39,7 +39,15 @@ nmap -p- 10.0.0.1
 ## Scripts (Nmap Scripting Engine)
 
 ```sh
-nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1
+# Enumerate SMB shares (SMB Port is 139 and 445)
+nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 139
+nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 445
+
+# Enumerate the network file system
+nmap --script=nfs-ls,nfs-statfs,nfs-showmount 10.0.0.1 -p 111
+
+# Look for URLs containing queries vulnerable to an SQL injection
+nmap -sV --script=http-sql-injection 10.0.0.1
 ```
 
 ## OS detection

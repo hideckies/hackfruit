@@ -1,11 +1,26 @@
 ---
 title: Nslookup
-desc: DNS resolution.
+desc: DNS (Domain Name System) resolution. Gets information about hosts. 
 tags: [ActiveRecon, Linux]
 alts: [Dig]
 website:
 ---
 
+## Basic
+
 ```sh
-nslookup -type=A example.com 1.1.1.1
+nslookup example.com
+```
+
+## Records
+
+```sh
+# NS records
+nslookup -type=ns example.com
+```
+
+## Reverse lookup
+
+```sh
+nslookup 10.0.0.1
 ```
