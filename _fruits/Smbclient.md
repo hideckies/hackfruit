@@ -6,6 +6,8 @@ alts: [Smbget, Smbmap]
 website:
 ---
 
+## Connect to Samba network shares
+
 ```sh
-smbclient //10.0.0.1/anonymous
+smbclient //10.0.0.1/somedir
 ```

@@ -6,6 +6,8 @@ alts: [Smbclient, Smbmap]
 website:
 ---
 
+## Download SMB share recursively
+
 ```sh
-smbget -R smb://10.0.0.1/anonymous
+smbget -R smb://10.0.0.1/somedir
 ```
