@@ -2,7 +2,7 @@
 title: John The Ripper
 desc: Hash password cracker.
 tags: [Cryptography, Linux, Password]
-alts: [Hashcat, Hydra]
+alts: [Hashcat, Hydra, Unshadow]
 website:
 ---
 
