@@ -2,7 +2,7 @@
 title: Cat
 desc: Reads contents from files.
 tags: [Linux, PrivEsc]
-alts: [Less]
+alts: [Less, Sed]
 website:
 ---
 

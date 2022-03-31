@@ -20,4 +20,7 @@ echo "Hello World" >> sample.txt
 
 # Overwrite (original contents disappears)
 echo "Hello World" > sample.txt
+
+# Enable escape
+echo -e "Hello\nWorld" > sample.txt
 ```

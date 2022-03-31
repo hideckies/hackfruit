@@ -40,8 +40,10 @@ nmap -p- 10.0.0.1
 
 ```sh
 # Enumerate SMB shares (SMB Port is 139 and 445)
-nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 139
-nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 445
+nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 139,445
+nmap --script smb-enum* 10.0.0.1 -p 139,445
+# Check vulnerabilities of SMB
+nmap --script smb-vuln* 10.0.0.1 -p 139,445
 
 # Enumerate the network file system
 nmap --script=nfs-ls,nfs-statfs,nfs-showmount 10.0.0.1 -p 111

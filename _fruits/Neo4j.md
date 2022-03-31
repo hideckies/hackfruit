@@ -9,7 +9,7 @@ website:
 # Srart server
 
 ```sh
-# Console
+# Start
 neo4j console
 
 # Daemon

@@ -1,13 +1,16 @@
 ---
 title: Smbclient
-desc: Connects Samba client.
+desc: Connects to Samba client.
 tags: [Linux, SMB, Windows]
 alts: [Smbget, Smbmap]
 website:
 ---
 
-## Connect to Samba network shares
+## Basic
 
 ```sh
+smbclient -L 10.0.0.1
+
+# Specific shares
 smbclient //10.0.0.1/somedir
 ```
