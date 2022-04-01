@@ -1,8 +1,8 @@
 ---
 title: Nslookup
 desc: DNS (Domain Name System) resolution. Gets information about hosts. 
-tags: [ActiveRecon, Linux]
-alts: [Dig]
+tags: [Linux, PassiveRecon]
+alts: [Dig, Host, Whois]
 website:
 ---
 

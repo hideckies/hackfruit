@@ -1,7 +1,7 @@
 ---
 title: Netcat
 desc: Manages network connections. Also known as 'nc'.
-tags: [Linux, PrivEsc, ReverseShell]
+tags: [ActiveRecon, Linux, PrivEsc, ReverseShell]
 alts: [Ncat, Telnet]
 website:
 ---
