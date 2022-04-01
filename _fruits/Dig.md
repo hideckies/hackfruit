@@ -1,23 +1,23 @@
 ---
 title: Dig
 desc: DNS resolution.
-tags: [Linux]
-alts: [Nslookup]
+tags: [Linux, PassiveRecon]
+alts: [Host, Nslookup, Whois]
 website:
 ---
 
-## Domain -> IP address
+## Basic
 
 ```sh
-dig example.com
+dig example.com @1.1.1.1
 ```
 
-## Ip address -> Domain
+## Records
 
 ```sh
-dig -x 
-```
+# AAAA records
+dig example.com @1.1.1.1 AAAA
 
-```sh
-dig example.com MX
+# MX records
+dig example.com @1.1.1.1 MX
 ```
