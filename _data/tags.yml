@@ -1,10 +1,12 @@
 - name: ActiveDirectory
 - name: ActiveRecon
+- name: APT
 - name: BrokenAccessControl
 - name: CRLF
 - name: CSRF
 - name: Cryptography
 - name: DirectoryDiscovery
+- name: IDOR
 - name: Linux
 - name: Malware
 - name: OAuth
@@ -14,6 +16,7 @@
 - name: PrivEsc
 - name: ReverseShell
 - name: SMB
+- name: SocialEngineering
 - name: SQLi
 - name: SSRF
 - name: SUID
