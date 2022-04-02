@@ -1,8 +1,8 @@
 ---
 title: MITRE
 desc: Provides MITRE ATT&CK, Cyber Analytics Repository, etc.
-tags: [OSINT]
-alts: [GoogleHackingDatabase]
+tags: [APT, OSINT]
+alts: [GoogleHackingDatabase, ExploitDB]
 website:
 ---
 
