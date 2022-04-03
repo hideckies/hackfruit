@@ -9,8 +9,13 @@ website:
 ## SUID/SGID files
 
 ```sh
-find / -type f -perm -04000 -ls 2>/dev/null
+# Option 1
+find / -type f -perm -04000 2>/dev/null
 
+# Option 2
+find / -type f -perm -u=s 2>/dev/null
+
+# Option 3
 find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
 ```
 
