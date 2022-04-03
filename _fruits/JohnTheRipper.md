@@ -24,4 +24,7 @@ john --wordlist=/usr/share/seclists/Password/Cracekd-Hashes/milw0rm-dictionary.t
 ```sh
 # MD5
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt ./hash.txt
+
+# NTLM
+john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt ./hash.txt
 ```

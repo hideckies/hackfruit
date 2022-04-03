@@ -39,6 +39,9 @@ nmap -p- 10.0.0.1
 ## Scripts (Nmap Scripting Engine)
 
 ```sh
+# Finds vulnerabilities
+nmap --script vuln 10.0.0.1
+
 # Enumerate SMB shares (SMB Port is 139 and 445)
 nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 139,445
 nmap --script smb-enum* 10.0.0.1 -p 139,445
@@ -68,6 +71,9 @@ nmap -sV 10.0.0.1
 
 ```sh
 nmap -v 10.0.0.1
+
+# More verbose
+nmap -vv 10.0.0.1
 ```
 
 ## Enable OS detection, version detection, script scanning, traceroute
