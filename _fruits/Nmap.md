@@ -16,6 +16,8 @@ nmap -n 10.0.0.1
 nmap -Pn 10.0.0.1
 ```
 
+<br />
+
 ## Scan technics
 
 ```sh
@@ -25,6 +27,8 @@ nmap -sS 10.0.0.1
 # UDP scan
 nmap -sU 10.0.0.1
 ```
+
+<br />
 
 ## Port
 
@@ -36,9 +40,14 @@ nmap -p2100-22000 10.0.0.1
 nmap -p- 10.0.0.1
 ```
 
+<br />
+
 ## Scripts (Nmap Scripting Engine)
 
 ```sh
+# --script=default
+nmap -sC 10.0.0.1
+
 # Finds vulnerabilities
 nmap --script vuln 10.0.0.1
 
@@ -55,17 +64,31 @@ nmap --script=nfs-ls,nfs-statfs,nfs-showmount 10.0.0.1 -p 111
 nmap -sV --script=http-sql-injection 10.0.0.1
 ```
 
+<br />
+
 ## OS detection
 
 ```sh
 nmap -O 10.0.0.1
 ```
 
+<br />
+
 ## Searvice/Version info
 
 ```sh
 nmap -sV 10.0.0.1
 ```
+
+<br />
+
+## Timing (0-5. higher is faster)
+
+```sh
+nmap -T4 10.0.0.1
+```
+
+<br />
 
 ## Verbose mode
 
@@ -75,6 +98,8 @@ nmap -v 10.0.0.1
 # More verbose
 nmap -vv 10.0.0.1
 ```
+
+<br />
 
 ## Enable OS detection, version detection, script scanning, traceroute
 
