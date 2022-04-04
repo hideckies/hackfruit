@@ -12,6 +12,7 @@
 - name: OAuth
 - name: OSINT
 - name: PassiveRecon
+- name: PassTheHash
 - name: Password
 - name: PrivEsc
 - name: ReverseShell

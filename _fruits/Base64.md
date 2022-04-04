@@ -12,6 +12,8 @@ website:
 base64 sample.txt
 ```
 
+<br />
+
 ## Decode
 
 ```sh
