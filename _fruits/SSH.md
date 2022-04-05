@@ -12,17 +12,27 @@ website:
 ssh username@10.0.0.1
 ```
 
+<br />
+
 ## Port number
 
 ```sh
 ssh username@10.0.0.1 -p 2200
 ```
 
+<br />
+
 ## Using private key
 
 ```sh
-ssh username@10.0.0.1 -i ~/.ssh/private_key.txt
+# Change permissions
+chmod 600 private_key.txt
+
+# Connect
+ssh -i private_key.txt username@10.0.0.1
 ```
+
+<br />
 
 ## Run command after connecting
 
