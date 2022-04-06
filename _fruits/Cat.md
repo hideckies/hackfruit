@@ -12,6 +12,16 @@ website:
 cat /etc/crontab
 ```
 
+<br />
+
+## Hosts
+
+```sh
+cat /etc/hosts
+```
+
+<br />
+
 ## Messages
 
 ```sh
@@ -22,11 +32,23 @@ cat /etc/issue
 cat /etc/motd
 ```
 
+<br />
+
 ## Nameserver
 
 ```sh
 cat /etc/resolv.conf
 ```
+
+<br />
+
+## OS kernel version
+
+```sh
+cat /proc/version
+```
+
+<br />
 
 ## Users and Passwords
 
@@ -37,6 +59,8 @@ cat /etc/passwd
 # Passwords
 cat /etc/shadow
 ```
+
+<br />
 
 ## Sudo configurations
 
