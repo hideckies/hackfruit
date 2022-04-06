@@ -1,8 +1,8 @@
 ---
 title: SSH
 desc: Connects remote server using Secure Shell protocol.
-tags: [Linux]
-alts: [PrivEsc, Telnet]
+tags: [Linux, PrivEsc]
+alts: [ssh-keygen, Telnet]
 website:
 ---
 
