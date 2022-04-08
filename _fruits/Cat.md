@@ -6,65 +6,26 @@ alts: [Less, Sed]
 website:
 ---
 
-## Cron jobs
+## Interesting
 
 ```sh
+# Cron jobs
 cat /etc/crontab
-```
-
-<br />
-
-## Hosts
-
-```sh
+# NFS settings
+cat /etc/exports
+# Hosts
 cat /etc/hosts
-```
-
-<br />
-
-## Messages
-
-```sh
-# before login
+# Messages
 cat /etc/issue
-
-# after login
 cat /etc/motd
-```
-
-<br />
-
-## Nameserver
-
-```sh
+# Nameserver
 cat /etc/resolv.conf
-```
-
-<br />
-
-## OS kernel version
-
-```sh
+# Os kernel version
 cat /proc/version
-```
-
-<br />
-
-## Users and Passwords
-
-```sh
-# Users
+# Users and passwords
 cat /etc/passwd
-
-# Passwords
 cat /etc/shadow
-```
-
-<br />
-
-## Sudo configurations
-
-```sh
+# Sudo config
 cat /etc/sudoers
 ```
 

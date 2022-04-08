@@ -6,8 +6,18 @@ alts: [Umount]
 website:
 ---
 
-## Mount
+## Basic
 
 ```sh
-mount 10.0.0.1:/somedir1 /mnt/somedir2
+mount 10.0.0.1:/path/to/victim /path/to/target
+```
+
+<br />
+
+## Mount share directory (type: NFS)
+
+```sh
+mkdir /tmp/share
+
+sudo mount -t nfs -o port=4444 localhost:/ /tmp/share
 ```
