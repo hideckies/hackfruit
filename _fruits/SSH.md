@@ -2,7 +2,7 @@
 title: SSH
 desc: Connects remote server using Secure Shell protocol.
 tags: [Linux, PrivEsc]
-alts: [ssh-keygen, Telnet]
+alts: [Ssh-keygen, Telnet]
 website:
 ---
 
@@ -25,6 +25,21 @@ ssh username@10.0.0.1 -p 2200
 
 <br />
 
+## Generate SSH keys and set up public key
+
+```sh
+# Generate SSH public and private keys
+[attacker@machine]$ ssh-keygen
+[attacker@machine]$ cat ~/.ssh/id_rsa.pub
+
+# Copy the content of the id_rsa.pub
+
+# Add the public key to the victim's authorized_keys
+[victim@machine]$ echo 'ssh rsa ....= attacker@machine' >> authorized_keys
+```
+
+<br />
+
 ## Using private key
 
 ```sh
@@ -41,4 +56,26 @@ ssh -i private_key.txt username@10.0.0.1
 
 ```sh
 ssh username@10.0.0.1 'ls -l'
+```
+
+<br />
+
+## Port forwarding, tunnel
+
+```sh
+# ex. bind_address: 3049, host port: 2049
+ssh -fN -L 3049:localhost:2049 victim@10.0.0.1
+```
+
+<br />
+
+## Start SSH server
+
+```sh
+/etc/init.d/ssh start
+
+----------------------
+
+# Check SSH running
+ps -e | grep ssh
 ```
