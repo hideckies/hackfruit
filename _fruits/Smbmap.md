@@ -7,5 +7,15 @@ website:
 ---
 
 ```sh
-smbmap -u "admin" -p "password" -h 10.10.10.10 -x "ipconfig"
+# Basic
+smbmap -H 10.0.0.1
+
+# Recursive
+smbmap -H 10.0.0.1 -R
+
+# Username and password
+smbmap -u username -p password -H 10.0.0.1
+
+# Execute a command
+smbmap -u username -p password -H 10.0.0.1 -x 'ipconfig'
 ```

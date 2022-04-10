@@ -9,12 +9,11 @@ website:
 ## Examples
 
 ```sh
-# Basic
+# List of shares
 smbclient -L 10.0.0.1
+smbclient -N -L \\\\10.0.0.1
+smbclient -L 10.0.0.1 -U username
 
-# Specific shares directory
-smbclient //10.0.0.1/somedir
-
-# Get list of shares (specific username e.g. 'admin')
-smbclient -L 10.0.0.1 -U admin
+# Specify shared directory
+smbclient //10.0.0.1/somedir -U username
 ```

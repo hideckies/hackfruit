@@ -51,6 +51,9 @@ nmap -sC 10.0.0.1
 # Finds vulnerabilities
 nmap --script vuln 10.0.0.1
 
+# Detect SMB protocols and version
+nmap --script smb-protocols 10.0.0.1 -p 139
+nmap --script smb-protocols 10.0.0.1 -p 445
 # Enumerate SMB shares (SMB Port is 139 and 445)
 nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 139,445
 nmap --script smb-enum* 10.0.0.1 -p 139,445
