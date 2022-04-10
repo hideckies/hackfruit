@@ -2,7 +2,7 @@
 title: 7zip
 desc: Manages .zip files.
 tags: [Linux, Malware]
-alts: [Bzip2, Gzip, Zip]
+alts: [Bzip2, Gzip, Tar, Zip]
 website:
 ---
 

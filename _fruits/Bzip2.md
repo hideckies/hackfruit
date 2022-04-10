@@ -2,7 +2,7 @@
 title: Bzip2
 desc: Manages .bz2 files.
 tags: [Linux, Malware]
-alts: [7zip, Gzip, Zip]
+alts: [7zip, Gzip, Tar, Zip]
 website:
 ---
 

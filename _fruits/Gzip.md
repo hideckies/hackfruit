@@ -2,7 +2,7 @@
 title: Gzip
 desc: Manages .gz files.
 tags: [Linux, Malware]
-alts: [7zip, Bzip2, Zip]
+alts: [7zip, Bzip2, Tar, Zip]
 website:
 ---
 
