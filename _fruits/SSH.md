@@ -2,7 +2,7 @@
 title: SSH
 desc: Connects remote server using Secure Shell protocol.
 tags: [Linux, PrivEsc]
-alts: [Ssh-keygen, Telnet]
+alts: [Ssh-keygen, Telnet, Ufw]
 website:
 ---
 
@@ -69,10 +69,16 @@ ssh -fN -L 3049:localhost:2049 victim@10.0.0.1
 
 <br />
 
-## Start SSH server
+## SSH server
 
 ```sh
+# Start SSH server
 /etc/init.d/ssh start
+# or
+systemctl start ssh
+
+# Stop ssh server
+systemctl stop ssh
 
 ----------------------
 
