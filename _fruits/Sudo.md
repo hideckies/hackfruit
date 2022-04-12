@@ -12,9 +12,14 @@ website:
 sudo -l
 ```
 
+<br />
+
 ## Misc
 
 ```sh
 # If you owns the privileges `su` command, you can switch to root user
 sudo su root
+
+# Run as other user named 'bob'
+sudo -u bob whoami
 ```
