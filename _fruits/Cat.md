@@ -27,6 +27,8 @@ cat /etc/passwd
 cat /etc/shadow
 # Sudo config
 cat /etc/sudoers
+# LDAP config
+cat /etc/ldap/ldap.conf
 ```
 
 <br /><br />
