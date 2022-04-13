@@ -10,6 +10,12 @@ website:
 
 ```sh
 sudo -l
+
+# Specify the hostname e.g. 'host-name'
+sudo -h host-name -l
+
+# Execute via the hostname e.g. 'host-name'
+sudo -h host-name /bin/bash
 ```
 
 <br />
