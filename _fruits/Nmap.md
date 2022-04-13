@@ -65,6 +65,9 @@ nmap --script=nfs-ls,nfs-statfs,nfs-showmount 10.0.0.1 -p 111
 
 # Look for URLs containing queries vulnerable to an SQL injection
 nmap -sV --script=http-sql-injection 10.0.0.1
+
+# PJL (Printer Job Language) - jetdirect
+nmap --script pjl-ready-message 10.0.0.1 -p 9100
 ```
 
 <br />

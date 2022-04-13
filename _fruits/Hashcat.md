@@ -2,7 +2,7 @@
 title: Hashcat
 desc: Password recovery.
 tags: [Cryptography, Linux, Password]
-alts: [CrackStation, ExampleHashes, Hydra, JohnTheRipper, Md5sum]
+alts: [CrackStation, ExampleHashes, HashesCom, Hydra, JohnTheRipper, Md5sum]
 website:
 ---
 
@@ -38,5 +38,5 @@ hashcat -m 900 -a 0 ./hash.txt /usr/share/seclists/Passwords/Cracked-Hashes/milw
 hashcat -m 100 -a 0 ./hash.txt /usr/share/seclists/Passwords/Cracked-Hashes/milw0rm-dictionary.txt
 
 # NTLM
-hashcat -m 1000 b4b9b02e6f09a9bd760f388b67351e2b /usr/share/wordlists/rockyou.txt
+hashcat -m 1000 -a 0 b4b9b02e6f09a9bd760f388b67351e2b /usr/share/wordlists/rockyou.txt
 ```
