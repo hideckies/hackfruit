@@ -6,6 +6,7 @@
 - name: CSRF
 - name: Cryptography
 - name: DirectoryDiscovery
+- name: FTP
 - name: IDOR
 - name: Linux
 - name: Malware
@@ -20,7 +21,9 @@
 - name: SMB
 - name: SocialEngineering
 - name: SQLi
+- name: SSH
 - name: SSRF
+- name: Steganography
 - name: SUID
 - name: XSS
 - name: Windows

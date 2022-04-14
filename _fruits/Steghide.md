@@ -1,8 +1,8 @@
 ---
 title: Steghide
 desc: Steganography tool that hide data into image files, and extract hidden data from files.
-tags: [Linux]
-alts: []
+tags: [Linux, Steganography]
+alts: [Zsteg]
 website:
 ---
 
@@ -12,11 +12,15 @@ website:
 steghide embed -ef sample.jpg
 ```
 
+<br />
+
 ## Extract hidden data
 
 ```sh
 steghide extract -sf sample.jpg
 ```
+
+<br />
 
 ## Information about file
 

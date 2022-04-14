@@ -1,7 +1,7 @@
 ---
 title: Scp
-desc: Transfers files between two machines.
-tags: [Linux]
+desc: Transfers files between two machines via SSH.
+tags: [Linux, SSH]
 alts: []
 website:
 ---
