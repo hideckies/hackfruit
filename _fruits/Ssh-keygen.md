@@ -1,7 +1,7 @@
 ---
 title: Ssh-keygen
 desc: Creates new SSH public and private keys.
-tags: [Linux, PrivEsc]
+tags: [Linux, PrivEsc, SSH]
 alts: [SSH]
 website:
 ---

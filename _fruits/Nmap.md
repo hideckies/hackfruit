@@ -1,7 +1,7 @@
 ---
 title: Nmap
 desc: Network scanner. Discovers open ports and services.
-tags: [ActiveRecon, Linux, SMB, SQLi, Windows]
+tags: [ActiveRecon, FTP, Linux, SMB, SQLi, Windows]
 alts: [Sqlmap]
 website:
 ---
@@ -62,6 +62,9 @@ nmap --script smb-vuln* 10.0.0.1 -p 139,445
 
 # Enumerate the network file system
 nmap --script=nfs-ls,nfs-statfs,nfs-showmount 10.0.0.1 -p 111
+
+# FTP anonymous
+nmap --script ftp-anon -p 21 10.0.0.1
 
 # Look for URLs containing queries vulnerable to an SQL injection
 nmap -sV --script=http-sql-injection 10.0.0.1

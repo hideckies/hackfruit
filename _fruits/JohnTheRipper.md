@@ -1,7 +1,7 @@
 ---
 title: John The Ripper
 desc: Hash password cracker. ssh2john is also used to transform a SSH private key for cracking password.
-tags: [Cryptography, Linux, Password]
+tags: [Cryptography, Linux, Password, SSH]
 alts: [Hashcat, HashesCom, Hydra, Unshadow]
 website:
 ---
