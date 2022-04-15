@@ -16,4 +16,7 @@ smbclient -L 10.0.0.1 -U username
 
 # Specify shared directory
 smbclient //10.0.0.1/somedir -U username
+
+# Specify workgroup
+smbclient -L 10.0.0.1 -W WORKGROUP -U username
 ```

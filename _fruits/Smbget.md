@@ -10,4 +10,7 @@ website:
 
 ```sh
 smbget -R smb://10.0.0.1/somedir -U username
+
+# Specify workgroup
+smbget -R smb://10.0.0.1/somedir -w WORKGROUP -U username
 ```
