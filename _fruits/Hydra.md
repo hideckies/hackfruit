@@ -35,6 +35,10 @@ hydra -v -L /usr/share/seclists/Usernames/Names/names.txt -p password 10.0.0.1 s
 
 # Crack password
 hydra -v -l username -P /usr/share/seclists/Passwords/darkc0de.txt 10.0.0.1 ssh
+
+# Specify port
+hydra -l username -P /usr/share/wordlists/rockyou.txt -s 2222 10.0.0.1 ssh
+hydra -l username -P /usr/share/wordlists/rockyou.txt ssh://10.0.0.1:2222
 ```
 
 <br />

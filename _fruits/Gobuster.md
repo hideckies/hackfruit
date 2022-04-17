@@ -2,7 +2,7 @@
 title: Gobuster
 desc: Scans web contents.
 tags: [ActiveRecon, DirectoryDiscovery, Linux]
-alts: [Dirb, Ffuf]
+alts: [Dirb, FeroxBuster, Ffuf]
 website:
 ---
 

