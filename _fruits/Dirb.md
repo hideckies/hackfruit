@@ -2,21 +2,23 @@
 title: Dirb
 desc: Scans web contents.
 tags: [ActiveRecon, DirectoryDiscovery, Linux]
-alts: [Gobuster, Ffuf]
+alts: [Gobuster, FeroxBuster, Ffuf]
 website:
 ---
 
+## Basic
+
 ```sh
 dirb http://10.0.0.1/
-```
 
-## Using SecLists
-
-```sh
 dirb https://10.0.0.1/ /usr/share/seclists/Discovery/Web-Content/common.txt
 ```
 
-Reference:
-<a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener noreferrer">
-    https://github.com/danielmiessler/SecLists
-</a>
+<br />
+
+## HTTP header request
+
+```sh
+# HTTP Header request
+dirb http://10.10.135.50 /usr/share/seclists/Discovery/Web-Content/common.txt -H "Authorization: Basic cmFzY2FsOm9jdG9iZXIyMQ=="
+```

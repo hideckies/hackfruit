@@ -52,16 +52,18 @@ nmap -sC 10.0.0.1
 nmap --script vuln 10.0.0.1
 
 # Detect SMB protocols and version
-nmap --script smb-protocols 10.0.0.1 -p 139
-nmap --script smb-protocols 10.0.0.1 -p 445
+nmap --script smb-protocols -p 139 10.0.0.1
+nmap --script smb-protocols -p 445 10.0.0.1
 # Enumerate SMB shares (SMB Port is 139 and 445)
-nmap --script=smb-enum-shares.nse,smb-enum-users.nse 10.0.0.1 -p 139,445
+nmap --script=smb-enum-shares.nse,smb-enum-users.nse -p 139,445 10.0.0.1
 nmap --script smb-enum* 10.0.0.1 -p 139,445
 # Check vulnerabilities of SMB
-nmap --script smb-vuln* 10.0.0.1 -p 139,445
+nmap --script smb-vuln* -p 139,445 10.0.0.1
+# Smb bruteforce
+nmap --script smb-brute -p 445 10.0.0.1
 
 # Enumerate the network file system
-nmap --script=nfs-ls,nfs-statfs,nfs-showmount 10.0.0.1 -p 111
+nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
 
 # FTP anonymous
 nmap --script ftp-anon -p 21 10.0.0.1
@@ -70,7 +72,7 @@ nmap --script ftp-anon -p 21 10.0.0.1
 nmap -sV --script=http-sql-injection 10.0.0.1
 
 # PJL (Printer Job Language) - jetdirect
-nmap --script pjl-ready-message 10.0.0.1 -p 9100
+nmap --script pjl-ready-message -p 9100 10.0.0.1
 ```
 
 <br />

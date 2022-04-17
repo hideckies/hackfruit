@@ -1,7 +1,7 @@
 ---
 title: Bash
 desc: Executes shell commands and scripts. It also used to Reverse Shell, etc.
-tags: [Linux, PrivEsc, SUID]
+tags: [Linux, PrivEsc, ReverseShell, SUID]
 alts: []
 website:
 ---

