@@ -68,6 +68,9 @@ nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
 # FTP anonymous
 nmap --script ftp-anon -p 21 10.0.0.1
 
+# HTTP enumeration
+nmap --script http-enum -p 80 10.0.0.1
+
 # Look for URLs containing queries vulnerable to an SQL injection
 nmap -sV --script=http-sql-injection 10.0.0.1
 

@@ -1,8 +1,8 @@
 ---
 title: Hydra
 desc: Cracks username and password in web form, SSH, FTP.
-tags: [Cryptography, FTP, Linux, Password, SMB, SSH]
-alts: [CrackStation, Hashcat, JohnTheRipper]
+tags: [BruteForce, Cryptography, FTP, Linux, Password, SMB, SSH]
+alts: [CrackStation, Hashcat, JohnTheRipper, Wfuzz]
 website:
 ---
 

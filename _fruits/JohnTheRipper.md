@@ -1,7 +1,7 @@
 ---
 title: John The Ripper
 desc: Hash password cracker. ssh2john is also used to transform a SSH private key for cracking password.
-tags: [Cryptography, Linux, Password, SSH]
+tags: [BruteForce, Cryptography, Linux, Password, SSH]
 alts: [Hashcat, HashesCom, Hydra, Unshadow]
 website:
 ---
@@ -66,4 +66,19 @@ echo -n $PASS > hash_and_salt.txt
 echo -n '$' >> hash_and_salt.txt
 echo -n $SALT >> hash_and_salt.txt
 john --format=dynamic='sha512($p.$s)' --wordlist=/usr/share/wordlists/rockyou.txt hash_and_salt.txt
+```
+
+<br />
+
+## Generate custom wordlist from wordlist
+
+```sh
+# Add custom rules to the /etc/john/john.conf
+[List.Rules:Custom]
+Az"[0-9][0-9][!?#$%&/()=]"
+
+# ----------------------------------------------------
+
+# Generate
+john --wordlist=/path/to/wordlist --rules:Custom --stdout > generated_wordlist.txt
 ```

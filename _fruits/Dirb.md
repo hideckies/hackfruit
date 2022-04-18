@@ -20,5 +20,5 @@ dirb https://10.0.0.1/ /usr/share/seclists/Discovery/Web-Content/common.txt
 
 ```sh
 # HTTP Header request
-dirb http://10.10.135.50 /usr/share/seclists/Discovery/Web-Content/common.txt -H "Authorization: Basic cmFzY2FsOm9jdG9iZXIyMQ=="
+dirb http://10.0.0.1/ /usr/share/seclists/Discovery/Web-Content/common.txt -H "Authorization: Basic cmFzY2FsOm9jdG9iZXIyMQ=="
 ```
