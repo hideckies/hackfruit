@@ -25,6 +25,9 @@ echo "Hello World" > sample.txt
 
 # Enable escape
 echo -e "Hello\nWorld" > sample.txt
+
+# No newline
+echo -n 'hello world' > sample.txt
 ```
 
 <br />

@@ -2,6 +2,7 @@
 - name: ActiveRecon
 - name: APT
 - name: BrokenAccessControl
+- name: BruteForce
 - name: CRLF
 - name: CSRF
 - name: Cryptography
