@@ -32,7 +32,7 @@ cat /etc/passwd
 cat /etc/shadow
 # Sudo config
 cat /etc/sudoers
-cat /etc/sodoers.d/somefile
+cat /etc/sodoers.d/usersgroup
 ```
 
 <br /><br />

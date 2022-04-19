@@ -19,11 +19,3 @@ nc -lvnp 4444
 ```
 
 <br />
-
-## Create Bash script
-
-```sh
-#!/bin/bash -p (-p: privilege mode. It's used for SUID)
-
-echo 'Hello World'
-```

@@ -26,3 +26,13 @@ done < $1
 ```sh
 ./wordlist_to_md5.sh wordlist.txt wordlist_md5.txt
 ```
+
+<br />
+
+## Run as Root privilege
+
+```sh
+#!/bin/bash -p (-p: privilege mode. It's used for SUID)
+
+whoami
+```

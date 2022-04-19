@@ -12,9 +12,9 @@ website: https://github.com/ffuf/ffuf
 # -s: silent mode
 ffuf -s -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.0.0.1/FUZZ
 
-# HTTP Authorization
-ffuf -H "Authorization: Basic cmFzY2FsOnJpdmVycw==" -s -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.0.0.1/FUZZ
+# HTTP header
+ffuf -H "Cookie: value=123" -s -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.0.0.1/FUZZ
 
 # Recursion
-ffuf -H "Authorization: Basic cmFzY2FsOnJpdmVycw==" -s -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.0.0.1/FUZZ -maxtime-job 60 -recursion -recursion-depth 2
+ffuf -s -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.0.0.1/FUZZ -maxtime-job 60 -recursion -recursion-depth 2
 ```

