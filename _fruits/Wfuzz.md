@@ -1,6 +1,6 @@
 ---
 title: Wfuzz
-desc: Brute force HTTP GET, POST request in web application.
+desc: Brute force HTTP GET, POST request in web application.  It can also handle JSON response by the Content-Length in HTTP response.
 tags: [BruteForce, Linux, Password]
 alts: [Hydra]
 website:
