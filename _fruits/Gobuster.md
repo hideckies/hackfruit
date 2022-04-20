@@ -6,13 +6,12 @@ alts: [Dirb, FeroxBuster, Ffuf]
 website:
 ---
 
-## Using SecLists
+## Examples
 
 ```sh
+# Basic
 gobuster dir -u http://10.0.0.1:80 -w /usr/share/seclists/Discovery/Web-Content/common.txt
-```
 
-Reference:
-<a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener noreferrer">
-    https://github.com/danielmiessler/SecLists
-</a>
+# -q: quiet mode
+gobuster dir -q -u http://10.0.0.1 -w /usr/share/seclists/Discovery/Web-Content/common.txt
+```
