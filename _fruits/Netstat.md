@@ -8,4 +8,7 @@ website:
 
 ```sh
 netstat
+
+# -t: tcp, -u: udp, -l: listen, -p: programs, -n: don't resolve names
+netstat -lnptu
 ```

@@ -67,8 +67,11 @@ ssh username@10.0.0.1 'ls -l'
 ## Port forwarding, tunnel
 
 ```sh
-# ex. bind_address: 3049, host port: 2049
-ssh -fN -L 3049:localhost:2049 victim@10.0.0.1
+# Basic
+ssh -L 3000:localhost:3000 username@10.0.0.1
+
+# Background
+ssh -fN -L 3000:localhost:3000 username@10.0.0.1
 ```
 
 <br />
