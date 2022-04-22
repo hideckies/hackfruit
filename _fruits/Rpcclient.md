@@ -20,3 +20,25 @@ rpcclient -U username -N 10.0.0.1
 # Kerberos
 rpcclient -k 10.0.0.1
 ```
+
+<br />
+
+## Commands
+
+```sh
+# Server info
+rpcclient $> srvinfo
+
+# Enumerate domains
+rpcclient $> enumdomains
+# Enumerate domain users
+rpcclient $> enumdomusers
+# Enumerate domain groups
+rpcclient $> enumdomgroups
+
+# Domain info
+rpcclient $> querydominfo
+
+# Current username
+rpcclient $> getusername
+```

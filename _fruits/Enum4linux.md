@@ -6,41 +6,24 @@ alts: [Smbclient, Smbget, Smbmap]
 website:
 ---
 
-## Basic
+## Examples
 
 ```sh
+# Basic
 enum4linux 10.0.0.1
-```
 
-<br />
-
-## Get users
-
-```sh
+# Get users
 enum4linux -U 10.0.0.1
-```
 
-<br />
-
-## Get shares
-
-```sh
+# Get shares
 enum4linux -S 10.0.0.1
-```
 
-<br />
-
-## All enumeration
-
-```sh
-# equivalent to -U -S -G -P -r -o -n -i
+# All enumeration
 enum4linux -a 10.0.0.1
-```
 
-<br />
-
-## Verbose
-
-```sh
+# Verbose
 enum4linux -v 10.0.0.1
+
+# Specify username and password
+enum4linux -a -u username -p password 10.0.0.1
 ```
