@@ -1,7 +1,7 @@
 ---
 title: Rpcinfo
 desc: Checks the status of RPC server.
-tags: [Linux]
+tags: [Linux, Windows]
 alts: []
 website:
 ---
