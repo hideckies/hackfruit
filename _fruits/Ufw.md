@@ -4,6 +4,7 @@ desc: Manages Firewall configuration.
 tags: [Linux]
 alts: [SSH]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

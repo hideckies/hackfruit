@@ -4,6 +4,7 @@ desc: SMB enumeration tool.
 tags: [Linux, SMB, Windows]
 alts: [Smbclient, Smbget]
 website:
+render_with_liquid: false
 ---
 
 ```sh

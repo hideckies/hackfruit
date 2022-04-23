@@ -4,6 +4,7 @@ desc: Manages .zip files.
 tags: [Linux, Malware]
 alts: [Bzip2, Gzip, Tar, Zip]
 website:
+render_with_liquid: false
 ---
 
 ## Archive

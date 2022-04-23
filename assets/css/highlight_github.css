@@ -25,12 +25,12 @@
 .highlight .kr { color: #606060; font-weight: normal } /* Keyword.Reserved */
 .highlight .kt { color: #445588; font-weight: normal } /* Keyword.Type */
 .highlight .m { color: #009999 } /* Literal.Number */
-.highlight .s { color: #d01040 } /* Literal.String */
-.highlight .na { color: #20a0a0 } /* Name.Attribute */
+.highlight .s { color: #f03070 } /* Literal.String */
+.highlight .na { color: #40c0c0 } /* Name.Attribute */
 .highlight .nb { color: #50c6ff } /* Name.Builtin */
 .highlight .nc { color: #6475a8; font-weight: normal } /* Name.Class */
-.highlight .no { color: #008080 } /* Name.Constant */
-.highlight .nd { color: #3c5d5d; font-weight: normal } /* Name.Decorator */
+.highlight .no { color: #20a0a0 } /* Name.Constant */
+.highlight .nd { color: #5ddd5d; font-weight: normal } /* Name.Decorator */
 .highlight .ni { color: #a020a0 } /* Name.Entity */
 .highlight .ne { color: #990000; font-weight: normal } /* Name.Exception */
 .highlight .nf { color: #990000; font-weight: normal } /* Name.Function */

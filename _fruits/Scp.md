@@ -4,6 +4,7 @@ desc: Transfers files between two machines via SSH.
 tags: [Linux, SSH]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ```sh

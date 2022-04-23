@@ -4,6 +4,7 @@ desc: Creates new SSH public and private keys.
 tags: [Linux, PrivEsc, SSH]
 alts: [SSH]
 website:
+render_with_liquid: false
 ---
 
 ```sh

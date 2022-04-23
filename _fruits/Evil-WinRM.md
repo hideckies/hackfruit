@@ -4,6 +4,7 @@ desc: Windows Remote Management shell for pentesting. It's also used for Pass Th
 tags: [ActiveDirectory, Linux, PassTheHash, Windows]
 alts: []
 website: https://github.com/Hackplayers/evil-winrm
+render_with_liquid: false
 ---
 
 ## Pass The Hash

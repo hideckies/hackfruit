@@ -4,6 +4,7 @@ desc: Prints selected parts of lines.
 tags: [Linux]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ```sh

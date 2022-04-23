@@ -4,6 +4,7 @@ desc: Searches, finds, extracts from files.
 tags: [Linux]
 alts: [Cat]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

@@ -4,6 +4,7 @@ desc: OSINT automation tool.
 tags: [Linux, OSINT, PassiveRecon]
 alts: [Dig, Host, Maltego, Nslookup, ViewDNSinfo, Whois]
 website: https://github.com/lanmaster53/recon-ng
+render_with_liquid: false
 ---
 
 ```sh

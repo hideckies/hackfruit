@@ -4,6 +4,7 @@ desc: Checks network connection.
 tags: [Linux]
 alts: [Ip]
 website:
+render_with_liquid: false
 ---
 
 ```sh

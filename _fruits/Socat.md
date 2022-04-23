@@ -4,6 +4,7 @@ desc: Opens another port and redirects to the port.
 tags: [Linux, SSH]
 alts: [SSH]
 website:
+render_with_liquid: false
 ---
 
 ```sh

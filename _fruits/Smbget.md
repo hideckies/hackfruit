@@ -4,6 +4,7 @@ desc: Downloads files in the SMB shares directory.
 tags: [Linux, SMB, Windows]
 alts: [Smbclient, Smbmap]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

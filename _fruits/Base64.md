@@ -4,6 +4,7 @@ desc: Encodes text using base64, or decodes base64 to text strings.
 tags: [Cryptography, Linux, Password]
 alts: [Base16, Base32]
 website:
+render_with_liquid: false
 ---
 
 ## Encode

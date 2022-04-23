@@ -4,6 +4,7 @@ desc: CUI from Microsoft.
 tags: [ActiveDirectory, PostExploitation, Windows]
 alts: [PowerView]
 website:
+render_with_liquid: false
 ---
 
 ```powershell

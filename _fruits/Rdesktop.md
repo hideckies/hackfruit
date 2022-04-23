@@ -4,6 +4,7 @@ desc: Connects to Windows server via Remote Desktop (RDP)
 tags: [Linux, Windows]
 alts: [FreeRDP]
 website:
+render_with_liquid: false
 ---
 
 ```sh

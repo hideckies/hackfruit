@@ -4,6 +4,7 @@ desc: Connect to FTP server.
 tags: [FTP, Linux]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ## Basic

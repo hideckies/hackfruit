@@ -4,6 +4,7 @@ desc: Provides MITRE ATT&CK, Cyber Analytics Repository, etc.
 tags: [APT, OSINT]
 alts: [GoogleHackingDatabase, ExploitDB]
 website:
+render_with_liquid: false
 ---
 
 <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer">

@@ -4,6 +4,7 @@ desc: Lists files in directories.
 tags: [Linux, PrivEsc]
 alts: [Cat]
 website:
+render_with_liquid: false
 ---
 
 ## Find SSH keys

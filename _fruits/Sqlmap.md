@@ -4,6 +4,7 @@ desc: SQL injection automation tool.
 tags: [ActiveRecon, Linux, SQLi]
 alts: [Nmap, SQLInjectionCheatSheet]
 website:
+render_with_liquid: false
 ---
 
 ## POST request

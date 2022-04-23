@@ -4,6 +4,7 @@ desc: Powershell script to gain network situational awareness on Windows domain.
 tags: [ActiveDirectory, PostExploitation, Windows]
 alts: [PowerShell]
 website:
+render_with_liquid: false
 ---
 
 Cheat Sheet:

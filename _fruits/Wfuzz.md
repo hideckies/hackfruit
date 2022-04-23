@@ -4,6 +4,7 @@ desc: Brute force HTTP GET, POST request in web application.  It can also handle
 tags: [BruteForce, Linux, Password]
 alts: [Hydra]
 website:
+render_with_liquid: false
 ---
 
 ## POST request

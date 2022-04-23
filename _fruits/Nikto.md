@@ -4,6 +4,7 @@ desc: Scans web server and detects exploitables
 tags: [ActiveRecon, Linux]
 alts: [Metasploit]
 website:
+render_with_liquid: false
 ---
 
 ```sh

@@ -4,4 +4,5 @@ desc: Checks if the email address or phone number has been exposed.
 tags: [SocialEngineering]
 alts: []
 website: https://haveibeenpwned.com/
+render_with_liquid: false
 ---

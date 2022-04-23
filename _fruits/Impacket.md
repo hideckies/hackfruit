@@ -4,6 +4,7 @@ desc: Provides low level access to the packets. Also, impacket-GetNPUsers is use
 tags: [ActiveDirectory, ActiveRecon, Windows]
 alts: [Bloodhound, Kerbrute, Mimikatz]
 website:
+render_with_liquid: false
 ---
 
 ```sh

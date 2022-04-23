@@ -4,6 +4,7 @@ desc: Displays the capabilities on the queried files.
 tags: [Linux, PrivEsc]
 alts: [Find, Setcap]
 website:
+render_with_liquid: false
 ---
 
 ## Basic

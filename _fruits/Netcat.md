@@ -4,6 +4,7 @@ desc: Manages network connections. Also known as 'nc'.
 tags: [ActiveRecon, Linux, PrivEsc, ReverseShell]
 alts: [Ncat, Telnet]
 website:
+render_with_liquid: false
 ---
 
 ## HTTP request
