@@ -4,6 +4,7 @@ desc: Displays IP.
 tags: [Linux]
 alts: [Netstat]
 website:
+render_with_liquid: false
 ---
 
 ## Address

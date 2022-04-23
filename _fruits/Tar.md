@@ -4,6 +4,7 @@ desc: Archives files and directories, or extracts them.
 tags: [Linux, SMB, Windows]
 alts: [7zip, Bzip2, Gzip, Zip]
 website:
+render_with_liquid: false
 ---
 
 ## Create archives

@@ -4,6 +4,7 @@ desc: A text file contains shell commands.
 tags: [Linux]
 alts: [Bash]
 website:
+render_with_liquid: false
 ---
 
 ## Wordlist to MD5

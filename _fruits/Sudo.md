@@ -4,6 +4,7 @@ desc: Linux command to execute any commands as privileges.
 tags: [Linux, PrivEsc, SUID]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ## List of privilege commands for current user

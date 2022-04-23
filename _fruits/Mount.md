@@ -4,6 +4,7 @@ desc: Mount file systems.
 tags: [Linux, PrivEsc]
 alts: [Umount]
 website:
+render_with_liquid: false
 ---
 
 ## Basic

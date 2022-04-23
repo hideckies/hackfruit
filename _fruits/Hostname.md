@@ -4,6 +4,7 @@ desc: Gets and sets hosname or DNS domain name.
 tags: [Linux]
 alts: [Uname]
 website:
+render_with_liquid: false
 ---
 
 ## Get

@@ -4,6 +4,7 @@ desc: In addition to the output of string, there are other uses such as the priv
 tags: [Linux, PrivEsc]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ## Directories specified by PATH

@@ -27,5 +27,6 @@
 - name: Steganography
 - name: SUID
 - name: XSS
+- name: Web
 - name: Windows
 - name: Wordlists

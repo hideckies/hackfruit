@@ -4,6 +4,7 @@ desc: Detects CMS like WordPress, Joomla, Drupal, etc. Gets the CMS version and 
 tags: [Linux]
 alts: []
 website: https://github.com/Tuhinshubhra/CMSeeK
+render_with_liquid: false
 ---
 
 ```sh

@@ -4,6 +4,7 @@ desc: Checks if files are malicious by identifying patterns. It recommended to u
 tags: [Linux, Malware]
 alts: [VirusTotal]
 website: https://github.com/virustotal/yara
+render_with_liquid: false
 ---
 
 ```sh

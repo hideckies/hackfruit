@@ -4,6 +4,7 @@ desc: Searches files and directories.
 tags: [Linux, PrivEsc, SUID]
 alts: [Getcap]
 website:
+render_with_liquid: false
 ---
 
 ## SUID/SGID files

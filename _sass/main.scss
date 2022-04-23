@@ -45,6 +45,10 @@ input:focus {
     outline: 4px solid var(--color-pink);
 }
 
+code {
+    font-family:'Courier New', Courier, monospace!important;
+}
+
 .highlighter-rouge {
     overflow-x: scroll;
     background: var(--color-richblack);

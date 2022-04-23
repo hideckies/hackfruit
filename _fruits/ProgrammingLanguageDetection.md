@@ -4,6 +4,7 @@ desc:  List of programming languages which is unfamiliar.
 tags: [Cryptography, Password]
 alts: [CyberChef]
 website:
+render_with_liquid: false
 ---
 
 ## Brainfuck

@@ -4,6 +4,7 @@ desc: Search Exploit Database.
 tags: [Linux]
 alts: [ExploitDB, Metasploit]
 website:
+render_with_liquid: false
 ---
 
 ## Search

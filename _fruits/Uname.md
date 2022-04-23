@@ -4,6 +4,7 @@ desc: Displays system informations.
 tags: [Linux]
 alts: [Hostname]
 website:
+render_with_liquid: false
 ---
 
 ## All information

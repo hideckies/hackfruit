@@ -4,6 +4,7 @@ desc: Create a hard link or symbolic link to an existing file or directory.
 tags: [Linux, PrivEsc]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ## Examples

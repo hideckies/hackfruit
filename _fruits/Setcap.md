@@ -4,6 +4,7 @@ desc: Sets the capability of  the file.
 tags: [Linux, PrivEsc]
 alts: [Getcap]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

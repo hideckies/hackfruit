@@ -4,6 +4,7 @@ desc: Executes MS-RPC functions in Samba.
 tags: [SMB, Windows]
 alts: [Sqlmap]
 website:
+render_with_liquid: false
 ---
 
 ## Basic

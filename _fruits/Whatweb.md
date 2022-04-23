@@ -4,6 +4,7 @@ desc: Web scanner.
 tags: [ActiveRecon, Linux]
 alts: [Nikto, Nmap]
 website:
+render_with_liquid: false
 ---
 
 ```sh

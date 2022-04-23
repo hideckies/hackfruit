@@ -4,6 +4,7 @@ desc: Views contents of text files.
 tags: [Linux, PrivEsc]
 alts: [Cat]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

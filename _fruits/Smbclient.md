@@ -4,6 +4,7 @@ desc: Connects to Samba client.
 tags: [Linux, SMB, Windows]
 alts: [Smbget, Smbmap]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

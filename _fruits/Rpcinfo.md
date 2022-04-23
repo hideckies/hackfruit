@@ -4,6 +4,7 @@ desc: Checks the status of RPC server.
 tags: [Linux, Windows]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ```sh

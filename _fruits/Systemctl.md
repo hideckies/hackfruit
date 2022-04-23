@@ -4,6 +4,7 @@ desc: Manages the state of the systemd.
 tags: [Linux]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ## Examples

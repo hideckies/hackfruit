@@ -1,9 +1,10 @@
 ---
 title: Burp Suite
 desc: Security testing tool for web applications.
-tags: [ActiveRecon, BrokenAccessControl, BruteForce, OAuth, Password, SQLi, SSRF, XSS]
+tags: [Web]
 alts: [OwaspZap]
 website: https://portswigger.net/burp
+render_with_liquid: false
 ---
 
 ## Json injection (HTTP POST request)

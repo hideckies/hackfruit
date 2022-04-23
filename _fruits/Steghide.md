@@ -4,6 +4,7 @@ desc: Steganography tool that hide data into image files, and extract hidden dat
 tags: [Linux, Steganography]
 alts: [Binwalk, Exiftool, Stegseek, Xxd, Zsteg]
 website:
+render_with_liquid: false
 ---
 
 ## Embed hidden data

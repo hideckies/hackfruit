@@ -4,6 +4,7 @@ desc: Enumerates comprehensive information about Windows and Samba system.
 tags: [ActiveDirectory, ActiveRecon, Linux, SMB, Windows]
 alts: [Smbclient, Smbget, Smbmap]
 website:
+render_with_liquid: false
 ---
 
 ## Examples

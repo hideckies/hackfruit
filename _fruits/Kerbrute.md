@@ -4,6 +4,7 @@ desc: Bruteforcing Kerberos pre-auth.
 tags: [ActiveDirectory, BruteForce, Linux, Windows]
 alts: [Impacket]
 website: https://github.com/ropnop/kerbrute
+render_with_liquid: false
 ---
 
 ## Bruteforce username:password

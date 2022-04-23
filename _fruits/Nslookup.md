@@ -4,6 +4,7 @@ desc: DNS (Domain Name System) resolution. Gets information about hosts.
 tags: [Linux, PassiveRecon]
 alts: [Dig, Host, Whois]
 website:
+render_with_liquid: false
 ---
 
 ## Basic

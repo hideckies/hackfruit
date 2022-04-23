@@ -4,6 +4,7 @@ desc: Manages .gz files.
 tags: [Linux, Malware]
 alts: [7zip, Bzip2, Tar, Zip]
 website:
+render_with_liquid: false
 ---
 
 ## Compress

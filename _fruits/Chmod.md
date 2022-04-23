@@ -4,6 +4,7 @@ desc: Change permission of directory or file.
 tags: [Linux, PrivEsc]
 alts: []
 website:
+render_with_liquid: false
 ---
 
 ## Examples

@@ -4,6 +4,7 @@ desc: Connect to Windows server via Remote Desktop (RDP). The command is 'xfreer
 tags: [Linux, Windows]
 alts: [Rdesktop]
 website:
+render_with_liquid: false
 ---
 
 ```sh

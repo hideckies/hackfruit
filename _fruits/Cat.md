@@ -4,6 +4,7 @@ desc: Reads contents from files.
 tags: [Linux, PrivEsc]
 alts: [Less, Sed]
 website:
+render_with_liquid: false
 ---
 
 ## Interesting
@@ -35,7 +36,7 @@ cat /etc/sudoers
 cat /etc/sodoers.d/usersgroup
 ```
 
-<br /><br />
+<br />
 
 ## Misc
 

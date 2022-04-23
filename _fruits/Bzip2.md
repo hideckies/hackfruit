@@ -4,6 +4,7 @@ desc: Manages .bz2 files.
 tags: [Linux, Malware]
 alts: [7zip, Gzip, Tar, Zip]
 website:
+render_with_liquid: false
 ---
 
 ## Compress
@@ -11,6 +12,8 @@ website:
 ```sh
 bzip2 sample.txt
 ```
+
+<br />
 
 ## Decompress
 

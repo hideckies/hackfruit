@@ -4,6 +4,7 @@ desc: Combines passwd and shadow in linux. It is used when cracking user's passw
 tags: [Cryptography, Linux, PrivEsc]
 alts: [JohnTheRipper]
 website:
+render_with_liquid: false
 ---
 
 ## Crack user passwords
