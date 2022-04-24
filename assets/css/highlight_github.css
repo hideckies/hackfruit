@@ -18,12 +18,12 @@
 .highlight .gs { font-weight: normal } /* Generic.Strong */
 .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
 .highlight .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight .kc { color: #606060; font-weight: normal } /* Keyword.Constant */
-.highlight .kd { color: #606060; font-weight: normal } /* Keyword.Declaration */
-.highlight .kn { color: #606060; font-weight: normal } /* Keyword.Namespace */
-.highlight .kp { color: #606060; font-weight: normal } /* Keyword.Pseudo */
-.highlight .kr { color: #606060; font-weight: normal } /* Keyword.Reserved */
-.highlight .kt { color: #445588; font-weight: normal } /* Keyword.Type */
+.highlight .kc { color: #909090; font-weight: normal } /* Keyword.Constant */
+.highlight .kd { color: #909090; font-weight: normal } /* Keyword.Declaration */
+.highlight .kn { color: #909090; font-weight: normal } /* Keyword.Namespace */
+.highlight .kp { color: #909090; font-weight: normal } /* Keyword.Pseudo */
+.highlight .kr { color: #909090; font-weight: normal } /* Keyword.Reserved */
+.highlight .kt { color: #7485b8; font-weight: normal } /* Keyword.Type */
 .highlight .m { color: #009999 } /* Literal.Number */
 .highlight .s { color: #f03070 } /* Literal.String */
 .highlight .na { color: #60d0e0 } /* Name.Attribute */
