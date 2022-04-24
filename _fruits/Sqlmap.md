@@ -1,7 +1,7 @@
 ---
 title: Sqlmap
 desc: SQL injection automation tool.
-tags: [ActiveRecon, Linux, SQLi]
+tags: [ActiveRecon, Linux, SQLi, Web]
 alts: [Nmap, SQLInjectionCheatSheet]
 website:
 render_with_liquid: false

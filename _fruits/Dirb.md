@@ -1,7 +1,7 @@
 ---
 title: Dirb
 desc: Scans web contents.
-tags: [ActiveRecon, DirectoryDiscovery, Linux]
+tags: [ActiveRecon, DirectoryDiscovery, Linux, Web]
 alts: [Gobuster, FeroxBuster, Ffuf]
 website:
 render_with_liquid: false
