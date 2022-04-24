@@ -1,7 +1,7 @@
 ---
 title: Hashcat
 desc: Password recovery.
-tags: [Cryptography, Linux, Password]
+tags: [BruteForce, Cryptography, Linux, Password]
 alts: [CrackStation, ExampleHashes, HashesCom, Hydra, JohnTheRipper, Md5sum]
 website:
 render_with_liquid: false
@@ -9,7 +9,7 @@ render_with_liquid: false
 
 *Hash mode number (option: `-m`) can be referred to [Example Hashes (Hashcat Wiki)](/fruits/ExampleHashes).
 
-## Bruteforce
+## Brute force
 
 ```sh
 # MD5
