@@ -4,12 +4,16 @@ desc: Examples of OAuth.
 tags: [CSRF, OAuth, Web]
 alts: []
 website:
-render_with_liquid: false
 ---
 
-## Change user info in POST request
+{% raw %}
+
+## Change user info
 
 ```json
+POST /authenticate HTTP/1.1
+...
+
 {
     "email":"victim@example.com",
     "username":"attacker",
@@ -46,3 +50,5 @@ render_with_liquid: false
 	}, false);
 </script>
 ```
+
+{% endraw %}
