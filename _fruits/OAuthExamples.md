@@ -7,12 +7,9 @@ website:
 render_with_liquid: false
 ---
 
-## Change user info
+## Change user info in POST request
 
 ```json
-POST /authenticate HTTP/1.1
-...
-
 {
     "email":"victim@example.com",
     "username":"attacker",
