@@ -3,6 +3,8 @@
 - name: ActiveRecon
 - name: APT
 - name: BruteForce
+- name: CommandInjection
+- name: CORS
 - name: CRLF
 - name: CSRF
 - name: Cryptography
@@ -30,3 +32,4 @@
 - name: Windows
 - name: Wordlists
 - name: XSS
+- name: XXE
