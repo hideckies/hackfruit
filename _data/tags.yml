@@ -3,12 +3,14 @@
 - name: ActiveRecon
 - name: APT
 - name: BruteForce
+- name: BusinessLogic
 - name: CommandInjection
 - name: CORS
 - name: CRLF
 - name: CSRF
 - name: Cryptography
 - name: DirectoryDiscovery
+- name: DirectoryTraversal
 - name: FTP
 - name: IDOR
 - name: Linux
