@@ -67,6 +67,7 @@ exploit.php.png
 exploit%2Ephp
 exploit.p.phphp
 exploit.php%00.jpg
+exploit.php%0d%0a.jpg
 ```
 
 <br />

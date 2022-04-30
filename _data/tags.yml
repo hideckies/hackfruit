@@ -11,6 +11,7 @@
 - name: Cryptography
 - name: DirectoryDiscovery
 - name: DirectoryTraversal
+- name: DNS
 - name: FTP
 - name: IDOR
 - name: Linux

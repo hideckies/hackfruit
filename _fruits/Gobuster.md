@@ -14,4 +14,7 @@ gobuster dir -u http://10.0.0.1:80 -w /usr/share/seclists/Discovery/Web-Content/
 
 # Quiet mode (-q)
 gobuster dir -q -u http://10.0.0.1 -w /usr/share/seclists/Discovery/Web-Content/common.txt
+
+# Specify file extention (-x)
+gobuster -q -x php -u http://10.0.0.1 -w /usr/share/wordlists/rockyou.txt
 ```
