@@ -75,6 +75,13 @@ nmap --script http-enum -p 80 10.0.0.1
 # Look for URLs containing queries vulnerable to an SQL injection
 nmap -sV --script=http-sql-injection 10.0.0.1
 
+# MySQL
+nmap --script mysql-enum,mysql-info -p 3306 10.0.0.1
+nmap --script mysql-brute -p 3306 10.0.0.1
+nmap --script mysql-databases -p 3306 10.0.0.1
+nmap --script mysql-users -p 3306 10.0.0.1
+nmap --script mysql* -p 3306 10.0.0.1
+
 # PJL (Printer Job Language) - jetdirect
 nmap --script pjl-ready-message -p 9100 10.0.0.1
 ```
