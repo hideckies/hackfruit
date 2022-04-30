@@ -20,6 +20,9 @@ john --format=raw-sha256 --wordlist=/usr/share/wordlists/rockyou.txt ./hash.txt
 
 # NTLM
 john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt ./hash.txt
+
+# NTLMv2
+john --format=netntlmv2 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 
 <br />
@@ -82,4 +85,12 @@ Az"[0-9][0-9][!?#$%&/()=]"
 
 # Generate
 john --wordlist=/path/to/wordlist --rules:Custom --stdout > generated_wordlist.txt
+```
+
+<br />
+
+## Force to crack again (remove john.pot)
+
+```sh
+rm ~/.john/john.pot
 ```

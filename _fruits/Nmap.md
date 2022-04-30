@@ -27,6 +27,9 @@ nmap -sS 10.0.0.1
 
 # UDP scan
 nmap -sU 10.0.0.1
+
+# FIN scan
+nmap -sF 10.0.0.1
 ```
 
 <br />
@@ -39,6 +42,7 @@ nmap -p2100-22000 10.0.0.1
 
 # All ports
 nmap -p- 10.0.0.1
+nmap -p 1-65535 10.0.0.1
 ```
 
 <br />
@@ -127,4 +131,16 @@ nmap -vv 10.0.0.1
 
 ```sh
 nmap -A 10.0.0.1
+```
+
+<br />
+
+## Bypass Firewall
+
+```sh
+# Fragmented packets
+nmap -f 10.0.0.1
+
+# Specify MTU
+nmap -mtu 24 10.0.0.1
 ```

@@ -7,6 +7,14 @@ website: https://github.com/Hackplayers/evil-winrm
 render_with_liquid: false
 ---
 
+## Basic
+
+```sh
+evil-winrm -i 10.0.0.1 -P 5985 -u username -p password
+```
+
+<br />
+
 ## Pass The Hash
 
 ```sh
