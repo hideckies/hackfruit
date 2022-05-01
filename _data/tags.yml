@@ -16,6 +16,7 @@
 - name: IDOR
 - name: Linux
 - name: Malware
+- name: MSSQL
 - name: OAuth
 - name: OSINT
 - name: PassiveRecon
