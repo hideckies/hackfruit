@@ -13,8 +13,16 @@ render_with_liquid: false
 echo -en "GET / HTTP/1.1\nhost: netcat\n\n" | nc 10.10.44.191 80
 ```
 
+<br />
+
 ## Listen for reverse shell
 
 ```sh
 nc -lvnp 4444
+
+# ---- Activate -------------------------
+
+# Enable to get a better functional shell
+$ SHELL=/bin/bash script -q /dev/null
+www-data@vulnerable:~$
 ```

@@ -1,6 +1,6 @@
 ---
 title: John The Ripper
-desc: Hash password cracker. ssh2john is also used to transform a SSH private key for cracking password.
+desc: Hash password cracker. ssh2john for the SSH private key. zip2john for the zip’s password. rar2john for the rar’s password.
 tags: [BruteForce, Cryptography, Linux, Password, SSH, Wordlists]
 alts: [CeWL, Hashcat, HashesCom, Hydra, Unshadow]
 website:
@@ -36,13 +36,12 @@ john --list=formats
 
 <br />
 
-## Crack password of SSH private key using ssh2john
+## Crack SSH private key
 
 ```sh
 # Transforms private key to hash
 ssh2john private_key.txt > hash.txt
 
-# Cracking
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 
@@ -54,7 +53,26 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 # Transform
 gpg2john sample.gpg > hash.txt
 
-# Crack
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+<br />
+
+## Crack RAR password
+
+```sh
+rar2john example.rar > hash.txt
+
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+<br />
+
+## Crack ZIP password
+
+```sh
+zip2john example.zip > hash.txt
+
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 

