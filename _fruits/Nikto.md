@@ -1,7 +1,7 @@
 ---
 title: Nikto
 desc: Scans web server and detects exploitables
-tags: [ActiveRecon, Linux]
+tags: [ActiveRecon, Linux, Web]
 alts: [Metasploit]
 website:
 render_with_liquid: false

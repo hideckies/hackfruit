@@ -7,7 +7,15 @@ website:
 render_with_liquid: false
 ---
 
-## Connect
+## Connect (local)
+
+```sh
+mysql -u username -p
+```
+
+<br />
+
+## Connect (remote)
 
 ```sh
 # Basic
