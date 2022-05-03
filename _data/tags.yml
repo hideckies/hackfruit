@@ -9,12 +9,14 @@
 - name: CRLF
 - name: CSRF
 - name: Cryptography
+- name: Database
 - name: DirectoryDiscovery
 - name: DirectoryTraversal
 - name: DNS
 - name: FTP
 - name: IDOR
 - name: Linux
+- name: Log4j
 - name: Malware
 - name: MSSQL
 - name: OAuth

@@ -1,7 +1,7 @@
 ---
 title: SQL Injection Cheat Sheet
 desc: Cheat Sheet for SQL injection.
-tags: [SQLi, Web]
+tags: [Database, SQLi, Web]
 alts: [Sqlmap]
 website: https://portswigger.net/web-security/sql-injection/cheat-sheet
 render_with_liquid: false
