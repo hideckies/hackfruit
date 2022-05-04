@@ -1,7 +1,7 @@
 ---
 title: Dig
 desc: DNS resolution.
-tags: [Linux, PassiveRecon]
+tags: [DNS, Linux, PassiveRecon]
 alts: [Host, Nslookup, Whois]
 website:
 render_with_liquid: false
