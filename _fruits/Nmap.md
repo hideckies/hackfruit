@@ -2,7 +2,7 @@
 title: Nmap
 desc: Network scanner. Discovers open ports and services.
 tags: [ActiveRecon, FTP, Linux, MSSQL, SMB, SQLi, Windows]
-alts: [Sqlmap]
+alts: [Masscan, Sqlmap]
 website:
 render_with_liquid: false
 ---
@@ -19,7 +19,7 @@ nmap -Pn 10.0.0.1
 
 <br />
 
-## Scan technics
+## Scan techniques
 
 ```sh
 # TCP SYN scan
@@ -30,6 +30,15 @@ nmap -sU 10.0.0.1
 
 # FIN scan
 nmap -sF 10.0.0.1
+
+# Xmas scan
+nmap -sX 10.0.0.1
+
+# Custom scan type
+nmap --scanflags SYNFIN 10.0.0.1
+nmap -sS --scanflags SYNFIN 10.0.0.1
+nmap --scanflags PSH 10.0.0.1
+nmap -sF --scanflags PSH 10.0.0.1
 ```
 
 <br />
@@ -43,6 +52,9 @@ nmap -p2100-22000 10.0.0.1
 # All ports
 nmap -p- 10.0.0.1
 nmap -p 1-65535 10.0.0.1
+
+# Top ports
+nmap --top-ports 100 10.0.0.1
 ```
 
 <br />
@@ -75,7 +87,6 @@ nmap --script ftp-anon -p 21 10.0.0.1
 
 # HTTP enumeration
 nmap --script http-enum -p 80 10.0.0.1
-
 # SQL injection
 nmap -sV --script http-sql-injection 10.0.0.1
 
@@ -93,6 +104,10 @@ nmap --script ms-sql* -p 1433 10.0.0.1
 
 # PJL (Printer Job Language) - jetdirect
 nmap --script pjl-ready-message -p 9100 10.0.0.1
+
+# SSH
+nmap --script ssh-brute -p 22 10.0.0.1
+nmap --script ssh* -p 22 10.0.0.1
 ```
 
 <br />
@@ -140,12 +155,26 @@ nmap -A 10.0.0.1
 
 <br />
 
-## Bypass Firewall
+## Firewall bypassing
 
 ```sh
 # Fragmented packets
 nmap -f 10.0.0.1
 
-# Specify MTU
-nmap -mtu 24 10.0.0.1
+# Specify MTU (Maximum Transmission Unit)
+nmap --mtu 16 10.0.0.1
+nmap --mtu 24 10.0.0.1
+
+# Decoy
+nmap -D RND:3 10.0.0.1
+```
+
+<br />
+
+## Subnet scan
+
+```sh
+# -sP: skip port scan
+nmap -sP 10.0.0.1/16
+nmap -sP 10.0.0.1/24
 ```
