@@ -81,6 +81,16 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
+## Crack PKCS#12 (.pfx, .p12) password
+
+```sh
+pfx2john example.pfx > hash.txt
+
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+<br />
+
 ## Salted hashes
 
 ```sh

