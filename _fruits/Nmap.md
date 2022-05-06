@@ -108,6 +108,9 @@ nmap --script pjl-ready-message -p 9100 10.0.0.1
 # SSH
 nmap --script ssh-brute -p 22 10.0.0.1
 nmap --script ssh* -p 22 10.0.0.1
+
+# LDAP
+nmap --script "ldap* and not brute" 10.0.0.1
 ```
 
 <br />

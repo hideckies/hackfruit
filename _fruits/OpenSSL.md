@@ -23,3 +23,17 @@ openssl s_client --connect example.com:443
 # password: 'password'
 openssl passwd -6 --salt salt password
 ```
+
+<br />
+
+## PFX -> PEM -> RSA
+
+```sh
+# Extract the private key
+openssl pkcs12 -in example.pfx -nocerts -out key.pem -nodes
+# Extract the certificate
+openssl pkcs12 -in example.pfx -nokeys -out cert.pem
+
+# Create RSA key
+openssl rsa -in key.pem -out rsa.key
+```
