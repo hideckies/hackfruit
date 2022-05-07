@@ -65,30 +65,35 @@ nmap --top-ports 100 10.0.0.1
 # --script=default
 nmap -sC 10.0.0.1
 
-# Finds vulnerabilities
-nmap --script vuln 10.0.0.1
-
-# Detect SMB protocols and version
-nmap --script smb-protocols -p 139 10.0.0.1
-nmap --script smb-protocols -p 445 10.0.0.1
-# Enumerate SMB shares (SMB Port is 139 and 445)
-nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 139,445 10.0.0.1
-nmap --script smb-enum* 10.0.0.1 -p 139,445
-# Check vulnerabilities of SMB
-nmap --script smb-vuln* -p 139,445 10.0.0.1
-# Smb bruteforce
+# SMB
 nmap --script smb-brute -p 445 10.0.0.1
-
-# Enumerate the network file system
-nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
+nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 139,445 10.0.0.1
+nmap --script smb-enum* -p 139,445 10.0.0.1
+nmap --script smb-protocols -p 139,445 10.0.0.1
+nmap --script smb-vuln* -p 139,445 10.0.0.1
 
 # FTP anonymous
 nmap --script ftp-anon -p 21 10.0.0.1
 
-# HTTP enumeration
+# HTTP
 nmap --script http-enum -p 80 10.0.0.1
-# SQL injection
 nmap -sV --script http-sql-injection 10.0.0.1
+
+# Kerberos
+nmap --script krb5-enum-users --script-args krb5-enum-users.realm='example.local'-p 88 10.0.0.1
+
+# LDAP
+nmap --script ldap-search,ldapbrute 10.0.0.1
+nmap --script ldap* 10.0.0.1
+nmap --script "ldap* and not brute" 10.0.0.1
+
+# Microsoft SQL server
+nmap --script ms-sql-info,ms-sql-config -p 1433 10.0.0.1
+nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 10.0.0.1
+nmap --script ms-sql* -p 1433 10.0.0.1
+
+# MSRPC
+nmap --script msrpc-enum 10.0.0.1
 
 # MySQL
 nmap --script mysql-enum,mysql-info -p 3306 10.0.0.1
@@ -97,10 +102,8 @@ nmap --script mysql-databases -p 3306 10.0.0.1
 nmap --script mysql-users -p 3306 10.0.0.1
 nmap --script mysql* -p 3306 10.0.0.1
 
-# Microsoft SQL server
-nmap --script ms-sql-info,ms-sql-config -p 1433 10.0.0.1
-nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 10.0.0.1
-nmap --script ms-sql* -p 1433 10.0.0.1
+# Network File System
+nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
 
 # PJL (Printer Job Language) - jetdirect
 nmap --script pjl-ready-message -p 9100 10.0.0.1
@@ -109,8 +112,8 @@ nmap --script pjl-ready-message -p 9100 10.0.0.1
 nmap --script ssh-brute -p 22 10.0.0.1
 nmap --script ssh* -p 22 10.0.0.1
 
-# LDAP
-nmap --script "ldap* and not brute" 10.0.0.1
+# Vulnerabilities
+nmap --script vuln 10.0.0.1
 ```
 
 <br />

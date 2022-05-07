@@ -91,6 +91,16 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
+## Crack PEM
+
+```sh
+pem2john example.pem > hash.txt
+
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+<br />
+
 ## Salted hashes
 
 ```sh

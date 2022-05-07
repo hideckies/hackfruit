@@ -29,8 +29,11 @@ openssl passwd -6 --salt salt password
 ## PFX -> PEM -> RSA
 
 ```sh
-# Extract the private key
+# Extract the private key (encrypted)
+openssl pkcs12 -in example.pfx -nocerts -out key.pem
+# Extract the private key (no encrypted)
 openssl pkcs12 -in example.pfx -nocerts -out key.pem -nodes
+
 # Extract the certificate
 openssl pkcs12 -in example.pfx -nokeys -out cert.pem
 

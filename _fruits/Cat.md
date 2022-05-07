@@ -12,6 +12,7 @@ render_with_liquid: false
 ```sh
 # Cron jobs
 cat /etc/crontab
+cat /etc/cron.d/*
 # NFS settings
 cat /etc/exports
 # Hosts

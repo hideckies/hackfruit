@@ -1,7 +1,7 @@
 ---
 title: Mimikatz
 desc: Dumps Windows credentials. It also manages Kerberos tickets.
-tags: [ActiveDirectory, PostExploitation, Windows]
+tags: [ActiveDirectory, Kerberos, PostExploitation, Windows]
 alts: [Bloodhound, Impacket]
 website: https://github.com/gentilkiwi/mimikatz
 render_with_liquid: false
