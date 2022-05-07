@@ -2,7 +2,7 @@
 title: Smbmap
 desc: SMB enumeration tool.
 tags: [Linux, SMB, Windows]
-alts: [Smbclient, Smbget]
+alts: [CrackMapExec, Smbclient, Smbget]
 website:
 render_with_liquid: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Kerbrute
 desc: Bruteforcing Kerberos pre-auth.
-tags: [ActiveDirectory, BruteForce, Linux, Windows]
+tags: [ActiveDirectory, BruteForce, Kerberos, Linux, Windows]
 alts: [Impacket]
 website: https://github.com/ropnop/kerbrute
 render_with_liquid: false
