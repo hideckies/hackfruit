@@ -1,7 +1,7 @@
 ---
 title: Ffuf
 desc: Discovers web contents.
-tags: [ActiveRecon, DirectoryDiscovery, Linux, Web]
+tags: [ActiveRecon, ContentDiscovery, Web]
 alts: [Gobuster, Dirb, FeroxBuster]
 website: https://github.com/ffuf/ffuf
 render_with_liquid: false
