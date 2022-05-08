@@ -7,6 +7,45 @@ website:
 render_with_liquid: false
 ---
 
+## For Loop
+
+```sh
+#!/bin/bash
+
+for i in {1..5}
+do
+	echo "Hello $i"
+done
+```
+
+<br />
+
+## For Loop (4-digits)
+
+```sh
+#!/bin/bash
+
+for i in {0000..9999}
+do
+	echo $i
+done
+```
+
+<br />
+
+## Read text line by line
+
+```sh
+#!/bin/bash
+
+while read line
+do
+	echo $line
+done < example.txt
+```
+
+<br />
+
 ## Wordlist to MD5
 
 ### 1. Create `.sh` file.
