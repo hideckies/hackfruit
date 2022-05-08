@@ -1,7 +1,7 @@
 ---
 title: Gobuster
 desc: Scans web contents.
-tags: [ActiveRecon, DirectoryDiscovery, Linux, Web]
+tags: [ActiveRecon, ContentDiscovery, Web]
 alts: [Dirb, FeroxBuster, Ffuf]
 website:
 render_with_liquid: false

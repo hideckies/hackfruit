@@ -8,6 +8,6 @@ render_with_liquid: false
 ---
 
 ```sh
-# Basic
-xfreerdp /v:10.0.0.1:3389 /u:username
+xfreerdp /u:username /v:10.0.0.1:3389
+xfreerdp /u:username /p:password /cert:ignore /v:10.0.0.1 /workarea
 ```
