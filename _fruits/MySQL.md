@@ -10,6 +10,9 @@ render_with_liquid: false
 ## Connect (local)
 
 ```sh
+# No password
+mysql -u username
+# Password
 mysql -u username -p
 ```
 
@@ -49,4 +52,18 @@ mysql -u root -h 10.0.0.1 -P 3306
 
 # Display everything in the table
 > select * from table_name;
+
+# Create new table
+> create table table_name(column_name column_type);
+> create table table_name(user_id int, user_name varchar(40));
+
+# Create an user-defined function
+> create function func_name(param1, param2) returns datatype;
+> create function new_fund(age integer) returns integer;
+
+# Use a function
+> select func_name(param1, param2);
+
+# Insert new record to the table
+> insert into table_name values(value1, value2);
 ```

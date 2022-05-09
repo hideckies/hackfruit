@@ -22,6 +22,7 @@
 - name: Linux
 - name: Log4j
 - name: Malware
+- name: MemoryForensics
 - name: MSSQL
 - name: OAuth
 - name: OSINT
