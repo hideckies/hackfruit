@@ -18,6 +18,11 @@ ssh 10.0.0.1
 
 # If you got the error message "...no matching host key type found. Their offer: ssh-rsa",
 ssh -o HostKeyAlgorithms=+ssh-rsa username@10.0.0.1
+
+
+# Test the connection
+ssh -T username@10.0.0.1
+ssh -T username@10.0.0.1 -vvv
 ```
 
 <br />
@@ -40,7 +45,7 @@ ssh username@10.0.0.1 -p 2200
 # Copy the content of the id_rsa.pub
 
 # Add the public key to the victim's authorized_keys
-[victim@machine]$ echo 'ssh rsa ....= attacker@machine' >> authorized_keys
+[victim@machine]$ echo 'ssh rsa ....= attacker@machine' >> ~/.ssh/authorized_keys
 ```
 
 <br />

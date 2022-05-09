@@ -7,6 +7,18 @@ website:
 render_with_liquid: false
 ---
 
+## Positional arguments of the script
+
+```sh
+$0
+$1
+$2
+...
+
+```
+
+<br />
+
 ## Reverse Shell TCP
 
 ```sh
