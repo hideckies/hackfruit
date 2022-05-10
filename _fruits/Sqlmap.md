@@ -55,6 +55,7 @@ sqlmap -r request.txt --risk=3 --level=5 --dump
 ## GET request
 
 ```sh
+sqlmap -u "http://10.0.0.1/?search=test"
 sqlmap -u "http://10.0.0.1/?category=test&item=1" -p item 
 ```
 

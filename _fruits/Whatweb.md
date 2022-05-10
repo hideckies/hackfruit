@@ -1,7 +1,7 @@
 ---
 title: Whatweb
 desc: Web scanner.
-tags: [ActiveRecon, Linux, Web]
+tags: [ActiveRecon, Web]
 alts: [Nikto, Nmap]
 website:
 render_with_liquid: false
