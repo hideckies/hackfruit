@@ -1,7 +1,7 @@
 ---
 title: Whois
 desc: Query WHOIS records.
-tags: [Linux, PassiveRecon]
+tags: [PassiveRecon, Web]
 alts: [Dig, Host, Nslookup]
 website:
 render_with_liquid: false

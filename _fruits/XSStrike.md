@@ -1,12 +1,22 @@
 ---
 title: XSStrike
 desc: XSS scanner.
-tags: [Linux, Web, XSS]
+tags: [Web, XSS]
 alts: [BurpSuite, OwaspZap]
 website: https://github.com/s0md3v/XSStrike
 render_with_liquid: false
 ---
 
+## Get request
+
 ```sh
 python xsstrike.py -u http://vulnerable.com/?param=test
+```
+
+<br />
+
+## Post request
+
+```sh
+python xsstrike.py -u http://vulnerable.com/post --data "username=test&email=test&comment=test"
 ```

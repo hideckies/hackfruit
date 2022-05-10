@@ -6,6 +6,7 @@
 - name: BruteForce
 - name: BufferOverflow
 - name: BusinessLogic
+- name: CMS
 - name: CommandInjection
 - name: ContentDiscovery
 - name: CORS
@@ -42,5 +43,6 @@
 - name: Web
 - name: Windows
 - name: Wordlists
+- name: WordPress
 - name: XSS
 - name: XXE
