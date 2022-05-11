@@ -1,7 +1,7 @@
 ---
 title: Metasploit
 desc: Provides security vulnerabilities and exploit using payloads. It contains Msfconsole, Msfvenom
-tags: [ActiveRecon, Linux]
+tags: [ActiveRecon, Jenkins, Linux]
 alts: [ExploitDB, Gobuster, Searchsploit]
 website:
 render_with_liquid: false
@@ -16,7 +16,7 @@ msfdb init
 
 <br />
 
-## Msfconsole
+## Msfconsole (Commands)
 
 ```sh
 # Start
@@ -55,6 +55,15 @@ msf6 exploit(windows/smb/smb_17_010_eternalblue) > exploit
 # 
 # Ctrl + Z to background session
 # 
+```
+
+<br />
+
+## Msfconsole (Modules)
+
+```sh
+# Jenkins
+msf > use auxiliary/scanner/http/jenkins_login
 ```
 
 <br />

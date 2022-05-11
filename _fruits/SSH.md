@@ -27,7 +27,7 @@ ssh -T username@10.0.0.1 -vvv
 
 <br />
 
-## Port number
+## Port Number
 
 ```sh
 ssh username@10.0.0.1 -p 2200
@@ -35,7 +35,7 @@ ssh username@10.0.0.1 -p 2200
 
 <br />
 
-## Generate SSH keys and set up public key
+## Generate SSH Keys and Set Up Public Key
 
 ```sh
 # Generate SSH public and private keys
@@ -50,7 +50,7 @@ ssh username@10.0.0.1 -p 2200
 
 <br />
 
-## Using private key
+## Using Private Key
 
 ```sh
 # Change permissions
@@ -62,7 +62,7 @@ ssh -i private_key.txt username@10.0.0.1
 
 <br />
 
-## Run command after connecting
+## Run Command After Connecting
 
 ```sh
 ssh username@10.0.0.1 'ls -l'
@@ -70,19 +70,33 @@ ssh username@10.0.0.1 'ls -l'
 
 <br />
 
-## Port forwarding, tunnel
+## Port Forwarding (Tunnel)
+
+Run the following commands on the attackers’s local machine.
+
+### 1. Local Forwarding
 
 ```sh
-# Basic
-ssh -L 3000:localhost:3000 username@10.0.0.1
+# 4444 -> port for the attacker's machine
+# 10.0.0.2:8080 -> ip/port for the victim's machine
+ssh -L 4444:10.0.0.2:8080 victim@10.0.0.1
 
-# Background
-ssh -fN -L 3000:localhost:3000 username@10.0.0.1
+# ---------------------------------------------
+
+In the attaker local machine, you can access http://localhost:4444.
+```
+
+### 2. Remote Forwarding
+
+```sh
+# 8080 -> port for the victim's machine
+# localhost:80 -> ip/port for the attacker's machine
+ssh -R 8080:localhost:80 victim@10.0.0.1
 ```
 
 <br />
 
-## SSH server
+## SSH Server
 
 ```sh
 # Start SSH server

