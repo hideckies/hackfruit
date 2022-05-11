@@ -18,6 +18,7 @@
 - name: DNS
 - name: FTP
 - name: IDOR
+- name: Jenkins
 - name: Kerberos
 - name: LDAP
 - name: Linux
