@@ -1,7 +1,7 @@
 ---
 title: Exiftool
 desc: Read and write meta information in files. It’s also used to create a polyglot. 
-tags: [Linux, Steganography]
+tags: [Steganography]
 alts: [Binwalk, Steghide, Stegseek, Xxd, Zsteg]
 website:
 render_with_liquid: false

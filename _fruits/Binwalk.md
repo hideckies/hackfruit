@@ -1,7 +1,7 @@
 ---
 title: Binwalk
 desc: Get any embbed files.
-tags: [Linux, Steganography]
+tags: [Steganography]
 alts: [Exiftool, Steghide, Stegseek, Xxd, Zsteg]
 website:
 render_with_liquid: false
