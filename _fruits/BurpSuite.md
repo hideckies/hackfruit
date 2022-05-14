@@ -68,6 +68,14 @@ def queueRequests(target, wordlists):
     for word in open('/usr/share/seclists/Fuzzing/4-digits-0000-9999.txt'):
         engine.queue(target.req, word.rstrip())
 
+    # Brute Force (alphabet)
+    for word in open('/usr/share/seclists/Fuzzing/char.txt'):
+        engine.queue(target.req, word.rstrip())
+
+    # Brute Force (alphanum upper-lower)
+    for word in open('/usr/share/seclists/Fuzzing/alphanum-case.txt'):
+        engine.queue(target.req, word.rstrip())
+
     # Null payloads (infinite loop)
     i = 0
     while i < 1:

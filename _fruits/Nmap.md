@@ -47,7 +47,7 @@ nmap -sF --scanflags PSH 10.0.0.1
 
 ```sh
 # Range
-nmap -p2100-22000 10.0.0.1
+nmap -p 2100-22000 10.0.0.1
 
 # All ports
 nmap -p- 10.0.0.1
@@ -65,52 +65,57 @@ nmap --top-ports 100 10.0.0.1
 # --script=default
 nmap -sC 10.0.0.1
 
-# SMB
+# Port 21: FTP anonymous
+nmap --script ftp-anon -p 21 10.0.0.1
+
+# Port 22: SSH
+nmap --script ssh-brute -p 22 10.0.0.1
+nmap --script ssh* -p 22 10.0.0.1
+
+# Port 80: HTTP
+nmap --script http-enum -p 80 10.0.0.1
+nmap -sV --script http-sql-injection -p 80 10.0.0.1
+
+# Port 88: Kerberos
+nmap --script krb5-enum-users --script-args krb5-enum-users.realm='example.local'-p 88 10.0.0.1
+
+# Port 111: Network File System (NFS)
+nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
+
+# Port 135: MSRPC
+nmap --script msrpc-enum -p 135 10.0.0.1
+
+# Port 139,445: SMB
 nmap --script smb-brute -p 445 10.0.0.1
 nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 139,445 10.0.0.1
 nmap --script smb-enum* -p 139,445 10.0.0.1
 nmap --script smb-protocols -p 139,445 10.0.0.1
 nmap --script smb-vuln* -p 139,445 10.0.0.1
 
-# FTP anonymous
-nmap --script ftp-anon -p 21 10.0.0.1
+# Port 389, 636: LDAP
+nmap --script ldap-search,ldap-brute -p 389 10.0.0.1
+nmap --script ldap* -p 389 10.0.0.1
+nmap --script "ldap* and not brute" -p 389 10.0.0.1
 
-# HTTP
-nmap --script http-enum -p 80 10.0.0.1
-nmap -sV --script http-sql-injection 10.0.0.1
-
-# Kerberos
-nmap --script krb5-enum-users --script-args krb5-enum-users.realm='example.local'-p 88 10.0.0.1
-
-# LDAP
-nmap --script ldap-search,ldapbrute 10.0.0.1
-nmap --script ldap* 10.0.0.1
-nmap --script "ldap* and not brute" 10.0.0.1
-
-# Microsoft SQL server
+# Port 1433: Microsoft SQL server
 nmap --script ms-sql-info,ms-sql-config -p 1433 10.0.0.1
 nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 10.0.0.1
 nmap --script ms-sql* -p 1433 10.0.0.1
 
-# MSRPC
-nmap --script msrpc-enum 10.0.0.1
-
-# MySQL
+# Port 3306: MySQL
 nmap --script mysql-enum,mysql-info -p 3306 10.0.0.1
 nmap --script mysql-brute -p 3306 10.0.0.1
 nmap --script mysql-databases -p 3306 10.0.0.1
 nmap --script mysql-users -p 3306 10.0.0.1
 nmap --script mysql* -p 3306 10.0.0.1
 
-# Network File System
-nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
+# Port 3389:  Remote Desktop Protocol (RDP)
+nmap --script rdp-enum-encryption -p 3389 10.0.0.1
+nmap --script rdp-ntlm-info -p 3389 10.0.0.1
+nmap --script rdp* -p 3389 10.0.0.1
 
-# PJL (Printer Job Language) - jetdirect
+# Port 9100: PJL (Printer Job Language) - jetdirect
 nmap --script pjl-ready-message -p 9100 10.0.0.1
-
-# SSH
-nmap --script ssh-brute -p 22 10.0.0.1
-nmap --script ssh* -p 22 10.0.0.1
 
 # Vulnerabilities
 nmap --script vuln 10.0.0.1
