@@ -1,7 +1,7 @@
 ---
 title: Rdesktop
 desc: Connects to Windows server via Remote Desktop (RDP)
-tags: [Linux, Windows]
+tags: [Linux, RDP, Windows]
 alts: [FreeRDP]
 website:
 render_with_liquid: false

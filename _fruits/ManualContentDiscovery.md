@@ -14,6 +14,11 @@ render_with_liquid: false
 /security.txt
 /sitemap.xml
 /sitemaps.xml
+
+/main.js
+/script.js
+/js/main.js
+/js/script.js
 ```
 
 <br />

@@ -16,6 +16,7 @@
 - name: Database
 - name: DirectoryTraversal
 - name: DNS
+- name: FileUpload
 - name: FTP
 - name: IDOR
 - name: Jenkins
@@ -34,6 +35,7 @@
 - name: PostExploitation
 - name: PrivEsc
 - name: ReverseShell
+- name: RDP
 - name: SMB
 - name: SocialEngineering
 - name: SQLi
