@@ -1,7 +1,7 @@
 ---
 title: Nmap
 desc: Network scanner. Discovers open ports and services.
-tags: [ActiveRecon, FTP, Linux, MSSQL, SMB, SQLi, Windows]
+tags: [ActiveRecon, FTP, Linux, MSSQL, SMB, SNMP, SQLi, Windows]
 alts: [Masscan, Sqlmap]
 website:
 render_with_liquid: false
@@ -72,6 +72,19 @@ nmap --script ftp-anon -p 21 10.0.0.1
 nmap --script ssh-brute -p 22 10.0.0.1
 nmap --script ssh* -p 22 10.0.0.1
 
+# Port 53, 5353: DNS
+nmap --script dns-nsec-enum,dns --script-args dns-nsec-enum.domains vulnerable.com -p 53 10.0.0.1
+nmap --script dns-random-srcport -p 53 10.0.0.1
+nmap --script dns-recursion -p 53 10.0.0.1
+nmap --script dns-service-discovery -p 53 10.0.0.1
+nmap --script dns* -p 53 10.0.0.1
+
+# Port 67, 68: DHCP (Server), DHCP (Client)
+nmap --script broadcast-dhcp-discover -p 67,68 10.0.0.1
+
+# Port 69: TFTP (Trivial File Transfer Protocol)
+nmap -sU --script tftp-enum -p 69 10.0.0.1
+
 # Port 80: HTTP
 nmap --script http-enum -p 80 10.0.0.1
 nmap -sV --script http-sql-injection -p 80 10.0.0.1
@@ -82,6 +95,11 @@ nmap --script krb5-enum-users --script-args krb5-enum-users.realm='example.local
 # Port 111: Network File System (NFS)
 nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
 
+# Port 123: NTP (Network Time Protocol)
+nmap -sU --script ntp-info -p 123 10.0.0.1
+nmap -sU --script ntp-monlist -p 123 10.0.0.1
+nmap -sU --script ntp* -p 123 10.0.0.1
+
 # Port 135: MSRPC
 nmap --script msrpc-enum -p 135 10.0.0.1
 
@@ -91,6 +109,13 @@ nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 139,445 10.0.0.1
 nmap --script smb-enum* -p 139,445 10.0.0.1
 nmap --script smb-protocols -p 139,445 10.0.0.1
 nmap --script smb-vuln* -p 139,445 10.0.0.1
+
+# Port 161: SNMP (Simple Network Management Protocol)
+nmap -sU --script snmp-info -p 161 10.0.0.1
+nmap -sU --script snmp-interfaces -p 161 10.0.0.1
+nmap -sU --script snmp-processes -p 161 10.0.0.1
+nmap -sU --script snmp-sysdescr -p 161 10.0.0.1
+nmap -sU --script snmp* -p 161 10.0.0.1
 
 # Port 389, 636: LDAP
 nmap --script ldap-search,ldap-brute -p 389 10.0.0.1

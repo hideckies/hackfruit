@@ -7,11 +7,10 @@ website:
 render_with_liquid: false
 ---
 
-## Examples
-
 ```sh
 # List of shares
 smbclient -L 10.0.0.1
+smbclient -N -L 10.0.0.1
 smbclient -N -L \\\\10.0.0.1
 smbclient -L 10.0.0.1 -U username
 

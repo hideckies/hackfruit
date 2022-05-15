@@ -37,6 +37,7 @@
 - name: ReverseShell
 - name: RDP
 - name: SMB
+- name: SNMP
 - name: SocialEngineering
 - name: SQLi
 - name: SSH
@@ -45,7 +46,9 @@
 - name: SUID
 - name: Web
 - name: Windows
+- name: WinRM
 - name: Wordlists
 - name: WordPress
 - name: XSS
+- name: XST
 - name: XXE

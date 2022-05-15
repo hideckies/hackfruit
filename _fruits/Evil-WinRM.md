@@ -1,7 +1,7 @@
 ---
 title: Evil-WinRM
 desc: Windows Remote Management shell for pentesting. It's also used for Pass The Hash.
-tags: [ActiveDirectory, Linux, PassTheHash, Windows]
+tags: [ActiveDirectory, PassTheHash, Windows, WinRM]
 alts: []
 website: https://github.com/Hackplayers/evil-winrm
 render_with_liquid: false

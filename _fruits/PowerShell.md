@@ -1,11 +1,29 @@
 ---
 title: PowerShell
-desc: CUI from Microsoft.
-tags: [ActiveDirectory, PostExploitation, Windows]
+desc: Run “pwsh” to use it on Linux.
+tags: [ActiveDirectory, PostExploitation, Windows, WinRM]
 alts: [PowerView]
 website:
 render_with_liquid: false
 ---
+
+## Basic Commands
+
+```shell
+PS> $PSVersionTable
+```
+
+<br />
+
+## PowerShell on Linux
+
+```sh
+pwsh
+```
+
+<br />
+
+## PowerShell on Windows
 
 ```powershell
 # Start and bypass the PowerShell execution policy (enable to run scripts)
