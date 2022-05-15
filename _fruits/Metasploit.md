@@ -64,6 +64,12 @@ msf6 exploit(windows/smb/smb_17_010_eternalblue) > exploit
 ```sh
 # Jenkins
 msf > use auxiliary/scanner/http/jenkins_login
+
+# WinRM
+msf > use auxiliary/scanner/winrm/winrm_login
+msf > use auxiliary/scanner/winrm/winrm_wql
+msf > use auxiliary/scanner/winrm/winrm_cmd
+msf > use auxiliary/scanner/winrm/winrm_script_exec
 ```
 
 <br />

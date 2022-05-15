@@ -8,5 +8,5 @@ render_with_liquid: false
 ---
 
 ```sh
-./tmpmap.py -u http://vulnerable.com/?name=michael
+./tplmap.py -u http://vulnerable.com/?name=michael
 ```
