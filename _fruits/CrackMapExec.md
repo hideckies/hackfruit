@@ -2,7 +2,7 @@
 title: CrackMapExec
 desc: A swiss army knife for pentesting networks.
 tags: [ActiveDirectory, BruteForce, LDAP, MSSQL, PassTheHash, PostExploitation, SMB, SSH, Windows, WinRM]
-alts: [Impacket, Smbmap]
+alts: [Evil-WinRM, Impacket, Smbmap]
 website: https://github.com/byt3bl33d3r/CrackMapExec
 render_with_liquid: false
 ---

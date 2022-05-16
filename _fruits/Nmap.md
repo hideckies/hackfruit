@@ -65,15 +65,18 @@ nmap --top-ports 100 10.0.0.1
 # --script=default
 nmap -sC 10.0.0.1
 
-# Port 21: FTP anonymous
+# Port 21: FTP
 nmap --script ftp-anon -p 21 10.0.0.1
+nmap --script ftp-vuln* -p 21 10.0.0.1
+nmap --script ftp* -p 21 10.0.0.1
 
 # Port 22: SSH
 nmap --script ssh-brute -p 22 10.0.0.1
 nmap --script ssh* -p 22 10.0.0.1
+nmap --script ssh-auth-methods --script-args="ssh.user=username" -p 22 10.0.0.1
 
 # Port 53, 5353: DNS
-nmap --script dns-nsec-enum,dns --script-args dns-nsec-enum.domains vulnerable.com -p 53 10.0.0.1
+nmap --script dns-nsec-enum --script-args dns-nsec-enum.domains vulnerable.com -p 53 10.0.0.1
 nmap --script dns-random-srcport -p 53 10.0.0.1
 nmap --script dns-recursion -p 53 10.0.0.1
 nmap --script dns-service-discovery -p 53 10.0.0.1
@@ -86,8 +89,10 @@ nmap --script broadcast-dhcp-discover -p 67,68 10.0.0.1
 nmap -sU --script tftp-enum -p 69 10.0.0.1
 
 # Port 80: HTTP
+nmap --script http-devframework -p 80 10.0.0.1
 nmap --script http-enum -p 80 10.0.0.1
-nmap -sV --script http-sql-injection -p 80 10.0.0.1
+nmap --script http-methods -p 80 10.0.0.1
+nmap --script http-sql-injection -p 80 10.0.0.1
 
 # Port 88: Kerberos
 nmap --script krb5-enum-users --script-args krb5-enum-users.realm='example.local'-p 88 10.0.0.1
@@ -105,10 +110,10 @@ nmap --script msrpc-enum -p 135 10.0.0.1
 
 # Port 139,445: SMB
 nmap --script smb-brute -p 445 10.0.0.1
-nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 139,445 10.0.0.1
-nmap --script smb-enum* -p 139,445 10.0.0.1
-nmap --script smb-protocols -p 139,445 10.0.0.1
-nmap --script smb-vuln* -p 139,445 10.0.0.1
+nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 445 10.0.0.1
+nmap --script smb-enum* -p 445 10.0.0.1
+nmap --script smb-protocols -p 445 10.0.0.1
+nmap --script smb-vuln* -p 445 10.0.0.1
 
 # Port 161: SNMP (Simple Network Management Protocol)
 nmap -sU --script snmp-info -p 161 10.0.0.1
@@ -122,13 +127,15 @@ nmap --script ldap-search,ldap-brute -p 389 10.0.0.1
 nmap --script ldap* -p 389 10.0.0.1
 nmap --script "ldap* and not brute" -p 389 10.0.0.1
 
-# Port 1433: Microsoft SQL server
-nmap --script ms-sql-info,ms-sql-config -p 1433 10.0.0.1
+# Port 1433: Microsoft SQL Server
+nmap --script ms-sql-info -p 1433 10.0.0.1
+nmap --script ms-sql-config -p 1433 10.0.0.1
 nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 10.0.0.1
 nmap --script ms-sql* -p 1433 10.0.0.1
 
 # Port 3306: MySQL
-nmap --script mysql-enum,mysql-info -p 3306 10.0.0.1
+nmap --script mysql-info -p 3306 10.0.0.1
+nmap --script mysql-enum -p 3306 10.0.0.1
 nmap --script mysql-brute -p 3306 10.0.0.1
 nmap --script mysql-databases -p 3306 10.0.0.1
 nmap --script mysql-users -p 3306 10.0.0.1
@@ -139,7 +146,7 @@ nmap --script rdp-enum-encryption -p 3389 10.0.0.1
 nmap --script rdp-ntlm-info -p 3389 10.0.0.1
 nmap --script rdp* -p 3389 10.0.0.1
 
-# Port 9100: PJL (Printer Job Language) - jetdirect
+# Port 9100: PJL (Printer Job Language)
 nmap --script pjl-ready-message -p 9100 10.0.0.1
 
 # Vulnerabilities
