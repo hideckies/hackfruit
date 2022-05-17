@@ -83,7 +83,7 @@ nmap --script dns-service-discovery -p 53 10.0.0.1
 nmap --script dns* -p 53 10.0.0.1
 
 # Port 67, 68: DHCP (Server), DHCP (Client)
-nmap --script broadcast-dhcp-discover -p 67,68 10.0.0.1
+nmap -sU --script broadcast-dhcp-discover -p 67,68 10.0.0.1
 
 # Port 69: TFTP (Trivial File Transfer Protocol)
 nmap -sU --script tftp-enum -p 69 10.0.0.1
