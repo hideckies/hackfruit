@@ -15,6 +15,27 @@ echo -en "GET / HTTP/1.1\nhost: netcat\n\n" | nc 10.10.44.191 80
 
 <br />
 
+## Listen
+
+```sh
+# HTTP
+nc -lvnp 80
+
+# HTTPS
+nc -lvnp 443
+```
+
+<br />
+
+## Listen (background)
+
+```sh
+# Add '&'
+nc -lvnp 4444 &
+```
+
+<br />
+
 ## Listen for Reverse Shell
 
 ```sh
@@ -28,13 +49,4 @@ nc -lvnp 4444
 # Enable to get a better functional shell
 $ SHELL=/bin/bash script -q /dev/null
 www-data@vulnerable:~$
-```
-
-<br />
-
-## Listen (background)
-
-```sh
-# Add '&'
-nc -lvnp 4444 &
 ```
