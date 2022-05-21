@@ -2,6 +2,7 @@
 - name: ActiveDirectory
 - name: ActiveRecon
 - name: APT
+- name: AndroidAPK
 - name: AWS
 - name: BruteForce
 - name: BufferOverflow
@@ -34,6 +35,7 @@
 - name: Password
 - name: PostExploitation
 - name: PrivEsc
+- name: ReverseEngineering
 - name: ReverseShell
 - name: RDP
 - name: SMB

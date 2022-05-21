@@ -1,7 +1,7 @@
 ---
 title: Zip
 desc: Manages .zip files.
-tags: [Linux, Malware]
+tags: [AndroidAPK, Linux, Malware]
 alts: [7zip, Bzip2, Gzip, Zip]
 website:
 render_with_liquid: false
@@ -14,8 +14,13 @@ render_with_liquid: false
 zip sample sample1.txt sample2.txt
 ```
 
+<br />
+
 ## Extract
 
 ```sh
 unzip sample
+
+# Decode Android APK. You can get "classes.dex" too.
+unzip example.apk -d ./Example
 ```
