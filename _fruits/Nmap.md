@@ -146,6 +146,10 @@ nmap --script rdp-enum-encryption -p 3389 10.0.0.1
 nmap --script rdp-ntlm-info -p 3389 10.0.0.1
 nmap --script rdp* -p 3389 10.0.0.1
 
+# Port 6379: Redis
+nmap --script redis-info -p 6379 10.0.0.1
+nmap --script redis-brute -p 6379 10.0.0.1
+
 # Port 9100: PJL (Printer Job Language)
 nmap --script pjl-ready-message -p 9100 10.0.0.1
 

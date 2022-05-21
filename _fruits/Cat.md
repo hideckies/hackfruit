@@ -41,6 +41,17 @@ cat /etc/sodoers.d/usersgroup
 
 <br />
 
+## Search Sensitive Text in Files
+
+```sh
+# grep -e: OR search
+cat * | grep -e username -e password -e credential -e secret -e key -e root
+cat */* | grep -e username -e password -e credential -e secret -e key -e root
+cat */*/** | grep -e admin
+```
+
+<br />
+
 ## Misc
 
 ```sh

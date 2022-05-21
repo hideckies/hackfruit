@@ -1,7 +1,7 @@
 ---
 title: MySQL
 desc:  Connect to MySQL remotely.
-tags: [Database, Linux]
+tags: [Database]
 alts: []
 website:
 render_with_liquid: false
