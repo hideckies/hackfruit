@@ -12,9 +12,16 @@ render_with_liquid: false
 ```sh
 find / -name "*.txt" 2>/dev/null
 find /opt -name "*.txt" 2>/dev/null
-
-# SSH keys
-find / -name authorized_keys 2>/dev/null
+find / -name "authorized_keys" 2>/dev/null
+find / -name "users" 2>/dev/null
+find / -name "*user*" 2>/dev/null
+find / -name "secret.key" -or -name "secret" 2>/dev/null
+find / -name "credential*.txt" 2>/dev/null
+find / -name "*secret*" -or -name "*credential*" 2>/dev/null
+find / -name "*root*" -or -name "*password*" 2>/dev/null
+find / -name "*.key" -or -name "*.db" 2>/dev/null
+find / -name "*data*" 2>/dev/null
+find / -name "*flag*" 2>/dev/null
 ```
 
 <br />

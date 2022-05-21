@@ -88,7 +88,7 @@ nmap -sU --script broadcast-dhcp-discover -p 67,68 10.0.0.1
 # Port 69: TFTP (Trivial File Transfer Protocol)
 nmap -sU --script tftp-enum -p 69 10.0.0.1
 
-# Port 80: HTTP
+# Port 80, 443: HTTP, HTTPS
 nmap --script http-devframework -p 80 10.0.0.1
 nmap --script http-enum -p 80 10.0.0.1
 nmap --script http-methods -p 80 10.0.0.1
