@@ -52,12 +52,12 @@ mongo "mongodb://10.0.0.1:27017"
 > db.admin.update({"_id": ObjectId("e75...")}, {$set: {"name": "Michael"}})
 
 # Create
-> db.coll.insertOne({name: "Michael"})
+> db.<collection_name>.insertOne({"name": "michael"})
 # Read
-> db.coll.findOne()
+> db.<collection_name>.find()
+> db.<collection_name>.findOne({"username":"michael"})
 # Update
-> db.coll.update({"_id": 1}, {"age": 28})
+> db.<collection_name>.update({"_id": 1}, {"age": 28})
 # Delete
-> db.coll.remove({name: "Micael"})
-
+> db.<collection_name>.remove({"name": "Micael"})
 ```

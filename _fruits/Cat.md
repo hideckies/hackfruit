@@ -24,10 +24,14 @@ cat /etc/ldap/ldap.conf
 # Messages
 cat /etc/issue
 cat /etc/motd
+# MySQL
+cat /etc/my.cnf
 # Nameserver
 cat /etc/resolv.conf
 # Os kernel version
 cat /proc/version
+# PAM
+cat /etc/pam.d/passwd
 # SSH config
 cat /etc/ssh/ssh_config
 cat /etc/ssh/sshd_config
@@ -48,6 +52,9 @@ cat /etc/sodoers.d/usersgroup
 cat * | grep -e username -e password -e credential -e secret -e key -e root
 cat */* | grep -e username -e password -e credential -e secret -e key -e root
 cat */*/** | grep -e admin
+
+# grep -v: Exclude
+cat * | grep -v node_modules
 ```
 
 <br />
