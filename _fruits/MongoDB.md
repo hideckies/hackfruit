@@ -24,6 +24,7 @@ mongo --port 27117
 ```sh
 mongo --host 10.0.0.1 --port 27017 -u username -p password
 mongo "mongodb://10.0.0.1:27017"
+mongo "mongodb://username:password@10.0.0.1:27017/?authSource=admin"
 ```
 
 <br />

