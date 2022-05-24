@@ -55,6 +55,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```sh
 # Transform
 gpg2john sample.gpg > hash.txt
+gpg2john sample.asc > hash.txt
 
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```

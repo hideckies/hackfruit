@@ -150,6 +150,19 @@ nmap --script rdp* -p 3389 10.0.0.1
 nmap --script redis-info -p 6379 10.0.0.1
 nmap --script redis-brute -p 6379 10.0.0.1
 
+# Port 8009: Apache JServ Protocol (AJP)
+nmap --script ajp-auth -p 8009 10.0.0.1
+nmap --script ajp-auth --script-args ajp-auth.path=/login -p 8009 10.0.0.1
+nmap --script ajp-brute -p 8009 10.0.0.1
+nmap --script ajp-headers -p 8009 10.0.0.1
+nmap --script ajp-methods -p 8009 10.0.0.1
+nmap --script ajp-request -p 8009 10.0.0.1
+
+# Port 8080: Web Proxy (HTTP), Apache Tomcat
+nmap --script http-* -p 8080 10.0.0.1
+nmap --script http-open-proxy -p 8080 10.0.0.1
+nmap --script http-proxy-brute -p 8080 10.0.0.1
+
 # Port 9100: PJL (Printer Job Language)
 nmap --script pjl-ready-message -p 9100 10.0.0.1
 

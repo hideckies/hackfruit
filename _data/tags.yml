@@ -1,6 +1,7 @@
 - name: AccessControl
 - name: ActiveDirectory
 - name: ActiveRecon
+- name: AJP
 - name: APT
 - name: AndroidAPK
 - name: AWS
@@ -17,6 +18,7 @@
 - name: Database
 - name: DirectoryTraversal
 - name: DNS
+- name: Docker
 - name: FileUpload
 - name: FTP
 - name: IDOR

