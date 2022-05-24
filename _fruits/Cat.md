@@ -10,13 +10,13 @@ render_with_liquid: false
 ## Interesting
 
 ```sh
+# Apache
+cat /var/log/apache2/access.log
 # Cron jobs
 cat /etc/cron*
 cat /etc/crontab
 cat /etc/cron.d/*
 cat /var/spool/cron/*
-# NFS settings
-cat /etc/exports
 # Hosts
 cat /etc/hosts
 # LDAP config
@@ -28,19 +28,21 @@ cat /etc/motd
 cat /etc/my.cnf
 # Nameserver
 cat /etc/resolv.conf
+# NFS settings
+cat /etc/exports
 # Os kernel version
 cat /proc/version
 # PAM
 cat /etc/pam.d/passwd
+# Sudo config
+cat /etc/sudoers
+cat /etc/sodoers.d/usersgroup
 # SSH config
 cat /etc/ssh/ssh_config
 cat /etc/ssh/sshd_config
 # Users and passwords
 cat /etc/passwd
 cat /etc/shadow
-# Sudo config
-cat /etc/sudoers
-cat /etc/sodoers.d/usersgroup
 ```
 
 <br />
