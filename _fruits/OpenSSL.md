@@ -1,7 +1,7 @@
 ---
 title: OpenSSL
 desc: Wide range tool around SSL/TLS contains private key, certifications, etc. It is also used to generate the password hash for /etc/passwd in Linux.
-tags: [ActiveRecon, Cryptography, FTP, Linux, Password, PrivEsc]
+tags: [ActiveRecon, Cryptography, FTP, Linux, Password, PrivEsc, SMTP]
 alts: []
 website:
 render_with_liquid: false
@@ -51,4 +51,15 @@ openssl pkcs12 -in example.pfx -nokeys -out cert.pem
 
 # Create RSA key
 openssl rsa -in key.pem -out rsa.key
+```
+
+<br />
+
+## SMTPS Connection
+
+```sh
+# Port 465
+openssl s_client -crlf -connect vulnerable.com:465
+# Port 587
+openssl s_client -starttls smtp -crlf -connect vulnerable.com:587
 ```
