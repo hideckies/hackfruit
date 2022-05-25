@@ -41,6 +41,7 @@
 - name: ReverseShell
 - name: RDP
 - name: SMB
+- name: SMTP
 - name: SNMP
 - name: SocialEngineering
 - name: SQLi

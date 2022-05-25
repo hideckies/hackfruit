@@ -75,6 +75,13 @@ nmap --script ssh-brute -p 22 10.0.0.1
 nmap --script ssh* -p 22 10.0.0.1
 nmap --script ssh-auth-methods --script-args="ssh.user=username" -p 22 10.0.0.1
 
+# Port 25, 465, 587: SMTP, SMTPS, SMTPS
+nmap --script smtp-brute -p 25,465,587 10.0.0.1
+nmap --script smtp-commands -p 25,465,587 10.0.0.1
+nmap --script smtp-enum-users -p 25,465,587 10.0.0.1
+nmap --script smtp-ntlm-info --script-args smtp-ntlm-info.domain=example.com -p 25,465,587 10.0.0.1
+nmap --script smtp-vuln-cve2011-1764 -p 25,465,587 10.0.0.1
+
 # Port 53, 5353: DNS
 nmap --script dns-nsec-enum --script-args dns-nsec-enum.domains vulnerable.com -p 53 10.0.0.1
 nmap --script dns-random-srcport -p 53 10.0.0.1
@@ -122,8 +129,9 @@ nmap -sU --script snmp-processes -p 161 10.0.0.1
 nmap -sU --script snmp-sysdescr -p 161 10.0.0.1
 nmap -sU --script snmp* -p 161 10.0.0.1
 
-# Port 389, 636: LDAP
-nmap --script ldap-search,ldap-brute -p 389 10.0.0.1
+# Port 389: LDAP
+nmap --script ldap-brute --script-args ldap.base='"cn=users,dc=cqure,dc=net"' -p 389 10.0.0.1
+nmap --script ldap-search -p 389 10.0.0.1
 nmap --script ldap* -p 389 10.0.0.1
 nmap --script "ldap* and not brute" -p 389 10.0.0.1
 
