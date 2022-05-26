@@ -11,6 +11,7 @@
 - name: CMS
 - name: CommandInjection
 - name: ContentDiscovery
+- name: CookieHijacking
 - name: CORS
 - name: Cryptography
 - name: CRLF
@@ -23,6 +24,7 @@
 - name: FTP
 - name: IDOR
 - name: Jenkins
+- name: JWT
 - name: Kerberos
 - name: LDAP
 - name: Linux

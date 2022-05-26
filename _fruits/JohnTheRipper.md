@@ -1,13 +1,22 @@
 ---
 title: John The Ripper
 desc: Hash password cracker. ssh2john for the SSH private key. zip2john for the zip’s password. rar2john for the rar’s password.
-tags: [BruteForce, Cryptography, Linux, Password, SSH, Wordlists]
+tags: [BruteForce, Cryptography, JWT, Linux, Password, SSH, Wordlists]
 alts: [CeWL, Hashcat, HashesCom, Hydra, Unshadow]
 website:
 render_with_liquid: false
 ---
 
-## Basic
+## List Formats
+
+```sh
+# List formats
+john --list=formats
+```
+
+<br />
+
+## Crack Common Hashes
 
 ```sh
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
@@ -30,16 +39,17 @@ john --format=netntlmv2 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
-## Formats
+## Crack JWT Signature
 
 ```sh
-# List formats
-john --list=formats
+echo -n '<Base64_Encoded_JWT>' > jwt.txt
+
+john --format=HMAC-SHA256 --wordlist=/usr/share/wordlists/rockyou.txt jwt.txt
 ```
 
 <br />
 
-## Crack SSH private key
+## Crack SSH Private Key
 
 ```sh
 # Transforms private key to hash
@@ -50,7 +60,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
-## Crack PGP passphrase
+## Crack PGP Passphrase
 
 ```sh
 # Transform
@@ -62,7 +72,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
-## Crack RAR password
+## Crack RAR Password
 
 ```sh
 rar2john example.rar > hash.txt
@@ -72,7 +82,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
-## Crack ZIP password
+## Crack ZIP Password
 
 ```sh
 zip2john example.zip > hash.txt
@@ -82,7 +92,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
-## Crack PKCS#12 (.pfx, .p12) password
+## Crack PKCS#12 (.pfx, .p12) Password
 
 ```sh
 pfx2john example.pfx > hash.txt
@@ -102,7 +112,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 <br />
 
-## Salted hashes
+## Salted Hashes
 
 ```sh
 # SHA512
@@ -116,7 +126,7 @@ john --format=dynamic='sha512($p.$s)' --wordlist=/usr/share/wordlists/rockyou.tx
 
 <br />
 
-## Generate custom wordlist from wordlist
+## Generate Custom Wordlist from Wordlist
 
 ```sh
 # Add custom rules to the /etc/john/john.conf
@@ -131,7 +141,7 @@ john --wordlist=/path/to/wordlist --rules:Custom --stdout > generated_wordlist.t
 
 <br />
 
-## Force to crack again (remove john.pot)
+## Force to Crack Again (Remove john.pot)
 
 ```sh
 rm ~/.john/john.pot

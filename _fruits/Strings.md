@@ -6,3 +6,7 @@ alts: [File, Cat]
 website: 
 render_with_liquid: false
 ---
+
+```sh
+strings example.jpg
+```
