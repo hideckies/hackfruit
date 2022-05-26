@@ -1,7 +1,7 @@
 ---
 title: Hashcat
 desc: Password recovery.
-tags: [BruteForce, Cryptography, Linux, Password]
+tags: [BruteForce, Cryptography, JWT, Linux, Password]
 alts: [CrackStation, ExampleHashes, HashesCom, Hydra, JohnTheRipper, Md5sum]
 website:
 render_with_liquid: false
@@ -46,4 +46,16 @@ hashcat -m 1800 -a 3 hash.txt /usr/share/wordlist/rockyou.txt
 
 # NTLM
 hashcat -m 1000 -a 0 b4b9b02e6f09a9bd760f388b67351e2b /usr/share/wordlists/rockyou.txt
+```
+
+<br />
+
+## Crack JWT Signature
+
+```sh
+echo -n '<Base64_Encoded_JWT>' > jwt.txt
+
+hashcat -a 0 -m 16500 jwt.txt passwords.txt
+hashcat -a 0 -m 16500 jwt.txt passwords.txt -r rules/best64.rule
+hashcat -a 3 -m 16500 jwt.txt ?u?l?l?l?l?l?l?l -i --increment-min=6
 ```
