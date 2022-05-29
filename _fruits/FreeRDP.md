@@ -1,8 +1,8 @@
 ---
 title: FreeRDP
 desc: Connect to Windows server via Remote Desktop (RDP). The command is 'xfreerdp'.
-tags: [Linux, RDP, Windows]
-alts: [Rdesktop]
+tags: [RDP, Windows]
+alts: [Remmina, Rdesktop]
 website:
 render_with_liquid: false
 ---
