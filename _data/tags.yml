@@ -51,6 +51,7 @@
 - name: SSRF
 - name: Steganography
 - name: SUID
+- name: VNC
 - name: Web
 - name: Windows
 - name: WinRM

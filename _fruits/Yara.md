@@ -39,8 +39,11 @@ rule hello_checker {
 # Update first, then will add `signature-base` directory
 python ~/Loki/loki.py --update
 
-# Run Loki
+# Run
 python ~/Loki/loki.py -p ./suspicious_files_dir
+
+# Run & output a log file
+python loki.py -p ./suspicious_files_dir -l log.txt
 ```
 
 <br />
