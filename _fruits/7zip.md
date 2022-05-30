@@ -10,11 +10,10 @@ render_with_liquid: false
 ## Archive
 
 ```sh
-# Archive
 7z a sample.zip sample.txt
 
-# Archive with password (ex. 'mypass')
-7z a sample.zip -pmypass sample.txt 
+# With password
+7z a sample.zip sample.txt  -p password
 ```
 
 <br />
@@ -22,9 +21,8 @@ render_with_liquid: false
 ## Extract
 
 ```sh
-# Extract
 7z e sample.zip
 
-# Extrace with password (ex. 'mypass')
-7z e sample.zip -pmypass
+# With password
+7z e sample.zip -p password
 ```

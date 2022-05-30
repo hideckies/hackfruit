@@ -53,6 +53,7 @@
 - name: SUID
 - name: VNC
 - name: Web
+- name: WiFi
 - name: Windows
 - name: WinRM
 - name: Wordlists
