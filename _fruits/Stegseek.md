@@ -2,7 +2,7 @@
 title: Stegseek
 desc: Cracks steganography passphrase using bruteforce.
 tags: [Steganography]
-alts: [Binwalk, Exiftool, Steghide, Zsteg]
+alts: [Stegcracker, Steghide]
 website: https://github.com/RickdeJager/stegseek
 render_with_liquid: false
 ---
