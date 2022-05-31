@@ -12,6 +12,8 @@ render_with_liquid: false
 ```sh
 # List formats
 john --list=formats
+john --list=formats | grep -e sha -e SHA
+john --list=formats | grep -e md5 -e MD5
 ```
 
 <br />
@@ -122,6 +124,18 @@ echo -n $PASS > hash_and_salt.txt
 echo -n '$' >> hash_and_salt.txt
 echo -n $SALT >> hash_and_salt.txt
 john --format=dynamic='sha512($p.$s)' --wordlist=/usr/share/wordlists/rockyou.txt hash_and_salt.txt
+```
+
+<br />
+
+## Filter the Number of Characters (-min-len, -max-len)
+
+```sh
+# Up to 5 characters (-max-len:5)
+john --wordlist=/usr/share/wordlists/rockyou.txt -max-len:5 hash.txt
+
+# 4 characters only (-min-len:4 -max-len:4)
+john --wordlist=/usr/share/wordlists/rockyou.txt -min-len:4 -max-len:4 hash.txt
 ```
 
 <br />

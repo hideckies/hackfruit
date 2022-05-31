@@ -24,7 +24,7 @@ hashcat -m 900 -a 3 hash.txt '?a?a?a?a?a'
 hashcat -m 100 -a 3 hash.txt '?a?a?a?a?a'
 
 # sha512crypt
-hashcat -m 1800 -a 0 hash.txt '?a?a?a?a'
+hashcat -m 1800 -a 3 hash.txt '?a?a?a?a'
 ```
 
 <br />
@@ -42,7 +42,7 @@ hashcat -m 900 -a 0 hash.txt /usr/share/seclists/Passwords/Cracked-Hashes/milw0r
 hashcat -m 100 -a 0 hash.txt /usr/share/seclists/Passwords/Cracked-Hashes/milw0rm-dictionary.txt
 
 # sha512crypt
-hashcat -m 1800 -a 3 hash.txt /usr/share/wordlist/rockyou.txt
+hashcat -m 1800 -a 0 hash.txt /usr/share/wordlist/rockyou.txt
 
 # NTLM
 hashcat -m 1000 -a 0 b4b9b02e6f09a9bd760f388b67351e2b /usr/share/wordlists/rockyou.txt
