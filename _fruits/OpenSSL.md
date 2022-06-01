@@ -7,7 +7,7 @@ website:
 render_with_liquid: false
 ---
 
-## Check if SSL/TLS connection
+## Check if SSL/TLS Connection
 
 ```sh
 openssl s_client --connect example.com:443
@@ -15,13 +15,13 @@ openssl s_client --connect example.com:443
 
 <br />
 
-## Generate password hash for passwd
+## Generate Password Hash for /etc/shadow
 
 ```sh
 # -6: SHA512
 # --salt: 'salt'
 # password: 'password'
-openssl passwd -6 --salt salt password
+openssl passwd -6 -salt salt password
 ```
 
 <br />
