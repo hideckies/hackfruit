@@ -46,6 +46,7 @@
 - name: SMTP
 - name: SNMP
 - name: SocialEngineering
+- name: Spectrogram
 - name: SQLi
 - name: SSH
 - name: SSRF
