@@ -7,7 +7,7 @@ website:
 render_with_liquid: false
 ---
 
-## GET request
+## GET Request
 
 ```sh
 sqlmap -u "http://10.0.0.1/?search=test"
@@ -21,7 +21,7 @@ sqlmap -u "http://vulnerable.com/?search=1" --cookie="token=3df28a..." --techniq
 
 <br />
 
-## POST request
+## POST Request
 
 ```sh
 # --dbs: List all available databases
@@ -50,7 +50,7 @@ sqlmap --headers="Cookie: value=1234" -u "http://10.0.0.1" --data="username=test
 
 <br />
 
-## POST request (specify the request file)
+## POST Request (Specify the Request File)
 
 ```sh
 # request.txt
