@@ -1,7 +1,7 @@
 ---
 title: CeWL
 desc: Custom wordlist generator.
-tags: [Linux, Password, Wordlists]
+tags: [Linux, Password, Wordlist]
 alts: [AssetnoteWordlists, GenCombos, JohnTheRipper, SecList]
 website: https://github.com/digininja/CeWL
 render_with_liquid: false

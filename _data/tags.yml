@@ -57,7 +57,7 @@
 - name: WiFi
 - name: Windows
 - name: WinRM
-- name: Wordlists
+- name: Wordlist
 - name: WordPress
 - name: XSS
 - name: XST
