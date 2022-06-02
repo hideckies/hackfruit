@@ -1,7 +1,7 @@
 ---
 title: GenCombos
 desc: Custom combos wordlist generator in Python.
-tags: [Password, Wordlists]
+tags: [Password, Wordlist]
 alts: [CeWL, SecLists]
 website: https://github.com/hideckies/gencombos
 render_with_liquid: false

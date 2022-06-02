@@ -1,7 +1,7 @@
 ---
 title: Fuzzdb
 desc: Simple pattern wordlist.
-tags: [Wordlists]
+tags: [Wordlist]
 alts: [AssetnoteWordlists, SecLists]
 website: https://github.com/fuzzdb-project/fuzzdb
 ---

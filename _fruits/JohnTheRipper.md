@@ -1,7 +1,7 @@
 ---
 title: John The Ripper
 desc: Hash password cracker. ssh2john for the SSH private key. zip2john for the zip’s password. rar2john for the rar’s password.
-tags: [BruteForce, Cryptography, JWT, Linux, Password, SSH, Wordlists]
+tags: [BruteForce, Cryptography, JWT, Linux, Password, SSH, Wordlist]
 alts: [CeWL, Hashcat, HashesCom, Hydra, Unshadow]
 website:
 render_with_liquid: false
