@@ -2,7 +2,7 @@
 title: Programming Language Detection
 desc:  List of programming languages which is unfamiliar.
 tags: [Cryptography, Password]
-alts: [CyberChef]
+alts: [CyberChef, ManualCryptoDetection]
 website:
 render_with_liquid: false
 ---
@@ -22,3 +22,5 @@ render_with_liquid: false
 <]>++ ++++. <++++ +++[- >---- ---<] >---- -.+++ +.<++ +++++ [->++ +++++
 <]>+. <+++[ ->--- <]>-- ---.- ----. <
 ```
+
+Online decoder: [https://www.dcode.fr/brainfuck-language](https://www.dcode.fr/brainfuck-language)

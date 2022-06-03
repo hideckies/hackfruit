@@ -1,12 +1,12 @@
 ---
 title: File
-desc: Displays file type.
+desc: Recognize the type of data contained in a computer file.
 tags: [Linux, Malware]
-alts: [Cat, Strings]
+alts: [Cat, Steganography, Strings]
 website:
 render_with_liquid: false
 ---
 
 ```sh
-file sample.txt
+file example.jpg
 ```

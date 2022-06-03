@@ -1,6 +1,6 @@
 ---
 title: Binwalk
-desc: Get any embbed files.
+desc: Search a given binary image for embedded files and executable code.
 tags: [Steganography]
 alts: [Exiftool, Steghide, Stegseek, Xxd, Zsteg]
 website:

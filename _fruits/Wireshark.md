@@ -15,3 +15,11 @@ render_with_liquid: false
 3. Open another window.
 4. Find the sensitive information by clicking the arrow on the right of "Stream *".
 ```
+
+<br />
+
+## Filters
+
+```
+"http"
+```
