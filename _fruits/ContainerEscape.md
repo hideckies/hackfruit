@@ -2,7 +2,7 @@
 title: Container Escape
 desc: Gain access to the target host from the container host.
 tags: [Docker, Linux, PrivEsc, ReverseShell]
-alts: []
+alts: [Docker]
 website:
 render_with_liquid: false
 ---
