@@ -42,6 +42,7 @@
 - name: ReverseEngineering
 - name: ReverseShell
 - name: RDP
+- name: Rootkit
 - name: SMB
 - name: SMTP
 - name: SNMP
