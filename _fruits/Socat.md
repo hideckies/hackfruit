@@ -2,7 +2,7 @@
 title: Socat
 desc: A relay for bidirectional data transfers between two independent data channels.
 tags: [Linux, Pivoting, PortForwarding, PostExploitation, ReverseShell, SSH]
-alts: [SSH]
+alts: [Chisel, SSH, Sshuttle]
 website:
 render_with_liquid: false
 ---

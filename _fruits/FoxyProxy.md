@@ -1,5 +1,5 @@
 ---
-title: Foxyproxy
+title: FoxyProxy
 desc: A browser extension for advanced proxy management.
 tags: [Pivoting]
 alts: [Proxychains]

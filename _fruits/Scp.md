@@ -1,21 +1,24 @@
 ---
 title: Scp
-desc: Transfer files between two machines via SSH.
+desc: It securely copy files and directories between two locations.
 tags: [Linux, SSH]
 alts: []
 website:
 render_with_liquid: false
 ---
 
-## Local file -> Remote
+## Local File -> Remote
 
 ```sh
 scp example.txt kali@10.0.0.1:/home/kali/example.txt
+
+# Using private key
+scp -i private_key example.txt username@<remote-ip>:/tmp/example.txt
 ```
 
 <br />
 
-## Remote file -> Local
+## Remote File -> Local
 
 ```sh
 scp kali@10.0.0.1:/home/kali/example.txt example.txt
