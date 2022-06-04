@@ -2,7 +2,7 @@
 title: Proxychains
 desc: Force any TCP connection made by any given application to follow through proxy like TOR or any other SOCKS4, SOCKS5 or HTTP(S) proxy.
 tags: [Pivoting, PostExploitation]
-alts: [Foxyproxy]
+alts: [FoxyProxy]
 website:
 render_with_liquid: false
 ---

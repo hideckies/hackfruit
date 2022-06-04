@@ -2,7 +2,7 @@
 title: Searchsploit
 desc: Search Exploit Database.
 tags: [Linux]
-alts: [ExploitDB, Metasploit]
+alts: [Dos2unix, ExploitDB, Metasploit]
 website:
 render_with_liquid: false
 ---
@@ -17,8 +17,18 @@ searchsploit cms
 searchsploit ProFtpd
 ```
 
-## Mirror (copy) to current directory
+<br />
+
+## Mirror (Copy) to Current Directory
 
 ```sh
 searchsploit -m windows/remote/42031.py
+# or
+searchsploit -m 42031
+
+# Then, before using this exploit, convert it to UNIX format
+dos2unix 42031.py
+
+# Run
+python 42031.py
 ```

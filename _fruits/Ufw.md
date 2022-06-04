@@ -2,7 +2,7 @@
 title: Ufw
 desc: Manages Firewall configuration.
 tags: [Linux]
-alts: [SSH]
+alts: [Firewalld, SSH]
 website:
 render_with_liquid: false
 ---
