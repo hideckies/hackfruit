@@ -2,7 +2,7 @@
 title: Wget
 desc: Retrieve content from web servers.
 tags: [Linux, PrivEsc]
-alts: []
+alts: [Curl]
 website:
 render_with_liquid: false
 ---

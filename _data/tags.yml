@@ -37,6 +37,8 @@
 - name: PassiveRecon
 - name: PassTheHash
 - name: Password
+- name: Pivoting
+- name: PortForwarding
 - name: PostExploitation
 - name: PrivEsc
 - name: ReverseEngineering

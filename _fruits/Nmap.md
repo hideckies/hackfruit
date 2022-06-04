@@ -7,7 +7,7 @@ website:
 render_with_liquid: false
 ---
 
-## Host discovery
+## Host Discovery
 
 ```sh
 # No DNS resolution
@@ -19,7 +19,7 @@ nmap -Pn 10.0.0.1
 
 <br />
 
-## Scan techniques
+## Scan Techniques
 
 ```sh
 # TCP SYN scan
@@ -52,6 +52,9 @@ nmap -p 2100-22000 10.0.0.1
 # All ports
 nmap -p- 10.0.0.1
 nmap -p 1-65535 10.0.0.1
+
+# First 10000 ports
+nmap -p-10000 10.0.0.1
 
 # Top ports
 nmap --top-ports 100 10.0.0.1
@@ -180,7 +183,7 @@ nmap --script vuln 10.0.0.1
 
 <br />
 
-## OS detection
+## OS Detection
 
 ```sh
 nmap -O 10.0.0.1
@@ -188,7 +191,7 @@ nmap -O 10.0.0.1
 
 <br />
 
-## Searvice/Version info
+## Searvice/Version Info
 
 ```sh
 nmap -sV 10.0.0.1
@@ -196,7 +199,7 @@ nmap -sV 10.0.0.1
 
 <br />
 
-## Timing (0-5. higher is faster)
+## Timing (0-5. Higher is Faster)
 
 ```sh
 nmap -T4 10.0.0.1
@@ -204,7 +207,7 @@ nmap -T4 10.0.0.1
 
 <br />
 
-## Verbose mode
+## Verbose Mode
 
 ```sh
 nmap -v 10.0.0.1
@@ -215,7 +218,7 @@ nmap -vv 10.0.0.1
 
 <br />
 
-## Enable OS detection, version detection, script scanning, traceroute
+## Enable OS Detection, Version Detection, Script Scanning, Traceroute
 
 ```sh
 nmap -A 10.0.0.1
@@ -223,7 +226,7 @@ nmap -A 10.0.0.1
 
 <br />
 
-## Firewall bypassing
+## Firewall Bypass
 
 ```sh
 # Fragmented packets
@@ -239,7 +242,15 @@ nmap -D RND:3 10.0.0.1
 
 <br />
 
-## Subnet scan
+## Network Ranges
+
+```sh
+nmap 10.0.0.1-255
+```
+
+<br />
+
+## Subnet Scan
 
 ```sh
 # -sP: skip port scan
