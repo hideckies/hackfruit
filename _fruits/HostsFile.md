@@ -7,19 +7,20 @@ website:
 render_with_liquid: false
 ---
 
-## Edit /etc/hosts
+## Resolve Host and IP in etc/hosts
 
-```
+```sh
+vim /etc/hosts
+
+# -------------------------------------------------------
+
 127.0.0.1  localhost
 
 # Custom host
 10.0.0.1  vulnerable.com subdomain.vulnerable.com
-```
 
-<br />
+# -------------------------------------------------------------
 
-## Restart hostnamed (after editing /etc/hosts)
-
-```sh
-systemctl restart systemd-hostnamed
+# Restart hostnamed
+sudo systemctl restart systemd-hostnamed
 ```

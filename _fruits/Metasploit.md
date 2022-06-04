@@ -1,7 +1,7 @@
 ---
 title: Metasploit
 desc: Provides security vulnerabilities and exploit using payloads. It contains Msfconsole, Msfvenom
-tags: [ActiveRecon, Jenkins, Linux]
+tags: [ActiveRecon, Jenkins, Linux, PortForwarding]
 alts: [ExploitDB, Gobuster, Searchsploit]
 website:
 render_with_liquid: false
@@ -74,7 +74,7 @@ msf > use auxiliary/scanner/winrm/winrm_script_exec
 
 <br />
 
-## Meterpreter - An interractive shell
+## Meterpreter - An Interractive Shell
 
 ```sh
 # Upgrade to meterpreter
@@ -119,11 +119,20 @@ meterpreter > run post/multi/recon/local_exploit_suggester
 # Enable RDP
 meterpreter > run post/windows/manage/enable_rdp
 
+# Port Forwarding
+# -l: local port
+# -p: desitination port on target machine
+# -r: remote ip
+meterpreter > portfwd add -l 3389 -p 3389 -r <remote-ip>
+meterpreter > portfwd delete –l 3389 –p 3389 –r <remote-ip>
+
+...
+
 ```
 
 <br />
 
-## Msfvenom - Standalone payload generator
+## Msfvenom - Standalone Payload Generator
 
 ```sh
 # Get payloads
