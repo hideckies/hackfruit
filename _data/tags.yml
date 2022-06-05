@@ -4,6 +4,7 @@
 - name: AJP
 - name: APT
 - name: AndroidAPK
+- name: AntiVirusEvasion
 - name: AWS
 - name: BruteForce
 - name: BufferOverflow
@@ -17,6 +18,7 @@
 - name: CRLF
 - name: CSRF
 - name: Database
+- name: DataExfiltration
 - name: DirectoryTraversal
 - name: DNS
 - name: Docker

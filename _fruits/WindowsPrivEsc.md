@@ -16,6 +16,11 @@ hostname
 systeminfo
 # Current user
 whoami
+
+# List all users
+net user
+# Specific user information
+net user <USERNAME>
 ```
 
 <br />
