@@ -2,7 +2,7 @@
 title: Find
 desc: Searches files and directories.
 tags: [Linux, PrivEsc, SUID]
-alts: [Getcap]
+alts: [Getcap, Grep]
 website:
 render_with_liquid: false
 ---
@@ -10,6 +10,7 @@ render_with_liquid: false
 ## Interesting files
 
 ```sh
+# Sensitive data
 find / -name "*.txt" 2>/dev/null
 find /opt -name "*.txt" 2>/dev/null
 find / -name "authorized_keys" 2>/dev/null
@@ -22,6 +23,10 @@ find / -name "*root*" -or -name "*password*" 2>/dev/null
 find / -name "*.key" -or -name "*.db" 2>/dev/null
 find / -name "*data*" 2>/dev/null
 find / -name "*flag*" 2>/dev/null
+
+# Backup files for /etc/shadow.
+# ex. /var/shadow.bak
+find / -name *shadow* 2>/dev/null
 ```
 
 <br />

@@ -2,7 +2,7 @@
 title: Cat
 desc: Reads contents from files.
 tags: [Linux, PrivEsc]
-alts: [Less, More, Sed]
+alts: [Grep, Less, More, Sed]
 website:
 render_with_liquid: false
 ---
@@ -12,6 +12,11 @@ render_with_liquid: false
 ```sh
 # Apache
 cat /var/log/apache2/access.log
+# Bash Files
+cat .bashrc
+cat .bash_history
+cat .bash_profile
+cat .profile
 # Cron jobs
 cat /etc/cron*
 cat /etc/crontab

@@ -47,6 +47,7 @@ aGVsbG8gd29ybGQ=
 
 ```
 68 65 6c 6c 6f 20 77 6f 72 6c 64
+68656c6c6f20776f726c64
 ```
 
 <br />
@@ -56,6 +57,20 @@ aGVsbG8gd29ybGQ=
 ```
 .... . .-.. .-.. ---
 .-- --- .-. .-.. -..
+```
+
+<br />
+
+## MD4
+
+```
+aa010fbc1d14c795d86ef98c95479d17
+```
+
+## MD5
+
+```
+5eb63bbbe01eeed093cb22bb8f5acdc3
 ```
 
 <br />
@@ -70,4 +85,12 @@ uryyb jbeyq
 
 ```
 96==@ H@C=5
+```
+
+<br />
+
+## SHA1
+
+```
+2aae6c35c94fcfb415dbe95f408b9ce91ee846ed
 ```
