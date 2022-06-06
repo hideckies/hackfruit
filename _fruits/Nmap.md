@@ -25,8 +25,9 @@ nmap -Pn 10.0.0.1
 # TCP SYN scan
 nmap -sS 10.0.0.1
 
-# UDP scan
+# UDP Scan
 nmap -sU 10.0.0.1
+nmap -sU --top-ports 25 10.0.0.1
 
 # FIN scan
 nmap -sF 10.0.0.1
@@ -107,7 +108,7 @@ nmap --script http-sql-injection -p 80 10.0.0.1
 # Port 88: Kerberos
 nmap --script krb5-enum-users --script-args krb5-enum-users.realm='example.local'-p 88 10.0.0.1
 
-# Port 111: Network File System (NFS)
+# Port 111, 2049: Network File System (NFS)
 nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111 10.0.0.1
 
 # Port 123: NTP (Network Time Protocol)

@@ -55,6 +55,25 @@ openssl rsa -in key.pem -out rsa.key
 
 <br />
 
+## RSA Asymmetric Encrypt/Decrypt
+
+```sh
+# Generate private key
+openssl genrsa -aes256 -out private.key 8912
+# Generate publick key using private key
+openssl rsa -in private.key -pubout public.key
+
+# Encrypt using public key
+openssl rsautl -encrypt -pubin -inkey public.key -in plain.txt -out encrypted.txt
+
+# -------------------------------------------------------------
+
+# Decrypt using private key
+openssl rsautl -decrypt -inkey private.key -in encrypted.txt -out plain.txt
+```
+
+<br />
+
 ## SMTPS Connection
 
 ```sh

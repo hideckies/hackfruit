@@ -1,7 +1,7 @@
 ---
 title: Mount
 desc: Mount file systems.
-tags: [Linux, PrivEsc]
+tags: [Linux, NFS, PrivEsc]
 alts: [Umount]
 website:
 render_with_liquid: false
@@ -15,10 +15,21 @@ mount 10.0.0.1:/path/to/victim /path/to/target
 
 <br />
 
-## Mount share directory (type: NFS)
+## Mount NFS Folder (Local -> Remote)
 
 ```sh
-mkdir /tmp/share
+# On attack machine
 
-sudo mount -t nfs -o port=4444 localhost:/ /tmp/share
+mkdir /mnt/share
+
+sudo mount -t nfs <target-ip>:/target/dir /mnt/share -o nolock
+# or
+sudo mount -t nfs -o vers=2 <target-ip>:/target/dir /mnt/share -o nolock
+
+# Check if mounting successfully
+ls /mnt/share
+
+# After that, don't forget to unmount.
+umount /mnt/share
+rm -rf /mnt/share
 ```

@@ -7,7 +7,7 @@ website:
 render_with_liquid: false
 ---
 
-## Connect (local)
+## Connect (Local)
 
 ```sh
 # No password
@@ -18,14 +18,20 @@ mysql -u username -p
 
 <br />
 
-## Connect (remote)
+## Connect (Remote)
 
 ```sh
 # Basic
-mysql -u username -p password -h 10.0.0.1 -P 3306 -D local
+mysql -u username -p -u 10.0.0.1 -P 3306
 
-# Login as root without password
-mysql -u root -h 10.0.0.1 -P 3306
+# Without password (remove -p)
+mysql -u username -u 10.0.0.1 -P 3306
+
+# Specify database (-D)
+mysql -u username -p -u 10.0.0.1 -D database_name
+
+# Default credential (username: root, no password)
+mysql -u root -u 10.0.0.1 -P 3306
 ```
 
 <br />
