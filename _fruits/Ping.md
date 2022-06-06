@@ -10,7 +10,13 @@ render_with_liquid: false
 ## Basic
 
 ```sh
-ping example.com
+ping 10.0.0.1
+
+# Stop after 5 times
+ping -c 5 10.0.0.1
+
+# No DNS resolution
+ping -n 3 10.0.0.1
 ```
 
 ## Count

@@ -2,7 +2,7 @@
 title: Less
 desc: Views contents of text files.
 tags: [Linux, PrivEsc]
-alts: [Cat, More]
+alts: [Cat, More, Sed]
 website:
 render_with_liquid: false
 ---
