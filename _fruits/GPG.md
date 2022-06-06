@@ -7,18 +7,6 @@ website:
 render_with_liquid: false
 ---
 
-## Basic
-
-```sh
-# Import private key
-gpg --import private.key
-
-# Decypt
-gpg --decrypt sample.gpg
-```
-
-<br />
-
 ## Decryption Flow
 
 ### 1. Decrypt GPG (PGP) Private Key (Get the Passphrase)
@@ -43,6 +31,15 @@ gpg --import private_key.sig
 ### 3. Decrypt GPG (PGP) and Enter the Passphrase
 
 ```sh
-gpg --decrypt sample.gpg
-gpg --decrypt sample.pgp
+gpg -d example.gpg
+gpg -d example.pgp
+```
+
+<br />
+
+## Encrypt
+
+```sh
+gpg -e example.txt
+gpg -c example.txt
 ```
