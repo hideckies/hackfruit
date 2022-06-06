@@ -25,6 +25,7 @@
 - name: FileUpload
 - name: FTP
 - name: IDOR
+- name: InsecureDeserialization
 - name: Jenkins
 - name: JWT
 - name: Kerberos
@@ -56,6 +57,7 @@
 - name: SSH
 - name: SSRF
 - name: Steganography
+- name: Struts
 - name: SUID
 - name: VNC
 - name: Web
