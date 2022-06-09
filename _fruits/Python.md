@@ -1,11 +1,45 @@
 ---
 title: Python
 desc: A high-level, interpreted, general-purpose programming language.
-tags: [PrivEsc, Web]
+tags: [Malware, PrivEsc, Web]
 alts: []
 website:
 render_with_liquid: false
 ---
+
+## Extract
+
+### Extract ZIP Archive
+
+```python
+import zipfile
+
+archive = 'example.zip'
+output_dir = 'output'
+
+with zipfile.ZipFile(archive, 'r') as z:
+	z.extractall(output_dir)
+```
+
+### Extract ZIP Archives Recursively
+
+```python
+import io
+import os
+import zipfile
+
+archive = 'example.zip'
+output_dir = 'output'
+
+with zipfile.ZipFile(archive, 'r') as z:
+	for f in z.namelist():
+		# Read inner zip
+		content = io.BytesIO(z.read(f))
+		with zipfile.ZipFile(content, 'r') as c:
+			c.extractall(output_dir)
+```
+
+<br />
 
 ## Requests
 
