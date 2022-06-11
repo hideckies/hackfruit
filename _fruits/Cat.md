@@ -21,6 +21,10 @@ cat .profile
 cat /etc/cron*
 cat /etc/crontab
 cat /etc/cron.d/*
+cat /etc/cron.daily/*
+cat /etc/cron.hourly/*
+cat /etc/cron.montyly/*
+cat /etc/cron.weekly/*
 cat /var/spool/cron/*
 # Hosts
 cat /etc/hosts
