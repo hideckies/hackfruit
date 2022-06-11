@@ -22,6 +22,7 @@
 - name: DirectoryTraversal
 - name: DNS
 - name: Docker
+- name: Elasticsearch
 - name: FileUpload
 - name: FTP
 - name: IDOR

