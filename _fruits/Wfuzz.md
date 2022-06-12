@@ -7,10 +7,19 @@ website:
 render_with_liquid: false
 ---
 
-## POST request
+## GET Request
 
 ```sh
-# Hide response with specific content
-# --hh 42 (hide when the chars of content (Content-Length) is 42)
-wfuzz -X POST -H "User-Agent: Bypass" -d '{"username":"marco","password":"FUZZ"}' -w /path/to/wordlist -u http://10.0.0.1/login --hh 42
+# Query parameter
+wfuzz -z,file /usr/share/wordlists/rockyou.txt http://10.0.0.1/?q=FUZZ
+```
+
+<br />
+
+## POST Request
+
+```sh
+# --hc: Hide status code
+# --hh: Hide chars (Content-Length)
+wfuzz -z,file /usr/share/wordlists/rockyou.txt -d "username=FUZZ&password=FUZZ" --hc 302 http://10.0.0.1/login
 ```

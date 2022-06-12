@@ -1,7 +1,7 @@
 ---
 title: Burp Suite
 desc: Security testing tool for web applications.
-tags: [Web]
+tags: [SQLi, Web]
 alts: [OwaspZap]
 website: https://portswigger.net/burp
 render_with_liquid: false
@@ -123,4 +123,33 @@ def handleResponse(req, interesting):
     # currently available attributes are req.status, req.wordcount, req.length and req.response
     if req.status != 404:
         table.add(req)
+```
+
+<br />
+
+## Useful BApps
+
+To install them, move to **“Extender” → “BApp Store”**.
+
+```
+Decoder Improved
+Turbo Intruder
+```
+
+<br />
+
+## With Sqlmap
+
+```sh
+# On Burp Suite
+
+1. Right click in the request field.
+2. Click "Save item" to download the request url, headers, so on.
+3. Save as "request.txt" (this is arbitrary).
+
+# ----------------------------------
+
+# On your terminal
+
+sqlmap -r request.txt
 ```
