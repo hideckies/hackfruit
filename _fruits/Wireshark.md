@@ -26,8 +26,18 @@ Enter the following text in a filtering form.
 dns
 ftp
 http
+http.request.method == GET
+http.request.method == POST
 icmp
+ip.addr == 10.0.0.1
+ip.addr != 10.0.0.2
+ip.addr == 10.0.0.1 && ip.addr == 10.0.0.2
+ip.src == 10.0.0.1
+ip.dst == 10.0.0.2
 smb
+tcp.port == 22
+tcp.port == 80 || udp.port == 67
+udp.port == 67
 ```
 
 <br />
