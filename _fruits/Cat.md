@@ -7,7 +7,7 @@ website:
 render_with_liquid: false
 ---
 
-## Interesting
+## Interesting Files
 
 ```sh
 # Apache
@@ -41,6 +41,7 @@ cat /etc/resolv.conf
 cat /etc/exports
 # Os kernel version
 cat /proc/version
+cat /etc/*release
 # PAM
 cat /etc/pam.d/passwd
 # Sudo config
