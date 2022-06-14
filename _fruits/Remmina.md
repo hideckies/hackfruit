@@ -10,6 +10,8 @@ render_with_liquid: false
 ## Connect
 
 ```sh
+remmina
+
 # RDP
 remmina -c rdp://username@vulnerable.com
 remmina -c rdp://domain\\username@vulnerable.com

