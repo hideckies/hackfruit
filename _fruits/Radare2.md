@@ -35,9 +35,8 @@ r2 -d ./somefile
 > afl
 > afl | grep main
 
-# Print
-> pdf
 # Print disassembly function
+> pdf
 > pdf @main
 
 # Add breakpoints
@@ -48,15 +47,18 @@ r2 -d ./somefile
 # Execute the program and stop at the breakpoints
 > dc
 
+# Seek/move onto the next instruction
+> ds
+
 # Print the value of memory in hex
 > px @rbp-0xc
 > px @rbp-0x8
 
-# Seek/move onto the next instruction
-> ds
-
 # See the value of registers
 > dr
+
+# Reload the program
+> ood
 
 # Help
 > ?
