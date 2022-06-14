@@ -12,8 +12,12 @@ render_with_liquid: false
 ```sh
 # No password
 mysql -u username
-# Password
+# With Password
 mysql -u username -p
+
+
+# Specity database name
+mysql -u username -p database_name
 ```
 
 <br />
