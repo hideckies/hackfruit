@@ -1,7 +1,7 @@
 ---
 title: Cookie Manipulation
 desc: Manipulate Cookie values in HTTP request header.
-tags: [Web]
+tags: [Cookie, Web]
 alts: []
 website:
 render_with_liquid: false

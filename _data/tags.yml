@@ -12,7 +12,7 @@
 - name: CMS
 - name: CommandInjection
 - name: ContentDiscovery
-- name: CookieHijacking
+- name: Cookie
 - name: CORS
 - name: Cryptography
 - name: CRLF
