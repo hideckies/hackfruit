@@ -23,4 +23,8 @@ curl -X GET https://vulnerable.com
 
 # POST
 curl -X POST https://vulnerable.com/comment -d "comment=hello"
+
+# Set User-Agent
+curl -A "test" https://vulnerable.com/
+curl -H "User-Agent: test" https://vulnerable.com/
 ```

@@ -1,7 +1,7 @@
 ---
 title: Cookie Hijacking Examples
 desc: Steal user's Cookie values.
-tags: [CookieHijacking, Web, XSS]
+tags: [Cookie, Web, XSS]
 alts: [XSSCheatSheet]
 website:
 render_with_liquid: false
