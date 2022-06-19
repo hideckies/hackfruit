@@ -29,6 +29,8 @@ impacket-GetNPUsers -dc-ip 10.0.0.1 -format hashcat example.local/admin
 Establish an authenticated connection to Microsoft SQL.
 
 ```sh
+# Connect
+impacket-mssqlclient -port 1433 DOMAIN/username:password@10.0.0.1
 impacket-mssqlclient -port 1433 DOMAIN/username:password@10.0.0.1 -windows-auth
 
 # ------ Logged in ---------------------------------------------

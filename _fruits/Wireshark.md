@@ -25,6 +25,7 @@ Enter the following text in a filtering form.
 ```
 dns
 ftp
+ftp-data
 http
 http.request.method == GET
 http.request.method == POST
