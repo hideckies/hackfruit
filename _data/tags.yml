@@ -6,6 +6,7 @@
 - name: AndroidAPK
 - name: AntiVirusEvasion
 - name: AWS
+- name: Blockchain
 - name: BruteForce
 - name: BufferOverflow
 - name: BusinessLogic
@@ -63,6 +64,7 @@
 - name: SUID
 - name: VNC
 - name: Web
+- name: Web3
 - name: WiFi
 - name: Windows
 - name: WinRM
