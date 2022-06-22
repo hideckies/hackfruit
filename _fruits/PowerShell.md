@@ -2,7 +2,7 @@
 title: PowerShell
 desc: Run “pwsh” to use it on Linux.
 tags: [ActiveDirectory, PostExploitation, Windows, WinRM]
-alts: [PowerView]
+alts: [PowerView, WindowsPrivEsc]
 website:
 render_with_liquid: false
 ---
@@ -59,6 +59,12 @@ Get-FileHash -Algorithm MD5 example.txt
 
 # 'strings' in Linux
 .\Strings.exe -accepteula example.exe
+
+# 'useradd' in Linux
+New-LocalUser -Name "username" -Description "My first account" -NoPassword
+# with password
+$Password = Read-Host -AsSecureString
+New-LocalUser -Name "username" -Password $Password -FullName "New User" -Description "My first account"
 
 
 # 'man' or '--help' in Linux

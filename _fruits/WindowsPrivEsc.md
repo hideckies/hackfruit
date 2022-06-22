@@ -1,7 +1,7 @@
 ---
 title: Windows PrivEsc
 desc: Checklist for Privilege Escalation on Windows.
-tags: [PrivEsc, Windows]
+tags: [PowerShell, PrivEsc, Windows]
 alts: [WinPEAS]
 website:
 render_with_liquid: false
@@ -146,6 +146,15 @@ It lets administrators and users view the event logs on a local or remote machin
 
 ```
 1. Search and open "Event Viewer".
+```
+
+<br />
+
+## FullEventLogview
+
+```sh
+# Search event logs
+1. Open "Advanced Options".
 ```
 
 <br />
