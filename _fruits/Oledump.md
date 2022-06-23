@@ -2,7 +2,7 @@
 title: Oledump
 desc: A program to analyze OLE files (Compund File Binary Format). These files contain streams of data. oledump allows you to analyze these streams.
 tags: [Malware]
-alts: []
+alts: [Oletools]
 website: https://blog.didierstevens.com/programs/oledump-py/
 render_with_liquid: false
 ---
