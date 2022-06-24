@@ -7,6 +7,14 @@ website: https://github.com/byt3bl33d3r/CrackMapExec
 render_with_liquid: false
 ---
 
+## LDAP - AD CS (Active Directory Certificate Services)
+
+```sh
+crackmapexec ldap 'domaincontroller' -d 'domain' -u 'user' -p 'password' -M adcs
+```
+
+<br />
+
 ## WinRM
 
 ```sh

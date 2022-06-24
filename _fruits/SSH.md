@@ -7,10 +7,10 @@ website:
 render_with_liquid: false
 ---
 
-## Basic
+## Basic Commands
 
 ```sh
-# Basic
+# Connect
 ssh username@10.0.0.1
 
 # Without username
@@ -23,6 +23,10 @@ ssh -o HostKeyAlgorithms=+ssh-rsa username@10.0.0.1
 # Test the connection
 ssh -T username@10.0.0.1
 ssh -T username@10.0.0.1 -vvv
+
+
+# Connect with Active Directory for Windows
+ssh domain-name\\username@domain-controller
 ```
 
 <br />

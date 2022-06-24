@@ -2,7 +2,7 @@
 title: Windows PrivEsc
 desc: Checklist for Privilege Escalation on Windows.
 tags: [PowerShell, PrivEsc, Windows]
-alts: [WinPEAS]
+alts: [ADCSPrivEsc, WinPEAS]
 website:
 render_with_liquid: false
 ---
