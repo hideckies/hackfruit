@@ -66,10 +66,22 @@ New-LocalUser -Name "username" -Description "My first account" -NoPassword
 $Password = Read-Host -AsSecureString
 New-LocalUser -Name "username" -Password $Password -FullName "New User" -Description "My first account"
 
-
 # 'man' or '--help' in Linux
 Get-Help Get-ChildItem
 Get-Help Invoke-WebRequest
+```
+
+<br />
+
+## Active Directory
+
+```sh
+# Get the machine which participates the Active Directory
+Get-ADComputer <PC-NAME> -properties dnshostname,serviceprincipalname
+# Remove the current SPN attribute
+Set-ADComputer <PC-NAME> -ServicePrincipalName @{}
+# Set new DNS hostname to that of the DC
+Set-ADComputer <PC-NAME> -DnsHostName VULNDC.vuln.local
 ```
 
 <br />
