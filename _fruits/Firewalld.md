@@ -1,7 +1,7 @@
 ---
 title: Firewalld
 desc: A firewall management tool.
-tags: [Linux]
+tags: [Linux, Network]
 alts: [Ufw]
 website: 
 render_with_liquid: false

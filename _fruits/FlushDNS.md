@@ -1,7 +1,7 @@
 ---
 title: Flush DNS
 desc: Clear IP addresses or DNS records from caches.
-tags: [DNS, Linux]
+tags: [DNS, Linux, Network]
 alts: []
 website: 
 render_with_liquid: false
