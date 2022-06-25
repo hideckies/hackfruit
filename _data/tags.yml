@@ -2,9 +2,10 @@
 - name: ActiveDirectory
 - name: ActiveRecon
 - name: AJP
-- name: APT
 - name: AndroidAPK
 - name: AntiVirusEvasion
+- name: APT
+- name: ARPSpoofing
 - name: AWS
 - name: Blockchain
 - name: BruteForce
@@ -34,9 +35,11 @@
 - name: LDAP
 - name: Linux
 - name: Log4j
+- name: MACFlooding
 - name: Malware
 - name: MemoryForensics
 - name: MSSQL
+- name: Network
 - name: NFS
 - name: OAuth
 - name: OSINT

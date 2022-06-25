@@ -1,7 +1,7 @@
 ---
 title: Hostname
 desc: Gets and sets hosname or DNS domain name.
-tags: [Linux]
+tags: [Linux, Network]
 alts: [Uname]
 website:
 render_with_liquid: false

@@ -1,7 +1,7 @@
 ---
 title: Pivoting Attack
 desc: Access obtained over one machine to exploit another machine deeper in the network.
-tags: [Linux, Pivoting, PostExploitation, Windows]
+tags: [Linux, Network, Pivoting, PostExploitation, Windows]
 alts: []
 website:
 render_with_liquid: false

@@ -1,7 +1,7 @@
 ---
 title: Netstat
 desc: Checks network connection.
-tags: [Linux, PrivEsc]
+tags: [Linux, Netstat, PrivEsc]
 alts: [Ip]
 website:
 render_with_liquid: false

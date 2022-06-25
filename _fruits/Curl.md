@@ -10,7 +10,10 @@ render_with_liquid: false
 ## Download Files
 
 ```sh
-curl 10.0.0.1/example.txt -o ./output.txt
+curl http://10.0.0.1/example.txt -o ./output.txt
+
+# Authentication
+curl -u username:password http://10.0.0.1/example.txt -o ./example.txt
 ```
 
 <br />

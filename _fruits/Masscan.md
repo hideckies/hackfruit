@@ -1,7 +1,7 @@
 ---
 title: Masscan
 desc: Port scanner.
-tags: [ActiveRecon, Linux]
+tags: [ActiveRecon, Linux, Network]
 alts: [Nmap]
 website:
 render_with_liquid: false

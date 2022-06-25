@@ -1,7 +1,7 @@
 ---
 title: Wireshark
 desc: Network protocol analyzer. It uses the pcapng file format.
-tags: [DataExfiltration, PassiveRecon]
+tags: [DataExfiltration, Network, PassiveRecon]
 alts: []
 website:
 render_with_liquid: false

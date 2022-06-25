@@ -1,7 +1,7 @@
 ---
 title: Nmap
 desc: Network scanner. Discovers open ports and services.
-tags: [ActiveRecon, FTP, Linux, MSSQL, SMB, SNMP, SQLi, Windows]
+tags: [ActiveRecon, FTP, Linux, MSSQL, Network, SMB, SNMP, SQLi, Windows]
 alts: [Masscan, Sqlmap]
 website:
 render_with_liquid: false
@@ -15,6 +15,10 @@ nmap -n 10.0.0.1
 
 # Skip host discovery
 nmap -Pn 10.0.0.1
+
+# Identify hostname
+nmap -sL 10.0.0.1
+nmap -sL 10.0.0.1/24
 ```
 
 <br />

