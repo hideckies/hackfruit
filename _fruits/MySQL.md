@@ -1,7 +1,7 @@
 ---
 title: MySQL
 desc:  Connect to MySQL remotely.
-tags: [Database]
+tags: [Database, PrivEsc]
 alts: []
 website:
 render_with_liquid: false
@@ -26,16 +26,16 @@ mysql -u username -p database_name
 
 ```sh
 # Basic
-mysql -u username -p -u 10.0.0.1 -P 3306
+mysql -u username -p -h 10.0.0.1 -P 3306
 
 # Without password (remove -p)
-mysql -u username -u 10.0.0.1 -P 3306
+mysql -u username -h 10.0.0.1 -P 3306
 
 # Specify database (-D)
-mysql -u username -p -u 10.0.0.1 -D database_name
+mysql -u username -p -h 10.0.0.1 -D database_name
 
 # Default credential (username: root, no password)
-mysql -u root -u 10.0.0.1 -P 3306
+mysql -u root -h 10.0.0.1 -P 3306
 ```
 
 <br />
