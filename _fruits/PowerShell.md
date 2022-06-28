@@ -2,7 +2,7 @@
 title: PowerShell
 desc: Run “pwsh” to use it on Linux.
 tags: [ActiveDirectory, PostExploitation, Windows, WinRM]
-alts: [PowerView, WindowsPrivEsc]
+alts: [Nishang, PowerView, WindowsPrivEsc]
 website:
 render_with_liquid: false
 ---

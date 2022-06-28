@@ -29,11 +29,14 @@ net user USERNAME
 # List all groups
 net localgroup
 
+# Change user's password
+net user USERNAME NEWPASSWORD
 # Add new user
 net user /add USERNAME PASSWORD
 # Add user to group
 net localgroup Administrators USERNAME /add
 net localgroup "Remote Managment Users" USERNAME /add
+net localgroup "Remote Desktop Users" USERNAME /add
 # Then you can execute "win-rm" or "xfreerdp" with credentials
 
 # Processes and services
@@ -79,6 +82,11 @@ vssadmin
 vssadmin list shadows
 vssadmin list volumes
 
+# List files - all
+dir /a \Users\Administrator\Desktop
+# List files - display the owner of the file or folder
+dir /q \Users\Administrator\Desktop
+
 # Get contents of file
 more .\example.txt
 type .\example.txt
@@ -92,6 +100,28 @@ vi .\example.txt
 
 # Move file
 move .\example.txt ..\Desktop\
+
+```
+
+<br />
+
+## Take Ownership of a File (Administrators Group Required)
+
+```powershell
+# Move to the directory containing the desired file
+cd \Users\Administrator\Desktop
+
+# Enable an administrator to recover access to a file.
+# /R: recursive operation
+# /F: specify the filename
+takeown /r /f *.*
+
+# Modify dictionary access control lists on specified files
+# /q: suppress success message
+# /c: continue the operation despite any file errors
+# /t: perform the operation on all specified files
+# /grant: grant specified user access rights
+icacls "example.txt" /q /c /t /grant Users:F
 ```
 
 <br />

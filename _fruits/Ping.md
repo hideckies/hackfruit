@@ -1,7 +1,7 @@
 ---
 title: Ping
 desc: Tests reachability, connectivity of hosts.
-tags: [ActiveRecon, Linux, Network]
+tags: [ActiveRecon, Linux, Network, Windows]
 alts: []
 website:
 render_with_liquid: false
