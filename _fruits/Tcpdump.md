@@ -1,7 +1,7 @@
 ---
 title: Tcpdump
 desc: Prints out a description of the contents of packets on a network interface.
-tags: [Linux, Network]
+tags: [Linux, Network, Windows]
 alts: []
 website:
 render_with_liquid: false
@@ -17,6 +17,9 @@ tcpdump -A -i eth1
 # -w: output to file
 tcpdump -A -i eth1 -w ./output.pcap
 
+
+# ICMP
+tcpdump -i tun0 icmp
 # LDAP
 tcpdump -i tun0 port 389
 ```
