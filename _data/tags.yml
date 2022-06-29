@@ -13,6 +13,7 @@
 - name: BusinessLogic
 - name: CMS
 - name: CommandInjection
+- name: Container
 - name: ContentDiscovery
 - name: Cookie
 - name: CORS

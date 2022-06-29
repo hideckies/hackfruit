@@ -1,8 +1,8 @@
 ---
 title: Docker
 desc: A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
-tags: [AWS, Docker, Linux, PrivEsc]
-alts: [ContainerEscape]
+tags: [AWS, Container, Docker, PrivEsc]
+alts: [ContainerEscape, Kubernetes]
 website: 
 render_with_liquid: false
 ---
