@@ -7,6 +7,16 @@ website:
 render_with_liquid: false
 ---
 
+## Useful Commands
+
+```sh
+# Banner Grabbing
+nc 10.0.0.1 21
+nc 10.0.0.1 22
+```
+
+<br />
+
 ## HTTP request
 
 ```sh

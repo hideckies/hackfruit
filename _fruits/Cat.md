@@ -26,6 +26,7 @@ cat /etc/cron.hourly/*
 cat /etc/cron.montyly/*
 cat /etc/cron.weekly/*
 cat /var/spool/cron/*
+cat /var/spool/cron/crontabs/*
 # Hosts
 cat /etc/hosts
 # LDAP config

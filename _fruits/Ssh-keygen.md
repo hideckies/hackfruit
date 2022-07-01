@@ -12,6 +12,8 @@ render_with_liquid: false
 ```sh
 
 ssh-keygen
+# Specify the output file
+ssh-keygen -f key
 
 # Specify Ed25519
 ssy-keygen -t ed25519

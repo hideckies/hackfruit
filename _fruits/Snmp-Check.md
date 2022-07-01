@@ -2,7 +2,7 @@
 title: Snmp-Check
 desc: Enumerator for Simple Network Management Protocol(SNMP).
 tags: [ActiveRecon, SNMP]
-alts: [Nmap]
+alts: [Nmap, Onesixtyone]
 website:
 render_with_liquid: false
 ---

@@ -8,6 +8,7 @@
 - name: ARPSpoofing
 - name: AWS
 - name: Blockchain
+- name: Bluetooth
 - name: BruteForce
 - name: BufferOverflow
 - name: BusinessLogic
@@ -22,6 +23,7 @@
 - name: CSRF
 - name: Database
 - name: DataExfiltration
+- name: Deobfuscation
 - name: DirectoryTraversal
 - name: DNS
 - name: Docker
