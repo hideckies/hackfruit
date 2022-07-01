@@ -49,12 +49,13 @@ ls /home/victim_user/.ssh/authorized_key
 
 # ------------------------------------------------------
 
-# On attack mahcine,
-# Generate SSH public and private keys
-ssh-keygen
+# On attack machine
 
-# Copy the content of the public key a.k.a. id_rsa.pub
-cat ~/.ssh/id_rsa.pub
+# Generate SSH keys (private and public)
+ssh-keygen -f key
+
+# Copy the content of publick key
+cat ./key.pub
 
 # -------------------------------------------------------
 
