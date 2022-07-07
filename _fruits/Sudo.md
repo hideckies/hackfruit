@@ -2,7 +2,7 @@
 title: Sudo
 desc: Linux command to execute any commands as privileges.
 tags: [Linux, PrivEsc, SUID]
-alts: []
+alts: [Doas]
 website:
 render_with_liquid: false
 ---

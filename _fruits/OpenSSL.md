@@ -1,7 +1,7 @@
 ---
 title: OpenSSL
 desc: Wide range tool around SSL/TLS contains private key, certifications, etc. It is also used to generate the password hash for /etc/passwd in Linux.
-tags: [ActiveRecon, Cryptography, FTP, Linux, Password, PrivEsc, SMTP]
+tags: [ActiveRecon, Cryptography, FTP, Linux, Password, PrivEsc, SMTP, SSH]
 alts: []
 website:
 render_with_liquid: false
@@ -11,6 +11,15 @@ render_with_liquid: false
 
 ```sh
 openssl s_client --connect example.com:443
+```
+
+<br />
+
+## Encrypt Files
+
+```sh
+openssl enc -in /etc/passwd -out /tmp/passwd
+openssl enc -in /tmp/passwd -out /etc/passwd
 ```
 
 <br />

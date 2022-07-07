@@ -13,4 +13,6 @@ render_with_liquid: false
 dmesg
 dmesg | less
 dmesg | grep bug
+
+dmesg -l err
 ```
