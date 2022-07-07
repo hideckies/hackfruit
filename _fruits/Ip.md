@@ -16,6 +16,13 @@ ip a
 ip a s eth0
 ip a s eth1
 
+# IPv4 only
+ip -4 a
+ip -4 a show tun0
+# IPv6 only
+ip -6 a
+ip -6 a show eth0
+
 # Static route
 ip route
 ```
