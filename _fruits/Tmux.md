@@ -13,6 +13,9 @@ render_with_liquid: false
 # Start a session
 tmux
 
+# Create new session
+tmux new -s <session-name>
+
 # Attach a session
 tmux a
 tmux a -t <session-name>

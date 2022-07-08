@@ -63,3 +63,19 @@ udp.port == 67
 2. Click "Save all".
 3. Analyze steganographic files using tools like steghide.
 ```
+
+<br />
+
+## Read the Capture File Comments
+
+```
+Click "Statictics" -> "Capture File Properties.
+```
+
+<br />
+
+## Read the Expert Information
+
+```
+Click "Analyze" -> "Expert Information"
+```

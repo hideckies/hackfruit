@@ -69,6 +69,17 @@ New-LocalUser -Name "username" -Password $Password -FullName "New User" -Descrip
 # 'man' or '--help' in Linux
 Get-Help Get-ChildItem
 Get-Help Invoke-WebRequest
+
+# 'touch' in Linux
+New-Item example.txt
+$null > example.txt
+
+# 'mkdir' in Linux
+mkdir example_folder
+
+# 'rm' in Linux
+rm exxample.txt
+rm -r example_folder
 ```
 
 <br />
