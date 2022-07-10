@@ -4,6 +4,7 @@ desc: Cheet Sheet for Cross Site Scripting.
 tags: [Web, XSS]
 alts: [CookieHijackingExamples]
 website: https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
+render_with_liquid: true
 ---
 
 {% raw %}

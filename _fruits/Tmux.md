@@ -50,9 +50,9 @@ Ctrl+b -> .
 # Pane
 
 # Split with up and down
-Ctrl+b "
+Ctrl+b "                                                                                         "
 # Split with left and right
-Ctrl+b 
+Ctrl+b %
 # Move between panes
 Ctrl+b <arrow>
 # Change pane to window
