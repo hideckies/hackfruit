@@ -7,34 +7,54 @@ website:
 render_with_liquid: false
 ---
 
-## Basic Usage
+## Basic Commands
 
 ```sh
-# Start a session
 tmux
+```
 
-# Create new session
-tmux new -s <session-name>
+<br />
 
-# Attach a session
-tmux a
-tmux a -t <session-name>
+## Operations
 
-# List all sessions in tmux
-tmux list-sessions
-tmux ls
+```sh
+# Common
 
-# Finish the specified session
-tmux kill-session -t <session-name>
+# Activate scrolling
+Ctrl+b -> [
+# Deactivate Scrolling
+q
 
-
-# ----------------------------------------------
-
-# On a session
-
-# Stop s session
+# Exit
+Ctrl+b -> x
 exit
 
-# Detach a session
-Ctrl+b d
+# --------------------------------------------------
+
+# Window
+
+# Create new window
+Ctrl+b -> c
+# Change window for specifying the number
+Ctrl+b -> 0
+Ctrl+b -> 1
+# List all windows
+Ctrl+b -> w
+# Change the window name
+Ctrl+b -> ,
+# Change the window number
+Ctrl+b -> .
+
+# -------------------------------------------------
+
+# Pane
+
+# Split with up and down
+Ctrl+b "
+# Split with left and right
+Ctrl+b 
+# Move between panes
+Ctrl+b <arrow>
+# Change pane to window
+Ctrl+b !
 ```

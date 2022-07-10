@@ -2,7 +2,7 @@
 title: Radare2
 desc: UNIX-like reverse engineering framework and command-line toolset.
 tags: [Malware, ReverseEngineering]
-alts: []
+alts: [Objdump]
 website: https://github.com/radareorg/radare2
 render_with_liquid: false
 ---
@@ -145,4 +145,31 @@ ret
 
 # Subtract
 sub
+```
+
+<br />
+
+## Registers
+
+```sh
+# Accumulator register
+%rax, %eax, %ax
+# Base register
+%rbx, %ebx, %bx
+# Counter register
+%rcx, %ecx, %cs
+# Data register
+%rdx, %edx, %dx
+
+# Stack pointer register
+%rsp, %esp, %sp
+# Base pointer register
+%rbp, %ebp, %bp
+# Program counter register
+%rip, %eip, %ip
+
+# Source register
+%rsi, %esi, %si
+# Destination register
+%rdi, %edi, %di
 ```
