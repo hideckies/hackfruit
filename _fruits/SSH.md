@@ -187,8 +187,12 @@ sudo kill <PID>
 # or
 systemctl start ssh
 
-# Stop ssh server
+# Stop SSH server
+/etc/init.d/ssh stop
+# Or
 systemctl stop ssh
+
+...
 
 ----------------------
 

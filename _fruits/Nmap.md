@@ -7,6 +7,14 @@ website:
 render_with_liquid: false
 ---
 
+## Recommendation to Stealth Scan
+
+```sh
+sudo nmap -sS 10.0.0.1
+```
+
+<br />
+
 ## Host Discovery
 
 ```sh
