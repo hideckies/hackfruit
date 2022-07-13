@@ -57,6 +57,7 @@
 - name: ReverseShell
 - name: RDP
 - name: Rootkit
+- name: Scanner
 - name: SMB
 - name: SMTP
 - name: SNMP
