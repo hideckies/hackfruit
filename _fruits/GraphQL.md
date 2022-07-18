@@ -52,5 +52,22 @@ query {
       }
     }
   }
+	__type(name: "admin") {
+		name
+	}
+}
+```
+
+<br />
+
+## Mutation
+
+Modify server-side data.
+
+```graphql
+mutation {
+  modifyBug(id: 2, private: false) {
+    ok
+  }
 }
 ```
