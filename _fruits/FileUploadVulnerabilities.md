@@ -2,7 +2,7 @@
 title: File Upload Vulnerabilities
 desc: Examples of File Upload Vulnerabilities.
 tags: [FileUpload, ReverseShell, Web]
-alts: []
+alts: [Exiftool]
 website:
 render_with_liquid: false
 ---
@@ -203,3 +203,16 @@ GIF32a
 ```
 
 <br />
+
+## Magic Numbers
+
+```sh
+# PNG
+89 50 4E 47 ...
+
+# JPEG
+FF D8 DD E0 ...
+
+# JPG
+FF D8 FF EE ...
+```
