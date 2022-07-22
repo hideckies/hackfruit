@@ -10,5 +10,5 @@ render_with_liquid: false
 ## Decode APK
 
 ```sh
-apktool d example.apk
+apktool d example.apk -o ./example
 ```
