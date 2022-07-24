@@ -20,6 +20,7 @@ tar -cf archive.tar sample1.txt sample2.txt
 
 ```sh
 tar -xf archive.tar
+tar -xf archive.tar.gz
 ```
 
 <br />

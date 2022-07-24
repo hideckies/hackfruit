@@ -1,7 +1,7 @@
 ---
 title: Hosts File
 desc: Edit /etc/hosts to be able to access subdomain which is same IP as root domain.
-tags: [Linux, Network, Web]
+tags: [DNS, Linux, Network, ResolvConf, Web]
 alts: []
 website:
 render_with_liquid: false
