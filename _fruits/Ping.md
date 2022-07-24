@@ -2,7 +2,7 @@
 title: Ping
 desc: Tests reachability, connectivity of hosts.
 tags: [ActiveRecon, Linux, Network, Windows]
-alts: []
+alts: [Scapy]
 website:
 render_with_liquid: false
 ---
