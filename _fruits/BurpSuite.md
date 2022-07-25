@@ -153,27 +153,3 @@ Turbo Intruder
 
 sqlmap -r request.txt
 ```
-
-<br />
-
-## Access Control Bypass
-
-Use **X-Forwarded-For** in HTTP Request Header
-
-```sh
-# If you encounter the 403 page...
-403 Forbidden
-
-# Check /.htaccess if you are able to see it. For example,
-Order Deny,Allow
-Deny from all
-Allow from 8.8.8.8
-Allow from 8.8.4.4
-
-# ----------------------------------------------------------
-
-# In Burp Suite, you might be able to access the page by adding X-Forwarded-For to HTTP request header,
-GET /admin HTTP/1.1
-...
-X-Forwarded-For: 8.8.8.8
-```

