@@ -1,7 +1,7 @@
 ---
 title: Broken Access Control Examples
 desc: Examples of Broken Access Controls. Bypass 401, 403 responses.
-tags: [AccessControl, IDOR, PrivEsc, Web]
+tags: [AccessControl, API, IDOR, PrivEsc, Web]
 alts: [IDORExamples]
 website: 
 render_with_liquid: false
