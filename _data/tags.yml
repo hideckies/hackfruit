@@ -4,6 +4,7 @@
 - name: AJP
 - name: AndroidAPK
 - name: AntiVirusEvasion
+- name: API
 - name: APT
 - name: ARPSpoofing
 - name: AWS

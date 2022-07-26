@@ -1,8 +1,8 @@
 ---
 title: Ffuf
 desc: Discover web contents.
-tags: [ActiveRecon, ContentDiscovery, Web]
-alts: [Gobuster, Dirb, FeroxBuster]
+tags: [ActiveRecon, BruteForce, ContentDiscovery, Web]
+alts: [Gobuster, Dirb, FeroxBuster, Kiterunner]
 website: https://github.com/ffuf/ffuf
 render_with_liquid: false
 ---
