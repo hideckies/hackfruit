@@ -11,6 +11,8 @@ render_with_liquid: false
 
 ```sh
 Cookie: isAdmin=true
+Cookie: access=1
+Cookie: access=true
 ```
 
 <br />
@@ -88,6 +90,7 @@ X-Forwarded-For: 127.0.0.1
 X-Original-URL: 127.0.0.1
 X-Originating-IP: 127.0.0.1
 X-ProxyUser-IP: 127.0.0.1
+X-Remote-Addr: 127.0.0.1
 X-Remote-IP: 127.0.0.1
 
 Host: 127.0.0.1

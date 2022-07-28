@@ -17,6 +17,7 @@ render_with_liquid: false
 
 /main.js
 /script.js
+/js/jquery.min.js
 /js/main.js
 /js/script.js
 ```
