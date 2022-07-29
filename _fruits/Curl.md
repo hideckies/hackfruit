@@ -38,8 +38,10 @@ curl -H 'Cookie: name=value' -H 'Content-Type: application/json' example.com
 # Set User-Agent
 curl -A 'Mozilla/5.0' example.com
 
-# Set cookie
+# Set cookie (--cookie, -b)
 curl -b 'PHPSESSID=c1ns...' example.com
+# Output Set-Cookie's value in response header (--cookie-jar, -c)
+curl -c ./cookie.txt example.com
 
 # Skip the invalid SSL certificate
 curl -k https://example.com

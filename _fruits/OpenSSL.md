@@ -15,6 +15,18 @@ openssl s_client --connect example.com:443
 
 <br />
 
+## Generate Random Strings
+
+```sh
+# Base64 encode output
+openssl rand -base64 3
+
+# Hex encode output
+openssl rand -hex 4
+```
+
+<br />
+
 ## Encrypt Files
 
 ```sh

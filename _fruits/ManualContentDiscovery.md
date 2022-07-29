@@ -20,6 +20,8 @@ render_with_liquid: false
 /js/jquery.min.js
 /js/main.js
 /js/script.js
+
+/READ.md
 ```
 
 <br />

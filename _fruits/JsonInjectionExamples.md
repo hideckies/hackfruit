@@ -10,4 +10,5 @@ render_with_liquid: false
 ```json
 { "username": "\"; pwd \"" }
 {"name":"<script>alert(1)</script>", "email":"victim@vulnerable.com"}
+{"name": "admin", "content": "{{template: ./admin.php}}"}
 ```
