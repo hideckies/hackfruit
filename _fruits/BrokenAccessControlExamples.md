@@ -10,6 +10,7 @@ render_with_liquid: false
 ## Change Cookie Values
 
 ```sh
+Cookie: admin=true
 Cookie: isAdmin=true
 Cookie: access=1
 Cookie: access=true
