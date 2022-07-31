@@ -2,7 +2,7 @@
 title: XOR
 desc: Exclusive or.
 tags: [Cryptography]
-alts: []
+alts: [PadBuster]
 website:
 render_with_liquid: false
 ---
