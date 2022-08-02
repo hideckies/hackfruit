@@ -10,7 +10,7 @@ render_with_liquid: false
 ## How To Use
 
 ```
-1. Access to the web page (out.txt).
+1. Access to the above web page (oui.txt).
 2. If the target BSSID is B4:5D:50:AA:86:41, search text by inputting "B4-5D-50".
 3. Check the information.
 ```
