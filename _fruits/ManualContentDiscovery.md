@@ -9,7 +9,7 @@ render_with_liquid: false
 
 ## Interesting files
 
-```
+```sh
 /robots.txt
 /security.txt
 /sitemap.xml
@@ -22,6 +22,15 @@ render_with_liquid: false
 /js/script.js
 
 /READ.md
+
+/.git
+/.git/
+/.github
+/.github/
+/.gitignore
+# Check typo about .gitignore
+/.gitignor
+/.gitgnore
 ```
 
 <br />
