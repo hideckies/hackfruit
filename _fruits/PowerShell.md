@@ -80,6 +80,9 @@ mkdir example_folder
 # 'rm' in Linux
 rm exxample.txt
 rm -r example_folder
+
+# 'reboot' in Linux
+Restart-Computer
 ```
 
 <br />
