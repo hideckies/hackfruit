@@ -14,6 +14,12 @@ wget http://example.com/example.txt
 
 # Specify the output name
 wget http://example.com/example.txt -O example1.txt
+
+# Download directory
+# -r: recursive
+# -np: no parent
+# Don't forget "/" after the directory name
+wget -r -np http://example.com/somedir/
 ```
 
 <br />
