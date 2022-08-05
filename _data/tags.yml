@@ -33,6 +33,7 @@
 - name: FTP
 - name: IDOR
 - name: InsecureDeserialization
+- name: IOC
 - name: Jenkins
 - name: JWT
 - name: Kerberos
