@@ -1,13 +1,12 @@
 ---
 title: Wireshark
 desc: Network protocol analyzer. It uses the pcapng file format.
-tags: [DataExfiltration, Network, PassiveRecon]
-alts: []
-website:
+tags: [Data Exfiltration, Network, Packet, Traffic, Wireshark]
+alts: [Recon]
 render_with_liquid: false
 ---
 
-## Find Sensitive Information
+## 1. Find Sensitive Information
 
 ```
 1. In Wireshark, open example.pcapng.
@@ -18,7 +17,7 @@ render_with_liquid: false
 
 <br />
 
-## Filters
+## 2. Filters
 
 Enter the following text in a filtering form.
 
@@ -43,7 +42,7 @@ udp.port == 67
 
 <br />
 
-## Data Exfiltration via DNS
+## 3. Data Exfiltration via DNS
 
 ```
 1. Enter "dns" in a filter form
@@ -56,7 +55,7 @@ udp.port == 67
 
 <br />
 
-## Data Exfiltration via HTTP
+## 4. Data Exfiltration via HTTP
 
 ```
 1. Open "File" -> "Export Objects" -> "HTTP...".
@@ -66,7 +65,7 @@ udp.port == 67
 
 <br />
 
-## Read the Capture File Comments
+## 5. Read the Capture File Comments
 
 ```
 Click "Statictics" -> "Capture File Properties.
@@ -74,7 +73,7 @@ Click "Statictics" -> "Capture File Properties.
 
 <br />
 
-## Read the Expert Information
+## 6. Read the Expert Information
 
 ```
 Click "Analyze" -> "Expert Information"
