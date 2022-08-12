@@ -1,38 +1,33 @@
 function filter(elemResults) {
-    let text = location.hash.substring(1).toLowerCase();
-    let adjustedTxtList = text.split("%20");
+    let searchText = decodeURI(location.hash.substring(1).toLowerCase());
 
     const allResultsElem = elemResults.getElementsByClassName("result");
     for (result of allResultsElem) {
         let resultHead = result.getElementsByClassName("head")[0];
-        let resultDesc = result.getElementsByClassName("desc")[0];
-        
-        let resultHeadTitle = resultHead.getElementsByClassName("title")[0];
-        let resultHeadTags = resultHead.getElementsByClassName("tags")[0];
-        let resultHeadTagList = resultHeadTags.children;
+        // Title
+        let resultTitle = resultHead.getElementsByClassName("title")[0];
+        resultTitle = resultTitle.innerHTML.trim().toLowerCase();
+        // Tags
+        let resultTags = resultHead.getElementsByClassName("tags")[0];
+        let resultTagList = resultTags.children;
         let tagList = [];
-        for (tagElem of resultHeadTagList) {
-            tagList.push(tagElem.innerHTML);
+        for (tagElem of resultTagList) {
+            tagList.push(tagElem.innerHTML.trim().toLowerCase());
         }
-        // String list
-        let resultStrings =
-            resultHeadTitle.innerHTML.replace(/(\r\n|\n|\r)/gm, "").toLowerCase() +
-            tagList.toString().replace(",", " ").replace(/(\r\n|\n|\r)/gm, "").toLowerCase() +
-            resultDesc.innerHTML.replace(/(\r\n|\n|\r)/gm, "").toLowerCase();
-        // Adjust 
-        // let resultStringList = resultStrings.split(" ").filter(e => e !== "");
 
-        // Check include
-        let includePt = adjustedTxtList.length;
-        for (let i=0; i < adjustedTxtList.length; i++) {
-            if (resultStrings.includes(adjustedTxtList[i])) {
-                includePt += 1;
-            } else {
-                includePt -= 1;
+        // Create String list
+        let resultStrings = [].concat([resultTitle]).concat(tagList);
+        
+        // Check if the resultStrings includes the search text
+        let cnt = 0;
+        for (let i = 0; i < resultStrings.length; i++) {
+            if (searchText.indexOf(resultStrings[i]) != -1) {
+                cnt++;
             }
         }
+
         // Toggle display
-        if (includePt > (adjustedTxtList.length / 2)) {
+        if (cnt >= 1) {
             result.style.display = "block";
         } else {
             result.style.display = "none";

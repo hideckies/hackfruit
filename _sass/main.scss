@@ -7,11 +7,12 @@
     --color-darkgrey: #555;
     --color-grey: #999;
     --color-lightgrey: #efeaef;
-    --color-darkpink: #bf1fdf;
-    --color-pink: #df2fff;
-    --color-white: #fff;
+    --color-darkpink: #cf3fdf;
+    --color-pink: #df5fff;
+    --color-white: #ffffef;
     // Fonts
-    --font-family-main:  Garamond, 'Courier New', Tahoma, sans-serif;
+    --font-family-main:  Verdana, Garamond, 'Courier New', Tahoma, sans-serif;
+    --font-family-code:  monospace;
 }
 
 html,body {
@@ -26,10 +27,33 @@ body {
     background: var(--color-black);
     color: var(--color-white);
     font-family: var(--font-family-main);
+    font-size: 1.1em;
+}
+
+div {
+    margin: 16px 0;
+}
+
+h1,h2 {
+    border-bottom: 1px solid var(--color-white);
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.4em; }
+
+a,p,span {
+    line-height: 1.8em;
 }
 
 a {
     color: var(--color-pink);
+}
+
+strong {
+    font-size: 1.2em;
 }
 
 input {
@@ -46,7 +70,7 @@ input:focus {
 }
 
 code {
-    font-family:'Courier New', Courier, monospace!important;
+    font-family: var(--font-family-code);
 }
 
 .highlighter-rouge {

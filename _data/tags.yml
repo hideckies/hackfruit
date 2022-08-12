@@ -1,85 +1,33 @@
-- name: AccessControl
-- name: ActiveDirectory
-- name: ActiveRecon
-- name: AJP
-- name: AndroidAPK
-- name: AntiVirusEvasion
+- name: Active Directory
 - name: API
-- name: APT
-- name: ARPSpoofing
 - name: AWS
 - name: Blockchain
-- name: Bluetooth
-- name: BruteForce
-- name: BufferOverflow
-- name: BusinessLogic
+- name: Buffer Overflow
+- name: Cloud
 - name: CMS
-- name: CommandInjection
 - name: Container
-- name: ContentDiscovery
-- name: Cookie
-- name: CORS
 - name: Cryptography
-- name: CRLF
-- name: CSRF
 - name: Database
-- name: DataExfiltration
-- name: Deobfuscation
-- name: DirectoryTraversal
 - name: DNS
-- name: Docker
-- name: Elasticsearch
-- name: FileUpload
-- name: FTP
-- name: IDOR
-- name: InsecureDeserialization
-- name: IOC
 - name: Jenkins
 - name: JWT
-- name: Kerberos
-- name: LDAP
 - name: Linux
 - name: Log4j
-- name: MACFlooding
 - name: Malware
-- name: MemoryForensics
-- name: MSSQL
 - name: Network
-- name: NFS
 - name: OAuth
 - name: OSINT
-- name: PassiveRecon
-- name: PassTheHash
-- name: Password
-- name: Pivoting
-- name: PortForwarding
-- name: PostExploitation
-- name: PrivEsc
-- name: ReverseEngineering
-- name: ReverseShell
-- name: RDP
-- name: Rootkit
-- name: Scanner
-- name: SMB
-- name: SMTP
-- name: SNMP
-- name: SocialEngineering
+- name: Port Forwarding
+- name: Post Exploitation
+- name: Privilege Escalation
+- name: Recon
+- name: Reverse Engineering
+- name: Reverse Shell
+- name: Social Engineering
 - name: Spectrogram
-- name: SQLi
 - name: SSH
-- name: SSRF
 - name: Steganography
-- name: Struts
-- name: SUID
 - name: Troubleshooting
-- name: VNC
 - name: Web
-- name: Web3
 - name: WiFi
 - name: Windows
-- name: WinRM
-- name: Wordlist
-- name: WordPress
-- name: XSS
-- name: XST
-- name: XXE

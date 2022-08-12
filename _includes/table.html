@@ -31,6 +31,11 @@
                             <span class="tag">{{ tag }}</span>
                         {% endfor %}
                     </div>
+                    <div class="tools" style="display: none;">
+                        {% for tool in fruit.tools %}
+                            <span class="tool">{{ tool }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="desc">
                     {{ fruit.desc }}
@@ -43,7 +48,7 @@
         elemResults.innerHTML = await defaultResults;
 
         if (location.hash.length > 0) {
-            elemSearchInput.value = location.hash.substring(1);
+            elemSearchInput.value = decodeURI(location.hash.substring(1));
             filter(elemResults);
         }
     }
