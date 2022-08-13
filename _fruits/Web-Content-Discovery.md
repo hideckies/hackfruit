@@ -2,7 +2,7 @@
 title: Web Content Discovery
 desc: 
 tags: [API, Content, Dirb, Directory, Discovery, Ffuf, Gobuster, Web]
-alts: []
+alts: [Web-Basic-Pentesting]
 render_with_liquid: false
 ---
 

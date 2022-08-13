@@ -1,8 +1,8 @@
 ---
 title: Reverse Shell
 desc: 
-tags: [Linux, Netcat, Privilege Escalation, Reverse Shell, Windows]
-alts: [Privilege-Escalation-Linux, Privilege-Escalation-Windows]
+tags: [Linux, Netcat, Privilege, Reverse, Shell, Windows]
+alts: [Linux-Privilege-Escalation, Windows-Privilege-Escalation]
 render_with_liquid: false
 ---
 

