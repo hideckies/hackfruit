@@ -1,5 +1,5 @@
 ---
-title: Cross-Site Script (XSS)
+title: Cross-Site Scripting (XSS)
 desc: 
 tags: [Burp Suite, Cross, Site, Web, XSS]
 alts: [Cookie-Hijacking]

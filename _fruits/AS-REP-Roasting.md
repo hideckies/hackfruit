@@ -1,7 +1,7 @@
 ---
 title: AS-REP Roasting
-desc: 
-tags: [ASREP, Impacket, Kerberos, Windows]
+desc: Retrieve password hashes for users that do not require Kerberos preauth.
+tags: [ASREP, Impacket, Kerberos, PreAuth, Windows]
 alts: []
 render_with_liquid: false
 ---
