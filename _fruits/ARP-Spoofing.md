@@ -6,10 +6,31 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Display All Hosts
+## 1. Basic Flow
 
-Using 'arp' command.
+1. **Check Interface and Gateway IP Address**
 
-```sh
-arp -a
-```
+    ```sh
+    # Interfaces
+    ip addr
+
+    # Default gateway
+    ip route list
+    ```
+
+2. **Scan the Network to Find Target IP**
+
+    ```sh
+    nmap -sP <gateway-ip>/24
+    nmap -sP <gateway-ip>/16
+    ```
+
+3. **Enable IP Forwarding**
+
+    ```sh
+    # Allow all forwading in the LAN
+    # -A: append rules
+    # -i: interface
+    # -j: jump
+    iptables -A FORWARD -i eth0 -j ACCEPT
+    ```

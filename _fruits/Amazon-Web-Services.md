@@ -1,6 +1,6 @@
 ---
 title: Amazon Web Services (AWS) Pentesting
-desc: 
+desc: It provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis. 
 tags: [Amazon, AWS, Cloud, S3, Web]
 alts: []
 render_with_liquid: false

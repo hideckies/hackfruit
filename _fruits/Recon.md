@@ -1,7 +1,7 @@
 ---
 title: Recon
 desc: Basic reconnaisance flows.
-tags: [DNS, Exploit DB, Network, Nmap, OSINT, Recon, Web]
+tags: [DNS, Exploit DB, Network, Nmap, OSINT, Recon, Subnet, Web]
 alts: [OSINT]
 render_with_liquid: false
 ---
