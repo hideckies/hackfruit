@@ -1,7 +1,7 @@
 ---
 title: Web Login Bypass
 desc: 
-tags: [Burp Suite, Ffuf, Login, SQLi, Web, Wfuzz]
+tags: [Burp, Ffuf, Login, SQLi, Web, Wfuzz]
 alts: [API-Pentesting]
 render_with_liquid: false
 ---

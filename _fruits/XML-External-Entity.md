@@ -1,7 +1,7 @@
 ---
 title: XML External Entity (XEE)
 desc: 
-tags: [Burp Suite, Web, XML, XXE]
+tags: [Burp, Web, XML, XXE]
 alts: []
 render_with_liquid: true
 ---

@@ -54,8 +54,8 @@ render_with_liquid: false
         Scanning all ports.
 
         ```sh
-        sudo nmap -sS -p- <target-ip>
-        sudo nmap -sS -p 1-65535 <target-ip>
+        sudo nmap -sS -p- <target-ip> --min-rate 1000
+        sudo nmap -sS -p 1-65535 <target-ip> --min-rate 1000
         ```
 
         Scanning the specific range ports.

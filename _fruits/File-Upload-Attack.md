@@ -1,7 +1,7 @@
 ---
 title: File Upload Attack
 desc: 
-tags: [Burp Suite, Exiftool, File, Netcat, Reverse, Shell, Upload, Web]
+tags: [Burp, Exiftool, File, Netcat, Reverse, Shell, Upload, Web]
 alts: [OS-Command-Injection, Reverse-Shell]
 render_with_liquid: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Cross-Site Request Forgery (CSRF)
 desc: 
-tags: [Burp Suite, Cross, CSRF, Site, Web]
+tags: [Burp, Cross, CSRF, Site, Web]
 alts: []
 render_with_liquid: false
 ---

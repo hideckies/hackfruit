@@ -1,7 +1,7 @@
 ---
 title: Cross-Site Scripting (XSS)
 desc: 
-tags: [Burp Suite, Cross, Site, Web, XSS]
+tags: [Burp, Cross, Site, Web, XSS]
 alts: [Cookie-Hijacking]
 render_with_liquid: true
 ---

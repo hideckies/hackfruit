@@ -1,7 +1,7 @@
 ---
 title: Burp Suite
 desc: 
-tags: [Burp Suite, Web]
+tags: [Burp, Web]
 alts: []
 render_with_liquid: false
 ---

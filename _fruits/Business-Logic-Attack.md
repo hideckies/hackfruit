@@ -1,7 +1,7 @@
 ---
 title: Business Logic Attack
 desc: 
-tags: [Burp Suite, Business Logic, Web]
+tags: [Burp, Business, Logic, Web]
 alts: []
 render_with_liquid: false
 ---

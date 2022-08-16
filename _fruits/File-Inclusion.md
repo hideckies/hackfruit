@@ -1,7 +1,7 @@
 ---
 title: File Inclusion
 desc: 
-tags: [Burp Suite, LFI, Netcat, Reverse Shell, RFI, Web]
+tags: [Burp, LFI, Netcat, Reverse Shell, RFI, Web]
 alts: [Directory-Traversal, Reverse-Shell]
 render_with_liquid: false
 ---

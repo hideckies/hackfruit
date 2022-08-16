@@ -1,7 +1,7 @@
 ---
 title: Cross-Origin Resource Sharing (CORS) Attack
 desc: 
-tags: [Burp Suite, CORS, Web]
+tags: [Burp, CORS, Web]
 alts: []
 render_with_liquid: false
 ---
