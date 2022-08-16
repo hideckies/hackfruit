@@ -1,7 +1,7 @@
 ---
 title: Insecure Direct Object References (IDOR) Attack
 desc: 
-tags: [Burp Suite, Ffuf, Hydra, IDOR, Web, Wfuzz]
+tags: [Burp, Ffuf, Hydra, IDOR, Web, Wfuzz]
 alts: [API-Pentesting]
 render_with_liquid: false
 ---

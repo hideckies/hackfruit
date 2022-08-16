@@ -1,7 +1,7 @@
 ---
 title: Cookie Hijacking
 desc: 
-tags: [Burp Suite, Cookie, Netcat, Web]
+tags: [Burp, Cookie, Netcat, Web]
 alts: [XSS]
 render_with_liquid: false
 ---

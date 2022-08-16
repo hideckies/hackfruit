@@ -1,7 +1,7 @@
 ---
 title: OS Command Injection
 desc: 
-tags: [Burp Suite, Command Injection, Web]
+tags: [Burp, Command Injection, Web]
 alts: []
 render_with_liquid: false
 ---

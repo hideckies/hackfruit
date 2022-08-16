@@ -1,7 +1,7 @@
 ---
 title: Broken Access Control
 desc: 
-tags: [Access Control, Burp Suite, Web]
+tags: [Access, Burp, Control, Web]
 alts: []
 render_with_liquid: false
 ---

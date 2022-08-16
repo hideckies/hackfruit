@@ -1,7 +1,7 @@
 ---
 title: OAuth Attack
 desc: 
-tags: [Burp Suite, CSRF, OAuth, Web]
+tags: [Burp, CSRF, OAuth, Web]
 alts: []
 render_with_liquid: false
 ---
