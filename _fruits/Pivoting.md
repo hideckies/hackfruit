@@ -1,7 +1,7 @@
 ---
 title: Pivoting
 desc: Accessing obtained over one machine to exploit another machine deeper in the network.
-tags: [Network, Pivoting]
+tags: [Network, Pivot]
 alts: []
 render_with_liquid: false
 ---

