@@ -41,6 +41,7 @@ render_with_liquid: false
     groups
 
     # Environments
+    env
     echo $PATH
 
     # Positional arguments

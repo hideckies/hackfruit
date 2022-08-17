@@ -18,7 +18,6 @@
 - name: OAuth
 - name: OSINT
 - name: Port Forwarding
-- name: Post Exploitation
 - name: Privilege Escalation
 - name: Recon
 - name: Reverse Engineering
