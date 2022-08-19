@@ -1,6 +1,6 @@
 ---
 title: Broken Access Control
-desc: 
+desc: The attacking methodology of broken access control in web applications.
 tags: [Access, Burp, Control, Web]
 alts: []
 render_with_liquid: false

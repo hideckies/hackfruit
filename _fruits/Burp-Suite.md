@@ -1,6 +1,6 @@
 ---
 title: Burp Suite
-desc: 
+desc: An application security testing software.
 tags: [Burp, Web]
 alts: []
 render_with_liquid: false

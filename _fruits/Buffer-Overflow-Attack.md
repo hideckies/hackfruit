@@ -1,6 +1,6 @@
 ---
 title: Buffer Overflow Attack
-desc: 
+desc: An anomaly where a program, while writing data to a buffer, overruns the buffer's boundary and overwrites adjacent memory locations.
 tags: [Buffer Overflow, Python, Reverse Engineering]
 alts: [Reverse-Engineering]
 render_with_liquid: false
