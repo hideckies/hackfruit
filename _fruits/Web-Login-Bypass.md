@@ -20,24 +20,23 @@ admin' or 1=1#
 
 ## 2. Use Default Credentials
 
-1. **Commonly Default Credentials**
+```sh
+admin:admin
+admin:password
+admin:password1
+admin:password123
+administrator:password
+administrator:password1
+administrator:password123
 
-    ```
-    admin:admin
-    admin:password
-    admin:password1
-    admin:password123
-    administrator:password
-    administrator:password1
-    administrator:password123
-    ```
+# phpIPAM
+admin:ipamadmin
+Admin:ipamadmin
 
-2. **PHPMyAdmin**
-
-    ```sh
-    root:(null)
-    root:password
-    ```
+# PHPMyAdmin
+root:(null)
+root:password
+```
 
 <br />
 
