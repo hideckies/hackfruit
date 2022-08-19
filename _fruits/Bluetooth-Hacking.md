@@ -1,6 +1,6 @@
 ---
 title: Bluetooth Hacking
-desc: 
+desc: A short-range wireless technology standard that is used for exchanging data between fixed and mobile devices over short distances and building personal area networks.
 tags: [Bluetooth, Network]
 alts: []
 render_with_liquid: false

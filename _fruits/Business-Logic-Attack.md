@@ -1,6 +1,6 @@
 ---
 title: Business Logic Attack
-desc: 
+desc: Business Logic is the part of the program that encodes the real-world business rules that determine how data can be created, stored, and changed. 
 tags: [Burp, Business, Logic, Web]
 alts: []
 render_with_liquid: false

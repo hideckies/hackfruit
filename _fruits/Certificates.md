@@ -1,6 +1,6 @@
 ---
 title: Certificates
-desc: 
+desc: An electronic document used to prove the validity of a public key.
 tags: [Cert, Key, OpenSSL, PFX, REM, RSA]
 alts: []
 render_with_liquid: false

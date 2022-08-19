@@ -1,6 +1,6 @@
 ---
 title: Archived Files
-desc: 
+desc: Archive/extract files and display the information of archived files.
 tags: [Linux, Tar, Zip]
 alts: []
 render_with_liquid: false

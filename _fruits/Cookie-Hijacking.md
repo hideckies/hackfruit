@@ -1,6 +1,6 @@
 ---
 title: Cookie Hijacking
-desc: 
+desc: A methodology of manipulating, grabbing cookies.
 tags: [Burp, Cookie, Netcat, Web]
 alts: [XSS]
 render_with_liquid: false
