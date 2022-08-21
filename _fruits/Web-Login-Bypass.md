@@ -66,7 +66,7 @@ root:password
 
         ```sh
         # -fc: Filter HTTP status code
-        ffuf -s -w passwords -X POST -d "username=admin&password=FUZZ" -u http://vulnerable.com/login -fc 401
+        ffuf -w passwords -X POST -d "username=admin&password=FUZZ" -u http://vulnerable.com/login -fc 401
         ```
 
     - **Hydra**

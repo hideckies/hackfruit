@@ -42,22 +42,22 @@ They are usually located in */usr/share/seclsits/* in Linux.
 1. **Ffuf**
 
     ```sh
-    ffuf -s -u https://vulnerable.com/FUZZ -w wordlist.txt 
+    ffuf -u https://vulnerable.com/FUZZ -w wordlist.txt 
 
     # Custom header (-H)
-    ffuf -s -H "Cookie: key=value" -u https://vulnerable.com/FUZZ -w wordlist.txt 
+    ffuf -H "Cookie: key=value" -u https://vulnerable.com/FUZZ -w wordlist.txt 
 
     # -mc: Match HTTP statuc code
-    ffuf -s -u http://vulnerable.com/FUZZ -w wordlist.txt -mc 200
+    ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -mc 200
     # -ms: Match HTTP response size
-    ffuf -s -u http://vulnerable.com/FUZZ -w wordlist.txt -ms 1234
-    ffuf -s -u http://vulnerable.com/FUZZ -w wordlist.txt -ms 50-300
+    ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -ms 1234
+    ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -ms 50-300
 
     # -fc: Filter HTTP statuc code
-    ffuf -s -u http://vulnerable.com/FUZZ -w wordlist.txt -fc 302
+    ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -fc 302
     # -fs: Filter HTTP response size
-    ffuf -s -u http://vulnerable.com/FUZZ -w wordlist.txt -fs 1234
-    ffuf -s -u http://vulnerable.com/FUZZ -w wordlist.txt -fs 50-300
+    ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -fs 1234
+    ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -fs 50-300
     ```
 
 2. **Gobuster**
