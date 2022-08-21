@@ -40,9 +40,9 @@ render_with_liquid: false
 2. **Fuzzing with Tools**
 
     ```sh
-    ffuf -s -w numbers.txt -u http://vulnerable.com/user?id=FUZZ
+    ffuf -w numbers.txt -u http://vulnerable.com/user?id=FUZZ
     # -fs: Filter HTTP response size
-    ffuf -s -w numbers.txt -u http://vulnerable.com/user?id=FUZZ -fs 439
+    ffuf -w numbers.txt -u http://vulnerable.com/user?id=FUZZ -fs 439
 
     wfuzz -z file,./numbers.txt http://vulnerable.com/user?id=FUZZ
     ```
