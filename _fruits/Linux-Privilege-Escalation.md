@@ -50,7 +50,7 @@ render_with_liquid: false
     echo $2
     ```
 
-2. **User's Privileges and Commands**
+3. **User's Privileges and Commands**
 
     ```sh
     sudo -l
@@ -82,90 +82,89 @@ render_with_liquid: false
         sudo -u john whoami
         ```
 
-3. **Interest Information**
+4. **Interest Information**
 
-    ```sh
-    # Apache
-    cat /var/log/apache2/access.log
+    1. **Use Common Tools**
 
-    # Bash Files
-    cat .bashrc
-    cat .bash_history
-    cat .bash_profile
-    cat .profile
+        ```sh
+        # Apache
+        cat /var/log/apache2/access.log
 
-    # Cron jobs
-    cat /etc/cron*
-    cat /etc/crontab
-    cat /etc/cron.d/*
-    cat /etc/cron.daily/*
-    cat /etc/cron.hourly/*
-    cat /etc/cron.montyly/*
-    cat /etc/cron.weekly/*
-    cat /var/spool/cron/*
-    cat /var/spool/cron/crontabs/*
-    # List all cron jobs
-    crontab -l
-    crontab -l -u username
+        # Bash Files
+        cat .bashrc
+        cat .bash_history
+        cat .bash_profile
+        cat .profile
 
-    # Hosts
-    cat /etc/hosts
-    # LDAP config
-    cat /etc/ldap/ldap.conf
-    # Messages
-    cat /etc/issue
-    cat /etc/motd
-    # MySQL
-    cat /etc/my.cnf
-    # Nameserver
-    cat /etc/resolv.conf
-    # NFS settings
-    cat /etc/exports
-    # Os kernel version
-    cat /proc/version
-    cat /etc/*release
-    # PAM
-    cat /etc/pam.d/passwd
-    # Sudo config
-    cat /etc/sudoers
-    cat /etc/sodoers.d/usersgroup
-    # SSH config
-    cat /etc/ssh/ssh_config
-    cat /etc/ssh/sshd_config
-    # Users and passwords
-    cat /etc/passwd
-    cat /etc/shadow
+        # Cron jobs
+        cat /etc/cron*
+        cat /etc/crontab
+        cat /etc/cron.d/*
+        cat /etc/cron.daily/*
+        cat /etc/cron.hourly/*
+        cat /etc/cron.montyly/*
+        cat /etc/cron.weekly/*
+        cat /var/spool/cron/*
+        cat /var/spool/cron/crontabs/*
+        # List all cron jobs
+        crontab -l
+        crontab -l -u username
 
-
-    # List all processes
-    lsof
-    # Select IPv[46] files
-    lsof -i
-    # Select IPv[46] files against specific port
-    lsof -i:53
-    lsof -i:80
-    # Select IPv[46] files against specific port (no port names)
-    lsof -i:53 -P
-    lsof -i:80 -P
-    # Specify user
-    lsof -u username
+        # Hosts
+        cat /etc/hosts
+        # LDAP config
+        cat /etc/ldap/ldap.conf
+        # Messages
+        cat /etc/issue
+        cat /etc/motd
+        # MySQL
+        cat /etc/my.cnf
+        # Nameserver
+        cat /etc/resolv.conf
+        # NFS settings
+        cat /etc/exports
+        # Os kernel version
+        cat /proc/version
+        cat /etc/*release
+        # PAM
+        cat /etc/pam.d/passwd
+        # Sudo config
+        cat /etc/sudoers
+        cat /etc/sodoers.d/usersgroup
+        # SSH config
+        cat /etc/ssh/ssh_config
+        cat /etc/ssh/sshd_config
+        # Users and passwords
+        cat /etc/passwd
+        cat /etc/shadow
 
 
-    # Display the currently-running processes.
-    ps
-    ps aux
-    ```
+        # List all processes
+        lsof
+        # Select IPv[46] files
+        lsof -i
+        # Select IPv[46] files against specific port
+        lsof -i:53
+        lsof -i:80
+        # Select IPv[46] files against specific port (no port names)
+        lsof -i:53 -P
+        lsof -i:80 -P
+        # Specify user
+        lsof -u username
 
-4. **Find Sensitive Information**
+
+        # Display the currently-running processes.
+        ps
+        ps aux
+        ```
+
+5. **Find Sensitive Information**
 
     1. **Use Find**
 
         **"find"** searches files in the real system, but slowly.
 
         ```sh
-        # SUID
-        
-
         # Sensitive data
         find / -name "*.txt" 2>/dev/null
         find /opt -name "*.txt" 2>/dev/null
@@ -179,6 +178,9 @@ render_with_liquid: false
         find / -name "*.key" -or -name "*.db" 2>/dev/null
         find / -name "*data*" 2>/dev/null
         find / -name "*flag*" 2>/dev/null
+
+        # Backup files may contain sensitive information
+        find / -name "*backup*" 2>/dev/null
 
         # Backup files for /etc/shadow.
         # ex. /var/shadow.bak
@@ -217,7 +219,7 @@ render_with_liquid: false
         ls /var/www/
         ```
 
-5. **Find SUID**
+6. **Find SUID**
 
     ```sh
     # Option 1
@@ -230,13 +232,13 @@ render_with_liquid: false
 
     If you'll get some SUID files, research the information of them using **[GTFOBins](https://gtfobins.github.io/){:target="_blank"}**.
 
-6. **Find Writable Directories**
+7. **Find Writable Directories**
 
     ```sh
     find / -writable 2>/dev/null | cut -d "/" -f 2,3 | sort -u
     ```
 
-7. **Find Capabilities**
+8. **Find Capabilities**
 
     ```sh
     getcap -r / 2>/dev/null
@@ -261,7 +263,7 @@ render_with_liquid: false
         setcap cap_setuid+ep /path/to/binary
         ```
 
-8. **Get Sensitive Contents in Files**
+9. **Get Sensitive Contents in Files**
 
     ```sh
     grep root ./*
@@ -278,7 +280,15 @@ render_with_liquid: false
     grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" ./*
     ```
 
-9. **Crack User Passwords**
+10. **Monitor Processes without Root Privileges**
+
+    Using **[pspy](https://github.com/DominicBreuker/pspy){:target="_blank"}**, you can fetch processes even if you’re not root user.
+
+    ```sh
+    ./pspy -pf -i 1000
+    ```
+
+11. **Crack User Passwords**
 
     If you can access **/etc/passwd** and **/etc/shadow**, crack users password using **unshadow**.
 

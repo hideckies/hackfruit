@@ -1,7 +1,7 @@
 ---
 title: Linux Techniques
 desc: Useful techniques in Linux.
-tags: [Awk, Base64, Bash, Linux, Privilege, Wget]
+tags: [Awk, Base64, Bash, Linux, PrivEsc, Privilege, Wget]
 alts: [Linux-Privilege-Escalation]
 render_with_liquid: false
 ---

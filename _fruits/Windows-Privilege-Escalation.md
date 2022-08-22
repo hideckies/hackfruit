@@ -1,7 +1,7 @@
 ---
 title: Windows Privilege Escalation
 desc: 
-tags: [ActiveDirectory, PowerShell, PrivEsc, Privilege Escalation, ShellBag, Windows, WMIC]
+tags: [ActiveDirectory, PowerShell, PrivEsc, Privilege, ShellBag, Windows, WMIC]
 alts: [PowerShell, Privilege-Escalation-Linux]
 render_with_liquid: false
 ---
