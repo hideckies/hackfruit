@@ -102,7 +102,7 @@ render_with_liquid: false
         cat /etc/cron.d/*
         cat /etc/cron.daily/*
         cat /etc/cron.hourly/*
-        cat /etc/cron.montyly/*
+        cat /etc/cron.monthly/*
         cat /etc/cron.weekly/*
         cat /var/spool/cron/*
         cat /var/spool/cron/crontabs/*
