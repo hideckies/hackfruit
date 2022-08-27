@@ -204,3 +204,11 @@ render_with_liquid: false
     # Help
     > ?
     ```
+
+4. **Use Rizin**
+
+    **[Rizin](https://github.com/rizinorg/rizin){:target="_blank"}** is a fork of **Radare2**.
+
+    ```sh
+    rizin example.exe
+    ```
