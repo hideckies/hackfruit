@@ -1,8 +1,8 @@
 ---
 title: Windows Privilege Escalation
 desc: 
-tags: [ActiveDirectory, PowerShell, PrivEsc, Privilege, ShellBag, Windows, WMIC]
-alts: [PowerShell, Privilege-Escalation-Linux]
+tags: [ActiveDirectory, LAPS, PowerShell, PrivEsc, Privilege, ShellBag, Windows, WMIC]
+alts: [LAPS-Pentesting, PowerShell, Privilege-Escalation-Linux]
 render_with_liquid: false
 ---
 
@@ -131,7 +131,15 @@ impacket-psexec username:password@<target-ip>
     sc qc "Development Service"
     ```
 
-4. **Interect with the Volume Shadow Copy Service (VSS)**
+4. **Histories**
+
+    - **Command History in PowerShell Console**
+
+        ```powershell
+        type c:\Users\<username>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+        ```
+
+5. **Interect with the Volume Shadow Copy Service (VSS)**
 
     ```powershell
     vssadmin
@@ -139,7 +147,7 @@ impacket-psexec username:password@<target-ip>
     vssadmin list volumes
     ```
 
-5. **Find the Sensitive Data**
+6. **Find the Sensitive Data**
 
     ```powershell
     findstr /si password *.txt *.xml *.ini
@@ -163,7 +171,7 @@ impacket-psexec username:password@<target-ip>
     cd \'$Recycle.bin\S-1-5-21-198...334-1001'
     ```
 
-6. **Use Mimikatz**
+7. **Use Mimikatz**
 
     **[Mimikatz](https://github.com/gentilkiwi/mimikatz){:target="_blank"}** dumps the Windows credentials and also manages Kerberos tickets.
 
@@ -223,7 +231,7 @@ impacket-psexec username:password@<target-ip>
         mimikatz # misc::cmd
         ```
 
-7. **Registry Keys**
+8. **Registry Keys**
 
     - **ShellBags**
 
@@ -253,7 +261,7 @@ impacket-psexec username:password@<target-ip>
 
             4. **Find suspicious folder and file**
 
-8. **.NET Decompiler**
+9. **.NET Decompiler**
 
     - **[ILSpy](https://github.com/icsharpcode/ILSpy){:target="_blank"}**
 

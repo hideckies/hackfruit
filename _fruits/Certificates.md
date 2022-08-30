@@ -1,7 +1,7 @@
 ---
 title: Certificates
 desc: An electronic document used to prove the validity of a public key.
-tags: [Cert, Key, OpenSSL, PFX, REM, RSA]
+tags: [Cert, Key, OpenSSL, PEM, PFX, PKCS, RSA]
 alts: []
 render_with_liquid: false
 ---
@@ -16,9 +16,17 @@ render_with_liquid: false
 
 <br />
 
-## 2. PFX -> REM -> RSA
+## 2. PFX (PKCS#12) -> PEM -> RSA
 
-1. **Extract a Private Key**
+1. **Crack Password of PFX**
+
+    **[crackpkcs12](https://github.com/crackpkcs12/crackpkcs12){:target="_blank"}** is useful to crack password.
+
+    ```sh
+    crackpkcs12 -d wordlist.txt example.pfx
+    ```
+
+2. **Extract a Private Key**
 
     - **For Encrypted Key**
 
@@ -32,13 +40,15 @@ render_with_liquid: false
         openssl pkcs12 -in example.pfx -nocerts -out key.pem -nodes
         ```
 
-2. **Extract the Certificate**
+3. **Extract a Public Key (Cert)**
 
     ```sh
     openssl pkcs12 -in example.pfx -nokeys -out cert.pem
     ```
 
-3. **Create RSA Key**
+4. **Create RSA Key**
+
+    Using the private key generated.
 
     ```sh
     openssl rsa -in key.pem -out rsa.key
