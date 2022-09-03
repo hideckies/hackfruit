@@ -3,8 +3,10 @@ title: Regular Expressions (Regex/RegExp)
 desc: Patterns of text that specifies a search pattern in text.
 tags: [Expression, Pattern, Regex, Regular, String, Text]
 alts: []
-render_with_liquid: false
+render_with_liquid: true
 ---
+
+{% raw %}
 
 ## 1. Online Tools
 
@@ -134,3 +136,5 @@ render_with_liquid: false
         ^0\d{2,3}-\d{1,4}-\d{4}
         # 000-000-0000, ...
         ```
+
+{% endraw %}
