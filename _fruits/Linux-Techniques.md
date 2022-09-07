@@ -66,22 +66,18 @@ wget -r -np http://example.com/somedir/
 
 1. **Use Base64**
 
-    ```sh
-    # On attack machine
+    1. **Encode a File with Base64 in Local Machine**
 
-    # Encode the file of payload
-    # -w 0: disable line wrapping
-    base64 exploit.sh -w 0
+        ```sh
+        # -w 0: disabe line wrapping
+        base64 exploit.sh -w 0
+        ```
 
-    # Copy the output string
+    2. **Decode Base64 of the File in Remote Machine**
 
-    # -----------------------------------------------
-
-    # On target machine
-
-    # Decode the base64 string
-    echo <output-base64-string> | base64 -d > exploit.sh
-    ```
+        ```sh
+        echo <base64-string-of-file> | base64 -d > exploit.sh
+        ```
 
 <br />
 

