@@ -6,6 +6,6 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Use Templates
+## Use Templates
 
 [This repository](https://github.com/mrd0x/BITB){:target="_blank"} is useful for attacking.

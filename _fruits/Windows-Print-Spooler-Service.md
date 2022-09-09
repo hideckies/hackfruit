@@ -8,7 +8,7 @@ render_with_liquid: false
 
 **[The proof of concept](https://github.com/cube0x0/CVE-2021-1675){:target="_blank"}** is available.
 
-## 1. Where is the Print Spooler on Windows
+## Where is the Print Spooler on Windows
 
 1. **Open Services**
 
@@ -20,7 +20,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Exploit
+## Exploit
 
 1. **Clone the Repository**
 

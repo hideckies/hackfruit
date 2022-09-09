@@ -6,7 +6,7 @@ alts: [LAPS-Pentesting, PowerShell, Privilege-Escalation-Linux]
 render_with_liquid: false
 ---
 
-## 1. Interact Shell from Linux
+## Interact from Linux
 
 Using **impacket-psexec**.
 
@@ -14,7 +14,9 @@ Using **impacket-psexec**.
 impacket-psexec username:password@<target-ip>
 ```
 
-## 2. Enumeration
+<br />
+
+## Enumeration
 
 1. **Use Impacket**
 
@@ -34,7 +36,7 @@ impacket-psexec username:password@<target-ip>
 
 <br />
 
-## 3. Investigation
+## Investigation
 
 1. **Use Automation Tools**
 
@@ -269,7 +271,7 @@ impacket-psexec username:password@<target-ip>
 
 <br />
 
-## 4. Useful Commands
+## Useful Commands
 
 1. **Refer to LOLBAS**
 
@@ -301,7 +303,7 @@ impacket-psexec username:password@<target-ip>
 
 <br />
 
-## 5. Change Credentials to Root Privileges, Remote Users
+## Change Credentials to Root Privileges, Remote Users
 
 If you can change the user's permissions, connect WinRM or RDP using "evil-winrm", "remmina".
 
@@ -320,7 +322,7 @@ net localgroup "Remote Desktop Users" USERNAME /add     # RDP
 
 <br />
 
-## 6. Take Ownership of a File (Administrators Group Required)
+## Take Ownership of a File (Administrators Group Required)
 
 ```powershell
 # Check if the current user belongs to the Administrators group. 
@@ -344,7 +346,7 @@ icacls "example.txt" /q /c /t /grant Users:F
 
 <br />
 
-## 7. Unquoteding Service Path to Privilege Escalation
+## Unquoteding Service Path to Privilege Escalation
 
 ```powershell
 
@@ -391,7 +393,7 @@ Restart-Computer
 
 <br />
 
-## 8. Active Directory Certificate Services (AD CS) Privilege Escalation
+## Active Directory Certificate Services (AD CS) Privilege Escalation
 
 AD CS is vulnerable to privilege escalation.
 
@@ -461,7 +463,7 @@ AD CS is vulnerable to privilege escalation.
 
 <br />
 
-## 9. Applications
+## Applications
 
 1. **Computer Management**
 

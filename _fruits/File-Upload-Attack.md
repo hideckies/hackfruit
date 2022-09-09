@@ -6,7 +6,7 @@ alts: [OS-Command-Injection, Reverse-Shell]
 render_with_liquid: false
 ---
 
-## 1. Prepare a Payload
+## Prepare a Payload
 
 1. **Create a Web Shell**
 
@@ -66,7 +66,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Bypass the File Validation Techniques when Uploading the Payload
+## Bypass the File Validation Techniques when Uploading the Payload
 
 Upload the payload in somewhere e.g. the profile picture's upload form.  
 In most cases, you need to bypass the file validation.
@@ -226,7 +226,7 @@ In most cases, you need to bypass the file validation.
 
 <br />
 
-## 3. Other Tips
+## Other Tips
 
 1. **Magic Numbers**
 

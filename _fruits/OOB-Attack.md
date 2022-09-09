@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Useful Tools
+## Useful Tools
 
 - **[interactsh](https://github.com/projectdiscovery/interactsh){:target="_blank"}**
 

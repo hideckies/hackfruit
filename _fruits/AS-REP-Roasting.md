@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Use impacket-GetNPUsers
+## Use impacket-GetNPUsers
 
 Lists users and passwords is not required Kerberos pre auth. Used for ASREPRoasting.
 

@@ -8,7 +8,7 @@ render_with_liquid: true
 
 {% raw %}
 
-## 1. Online Tools
+## Online Tools
 
 - **[RegExp Playground](https://projects.verou.me/regexplained/){:target="_blank"}**
 
@@ -20,7 +20,7 @@ render_with_liquid: true
 
 <br />
 
-## 2. Commands
+## Commands
 
 1. **Pattern Matching**
 
@@ -30,7 +30,7 @@ render_with_liquid: true
 
 <br />
 
-## 3. Example Patterns
+## Example Patterns
 
 1. **Basic**
 

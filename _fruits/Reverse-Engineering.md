@@ -6,7 +6,7 @@ alts: [Android-APK-Pentesting, Assembly, Malware-Analysis, Steganography]
 render_with_liquid: false
 ---
 
-## 1. Investigation
+## Investigation
 
 1. **Basic Information**
 
@@ -88,7 +88,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Analysis
+## Analysis
 
 1. **Use Softwares**
 

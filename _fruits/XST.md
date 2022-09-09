@@ -6,7 +6,7 @@ alts: [Cookie-Hijacking]
 render_with_liquid: false
 ---
 
-## a. Add Cookie Header
+## Add Cookie Header
 
 ```sh
 TRACE / HTTP/1.1

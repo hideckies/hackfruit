@@ -6,7 +6,7 @@ alts: [Privilege-Escalation-Linux]
 render_with_liquid: false
 ---
 
-## 1. Connection
+## Connection
 
 1. **Status**
 
@@ -70,7 +70,7 @@ render_with_liquid: false
             wireshark /tmp/tcpdump.pcap
             ```
 
-## 2. Firewall
+## Firewall
 
 1. **Use UFW**
 
@@ -136,7 +136,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Send Packet with MAC/IP Spoofing
+## Send Packet with MAC/IP Spoofing
 
 1. **IP Spoofing**
 

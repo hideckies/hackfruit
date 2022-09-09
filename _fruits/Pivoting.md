@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Enumerate Network
+## Enumerate Network
 
 After entering the target server, enumerate and search other networks.
 
@@ -52,7 +52,7 @@ After entering the target server, enumerate and search other networks.
     for i in {1..65535}; do (echo > /dev/tcp/10.0.0.1/$i) >/dev/null 2>&1 && echo $i is open; done
     ```
 
-## 2. Use Proxychains
+## Use Proxychains
 
 **[Proxychains](https://github.com/haad/proxychains){:target="_blank"}** forces any TCP connection made by any given application to follow through proxy like TOR or any other SOCKS4, SOCKS5 or HTTP(S) proxy.
 

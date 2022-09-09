@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Cheat Sheet
+## Cheat Sheet
 
 ```html
 https://vulnerable.com/example.php?redirectUrl=https://attacker.com/

@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Registry Hives
+## Registry Hives
 
 1. **Use Registry Editor**
 
@@ -51,7 +51,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Acquire Registry Data
+## Acquire Registry Data
 
 1. **Use KAPE**
 
@@ -61,13 +61,13 @@ render_with_liquid: false
 
 <br />
 
-## 3. Explore Registry Data
+## Explore Registry Data
 
 1. **Use [Registry Viewer](https://accessdata.com/product-download-page){:target="_blank"}**
 
 <br />
 
-## 4. System Information
+## System Information
 
 1. **OS Version**
 
@@ -75,7 +75,7 @@ render_with_liquid: false
 
 <br />
 
-## 5. Memory Forensics
+## Memory Forensics
 
 1. **Use Volatility**
 

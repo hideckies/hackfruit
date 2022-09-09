@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Investigation
+## Investigation
 
 1. **Online Tools**
 
@@ -54,7 +54,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Crack using Default Router Credentials
+## Crack using Default Router Credentials
 
 ```
 admin:Admin
@@ -69,7 +69,7 @@ telco:telco
 
 <br />
 
-## 2. MAC Address Spoofing
+## MAC Address Spoofing
 
 First of all, you need to use network adapter which has monitor mode on your machine.  
 **[Aircrack-ng](https://github.com/aircrack-ng/aircrack-ng){:target="_blank"}** is a complete suite of tools to assess WiFi network security.
@@ -132,7 +132,7 @@ First of all, you need to use network adapter which has monitor mode on your mac
 
 <br />
 
-## 3. WiFi Password Recovery
+## WiFi Password Recovery
 
 1. **Windows**
 
@@ -148,7 +148,7 @@ First of all, you need to use network adapter which has monitor mode on your mac
 
 <br />
 
-## 4. Other Useful Tools
+## Other Useful Tools
 
 - **[Bettercap](https://www.bettercap.org/){:target="_blank"}**
 

@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Change User Info
+## Change User Info
 
 ```json
 POST /authenticate HTTP/1.1
@@ -21,7 +21,7 @@ POST /authenticate HTTP/1.1
 
 <br />
 
-## 2. Steal Tokens
+## Steal Tokens
 
 1. **Open Web Server in Your Local Machine**
 
@@ -39,7 +39,7 @@ POST /authenticate HTTP/1.1
 
 <br />
 
-## 3. CSRF
+## CSRF
 
 1. **Steal Code**
 

@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Content-Length: 0
+## Content-Length: 0
 
 If the target website ignores the Content-Length, you’re able to access the restricted page by request smuggling.
 
@@ -49,7 +49,7 @@ If the target website ignores the Content-Length, you’re able to access the re
 
 <br />
 
-## 2. HTTP/2 Content-Length: 0
+## HTTP/2 Content-Length: 0
 
 1. **Prepare Request**
 

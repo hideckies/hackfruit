@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Basic Analysis
+## Basic Analysis
 
 1. **Check Basic Information**
 
@@ -75,7 +75,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Repair Image Headers
+## Repair Image Headers
 
 1. **PNG**
 
@@ -113,7 +113,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Embed Hidden Data
+## Embed Hidden Data
 
 1. **Use Steghide**
 
@@ -131,7 +131,7 @@ render_with_liquid: false
 
 <br />
 
-## 4. npiet
+## npiet
 
 **[npiet](https://www.bertnase.de/npiet/){:target="_blank"}** is an interpreter for **the piet programming language**.  
 It takes as input a portable pixmap (PPM) and PNG, GIF.

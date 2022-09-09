@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Change Header Values
+## Change Header Values
 
 1. **Cookie**
 
@@ -37,7 +37,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Change Methods
+## Change Methods
 
 ```sh
 GET, POST, PUT, DELETE, HEAD, TRACE, OPTIONS, PATCH, INVENTED, CONNECT, etc.
@@ -49,7 +49,7 @@ X-HTTP-Method-Override: PUT
 
 <br />
 
-## 3. Change POST Params
+## Change POST Params
 
 ```
 POST / HTTP/1.1
@@ -63,7 +63,7 @@ POST / HTTP/1.1
 
 <br />
 
-## 4. Add X-Original-URL, X-Rewrite-URL
+## Add X-Original-URL, X-Rewrite-URL
 
 ```sh
 POST / HTTP/1.1
@@ -79,7 +79,7 @@ username=michael
 
 <br />
 
-## 5. Change Query Parameters
+## Change Query Parameters
 
 ```sh
 https://vulnerable.com/account?id=michael

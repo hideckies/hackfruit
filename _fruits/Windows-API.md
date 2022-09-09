@@ -6,13 +6,13 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Online Tools
+## Online Tools
 
 - **[MalAPI](https://malapi.io/){:target="_blank"}**
 
 <br />
 
-## 2. Keylogger
+## Keylogger
 
 ```c#
 class Keylogger
@@ -49,7 +49,7 @@ class Keylogger
 
 <br />
 
-## 3. Shellcode Launcher
+## Shellcode Launcher
 
 ```c#
 class ShellcodeLauncher

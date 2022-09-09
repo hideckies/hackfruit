@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Archive Files
+## Archive Files
 
 ```sh
 # 7zip
@@ -30,7 +30,7 @@ zip sample sample1.txt sample2.txt
 
 <br />
 
-## 2. Extract Files
+## Extract Files
 
 1. **Basic Extracting**
 
@@ -74,7 +74,7 @@ zip sample sample1.txt sample2.txt
 
 <br />
 
-## 3. Display the Contents without Extracting
+## Display the Contents without Extracting
 
 ```sh
 # Tar

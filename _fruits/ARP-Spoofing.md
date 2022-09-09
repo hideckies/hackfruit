@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Basic Flow
+## Basic Flow
 
 1. **Check Interface and Gateway IP Address**
 

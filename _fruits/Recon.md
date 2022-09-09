@@ -6,7 +6,7 @@ alts: [OSINT]
 render_with_liquid: false
 ---
 
-## 1. Network Investigation
+## Network Investigation
 
 1. **Scan Using Nmap**
 
@@ -27,7 +27,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Port Scan
+## Port Scan
 
 1. **Use Nmap**
 
@@ -151,7 +151,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Find Vulnerabilites
+## Find Vulnerabilites
 
 1. **Automation**
 

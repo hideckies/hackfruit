@@ -1,12 +1,24 @@
 ---
 title: Certificates
 desc: An electronic document used to prove the validity of a public key.
-tags: [Cert, Key, OpenSSL, PEM, PFX, PKCS, RSA]
+tags: [Cert, Key, Netcat, OpenSSL, PEM, PFX, PKCS, RSA, SSL, TLS]
 alts: []
 render_with_liquid: false
 ---
 
-## 1. RSA Attack
+## Connect to Remote Server with SSL/TLS
+
+You need to have two files - certificate and private key.
+
+```sh
+nc --ssl-cert cert.pem --ssl-key private-key.pem <target-ip> <target-port>
+# or
+ncat --ssl-cert cert.pem --ssl-key private-key.pem <target-ip> <target-port>
+```
+
+<br />
+
+## RSA Attack
 
 1. **Retrieve Private Key**
 
@@ -16,7 +28,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. PFX (PKCS#12) -> PEM -> RSA
+## PFX (PKCS#12) -> PEM -> RSA
 
 1. **Crack Password of PFX**
 
@@ -56,7 +68,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. RSA Asymmetrick Encrypt/Decrypt
+## RSA Asymmetrick Encrypt/Decrypt
 
 - **Encryption**
 

@@ -6,7 +6,7 @@ alts: [Reverse-Shell]
 render_with_liquid: false
 ---
 
-## 1. Establish MITM
+## Establish MITM
 
 1. **Use ARP Spoofing**
 
@@ -31,7 +31,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Gain Access to a Shell
+## Gain Access to a Shell
 
 1. **Reverse Shell Via ARP Spoofing**
 

@@ -6,7 +6,7 @@ alts: [Reverse-Engineering]
 render_with_liquid: false
 ---
 
-## 1. Investigation
+## Investigation
 
 1. **Check Security Properties**
 
@@ -53,7 +53,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Crash Replication and Control EIP/RIP
+## Crash Replication and Control EIP/RIP
 
 Instruction Pointer (IP), which is called  the EIP on 32-bit machines, and the RIP on 64-bit machines.  
 The IP points to the next instruction to be executed.
@@ -312,7 +312,7 @@ The IP points to the next instruction to be executed.
 
 <br />
 
-## 3. Fuzzing using Python
+## Fuzzing using Python
 
 1. **Create Python Script**
 

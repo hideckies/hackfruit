@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Change URL Path/Parameters
+## Change URL Path/Parameters
 
 ```
 /api/cmd/whoami
@@ -17,7 +17,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Change POST Parameters
+## Change POST Parameters
 
 1. **Basic Command Injection**
 

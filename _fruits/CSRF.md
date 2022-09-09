@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. POST Request
+## POST Request
 
 The payloads need to be entered in the post form like comments, profile in the target web page.  
 They force to update the victim account's email address to your email address.
@@ -61,7 +61,7 @@ They force to update the victim account's email address to your email address.
 
 <br />
 
-## 2. GET Request (Bypass CSRF Token)
+## GET Request (Bypass CSRF Token)
 
 ```html
 <!-- ex. https://attacker.com/exploit -->

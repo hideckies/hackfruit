@@ -6,13 +6,13 @@ alts: [Recon]
 render_with_liquid: false
 ---
 
-## 1. Use OSINT Helpers
+## Use OSINT Helpers
 
 - **[OSINT Framework](https://osintframework.com/){:target="_blank"}**
 
 <br />
 
-## 2. Investigation
+## Investigation
 
 1. **Comprehensive Tools**
 
@@ -132,7 +132,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Adversary Tactics
+## Adversary Tactics
 
 1. **MITRE**
 

@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. PHP Gadget Chains
+## PHP Gadget Chains
 
 - **PHPGGC**
 
@@ -18,6 +18,6 @@ render_with_liquid: false
 
 <br />
 
-## 2. Ysoserial
+## Ysoserial
 
 **[Ysoserial](https://github.com/frohoff/ysoserial){:target="_blank"}** is a proof-of-concept tool for generating payloads that exploit unsafe Java object deserialization.

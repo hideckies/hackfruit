@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Magic in CyberChef
+## Magic in CyberChef
 
 **[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}** is an amazing swiss army knife for cryptography.
 
@@ -15,7 +15,7 @@ So it's recommended to use the "Magic" at first.
 
 <br />
 
-## 2. Identify the Type of Cipher
+## Identify the Type of Cipher
 
 1. **Manual Identification**
 
@@ -71,7 +71,7 @@ So it's recommended to use the "Magic" at first.
 
 <br />
 
-## 3. Binary Data Manual Operations
+## Binary Data Manual Operations
 
 Using **Python**.
 
@@ -191,7 +191,7 @@ Using **Python**.
 
 <br />
 
-## 4. Encode/Decode
+## Encode/Decode
 
 - **Base16**
 
@@ -244,7 +244,7 @@ Using **Python**.
 
 <br />
 
-## 5. Crack Hashes
+## Crack Hashes
 
 1. **Use Online Automation Tools**
 
@@ -397,7 +397,7 @@ Using **Python**.
 
 <br />
 
-## 6. Encrypt Hashes
+## Encrypt Hashes
 
 - **MD5**
 
@@ -436,7 +436,7 @@ Using **Python**.
 
 <br />
 
-## 7. John the Ripper Techniques
+## John the Ripper Techniques
 
 1. **Search Hash Formats**
 
@@ -483,7 +483,7 @@ Using **Python**.
 
 <br />
 
-## 8. Encrypt Files
+## Encrypt Files
 
 ```sh
 openssl enc -in /etc/passwd -out /tmp/passwd
@@ -492,7 +492,7 @@ openssl enc -in /tmp/passwd -out /etc/passwd
 
 <br />
 
-## 9. Generate Passwords
+## Generate Passwords
 
 1. **Password Hash for /etc/shadow**
 
@@ -505,7 +505,7 @@ openssl enc -in /tmp/passwd -out /etc/passwd
 
 <br />
 
-## 10. Useful Commands
+## Useful Commands
 
 1. **Generate Random Strings**
 
