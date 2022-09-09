@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Brainfuck
+## Brainfuck
 
 ```sh
 +++++ ++++[ ->+++ +++++ +<]>+ +++.< +++++ [->++ +++<] >++++ +.<++ +[->-

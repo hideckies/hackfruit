@@ -6,7 +6,7 @@ alts: [API-Pentesting]
 render_with_liquid: false
 ---
 
-## 1. Find the Vulnerabilities from HTML Source Code
+## Find the Vulnerabilities from HTML Source Code
 
 1. **Check the Names and Values of Input Form**
 
@@ -22,7 +22,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Change URL Parameters
+## Change URL Parameters
 
 1. **Manual Changing**
 

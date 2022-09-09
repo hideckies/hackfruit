@@ -6,7 +6,7 @@ alts: [Recon]
 render_with_liquid: false
 ---
 
-## 1. Find Sensitive Information
+## Find Sensitive Information
 
 ```
 1. In Wireshark, open example.pcapng.
@@ -17,7 +17,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Filters
+## Filters
 
 Enter the following text in a filtering form.
 
@@ -42,7 +42,7 @@ udp.port == 67
 
 <br />
 
-## 3. Data Exfiltration via DNS
+## Data Exfiltration via DNS
 
 ```
 1. Enter "dns" in a filter form
@@ -55,7 +55,7 @@ udp.port == 67
 
 <br />
 
-## 4. Data Exfiltration via HTTP
+## Data Exfiltration via HTTP
 
 ```
 1. Open "File" -> "Export Objects" -> "HTTP...".
@@ -65,7 +65,7 @@ udp.port == 67
 
 <br />
 
-## 5. Read the Capture File Comments
+## Read the Capture File Comments
 
 ```
 Click "Statictics" -> "Capture File Properties.
@@ -73,7 +73,7 @@ Click "Statictics" -> "Capture File Properties.
 
 <br />
 
-## 6. Read the Expert Information
+## Read the Expert Information
 
 ```
 Click "Analyze" -> "Expert Information"

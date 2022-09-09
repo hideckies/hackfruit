@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Automate a Sequence of Requests with Burp Intruder
+## Automate a Sequence of Requests with Burp Intruder
 
 ```
 1. "Project options" -> "Sessions" -> "Session handling rules" panel -> Click "Add"
@@ -37,7 +37,7 @@ option 7. In the Macro editor -> Click "Test macro" to check if the sequence doe
 
 <br />
 
-## 2. Brute Force using Turbo Intruder
+## Brute Force using Turbo Intruder
 
 1. **Single Parameter**
 
@@ -126,7 +126,7 @@ option 7. In the Macro editor -> Click "Test macro" to check if the sequence doe
 
 <br />
 
-## 4. Useful BApps
+## Useful BApps
 
 To install them, move to **“Extender” → “BApp Store”**.
 
@@ -137,7 +137,7 @@ Turbo Intruder
 
 <br />
 
-## 5. Download Request Data for Sqlmap
+## Download Request Data for Sqlmap
 
 When using **Sqlmap**, you'll be able to use the downloaded file.
 

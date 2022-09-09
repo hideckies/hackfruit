@@ -6,7 +6,7 @@ alts: [Web-Basic-Pentesting]
 render_with_liquid: false
 ---
 
-## 1. Manual Discovery
+## Manual Discovery
 
 ```sh
 # Common files
@@ -32,7 +32,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Use Discovery Tools
+## Use Discovery Tools
 
 **[SecLists](https://github.com/danielmiessler/SecLists){:target="_blank"}** is useful wordlists.  
 They are usually located in */usr/share/seclsits/* in Linux.
@@ -103,7 +103,7 @@ They are usually located in */usr/share/seclsits/* in Linux.
 
 <br />
 
-## 3. Framework Detection from Favicon
+## Framework Detection from Favicon
 
 Get the information of the used framework from favicon.
 

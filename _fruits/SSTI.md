@@ -8,7 +8,7 @@ render_with_liquid: true
 
 {% raw %}
 
-## 1. Automation
+## Automation
 
 1. **Use Tplmap**
 
@@ -20,7 +20,7 @@ render_with_liquid: true
 
 <br />
 
-## 2. Manual Injection
+## Manual Injection
 
 1. **Flask Jinja2**
 

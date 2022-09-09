@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Attack Flow
+## Attack Flow
 
 1. **Open Two SSH Sessions**
 

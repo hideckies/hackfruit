@@ -6,7 +6,7 @@ alts: [DNS-Pentesting, Docker-Pentesting, Reverse-Shell, Windows-Priviles-Escala
 render_with_liquid: false
 ---
 
-## 1. Investigation
+## Investigation
 
 1. **Use Automation Tools**
 
@@ -386,7 +386,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Execute Commands as Root Privilege
+## Execute Commands as Root Privilege
 
 1. **Change Shebang in Shell Script**
 
@@ -534,7 +534,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Update Sensitive Information
+## Update Sensitive Information
 
 1. **Change Password of Current User**
 
@@ -573,7 +573,7 @@ render_with_liquid: false
 
 <br />
 
-## 4. LXC/LXD
+## LXC/LXD
 
 LXD is a container management extension for Linux Containers (LXC).
 
@@ -632,7 +632,7 @@ LXD is a container management extension for Linux Containers (LXC).
 
 <br />
 
-## 5. Wildcard Injection with Tar
+## Wildcard Injection with Tar
 
 ```sh
 # Check if there are 'tar' command and wildcard(*) in the sudoers
@@ -664,7 +664,7 @@ whoami
 
 <br />
 
-## 6. Mount Folders
+## Mount Folders
 
 First of all, show mount info.
 
@@ -705,7 +705,7 @@ showmount -e <target-ip>
 
 <br />
 
-## 7. Display the Content of Files You Don't Have Permissions
+## Display the Content of Files You Don't Have Permissions
 
 Using **"more"** command.
 
@@ -730,7 +730,7 @@ Using **"more"** command.
 
 <br />
 
-## 8. Webmin <= 1.920 Remote Code Execution
+## Webmin <= 1.920 Remote Code Execution
 
     ```sh
     git clone https://github.com/MuirlandOracle/CVE-2019-15107

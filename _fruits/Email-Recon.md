@@ -6,7 +6,7 @@ alts: [OSINT, Recon]
 render_with_liquid: false
 ---
 
-## 1. Analyze Messages
+## Analyze Messages
 
 First off, open the message's source code, and copy it.
 
@@ -24,7 +24,7 @@ First off, open the message's source code, and copy it.
 
 <br />
 
-## 2. Malware Detection in Attached Files
+## Malware Detection in Attached Files
 
 If you got mali in which attached "suspicious" files, you need to investigate them.
 

@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: true
 ---
 
-## 1. Proxy Management
+## Proxy Management
 
 1. **Use FoxyProxy**
 
@@ -33,7 +33,7 @@ render_with_liquid: true
 
 <br />
 
-## 2. Port Forwarding
+## Port Forwarding
 
 1. **Use Socat**
 
@@ -170,7 +170,7 @@ render_with_liquid: true
 
 <br />
 
-## 3. Reverse Shell Relay
+## Reverse Shell Relay
 
 1. **Use Socat**
 
@@ -208,7 +208,7 @@ render_with_liquid: true
 
 <br />
 
-## 4. Reverse Connection
+## Reverse Connection
 
 1. **Use Plink (Windows)**
 
@@ -302,7 +302,7 @@ render_with_liquid: true
 
 <br />
 
-## 5. Address Binding
+## Address Binding
 
 1. **Use SSH**
 
@@ -316,7 +316,7 @@ render_with_liquid: true
 
 <br />
 
-## 6. Forwarding SOCKS Proxy
+## Forwarding SOCKS Proxy
 
 In the target machine,
 
@@ -332,7 +332,7 @@ chisel client <target-ip>:<listen-port> <proxy-port>:socks
 
 <br />
 
-## 7. Reverse SOCKS Proxy
+## Reverse SOCKS Proxy
 
 In your local machine,
 

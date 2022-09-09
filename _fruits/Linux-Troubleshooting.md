@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Check Error Logs
+## Check Error Logs
 
 1. **Print the Message Buffer of Kernel**
 

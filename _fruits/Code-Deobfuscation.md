@@ -6,11 +6,11 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Deobfuscation
+## Deobfuscation
 
 <br />
 
-## 2. Obfuscation
+## Obfuscation
 
 1. **JavaScript**
 

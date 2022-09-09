@@ -6,7 +6,7 @@ alts: [Linux-Privilege-Escalation, Windows-Privilege-Escalation]
 render_with_liquid: false
 ---
 
-## 1. Basic Flow
+## Basic Flow
 
 1. **Open Listener in Your Local Machine**
 
@@ -166,6 +166,6 @@ render_with_liquid: false
 
 <br />
 
-## 2. Pwncat
+## Pwncat
 
 **[Pwncat](https://pwncat.org/){:target="_blank"}** is a reverse and bind shell handler.

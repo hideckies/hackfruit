@@ -6,7 +6,7 @@ alts: [API-Pentesting]
 render_with_liquid: false
 ---
 
-## 1. Use SQL Injections
+## Use SQL Injections
 
 ```
 admin'--
@@ -18,7 +18,7 @@ admin' or 1=1#
 
 <br />
 
-## 2. Use Default Credentials
+## Use Default Credentials
 
 ```sh
 admin:admin
@@ -40,7 +40,7 @@ root:password
 
 <br />
 
-## 3. Brute Force Credentials
+## Brute Force Credentials
 
 1. **Prepare Wordlists**
 

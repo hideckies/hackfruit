@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-## 1. Origin Reflection
+## Origin Reflection
 
 1. **Change Origin Value of Request Header**
 
@@ -54,7 +54,7 @@ render_with_liquid: false
 
 <br />
 
-## 2. Null origin
+## Null origin
 
 1. **Send Request with Origin: null**
 
@@ -92,7 +92,7 @@ render_with_liquid: false
 
 <br />
 
-## 3. Insecure Protocol
+## Insecure Protocol
 
 1. **Send Request with Abbused Origin**
 
@@ -119,7 +119,7 @@ render_with_liquid: false
 
 <br />
 
-## 4. JSONP (Json with Padding)
+## JSONP (Json with Padding)
 
 ```html
 <script>

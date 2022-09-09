@@ -6,7 +6,7 @@ alts: [Linux-Privilege-Escalation]
 render_with_liquid: false
 ---
 
-## 1. System Control
+## System Control
 
 ```sh
 # Check status the service (ex. ssh)
@@ -27,7 +27,7 @@ systemctl disable ssh
 
 <br />
 
-## 2. Download Files Recursively from Web
+## Download Files Recursively from Web
 
 ```sh
 # -r: recursive
@@ -38,7 +38,7 @@ wget -r -np http://example.com/somedir/
 
 <br />
 
-## 3. Text Formatt
+## Text Formatt
 
 1. **Use Awk**
 
@@ -62,7 +62,7 @@ wget -r -np http://example.com/somedir/
 
 <br />
 
-## 4. File Transfer
+## File Transfer
 
 1. **Use Base64**
 
@@ -81,7 +81,7 @@ wget -r -np http://example.com/somedir/
 
 <br />
 
-## 5. Shell Script
+## Shell Script
 
 1. **For Loop**
 
@@ -165,7 +165,7 @@ wget -r -np http://example.com/somedir/
 
 <br />
 
-## 6. Display Data
+## Display Data
 
 1. **Line Numbers**
 
@@ -207,7 +207,7 @@ wget -r -np http://example.com/somedir/
 
 <br />
 
-## 7. Symbolic Link
+## Symbolic Link
 
 For example, "/usr/bin/python3 -> /tmp/python3".
 
@@ -225,7 +225,7 @@ For example, "/usr/bin/python3 -> /tmp/python3".
 
 <br />
 
-## 8. Passwords
+## Passwords
 
 1. **Creat New Passwords**
 

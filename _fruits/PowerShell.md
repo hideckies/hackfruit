@@ -6,7 +6,7 @@ alts: [Windows-Privilege-Escalation]
 render_with_liquid: false
 ---
 
-## 1. Start PowerShell
+## Start PowerShell
 
 In Linux
 
@@ -22,7 +22,7 @@ powershell
 
 <br />
 
-## 2. Basic Commands
+## Basic Commands
 
 1. **OS Information**
 
@@ -165,7 +165,7 @@ powershell
 
 <br />
 
-## 3. About Active Directory
+## About Active Directory
 
 ```sh
 # Get the machine which participates the Active Directory
@@ -178,7 +178,7 @@ Set-ADComputer <PC-NAME> -DnsHostName VULNDC.vuln.local
 
 <br />
 
-## 4. Use PowerView
+## Use PowerView
 
 PowerView is a Powershell’s script to gain network situational awareness on Windows domain.
 

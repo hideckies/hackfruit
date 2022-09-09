@@ -8,7 +8,7 @@ render_with_liquid: true
 
 {% raw %}
 
-## 1. Automation
+## Automation
 
 - **[XSStrike](https://github.com/s0md3v/XSStrike){:target="_blank"}**
 
@@ -28,7 +28,7 @@ render_with_liquid: true
 <br />
 
 
-## 2. Manual
+## Manual
 
 1. **URL Parameters**
 
