@@ -1,7 +1,7 @@
 ---
 title: Steganography
 desc: 
-tags: [Binwalk, Exiftool, Jpeg, JPG, Npiet, OSINT, PDF, PNG, QR, Reverse Engineering, Steganography, Steghide, Zsteg]
+tags: [Binwalk, Digital, Exiftool, Forensics, Jpeg, JPG, Npiet, OSINT, PDF, PNG, QR, Reverse Engineering, Steganography, Steghide, Zsteg]
 alts: []
 render_with_liquid: false
 ---
