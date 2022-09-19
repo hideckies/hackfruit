@@ -16,6 +16,9 @@ render_with_liquid: false
         file ./somefile
         strings ./somefile
 
+        # Security properties
+        checksec ./somefile
+
         # -B: signature
         binwalk -B ./somefile
 
@@ -88,160 +91,151 @@ render_with_liquid: false
 
 <br />
 
-## Analysis
+## Dynamic Analysis
 
-1. **Use Softwares**
+- **GDB**
 
-    - **[REMnux](https://remnux.org/){:target="_blank"}**
+    A GNU debugger.  
+    It's recommended to setup **[Pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}** or **[GEF](https://github.com/hugsy/gef){:target="_blank"}** for enhanced features if you want to use it more efficiency.
 
-        A Linux toolkit for reverse-engineering and analyzing malicious software.
+    First off, change permission of the target file to be executable.
 
-    - **Ghidra**
+    ```sh
+    chmod 700 ./somefile
+    ```
 
-        Open the Ghidra GUI.
+    After that, start debugger.
 
-        ```sh
-        ghidra
-        ```
+    ```sh
+    gdb ./somefile
+    ```
 
-2. **Use Programs**
-
-    - **[GDB](https://www.sourceware.org/gdb/){:target="_blank"}**
-
-        GDB is a GNU debugger.  
-        It's recommended to setup **[Pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}** or **[GEF](https://github.com/hugsy/gef){:target="_blank"}** for enhanced features before using it.
-
-        1. **Change Permission of File**
-
-            First off, change permission of the target file to be executable.
-
-            ```sh
-            chmod 700 example.obj
-            ```
-
-        2. **Start GDB Debugger**
-
-            ```sh
-            gdb
-            ```
-
-        3. **Analysis in Debugger**
-
-            ```sh
-            # Find the protections
-            checksec
-
-            # Create pattern
-            # e.g. 50 bytes
-            pattern create 50
-
-            # Examine memory
-            x/xg $rsp
-            # e.g. output -> 0x7fffffffdf48:	0x6161616161616166
-
-            # Search a sequenct of unique substrings of length N
-            pattern search 0x6161616161616166
-            # or
-            pattern offset 0x6161616161616166
-
-            # Set breakpoint at specific point
-            break main
-
-            # Start debugged program
-            run
-            # Buffer overflow
-            run <<< `python3 -c 'print("A"*32+"B"*8+"C"*8)'`
-            (python3 -c 'print("A"*32+"BBBBBBBB"+"\x86\x06\x40\x00\x00\x00\x00\x00")'; cat) | ./Dear
-
-            # List of integer registers and their contents
-            info registers
-            ```
-
-        4. **Quit Debugger**
-
-            ```sh
-            quit
-            ```
-
-    - **Rizin**
-
-        **[Rizin](https://github.com/rizinorg/rizin){:target="_blank"}** is a fork of **Radare2**.
+    - **Information**
 
         ```sh
-        # Start
-        rizin example.exe
+        # List all functions
+        gdb> info function
 
-        # --------------------------------------
-
-        # Seek
-        > s
-        # Help
-        > s?
-
-        # Print
-        > p
-        # Print in hexadecimal
-        > px
-        # Print in disassembling
-        > pd
-        # Help
-        > p?
-
-        # Write string
-        > w hello world
-        # Write hexpairs
-        > wx 90 90 90 90
-        # Write assembly opcodes
-        > wa jmp 0x8048140
-        # Write contents of file
-        > wf inline.bin
-        # Help
-        > w?
-
-        # Help
-        > ?
+        # Print the value of the name
+        gdb> print <function-name>
+        gdb> print main
         ```
 
-    - **Radare2**
-
-        **[Radare2](https://github.com/radareorg/radare2){:target="_blank"}** is a reverse engineering framework and command-line toolset.
+    - **Breakpoint**
 
         ```sh
-        # Start
-        r2 ./somefile
-        r2 -d ./somefile
+        # Set a breakpoint at function name
+        gdb> break <function-name>
+        gdb> break main
+        gdb> break vuln
 
-        >aaa
-        >pdf @main
+        # Delete all breakpoints
+        gdb> delete
+        # Delete given breakpoint
+        gdb> delete <breakpoint-number>
+        gdb> delete 1
+        gdb> delete 2
+        # Delete multiple breakpoints
+        gdb> delete 1 2
 
-        # List of functions
-        > afl
-        > afl | grep main
-
-        # Print disassembly function
-        > pdf
-        > pdf @main
-
-        # Add breakpoints
-        > db 0x55ae... (hex address of the instruction)
-        # Remove breakpoints
-        > db -0x55ae...
-
-        # Execute the program and stop at the breakpoints
-        > dc
-        # Seek/move onto the next instruction
-        > ds
-
-        # Print the value of memory in hex
-        > px @rbp-0xc
-        > px @rbp-0x8
-
-        # See the value of registers
-        > dr
-
-        # Reload the program
-        > ood
-
-        # Help
-        > ?
+        # List breakpoints
+        gdb> info breakpoints
         ```
+
+    - **Run**
+
+        Run to the next breakpoint or end.
+
+        ```sh
+        gdb> run
+
+        # Input data
+        gdb> run < pattern.txt
+        ```
+
+    - **Step**
+
+        ```sh
+        # Continue normal execution
+        gdb> continue
+        ```
+
+    - **Disassemble**
+
+        ```sh
+        # Disassembly the current function or given location
+        gdb> disassemble
+        gdb> disassemble main
+        ```
+
+    - **Print Memory**
+
+        ```sh
+        # Byte
+        gdb> x/1xb $eip
+        # Half-word (2 bytes)
+        gdb> x/1xh $eip
+        # Word (4 bytes)
+        gdb> x/1xw $eip
+        # Giant-word (8 bytes)
+        gdb> x/1xg $eip
+        ```
+
+    - **Set Address to Registers**
+
+        You can insert the unexpected function to the next instruction by setting the EIP to the address of the function.
+
+        ```sh
+        # Set target address to EIP while running the program so you can hijack it.
+        gdb> set $eip = <address>
+        gdb> set $eip = 0x565561a9
+        ```
+
+    - **Quit**
+
+        ```sh
+        gdb> quit
+        ```
+
+- **Rizin**
+
+    **[Rizin](https://github.com/rizinorg/rizin){:target="_blank"}** is a fork of **Radare2**.
+
+    ```sh
+    # Start
+    rizin example.exe
+
+    # --------------------------------------
+
+    # Seek
+    > s
+    # Help
+    > s?
+
+    # Print
+    > p
+    # Print in hexadecimal
+    > px
+    # Print in disassembling
+    > pd
+    # Help
+    > p?
+
+    # Write string
+    > w hello world
+    # Write hexpairs
+    > wx 90 90 90 90
+    # Write assembly opcodes
+    > wa jmp 0x8048140
+    # Write contents of file
+    > wf inline.bin
+    # Help
+    > w?
+
+    # Help
+    > ?
+    ```
+
+- **Ghidra**
+
+    Coming soon.
