@@ -1,7 +1,7 @@
 ---
 title: Cross-Site Tracing (XST)
 desc: 
-tags: [Burp, Cross, Site, Web, XST]
+tags: [Burp, Cross, Site, TRACE, Web, XST]
 alts: [Cookie-Hijacking]
 render_with_liquid: false
 ---
