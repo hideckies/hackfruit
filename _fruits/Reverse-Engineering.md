@@ -2,7 +2,7 @@
 title: Reverse Engineering
 desc: Analyze and get the knowledge of executables.
 tags: [Binary, ELF, Exe, Ghidra, GDB, Hex, Malware, Obj, Radare, Reverse Engineering, Rizin]
-alts: [Android-APK-Pentesting, Assembly, Malware-Analysis, Steganography]
+alts: [Android-APK-Pentesting, Malware-Analysis, x86-Assembly]
 render_with_liquid: false
 ---
 
