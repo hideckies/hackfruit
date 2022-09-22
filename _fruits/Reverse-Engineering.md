@@ -116,9 +116,16 @@ render_with_liquid: false
         # List all functions
         gdb> info function
 
+        # Information of registers
+        gdb> info registers
+
         # Print the value of the name
         gdb> print <function-name>
         gdb> print main
+
+        # print the non-register data
+        # /x: hex
+        gdb> print /x buffer
         ```
 
     - **Breakpoint**
@@ -156,6 +163,9 @@ render_with_liquid: false
     - **Step**
 
         ```sh
+        # Step into the next one instruction.
+        gdb> stepi
+
         # Continue normal execution
         gdb> continue
         ```

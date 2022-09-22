@@ -193,7 +193,7 @@ render_with_liquid: false
         cat /etc/pam.d/passwd
         # Sudo config
         cat /etc/sudoers
-        cat /etc/sodoers.d/usersgroup
+        cat /etc/sudoers.d/usersgroup
         # SSH config
         cat /etc/ssh/ssh_config
         cat /etc/ssh/sshd_config
@@ -219,6 +219,17 @@ render_with_liquid: false
         # Display the currently-running processes.
         ps
         ps aux
+        ps aux | grep ping
+        ```
+
+    2. **Tcpdump**
+
+        If the process (like ping) is running as root, you may be able to capture the interesting information using tcpdump.
+
+        ```sh
+        # -i lo: specify interface (lo: loopback address, localhost)
+        # -A: print each packet in ASCII
+        tcpdump -i lo -A
         ```
 
 5. **Find Sensitive Information**
