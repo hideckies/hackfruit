@@ -28,6 +28,12 @@ render_with_liquid: false
 
 # Apache Tomcat
 /manager
+
+# If you know the users manage the website, try the usernames
+/admin
+/administrator
+/john
+/michael
 ```
 
 <br />
