@@ -1,7 +1,7 @@
 ---
 title: Reverse Engineering
 desc: Analyze and get the knowledge of executables.
-tags: [Binary, ELF, Exe, Ghidra, GDB, Hex, Malware, Obj, Radare, Reverse Engineering, Rizin]
+tags: [Assemble, Assembly, Binary, ELF, Exe, Ghidra, GDB, Hex, Malware, Obj, Radare, Reverse Engineering, Rizin]
 alts: [Android-APK-Pentesting, Malware-Analysis, x86-Assembly]
 render_with_liquid: false
 ---
@@ -119,9 +119,14 @@ render_with_liquid: false
         # Information of registers
         gdb> info registers
 
-        # Print the value of the name
+        # Print the value of functions
         gdb> print <function-name>
         gdb> print main
+
+        # Print the value of memory (variable) with casting
+        gdb> print (int)<variable-name>
+        gdb> print {int}(<address-of-variable>)
+        gdb> print {int}(0x01234567)
 
         # print the non-register data
         # /x: hex
@@ -199,6 +204,26 @@ render_with_liquid: false
         # Set target address to EIP while running the program so you can hijack it.
         gdb> set $eip = <address>
         gdb> set $eip = 0x565561a9
+        ```
+
+    - **Set Value to Memory (Variable)**
+
+        When you set the value into variables, note that you need to cast the variable has unknown type.
+
+        ```sh
+        # examine the current value
+        gdb> print (int)<variable-name>
+
+        # check the address of the variable
+        gdb> info address <variale-name>
+
+        # set new value
+        gdb> set {int}(<address-of-variable>) = 666
+
+        # confirm that the value of the variable changed
+        gdb> print (int)<variable-name>
+        # or
+        gdb> print {int}(<address-of-variable>)
         ```
 
     - **Quit**
