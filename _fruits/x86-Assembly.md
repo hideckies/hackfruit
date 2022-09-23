@@ -90,6 +90,8 @@ render_with_liquid: false
     - **MOV DWORD** - Copy (double word)
     - **MOV QWORD** - Copy (quad word)
 
+    - **NOP**       - No operation
+
     - **PUSH**      - Push onto stack
     - **POP**       - Pop stack
 
@@ -181,24 +183,29 @@ Every assembly language program is divided into three sections.
 
     ```
     .section .data
+        constant:
+            .int 10
 
     .section .bss
-    .lcomm buffer 1
+        .lcomm buffer 1
 
     .section .text
-    .globl _start
+        .globl _start
 
     _start:
-    nop                                       # used for debugging purposes
+        nop                                       # used for debugging purposes
 
-    mov_immediate_data_to_register:
-    movl $100, %eax                           # mov 100 into the EAX register
-    movl $0x50, buffer                        # mov 0x50 into buffer memory location
+    mov_data_to_registers:
+        movl $100, %eax                           # mov 100 into the EAX register
+        movl $0x50, buffer                        # mov 0x50 into buffer memory location
+
+    mov_data_between_memory_and_registers:
+        movl constant, %ecx
 
     exit:
-    movl $1, %eax                             # sys_exit system call
-    movl $0, %ebx                             # exit code 0 successful execution
-    int $0x80                                 # call sys_exit
+        movl $1, %eax                             # sys_exit system call
+        movl $0, %ebx                             # exit code 0 successful execution
+        int $0x80                                 # call sys_exit
     ```
 
     To compile it, run the following two commands.
@@ -218,22 +225,22 @@ Every assembly language program is divided into three sections.
     section .data
 
     section .bss
-    buffer resb 1
+        buffer resb 1
 
     section .text
-    global _start
+        global _start
 
     _start:
-    nop                                    ;used for debugging purposes
+        nop                                    ;used for debugging purposes
 
     mov_immediate_data_to_register:
-    mov eax, 100                           ;mov 100 into EAX register
-    mov byte[buffer], 0x50                 ;mov 0x50 into buffer memory location
+        mov eax, 100                           ;mov 100 into EAX register
+        mov byte[buffer], 0x50                 ;mov 0x50 into buffer memory location
 
     exit:
-    mov eax, 1                             ;sys_exit system call
-    mov ebx, 0                             ;exit code 0 successful execution
-    int 0x80                               ;call sys_exit
+        mov eax, 1                             ;sys_exit system call
+        mov ebx, 0                             ;exit code 0 successful execution
+        int 0x80                               ;call sys_exit
     ```
 
     To compile it, run the following two commands.
