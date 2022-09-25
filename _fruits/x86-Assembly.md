@@ -160,11 +160,15 @@ gcc -m32 sample.o -o sample
 
 <br />
 
-## Examine Executable File
+## Information of Executable File
 
 ```sh
 objdump -d <executable-file>
 objdump -d sample
+
+# -M: specific disassemble option
+objdump -d -M att sample
+objdump -d -M intel sample
 ```
 
 <br />
@@ -185,6 +189,8 @@ Every assembly language program is divided into three sections.
     .section .data
         constant:
             .int 10
+        constants:
+            .int  5, 8, 17, 44, 50, 52, 60, 65, 70, 77, 80      # array
 
     .section .bss
         .lcomm buffer 1
@@ -193,19 +199,26 @@ Every assembly language program is divided into three sections.
         .globl _start
 
     _start:
-        nop                                       # used for debugging purposes
+        nop                                         # used for debugging purposes
 
     mov_data_to_registers:
-        movl $100, %eax                           # mov 100 into the EAX register
-        movl $0x50, buffer                        # mov 0x50 into buffer memory location
+        movl $100, %eax                             # mov 100 into the EAX register
+        movl $0x50, buffer                          # mov 0x50 into buffer memory location
 
     mov_data_between_memory_and_registers:
         movl constant, %ecx
 
+    indirect_addressing:
+        movl constants, %eax                        # mov constants value into eax
+        movl constants, %edi                        # mov memory address into edi
+        movl $25, 4(%edi)                           # mov immediate val 4b after edi ptr
+        movl $1, %edi                               # load 2nd index constants label
+        movl constants(, %edi, 4), %ebx
+
     exit:
-        movl $1, %eax                             # sys_exit system call
-        movl $0, %ebx                             # exit code 0 successful execution
-        int $0x80                                 # call sys_exit
+        movl $1, %eax                               # sys_exit system call
+        movl $0, %ebx                               # exit code 0 successful execution
+        int $0x80                                   # call sys_exit
     ```
 
     To compile it, run the following two commands.

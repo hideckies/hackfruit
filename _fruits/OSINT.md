@@ -6,7 +6,7 @@ alts: [Recon]
 render_with_liquid: false
 ---
 
-## Use OSINT Helpers
+## Frameworks
 
 - **[OSINT Framework](https://osintframework.com/){:target="_blank"}**
 
@@ -15,6 +15,10 @@ render_with_liquid: false
 ## Investigation
 
 1. **Comprehensive Tools**
+
+    - **[DeHashed](https://www.dehashed.com){:target="_blank"}**
+
+    - **[Have I Been Pwned](https://haveibeenpwned.com/){:target="_blank"}**
 
     - **[MetaDefender Cloud](https://metadefender.opswat.com/){:target="_blank"}**
 

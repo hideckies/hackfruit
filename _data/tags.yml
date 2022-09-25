@@ -27,7 +27,6 @@
 - name: Spectrogram
 - name: SSH
 - name: Steganography
-- name: Troubleshooting
 - name: Web
 - name: WiFi
 - name: Windows
