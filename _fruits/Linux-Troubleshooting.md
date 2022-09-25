@@ -1,7 +1,7 @@
 ---
 title: Linux Troubleshooting
 desc: 
-tags: [Dmesg, Journalctl, Linux, Troubleshooting]
+tags: [Dmesg, Journalctl, Linux, Trouble]
 alts: []
 render_with_liquid: false
 ---

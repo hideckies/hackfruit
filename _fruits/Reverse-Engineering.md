@@ -183,9 +183,18 @@ render_with_liquid: false
         gdb> disassemble main
         ```
 
-    - **Print Memory**
+    - **Examine Value, Memory**
 
         ```sh
+        # Value
+        gdb> x/1 &<variable-name>
+        gdb> x/1 &constant
+        # print 6 values of the variable
+        gdb> x/6 &constants
+
+        # Decimal
+        gdb> x/1d $eip
+        gdb> x/6d &<variable-name>
         # Byte
         gdb> x/1xb $eip
         # Half-word (2 bytes)
