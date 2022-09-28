@@ -106,6 +106,60 @@ render_with_liquid: false
     - **MUL**   - Multiply (unsigned)
     - **IMUL**  - Multiply (signed)
 
+- **Conditional Instructions**
+
+    - **CMOVA**     - Move if above (CF=0 and ZF=0)
+    - **CMOVAE**    - Move if above or equal (CF=0)
+    - **CMOVB**     - Move if below (CF=1)
+    - **CMOVBE**    - Move if below or equal (CF=1)
+    - **CMOVC**     - Move if carry (CF=1)
+    - **CMOVE**     - Move if equal (ZF=1)
+    - **CMOVG**     - Move if greater (ZF=0 and SF=OF)
+    - **CMOVGE**    - Move if greater or equal (SF=OF)
+    - **CMOVL**     - Move if less (SF≠OF)
+    - **CMOVLE**    - Move if less or equal (ZF=1 or SF≠OF)
+    - **CMOVO**     - Move if overflow (OF=1)
+    - **CMOVP**     - Move if parity (PF=1)
+    - **CMOVPE**    - Move if parity even (PF=1)
+    - **CMOVPO**    - Move if parity odd (PF=0)
+    - **CMOVS**     - Move if sign (SF=1)
+    - **CMOVZ**     - Move if zero (ZF=0)
+
+    - **CMOVNA**    - Move if not above (CF=1 or ZF=1)
+    - **CMOVNAE**   - Move if not above or equal (CF=1)
+    - **CMOVNB**    - Move if not below (CF=0)
+    - **CMOVNBE**   - Move if not below or equal (CF=0 and ZF=0)
+    - **CMOVNC**    - Move if not carry (CF=0)
+    - **CMOVNE**    - Move if not equal (ZF=0)
+    - **CMOVNG**    - Move if not greater (ZF=1 or SF≠OF)
+    - **CMOVNGE**   - Move if not greater or equal (SF≠OF)
+    - **CMOVNL**    - Move if not less (SF=OF)
+    - **CMOVNLE**   - Move if not less or equal (ZF=0 and SF=OF)
+
+    - **JMP**       - Jump
+    - **JA**        - Jump if above
+    - **JAE**       - Jump if above or equal
+    - **JB**        - Jump if below
+    - **JBE**       - Jump if below or equal
+    - **JC**        - Jump if carry
+    - **JE**        - Jump if equal
+    - **JG**        - Jump if greater
+    - **JGE**       - Jump if greater or equal
+    - **JL**        - Jump if less
+    - **JLE**       - Jump if less or equal
+    - **JO**        - Jump if overflow
+    - **JP**        - Jump if parity
+    - **JPE**       - Jump if parity even
+    - **JPO**       - Jump if parity odd
+    - **JS**        - Jump if sign
+    - **JZ**        - Jump if zero
+
+    - **JNC**       - Jump if not carry
+    - **JNE**       - Jump if not equal
+    - **JNO**       - Jump if not overflow
+    - **JNP**       - Jump if not parity
+    - **JNS**       - Jump if not sign
+
 <br />
 
 ## Create 32bit Program
@@ -178,8 +232,8 @@ objdump -d -M intel sample
 Every assembly language program is divided into three sections.
 
 - **Data section** - used for declaring initialized data or constants.
-- **BSS section** - used for declaring uninitialized data or variables.
-- **Text section** - used for the actual code sections as it begins with a global __start which tells  the kernel where execution begins.
+- **BSS section** - the block starting symbol. used for declaring uninitialized data or variables.
+- **Text section** - used for the actual code sections as it begins with a global _start which tells the kernel where execution begins.
 
 1. **AT&T**
 
@@ -187,12 +241,17 @@ Every assembly language program is divided into three sections.
 
     ```
     .section .data
+        result:
+            .asciz "The smallest value is "
+        lr:
+            .ascii ".\n"
         constant:
             .int 10
         constants:
             .int  5, 8, 17, 44, 50, 52, 60, 65, 70, 77, 80      # array
 
     .section .bss
+        .comm answer, 1
         .lcomm buffer 1
 
     .section .text
@@ -214,6 +273,34 @@ Every assembly language program is divided into three sections.
         movl $25, 4(%edi)                           # mov immediate val 4b after edi ptr
         movl $1, %edi                               # load 2nd index constants label
         movl constants(, %edi, 4), %ebx
+
+    find_smallest_value:
+        movl constants(, %edi, 4), %eax
+        cmp %ebx, %eax
+        cmovb %eax, %ebx
+        inc %edi
+        cmp $8, %edi
+        jne find_smallest_value
+        addl $0x30, %ebx
+        movl %ebx, answer
+
+        movl $4, %eax
+        movl $1, %ebx
+        movl $result, %ecx
+        movl $23, %edx
+        int $0x80
+
+        movl $4, %eax
+        movl $1, %ebx
+        movl $answer, %ecx
+        movl $1, %edx
+        int $0x80                                   # call sys_write
+
+        movl $4, %eax
+        movl $1, %ebx
+        movl $lr, %ecx
+        movl $2, %edx
+        int $0x80                                   # call sys_write
 
     exit:
         movl $1, %eax                               # sys_exit system call
