@@ -118,19 +118,6 @@ render_with_liquid: false
 
         # Information of registers
         gdb> info registers
-
-        # Print the value of functions
-        gdb> print <function-name>
-        gdb> print main
-
-        # Print the value of memory (variable) with casting
-        gdb> print (int)<variable-name>
-        gdb> print {int}(<address-of-variable>)
-        gdb> print {int}(0x01234567)
-
-        # print the non-register data
-        # /x: hex
-        gdb> print /x buffer
         ```
 
     - **Breakpoint**
@@ -140,6 +127,9 @@ render_with_liquid: false
         gdb> break <function-name>
         gdb> break main
         gdb> break vuln
+
+        # Set a breakpoint at address (if you want to know where the desired address, use "disassemble <function-name>" command.)
+        gdb> break *0x0804901e
 
         # Delete all breakpoints
         gdb> delete
@@ -168,6 +158,9 @@ render_with_liquid: false
     - **Step**
 
         ```sh
+        # Step program until it reaches a different source line (e.g. the next function)
+        gdb> step
+
         # Step into the next one instruction.
         gdb> stepi
 
@@ -183,12 +176,46 @@ render_with_liquid: false
         gdb> disassemble main
         ```
 
-    - **Examine Value, Memory**
+    - **Print**
+
+        ```sh
+        # Print the value of functions
+        gdb> print <function-name>
+        gdb> print main
+
+        # Print the value of memory (variable) with casting
+        gdb> print (int)<variable-name>
+        gdb> print {int}(<address-of-variable>)
+        gdb> print {int}(0x01234567)
+
+        # print the non-register data
+        # /x: hex
+        gdb> print /x buffer
+
+        # Print the value of registers
+        gdb> print $eip
+        gdb> print $eax
+        gdb> print $ebx
+
+        # Print array of variable
+        gdb> print (int[8]) <variable-name>
+        gdb> print (int[14]) *0x804a010
+
+        # Print the string of variable
+        gdb> print (char[12]) <variable-name>
+        gdb> print (char[20]) *0x804a000 
+        ```
+
+    - **Examine Memory (Address)**
 
         ```sh
         # Value
         gdb> x/1 &<variable-name>
         gdb> x/1 &constant
+
+        gdb> x/1 <address>
+        gdb> x/1 0x804a039
+
         # print 6 values of the variable
         gdb> x/6 &constants
 

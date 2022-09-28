@@ -6,7 +6,7 @@ alts: [Privilege-Escalation-Linux]
 render_with_liquid: false
 ---
 
-## Connection
+## Network Connection
 
 1. **Status**
 
@@ -69,6 +69,42 @@ render_with_liquid: false
             ```sh
             wireshark /tmp/tcpdump.pcap
             ```
+
+<br />
+
+## DNS Resolver
+
+Check the condition of the name resolution
+
+```bash
+ping example.com
+```
+
+If you cannot ping the target website, the DNS resolver is not working.  
+To change the DNS resolver, update the original nameserver to the new one in /etc/resolv.conf.  
+For example:
+
+```bash
+...
+# nameserver x.x.x.x
+nameserver 8.8.8.8
+...
+```
+
+Below are some representative DNS servers.
+
+- **Google - 8.8.8.8 & 8.8.4.4**
+- **Quad9 - 9.9.9.9 & 149.112.112.112**
+- **OpenDNS - 208.67.222.222 & 208.67.220.220**
+- **Cloudflare - 1.1.1.1 & 1.0.0.1**
+
+After updating /etc/resolv.conf, restart the name resolution service.
+
+```bash
+sudo systemctl restart systemd-resolved.service
+```
+
+<br />
 
 ## Firewall
 

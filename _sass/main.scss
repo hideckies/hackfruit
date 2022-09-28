@@ -9,7 +9,7 @@
     --color-lightgrey: #efeaef;
     --color-darkpink: #cf3fdf;
     --color-pink: #df5fff;
-    --color-white: #ffffef;
+    --color-white: #ffefea;
     // Fonts
     --font-family-main: 'Roboto Mono', monospace;;
     --font-family-code: 'Source Code Pro', monospace;;
@@ -27,7 +27,7 @@ body {
     background: var(--color-black);
     color: var(--color-white);
     font-family: var(--font-family-main);
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 div {
