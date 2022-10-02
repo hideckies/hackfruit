@@ -64,7 +64,7 @@ render_with_liquid: false
 
             It provides archived web pages.
 
-            1. **Research Old Information**
+            - **Research Old Information**
 
                 1. robots.txt, sitemap.xml, and other interesting files.
 
@@ -73,6 +73,12 @@ render_with_liquid: false
                 3. URL parameters
 
                 4. API keys
+
+            - **Useful Tools**
+
+                - **[Waybackurls](https://github.com/tomnomnom/waybackurls){:target="_blank"}**
+
+                    Fetch all URLs that the Wayback Machine knows about for a domain.
 
     2. **IP Address**
 

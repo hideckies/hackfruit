@@ -1,7 +1,7 @@
 ---
 title: x86 Assembly
 desc: 
-tags: [32bit, Assemble, Assembly, Binary, Disassemble, Disassembly, Engineering, GDB, i386, IA-32, Intel, Register, Reverse, x86]
+tags: [32, Assemble, Assembly, Binary, Bit, Disassemble, Disassembly, Engineering, GDB, i386, IA-32, Intel, Register, Reverse, x86]
 alts: [Reverse-Engineering]
 render_with_liquid: false
 ---
