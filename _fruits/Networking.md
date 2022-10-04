@@ -2,7 +2,7 @@
 title: Networking
 desc:
 tags: [Firewall, Linux, Network, Packet, Ping, Traffic, Wireshark]
-alts: [Privilege-Escalation-Linux]
+alts: [Firewall, Privilege-Escalation-Linux]
 render_with_liquid: false
 ---
 
@@ -103,72 +103,6 @@ After updating /etc/resolv.conf, restart the name resolution service.
 ```bash
 sudo systemctl restart systemd-resolved.service
 ```
-
-<br />
-
-## Firewall
-
-1. **Use UFW**
-
-    **Uncomplicated Firewall (UFW)** is a program for managing a netfilter firewall designed to be easy to use.
-
-    1. **Status**
-
-        ```sh
-        ufw show
-        ```
-
-    2. **Enable/Disable Firewall**
-
-        ```sh
-        # Enable
-        ufw enable
-
-        # Disable
-        ufw disable
-        ```
-
-    3. **Default Policies**
-
-        Allow all in default
-
-        ```sh
-        ufw default ALLOW
-        ```
-
-        Deny all in default
-
-        ```sh
-        ufw default DENY
-        ```
-
-    4. **Add Rules**
-
-        Allow rules
-
-        ```sh
-        ufw allow 22
-        ufw allow 22/tcp
-        ufw allow 80
-        ufw allow 80/tcp
-        ```
-
-        Deny rules
-
-        ```sh
-        ufw deny 22
-        ufw deny 22/tcp
-        ufw deny 80
-        ufw deny 80/tcp
-        ```
-
-2. **Use firewalld**
-
-    1. **Open Firewall Port**
-
-        ```sh
-        firewall-cmd --zone=public --add-port 15000/tcp
-        ```
 
 <br />
 
