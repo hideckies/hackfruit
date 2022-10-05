@@ -164,7 +164,7 @@ render_with_liquid: false
         # Step into the next one instruction.
         gdb> stepi
 
-        # Continue normal execution
+        # Execute until next breakpoint
         gdb> continue
         ```
 
