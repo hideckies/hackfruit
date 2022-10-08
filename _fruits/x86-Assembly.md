@@ -75,16 +75,24 @@ render_with_liquid: false
 
     - **LEA**       - Load effective address
 
+        ```sh
+        # AT&T syntax - store [esp+0x18] in eax
+        lea 0x18(%esp), %eax
+
+        # Intel syntax - store [esp+0x18] in eax
+        lea eax, [esp+0x18]
+        ```
+
     - **CALL**      - Call procedure
 
     - **MOV**       - Move
 
         ```sh
-        # AT&T syntax
-        movl %esp, %ebp [move esp into ebp]
+        # AT&T syntax - move esp into ebp
+        movl %esp, %ebp
 
-        # Intel syntax
-        mov esp, ebp [move ebp into esp]
+        # Intel syntax - move ebp into esp
+        mov esp, ebp
         ```
 
     - **MOV DWORD** - Copy (double word)
