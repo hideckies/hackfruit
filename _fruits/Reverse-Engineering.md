@@ -2,7 +2,7 @@
 title: Reverse Engineering
 desc: Analyze and get the knowledge of executables.
 tags: [Assemble, Assembly, Binary, ELF, Exe, Ghidra, GDB, Hex, Malware, Obj, Radare, Reverse Engineering, Rizin]
-alts: [Android-APK-Pentesting, Malware-Analysis, x86-Assembly]
+alts: [Android-APK-Pentesting, Buffer-Overflow-Attack, Malware-Analysis, x86-Assembly]
 render_with_liquid: false
 ---
 
@@ -10,17 +10,19 @@ render_with_liquid: false
 
 1. **Basic Information**
 
+    Assume that the target file named "sample".
+
     1. **Common**
 
         ```sh
-        file ./somefile
-        strings ./somefile
+        file ./sample
+        strings ./sample
 
         # Security properties
-        checksec ./somefile
+        checksec ./sample
 
         # -B: signature
-        binwalk -B ./somefile
+        binwalk -B ./sample
 
         hd ./somefile
         # -n: only length bytes of input (ex. display the first 28 bytes)
@@ -29,8 +31,8 @@ render_with_liquid: false
         # only display the first 64 bytes
         hd -n 64 example.bin
 
-        xxd ./somefile
-        xxd ./somefile | head
+        xxd ./sample
+        xxd ./sample | head
         ```
 
     2. **Object Files**
@@ -39,10 +41,10 @@ render_with_liquid: false
 
             ```sh
             # Get information
-            readelf -a ./somefile
+            readelf -a ./sample
 
             # Change MSB <=> LSB by editing binary number.
-            hexedit ./somefile
+            hexedit ./sample
             (MSB) 7F 45 4C 46  02 02 01 ... <=> (LSB) 7F 45 4C 46  02 01 01 ...
             ```
 
@@ -91,6 +93,36 @@ render_with_liquid: false
 
 <br />
 
+## Code Examination
+
+```sh
+ghidra ./sample
+```
+
+<br />
+
+## Run Program
+
+```sh
+chmod 700 sample
+./sample
+```
+
+If the program allow you to input some text, you can try first.
+
+1. **printf vulnerability**
+
+    **"printf"**, a function in the C language, is vulnerable to display the internal values from inputs.
+
+    ```sh
+    # the value of the pointer
+    > %p
+    # the value of the 10th pointer
+    > %10$p
+    ```
+
+<br />
+
 ## Dynamic Analysis
 
 - **GDB**
@@ -101,13 +133,13 @@ render_with_liquid: false
     First off, change permission of the target file to be executable.
 
     ```sh
-    chmod 700 ./somefile
+    chmod 700 ./sample
     ```
 
     After that, start debugger.
 
     ```sh
-    gdb ./somefile
+    gdb ./sample
     ```
 
     - **Information**
@@ -306,7 +338,3 @@ render_with_liquid: false
     # Help
     > ?
     ```
-
-- **Ghidra**
-
-    Coming soon.

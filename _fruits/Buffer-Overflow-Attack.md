@@ -1,7 +1,7 @@
 ---
 title: Buffer Overflow Attack
 desc: An anomaly where a program, while writing data to a buffer, overruns the buffer's boundary and overwrites adjacent memory locations.
-tags: [Binary, Buffer, Exe, Overflow, PrivEsc, Privilege, Pwndbg, Pwntools, Reverse]
+tags: [Binary, Buffer, Exe, Ghidra, Overflow, PrivEsc, Privilege, Pwndbg, Pwntools, Reverse]
 alts: [Reverse-Engineering]
 render_with_liquid: false
 ---
@@ -10,7 +10,7 @@ render_with_liquid: false
 
 1. **Check Security Properties**
 
-    Assuming that the target file named "sample".
+    Assume that the target file named "sample".
 
     ```sh
     checksec ./sample
@@ -80,7 +80,7 @@ The IP points to the next instruction to be executed.
         # or
         msf-pattern_create -l 100 > pattern.txt
         # or
-        python3 -c "print('A'*200)"
+        python3 -c "print('A'*200)" > pattern.txt
         ```
 
     2. **Start Debugging with GDB**
