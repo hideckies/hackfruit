@@ -43,7 +43,7 @@ render_with_liquid: false
     steghide info sample.jpg
     steghide extract -sf sample.jpg
 
-    # PNG & BMP only
+    # PNG & BMP only - https://github.com/zed-0xff/zsteg
     zsteg -a sample.png
 
     # PDF only
