@@ -115,13 +115,19 @@ render_with_liquid: false
 
 ## Embed Hidden Data
 
-1. **Use Steghide**
+- **Exiftool**
+
+    ```sh
+    exiftool -Key="value" sample.jpg
+    ```
+
+- **Steghide**
 
     ```sh
     steghide embed -ef sample.jpg
     ```
 
-2. **Use Outguess**
+- **Outguess**
 
     **[Outguess](A steganography tool for JPG, PPM and PNM.){:target="_blank"}** is a steganography tool for JPG, PPM and PNM.
 
