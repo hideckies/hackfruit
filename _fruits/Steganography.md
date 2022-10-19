@@ -14,6 +14,8 @@ render_with_liquid: false
     open example.jpg
     file example.jpg
     strings example.jpg
+    strings example.jpg | head
+    xxd example.jpg
     ```
 
 2. **Extract the Data inside the Image File**
