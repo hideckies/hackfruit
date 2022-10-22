@@ -54,6 +54,8 @@ zip sample sample1.txt sample2.txt
 
     # Zip
     unzip sample.zip
+    # extract it to the given directory
+    unzip sample.zip -d ./sample
     ```
 
 2. **Crack Passwords**
