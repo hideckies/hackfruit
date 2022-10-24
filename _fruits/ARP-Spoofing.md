@@ -1,7 +1,7 @@
 ---
 title: ARP Spoofing
 desc: Address Resolution Protocol (ARP) is used to find another computer’s MAC address based on its IP address.
-tags: [ARP, Network]
+tags: [Address, ARP, MAC, Network]
 alts: []
 render_with_liquid: false
 ---
@@ -34,3 +34,13 @@ render_with_liquid: false
     # -j: jump
     iptables -A FORWARD -i eth0 -j ACCEPT
     ```
+
+<br />
+
+## Find MAC Address
+
+```sh
+cat /sys/class/net/eth0/address
+cat /sys/class/net/enp0s3/address
+cat /sys/class/net/tun0/address
+```
