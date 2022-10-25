@@ -110,7 +110,7 @@ chmod 700 sample
 
 If the program allow you to input some text, you can try first.
 
-1. **printf vulnerability**
+1. **Format String Attack**
 
     **"printf"**, a function in the C language, is vulnerable to display the internal values from inputs.
 
@@ -292,6 +292,14 @@ If the program allow you to input some text, you can try first.
         gdb> print (int)<variable-name>
         # or
         gdb> print {int}(<address-of-variable>)
+        ```
+
+    - **Jump**
+
+        Jump to destination address.
+
+        ```sh
+        gdb> jump *0x0040096a
         ```
 
     - **Quit**

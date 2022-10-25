@@ -6,6 +6,39 @@ alts: []
 render_with_liquid: false
 ---
 
+## Custom HTTP Header
+
+It is useful for bug bounties.
+
+1. Go to Proxy -> Options tab.
+2. Scroll down to "Match and Replace".
+3. Click on "Add".
+4. Set rule:
+
+    - **User Agent**
+
+        ```
+        Type: Request header
+        Match: ^User-Agent.*$
+        Replace: User-Agent: HackerOne-username
+        Comment:
+        ```
+
+    - **New Original Header**
+
+        ```
+        Type: Request header
+        Match: (empty)
+        Replace: X-Bug-Bounty: HackerOne-username
+        Comment:
+        ```
+
+5. Check the box of "Regex match".
+6. Click on "OK".
+7. Search for the rule in the list and click on "Enabled".
+
+<br />
+
 ## Automate a Sequence of Requests with Burp Intruder
 
 ```
