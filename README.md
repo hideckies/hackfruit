@@ -17,5 +17,8 @@ bundle install
 For starting local server,
 
 ```sh
+chmod +x server.sh
+./server.sh
+# or
 bundle exec jekyll serve
 ```
