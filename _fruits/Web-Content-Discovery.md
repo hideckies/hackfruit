@@ -2,7 +2,7 @@
 title: Web Content Discovery
 desc: 
 tags: [API, Content, Dirb, Directory, Discovery, Ffuf, Gobuster, Web]
-alts: [Web-Basic-Pentesting]
+alts: [Web-Basic-Pentesting, Web-Login-Bypass]
 render_with_liquid: false
 ---
 
@@ -19,6 +19,9 @@ render_with_liquid: false
 /js/jquery.min.js
 /js/main.js
 /js/script.js
+
+# Sensitive information
+/.env
 
 # GitHub
 /READ.md

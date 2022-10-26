@@ -1,8 +1,8 @@
 ---
 title: Web Login Bypass
 desc: 
-tags: [Burp, Ffuf, Hydra, Login, SQLi, Web, Wfuzz]
-alts: [API-Pentesting]
+tags: [Burp, Ffuf, Hydra, Login, Password, SQLi, Web, Wfuzz]
+alts: [Web-Basic-Pentesting, Web-Content-Discovery]
 render_with_liquid: false
 ---
 
