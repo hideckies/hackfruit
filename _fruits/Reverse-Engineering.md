@@ -19,7 +19,7 @@ render_with_liquid: false
         strings ./sample
 
         # Security properties
-        checksec ./sample
+        checksec --file=./sample
 
         # -B: signature
         binwalk -B ./sample

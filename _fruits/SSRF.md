@@ -1,5 +1,5 @@
 ---
-title: Server-Side Request Forgery
+title: Server-Side Request Forgery (SSRF)
 desc: 
 tags: [SSRF, Web]
 alts: []

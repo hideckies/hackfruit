@@ -7,7 +7,7 @@
 - name: Cloud
 - name: CMS
 - name: Container
-- name: Cryptography
+- name: Crypto
 - name: Database
 - name: DNS
 - name: Jenkins

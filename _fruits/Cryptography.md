@@ -1,15 +1,14 @@
 ---
 title: Cryptography
 desc: 
-tags: [Base, Cipher, Crypto, CyberChef, Hash, John, MD5, OpenSSL, Python, SHA1, SHA2, XOR]
+tags: [Cipher, Crack, Crypto, CyberChef, Hash, John, OpenSSL, Password, Python, XOR]
 alts: []
 render_with_liquid: false
 ---
 
 ## Magic in CyberChef
 
-**[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}** is an amazing swiss army knife for cryptography.
-
+**[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}** is a swiss army knife for cryptography.  
 Especially, **"Magic"** tool can process the given hashes automatically.  
 So it's recommended to use the "Magic" at first.
 
@@ -17,7 +16,7 @@ So it's recommended to use the "Magic" at first.
 
 ## Identify the Type of Cipher
 
-1. **Manual Identification**
+- **Manual Identification**
 
     The following cryptos mean "hello".
 
@@ -61,7 +60,7 @@ So it's recommended to use the "Magic" at first.
     9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca72323c3d99ba5c11d7c7acc6e14b8c5da0c4663475c2e5c3adef46f73bcdec043
     ```
 
-2. **Use Online Tools**
+- **Online Tools**
 
     - **[Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier){:target="_blank"}**
 
@@ -191,68 +190,20 @@ Using **Python**.
 
 <br />
 
-## Encode/Decode
+## Vigenere Cipher
 
-- **Base16**
-
-    ```sh
-    # Encode
-    base16 example.txt
-    echo -n 'hello' | base16
-
-    # Decode
-    base16 -d encoded.txt
-    echo -n '68656c6c6f0a' | base16 -d
-    ```
-
-- **Base32**
-
-    ```sh
-    # Encode
-    base32 example.txt
-    echo -n 'hello' | base32
-
-    # Decode
-    base32 -d encoded.txt
-    echo -n 'NBSWY3DP' | base32 -d
-    ```
-
-- **Base64**
-
-    ```sh
-    # Encode
-    base64 example.txt
-    echo -n 'hello' | base64
-
-    # Decode
-    base64 -d encoded.txt
-    echo -n 'aGVsbG8=' | base64 -d
-    ```
-
-- **ROT13**
-
-    ```sh
-    # Encode
-    echo hello | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-    ```
-
-- **Vigenere Cipher**
-
-    1. **Use Online Tools**
-
-        - **[Vigenere Cipher](https://www.dcode.fr/vigenere-cipher){:target="_blank"}**
+- **[Vigenere Cipher](https://www.dcode.fr/vigenere-cipher){:target="_blank"}**
 
 <br />
 
 ## Crack Hashes
 
-1. **Use Online Automation Tools**
+1. **Online Tools**
 
     - **[CrackStation](https://crackstation.net/){:target="_blank"}**
-
     - **[Hashes.com](https://hashes.com/en/decrypt/hash){:target="_blank"}**
 
-2. **Use the Cracking Tools**
+2. **Cracking Tools**
 
     First of all, you need to put the hash into the file like the following.
 
@@ -266,172 +217,6 @@ Using **Python**.
 
     ```sh
     hashcat -m <hash-mode> -a 3 '?a?a?a?a?a'
-    ```
-
-    1. **Decrypt MD4, MD5**
-
-        1. **Use Online Tools**
-
-            - **[MD5 Center](https://md5.gromweb.com/){:target="_blank"}**
-
-        2. **Use Cracking Tools**
-
-            ```sh
-            # MD4
-            hashcat -m 900 -a 0 hash.txt wordlist.txt
-
-            # MD5
-            john --format=raw-md5 --wordlist=wordlist.txt hash.txt
-            hashcat -m 0 -a 0 hash.txt wordlist.txt
-            ```
-
-    2. **Decrypt SHA1, SHA256, SHA512**
-
-        ```sh
-        # SHA1
-        hashcat -m 100 -a 0 hash.txt wordlist.txt
-
-        # SHA256
-        john --format=raw-sha256 --wordlist=wordlist.txt hash.txt
-        hashcat -m 1400 -a 0 hash.txt wordlist.txt
-
-        # SHA512
-        john --format=raw-sha512 --wordlist=wordlist.txt hash.txt
-        hashcat -m 1700 -a 0 hash.txt wordlist.txt
-        hashcat -m 1800 -a 0 hash.txt wordlist.txt
-
-        # SHA512 (password:salt)
-        PASS='39a57...71bed'
-        SALT='72b5b...02a05'
-        echo -n $PASS > hash_and_salt.txt
-        echo -n '$' >> hash_and_salt.txt
-        echo -n $SALT >> hash_and_salt.txt
-        john --format=dynamic='sha512($p.$s)' --wordlist=wordlist.txt hash_and_salt.txt
-        ```
-
-    3. **Decrypt NTLM, NTLMv2**
-
-        ```sh
-        # NTLM
-        john --format=nt --wordlist=wordlist.txt hash.txt
-        hashcat -m 1000 -a 0 hash.txt wordlist.txt
-
-        # NTLMv2
-        john --format=netntlmv2 --wordlist=wordlist.txt hash.txt
-        ```
-
-    4. **Crack PKCS#12 (.pfx, p12) Password**
-
-        First of all, you need to format the PKCS file to make the John to recognize it.
-
-        ```sh
-        pfx2john example.pfx > hash.txt
-        ```
-
-        Crack the password using the formatted text.
-
-        ```sh
-        john --wordlist=wordlist.txt hash.txt
-        ```
-
-    5. **Crack PEM**
-
-        First of all, you need to format the PEM file to make the John to recognize it.
-
-        ```sh
-        pem2john example.pem > hash.txt
-        ```
-
-        Crack the hash.
-
-        ```sh
-        john --wordlist=wordlist.txt hash.txt
-        ```
-
-    6. **Crack RAR Password**
-
-        First of all, you need to format the RAR file to make the John to recognize it.
-
-        ```sh
-        rar2john example.rar > hash.txt
-        ```
-
-        Crack the password using the formatted text.
-
-        ```sh
-        john --wordlist=wordlist.txt hash.txt
-        ```
-
-    7. **Decrypt GPG**
-
-        1. **Crack the Passphrase from the Private Key**
-
-            First of all, you need to format the private key to make the John to recognize it.
-
-            ```sh
-            gpg2john private_key.asc > key.txt
-            gpg2john private_key.sig > key.txt
-            ```
-
-            Crack the passphrase using the formatted text.
-
-            ```sh
-            john --wordlist=/path/to/wordlist key.txt
-            ```
-
-        2. **Import the Private Key**
-
-            ```sh
-            gpg --import private_key.asc
-            gpg --import private_key.sig
-            ```
-
-        3. **Decrypt GPG (PGP) using the Passphrase**
-
-            At that time, you'll be asked for the passphrase, so enter the passphrase you gotten in the previous section.
-
-            ```sh
-            gpg -d example.gpg
-            gpg -d example.pgp
-            ```
-
-<br />
-
-## Encrypt Hashes
-
-- **MD5**
-
-    ```sh
-    echo -n 'hello' | md5sum
-    md5sum example.txt
-    ```
-
-- **SHA1**
-
-    ```sh
-    echo -n 'hello' | sha1sum
-    sha1sum example.txt
-    ```
-
-- **SHA256**
-
-    ```sh
-    echo -n 'hello' | sha256sum
-    sha256sum example.txt
-    ```
-
-- **SHA512**
-
-    ```sh
-    echo -n 'hello' | sha512sum
-    sha512sum example.txt
-    ```
-
-- **GPG**
-
-    ```sh
-    gpg -e example.txt
-    gpg -c example.txt
     ```
 
 <br />
@@ -492,29 +277,11 @@ openssl enc -in /tmp/passwd -out /etc/passwd
 
 <br />
 
-## Generate Passwords
-
-1. **Password Hash for /etc/shadow**
-
-    ```sh
-    # -6: SHA512
-    # --salt: 'salt'
-    # password: 'password'
-    openssl passwd -6 -salt salt password
-    ```
-
-<br />
-
 ## Useful Commands
 
-1. **Generate Random Strings**
+- **Generate Random Strings**
 
     ```sh
-    # Base64 encoded password
-    openssl rand -base64 3
-
     # Hex encoded password
     openssl rand -hex 4
     ```
-
-<br />
