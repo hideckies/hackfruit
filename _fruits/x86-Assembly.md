@@ -145,7 +145,7 @@ render_with_liquid: false
     - **CMOVNLE**   - Move if not less or equal (ZF=0 and SF=OF)
 
     - **JMP**       - Jump
-    - **JA**        - Jump if above
+    - **JA**        - Jump if above (CF = 0 and ZF = 0)
     - **JAE**       - Jump if above or equal
     - **JB**        - Jump if below
     - **JBE**       - Jump if below or equal
@@ -167,6 +167,13 @@ render_with_liquid: false
     - **JNO**       - Jump if not overflow
     - **JNP**       - Jump if not parity
     - **JNS**       - Jump if not sign
+
+    - **TEST**      - Set ZF (Zero Flag) to 1 if a bitwise AND is 0.
+
+        ```
+        test %eax,%eax ; set ZF to 1 if eax == 0
+        je 0xf7eb0f70  ; jump if ZF == 1
+        ```
 
 <br />
 

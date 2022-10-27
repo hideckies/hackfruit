@@ -59,6 +59,28 @@ root:password
 
 <br />
 
+## Wildcard Brute Force
+
+If it is allowed to login with wildcard (*), you may be able to find the username/password with brute force.
+
+```bash
+username = *
+password = *
+```
+
+For example, in Turbo Intruder (Burp Suite), login attempt with alpha numeric characters one by one.
+
+```bash
+username=%s*&password=*
+# or
+username=*&password=%s*
+```
+
+My favorite wordlist for it is the seclists:  
+[https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/alphanum-case-extra.txt](https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/alphanum-case-extra.txt){:target="_blank"}
+
+<br />
+
 ## Brute Force Credentials
 
 1. **Prepare Wordlists**
