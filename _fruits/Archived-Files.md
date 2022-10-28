@@ -32,7 +32,7 @@ zip sample sample1.txt sample2.txt
 
 ## Extract Files
 
-1. **Basic Extracting**
+- **Basic**
 
     ```sh
     # 7zip
@@ -58,7 +58,7 @@ zip sample sample1.txt sample2.txt
     unzip sample.zip -d ./sample
     ```
 
-2. **Crack Passwords**
+- **Crack Passwords**
 
     - **ZIP**
         
@@ -84,6 +84,22 @@ zip sample sample1.txt sample2.txt
             # -p: strgin as initial password/file
             fcrackzip -u -D -p passwords.txt sample.zip
             ```
+
+- **Unzip with Python**
+
+    ```py
+    import zipfile
+
+    filename = "./sample.zip"
+    extdir = "./"
+    password = "password123"
+
+    with zipfile.ZipFile(filename, 'r') as zp:
+        try:
+            zp.extractall(path=extdir, pwd=password.encode('utf-8'))
+        except RuntimeError as e:
+            print(e)
+    ```
 
 <br />
 
