@@ -8,88 +8,88 @@ render_with_liquid: false
 
 ## Investigation
 
-1. **Basic Information**
+```sh
+file ./sample
+strings ./sample
 
-    Assume that the target file named "sample".
+# Security properties
+checksec --file=./sample
 
-    1. **Common**
+# -B: signature
+binwalk -B ./sample
+
+# Dump hex
+hexdump ./sample
+# -C: canonical hex+ASCII display
+# -n: length
+hexdump -C -n 64 ./sample
+
+hd ./somefile
+# -n: only length bytes of input (ex. display the first 28 bytes)
+# -s: skip offset bytes from the beginning (ex. no display the first 568 bytes)
+hd -n 28 -s 568 example.so
+# only display the first 64 bytes
+hd -n 64 example.bin
+
+xxd ./sample
+xxd ./sample | head
+```
+
+- **Object Files**
+
+    - **ELF**
 
         ```sh
-        file ./sample
-        strings ./sample
+        # Get information
+        readelf -a ./sample
 
-        # Security properties
-        checksec --file=./sample
-
-        # -B: signature
-        binwalk -B ./sample
-
-        hd ./somefile
-        # -n: only length bytes of input (ex. display the first 28 bytes)
-        # -s: skip offset bytes from the beginning (ex. no display the first 568 bytes)
-        hd -n 28 -s 568 example.so
-        # only display the first 64 bytes
-        hd -n 64 example.bin
-
-        xxd ./sample
-        xxd ./sample | head
+        # Change MSB <=> LSB by editing binary number.
+        hexedit ./sample
+        (MSB) 7F 45 4C 46  02 02 01 ... <=> (LSB) 7F 45 4C 46  02 01 01 ...
         ```
 
-    2. **Object Files**
+    - **Objdump**
 
-        - **ELF**
+        ```sh
+        # -d: disassemble
+        objdump -d example.obj
+
+        # -M: option
+        objdump -M intel -d example.obj
+        ```
+
+- **OLE Files**
+
+    **OLE** is a mechanism that allows users to create and edit documents containing items or "objects" created by multiple applications.
+
+    1. **Dump the Information of the OLE Files**
+
+        - **Use Oledump**
 
             ```sh
-            # Get information
-            readelf -a ./sample
+            oledump.py example.doc
 
-            # Change MSB <=> LSB by editing binary number.
-            hexedit ./sample
-            (MSB) 7F 45 4C 46  02 02 01 ... <=> (LSB) 7F 45 4C 46  02 01 01 ...
+            # -s: stream number to analyze
+            # -d: dump
+            oledump.py -s 8 -d example.doc
+            oledump.py -s 9 -d example.doc
             ```
 
-        - **Objdump**
+            Then decrypt the output using online tools like CyberChef.
+
+        - **Use Olevba**
+
+            Download the **[Oletools](https://github.com/decalage2/oletools){:target="_blank"}**.
 
             ```sh
-            # -d: disassemble
-            objdump -d example.obj
-
-            # -M: option
-            objdump -M intel -d example.obj
+            olevba example.docm
             ```
 
-    3. **OLE Files**
-
-        **OLE** is a mechanism that allows users to create and edit documents containing items or "objects" created by multiple applications.
-
-        1. **Dump the Information of the OLE Files**
-
-            - **Use Oledump**
-
-                ```sh
-                oledump.py example.doc
-
-                # -s: stream number to analyze
-                # -d: dump
-                oledump.py -s 8 -d example.doc
-                oledump.py -s 9 -d example.doc
-                ```
-
-                Then decrypt the output using online tools like CyberChef.
-
-            - **Use Olevba**
-
-                Download the **[Oletools](https://github.com/decalage2/oletools){:target="_blank"}**.
-
-                ```sh
-                olevba example.docm
-                ```
-
-                Copy the above Visual Basic code.  
-                And access to **[OneCompiler](https://onecompiler.com/){:target="_blank"}**.  
-                Select the programming language "Visual Basic".  
-                Paste the copied code to the editor.  
-                Click Run.
+            Copy the above Visual Basic code.  
+            And access to **[OneCompiler](https://onecompiler.com/){:target="_blank"}**.  
+            Select the programming language "Visual Basic".  
+            Paste the copied code to the editor.  
+            Click Run.
 
 <br />
 

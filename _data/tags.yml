@@ -10,6 +10,7 @@
 - name: Crypto
 - name: Database
 - name: DNS
+- name: Forensics
 - name: Jenkins
 - name: JWT
 - name: Linux
