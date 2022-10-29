@@ -99,6 +99,9 @@ xxd ./sample | head
 ghidra ./sample
 ```
 
+- If you find **“??”** instructions in the analyzer of Ghidra, right-click on it and select **“Decompile”**.
+- If you find **“UD2 (Undefined Instruction)”** instruction in the analyzer of Ghidra, replace them with **“NOP”** by right-clicking and selecting **“patch instruction”**.
+
 <br />
 
 ## Run Program
