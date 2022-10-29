@@ -175,6 +175,10 @@ render_with_liquid: false
         je 0xf7eb0f70  ; jump if ZF == 1
         ```
 
+- **Other Instructions**
+
+    - **UD2**       - Undefined instruction (invalid opcode). It is same as **NOP** instruction.
+
 <br />
 
 ## Create 32bit Program
