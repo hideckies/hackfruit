@@ -178,7 +178,7 @@ When using **Sqlmap**, you'll be able to use the downloaded file.
 # On Burp Suite
 
 1. Right click in the request field.
-2. Click "Save item" to download the request url, headers, so on.
+2. Click "Copy to file" to download the request url, headers, so on.
 3. Save as "request.txt" (this is arbitrary).
 
 # ----------------------------------
