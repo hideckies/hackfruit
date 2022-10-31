@@ -14,13 +14,14 @@ render_with_liquid: false
 
     ```sh
     gpg2john private_key.asc > key.txt
+    # or
     gpg2john private_key.sig > key.txt
     ```
 
     Crack the passphrase using the formatted text.
 
     ```sh
-    john --wordlist=/path/to/wordlist key.txt
+    john --wordlist=wordlist.txt key.txt
     ```
 
 2. **Import the Private Key**
