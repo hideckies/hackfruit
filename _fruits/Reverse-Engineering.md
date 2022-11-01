@@ -95,12 +95,16 @@ xxd ./sample | head
 
 ## Code Examination
 
-```sh
-ghidra ./sample
-```
+- **Ghidra**
 
-- If you find **“??”** instructions in the analyzer of Ghidra, right-click on it and select **“Decompile”**.
-- If you find **“UD2 (Undefined Instruction)”** instruction in the analyzer of Ghidra, replace them with **“NOP”** by right-clicking and selecting **“patch instruction”**.
+    ```sh
+    ghidra ./sample
+    ```
+
+    - If you find **“??”** instructions in the analyzer of Ghidra, right-click on it and select **“Decompile”**.
+    - If you find **“UD2 (Undefined Instruction)”** instruction in the analyzer of Ghidra, replace them with **“NOP”** by right-clicking and selecting **“patch instruction”**.
+
+- **IDA**
 
 <br />
 
@@ -126,226 +130,151 @@ If the program allow you to input some text, you can try first.
 
 <br />
 
-## Dynamic Analysis
+## Dynamic Analysis with GDB
 
-- **GDB**
+GDB is a GNU debugger which is used for reverse engineering.  
 
-    A GNU debugger.  
-    It's recommended to setup **[Pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}** or **[GEF](https://github.com/hugsy/gef){:target="_blank"}** for enhanced features if you want to use it more efficiency.
+1. **Start the debugger**
 
-    First off, change permission of the target file to be executable.
-
-    ```sh
-    chmod 700 ./sample
-    ```
-
-    After that, start debugger.
+    Before starting, you need to change the permission for the executable so that the program can be executed.
 
     ```sh
-    gdb ./sample
+    chmod +x ./executable
     ```
 
-    - **Information**
+    Now statt gdb.
+
+    ```sh
+    gdb ./executable
+    ```
+
+2. **Investigation**
+
+    Find the interesting function and get the address.
+
+    ```sh
+    gdb> info function
+    ```
+
+3. **Set breakpoints**
+
+    When you find the interesting function, such as main, strcmp, etc., set the breakpoint at the address.
+
+    ```sh
+    gdb> break *<address-of-the-function>
+    # e.g.
+    gdb> break *0x0000000000400580
+    ```
+
+    By the way, you can delete them if you want.
+
+    ```sh
+    gdb> info breakpoints
+
+    # Delete all breakpoints
+    gdb> delete
+
+    # Delete the specific breakpoint
+    gdb> delete <the-number-of-the-breakpoint>
+    # e.g.
+    gdb> delete 1
+    gdb> delete 2
+    ```
+
+4. **Run the program**
+
+    Since you set the breakpoint, the program will stop at the breakpoint.
+
+    ```sh
+    gdb> run
+    ```
+
+    To observe the information of the current position in the function, run the following command.
+
+    ```sh
+    gdb> disassemble
+
+    # for the specific function
+    gdb> disassemble <function>
+    ``` 
+
+    To proceed step by step.
+
+    ```sh
+    gdb> stepi
+
+    # to proceed until the next function
+    gdb> step
+    ```
+
+    To proceed until the next function.
+
+    ```sh
+    gdb> continue
+    ```
+
+5. **Examin values of registers**
+
+    First off, check the address of registers.
+
+    ```sh
+    gdb> info registers
+    ```
+
+    Then examine values of registers.  
+
+    - **String**
+
+        To get the value as string,
 
         ```sh
-        # List all functions
-        gdb> info function
-
-        # Information of registers
-        gdb> info registers
+        gdb> x/s <address-of-the-register>
+        # e.g.
+        gdb> x/s 0x7fffffffdeb0
+        # or you can specify register names directly
+        gdb> x/s $rax
+        gdb> x/s $rbx
+        gdb> x/s $rcx
+        gdb> x/s $rdx
         ```
 
-    - **Breakpoint**
+    - **Decimal**
+
+        To get the value as decimal,
 
         ```sh
-        # Set a breakpoint at function name
-        gdb> break <function-name>
-        gdb> break main
-        gdb> break vuln
-
-        # Set a breakpoint at address (if you want to know where the desired address, use "disassemble <function-name>" command.)
-        gdb> break *0x0804901e
-
-        # Delete all breakpoints
-        gdb> delete
-        # Delete given breakpoint
-        gdb> delete <breakpoint-number>
-        gdb> delete 1
-        gdb> delete 2
-        # Delete multiple breakpoints
-        gdb> delete 1 2
-
-        # List breakpoints
-        gdb> info breakpoints
+        gdb> x/d <address-of-the-register>
+        # e.g.
+        gdb> x/d 0x7fffffffdeb0
+        # or you can specify register names directly
+        gdb> x/d $rax
+        gdb> x/d $rbx
+        gdb> x/d $rcx
+        gdb> x/d $rdx
         ```
+    
+6. **Quit the debugger**
 
-    - **Run**
+    ```sh
+    gdb> quit
+    ```
 
-        Run to the next breakpoint or end.
+- **Techniques**
 
-        ```sh
-        gdb> run
-
-        # Input data
-        gdb> run < pattern.txt
-        ```
-
-    - **Step**
+    - **Set addresses to pointers**
 
         ```sh
-        # Step program until it reaches a different source line (e.g. the next function)
-        gdb> step
-
-        # Step into the next one instruction.
-        gdb> stepi
-
-        # Execute until next breakpoint
-        gdb> continue
-        ```
-
-    - **Disassemble**
-
-        ```sh
-        # Disassembly the current function or given location
-        gdb> disassemble
-        gdb> disassemble main
-        ```
-
-    - **Print**
-
-        ```sh
-        # Print the value of functions
-        gdb> print <function-name>
-        gdb> print main
-
-        # Print the value of memory (variable) with casting
-        gdb> print (int)<variable-name>
-        gdb> print {int}(<address-of-variable>)
-        gdb> print {int}(0x01234567)
-
-        # print the non-register data
-        # /x: hex
-        gdb> print /x buffer
-
-        # Print the value of registers
-        gdb> print $eip
-        gdb> print $eax
-        gdb> print $ebx
-
-        # Print array of variable
-        gdb> print (int[8]) <variable-name>
-        gdb> print (int[14]) *0x804a010
-
-        # Print the string of variable
-        gdb> print (char[12]) <variable-name>
-        gdb> print (char[20]) *0x804a000 
-        ```
-
-    - **Examine Memory (Address)**
-
-        ```sh
-        # Value
-        gdb> x/1 &<variable-name>
-        gdb> x/1 &constant
-
-        gdb> x/1 <address>
-        gdb> x/1 0x804a039
-
-        # print 6 values of the variable
-        gdb> x/6 &constants
-
-        # Decimal
-        gdb> x/1d $eip
-        gdb> x/6d &<variable-name>
-        # Byte
-        gdb> x/1xb $eip
-        # Half-word (2 bytes)
-        gdb> x/1xh $eip
-        # Word (4 bytes)
-        gdb> x/1xw $eip
-        # Giant-word (8 bytes)
-        gdb> x/1xg $eip
-        ```
-
-    - **Set Address to Registers**
-
-        You can insert the unexpected function to the next instruction by setting the EIP to the address of the function.
-
-        ```sh
-        # Set target address to EIP while running the program so you can hijack it.
         gdb> set $eip = <address>
+        # e.g.
         gdb> set $eip = 0x565561a9
         ```
 
-    - **Set Value to Memory (Variable)**
+    - **Set values to registers**
 
-        When you set the value into variables, note that you need to cast the variable has unknown type.
+        Coming soon.
 
-        ```sh
-        # examine the current value
-        gdb> print (int)<variable-name>
-
-        # check the address of the variable
-        gdb> info address <variale-name>
-
-        # set new value
-        gdb> set {int}(<address-of-variable>) = 666
-
-        # confirm that the value of the variable changed
-        gdb> print (int)<variable-name>
-        # or
-        gdb> print {int}(<address-of-variable>)
-        ```
-
-    - **Jump**
-
-        Jump to destination address.
+    - **Jump to the destination address**
 
         ```sh
         gdb> jump *0x0040096a
         ```
-
-    - **Quit**
-
-        ```sh
-        gdb> quit
-        ```
-
-- **Rizin**
-
-    **[Rizin](https://github.com/rizinorg/rizin){:target="_blank"}** is a fork of **Radare2**.
-
-    ```sh
-    # Start
-    rizin example.exe
-
-    # --------------------------------------
-
-    # Seek
-    > s
-    # Help
-    > s?
-
-    # Print
-    > p
-    # Print in hexadecimal
-    > px
-    # Print in disassembling
-    > pd
-    # Help
-    > p?
-
-    # Write string
-    > w hello world
-    # Write hexpairs
-    > wx 90 90 90 90
-    # Write assembly opcodes
-    > wa jmp 0x8048140
-    # Write contents of file
-    > wf inline.bin
-    # Help
-    > w?
-
-    # Help
-    > ?
-    ```
