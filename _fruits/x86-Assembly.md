@@ -12,31 +12,29 @@ render_with_liquid: false
 
     They are used for temporarily storing data.
 
-    - **EAX** - Accumulator register.
-    - **EBX** - Base register.
-    - **ECX** - Counter register.
-    - **EDX** - A general purpose register.
+    - **EAX/RAX** - Accumulator register.
+    - **EBX/RBX** - Base register.
+    - **ECX/RCX** - Counter register.
+    - **EDX/RDX** - A general purpose register.
     
-    - **ESI** - Source index register.
-    - **EDI** - Destination index register.
-    - **EBP** - Base pointer register.
-    - **ESP** - Stack pointer register.
+    - **ESI/RSI** - Source index register.
+    - **EDI/RDI** - Destination index register.
+    - **EBP/RBP** - Base pointer register.
+    - **ESP/RSP** - Stack pointer register which is also called as the frame pointer.
+
+    - **EIP/RIP** - The most important register in reverse engineering. It keeps track of the next instruction code to execute. EIP points to the next instruction to execute.
 
 - **Segment Registers**
 
     They are used for referencing memory locations.
 
-    - **CS** - Code segment register.
-    - **DS** - Data segment register.
+    - **CS** - Code segment register. It contains all the instructions to be executed.
+    - **DS** - Data segment register. It contains data, constants and work areas.
     - **ES** - Extra segment register.
     - **FS** - Extra segment register.
     - **GS** - Extra segment register.
-    - **SS** - Stack segment register.
-
-- **Instruction Pointer Register**
-
-    - **EIP** - The most important register in reverse engineering. It keeps track of the next instruction code to execute. EIP points to the next instruction to execute.
-
+    - **SS** - Stack segment register. It contains data and return addresses of procedures or subroutines.
+    
 - **Control Registers**
 
     A processor register which changes or controls the general behavior of a CPU or other digital device.
@@ -49,23 +47,23 @@ render_with_liquid: false
 
 - **Status/Flags Registers**
 
-    - **CF** - Carry flag
-    - **PF** - Parity flag
-    - **AF** - Adjust flag
-    - **ZF** - Zero flag
-    - **SF** - Sign flag
-    - **OF** - Overflow flag
-
-    - **TF**    - Trap flag
-    - **IF**    - Interrupt enable flag
+    - **AF**    - Adjust flag. It is also called as the Auxiliary flag and the Auxiliary Carry flag. The AF is set when a 1-bytes arithmetic operation causes a carry from bit 3 into bit 4.
+    - **AC**    - Alignment check flag
+    - **CF**    - Carry flag. It contains the carry of 0 and 1 from a high-order bit (leftmost) after an arithmetic operation. It also stores the contents of last bit of a shift  or rotate operation.
+    - **DF**    - Direction flag. When the DF is 0, the string operation takes left-to-right direction and when the DF is 1, the string operation takes right-to-left direction.
+    - **ID**    - Identification flag
+    - **IF**    - Interrupt enable flag. When the IF is 0, it disables the external interrupt and when the IF is 1, it enables the interrupt.
     - **IOPL**  - I/O privilege level flag
     - **NT**    - Nested task flag
+    - **OF**    - Overflow flag. It indicates the overflow of a high-order bit (leftmost bit) of data after a signed arithmetic operation.
+    - **PF**    - Parity flag. It indicates the total number of 1-bits in the result obtained from an arithmetic operation. An even number of 1-bits clears the parity flag to 0 and an odd number of 1-bits clears the parity flag to 1.
     - **RF**    - Resume flag
+    - **SF**    - Sign flag. It shows the sign of the result of an arithmetic operation. A positive result clears the value of  SF to 0 and negative result sets it to 1.
+    - **TF**    - Trap flag. It allows setting the operation of  the processor in the single-step mode.
     - **VM**    - Virtual-8086 mode flag
-    - **AC**    - Alignment check flag
     - **VIF**   - Virtual interrupt flag
     - **VIP**   - Virtual interrupt pending flag
-    - **ID**    - Identification flag
+    - **ZF**    - Zero flag. It indicates the result of an arithmetic or comparison operation. A nonzero result clears the zero flag to 0, and a zero result sets it to 1.
 
 <br />
 
@@ -250,7 +248,7 @@ objdump -d -M intel sample
 
 Every assembly language program is divided into three sections.
 
-- **Data section** - used for declaring initialized data or constants.
+- **Data section** - used for declaring initialized data or constants. The data does not change at runtime.
 - **BSS section** - the block starting symbol. used for declaring uninitialized data or variables.
 - **Text section** - used for the actual code sections as it begins with a global _start which tells the kernel where execution begins.
 
@@ -361,6 +359,8 @@ Every assembly language program is divided into three sections.
         mov ebx, 0                             ;exit code 0 successful execution
         int 0x80                               ;call sys_exit
     ```
+
+    You can replace "section" keyword with "segment".
 
     To compile it, run the following two commands.
 
