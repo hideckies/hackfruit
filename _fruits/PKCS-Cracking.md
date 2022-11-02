@@ -1,5 +1,5 @@
 ---
-title: PKCS, PKCS#12 Cracking
+title: PKCS Cracking
 desc: Public-Key Cryptography Standards (PKCS).
 tags: [Crypto, Hash, John, Password, PKCS]
 alts: []
