@@ -252,7 +252,44 @@ Every assembly language program is divided into three sections.
 - **BSS section** - the block starting symbol. used for declaring uninitialized data or variables.
 - **Text section** - used for the actual code sections as it begins with a global _start which tells the kernel where execution begins.
 
-1. **AT&T**
+- **Intel**
+
+    Create "hello_world.asm".
+
+    ```
+    section .data
+        msg db 'Hello, World!', 0xa ;string to be printed. db means the Define Byte.
+        len equ $ - msg  ;length of the string. equ means 'equate'. '$' means the current address.
+
+    section .text
+        global _start  ;linker (ld)
+
+    _start:
+        mov edx,len  ;message length
+        mov ecx,msg  ;message to write
+        mov ebx,1    ;file descriptor (stdout)
+        mov eax,4    ;system call number (sys_write)
+        int 0x80     ;call kernel
+
+        mov eax,1    ;system call number (sys_exit)
+        int 0x80     ;call kernel
+    ```
+
+    To assemble the program, run the following command. Then the object file will be created.
+
+    ```sh
+
+    # -f: format (ELF32)
+    nasm -f elf32 hello_world.asm
+    ```
+
+    To link the object file,
+
+    ```sh
+    ld -m elf_i386 -o hello_world hello_world.o
+    ```
+
+- **AT&T**
 
     First, create "sample.s"
 
@@ -334,39 +371,3 @@ Every assembly language program is divided into three sections.
     ld -m elf_i386 -o sample sample.o
     ```
 
-2. **Intel**
-
-    Create "sample.asm".
-
-    ```
-    section .data
-
-    section .bss
-        buffer resb 1
-
-    section .text
-        global _start
-
-    _start:
-        nop                                    ;used for debugging purposes
-
-    mov_immediate_data_to_register:
-        mov eax, 100                           ;mov 100 into EAX register
-        mov byte[buffer], 0x50                 ;mov 0x50 into buffer memory location
-
-    exit:
-        mov eax, 1                             ;sys_exit system call
-        mov ebx, 0                             ;exit code 0 successful execution
-        int 0x80                               ;call sys_exit
-    ```
-
-    You can replace "section" keyword with "segment".
-
-    To compile it, run the following two commands.
-
-    ```sh
-    # Netwide assembler
-    nasm -f elf32 sample.asm
-    # linker
-    ld -m elf_i386 -o sample sample.o
-    ```
