@@ -13,6 +13,7 @@ render_with_liquid: false
 /command/whoami
 
 /?cmd=whoami
+/?cmd=;id
 ```
 
 <br />
