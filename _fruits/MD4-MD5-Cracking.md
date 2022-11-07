@@ -16,15 +16,33 @@ render_with_liquid: false
 
 - **MD4**
 
+    Put the md4 hash into the file.
+
+    ```sh
+    echo -n '<md4-hash>' > hash.txt
+    ```
+
+    Then crack it.
+
     ```sh
     john --format=raw-md4 --wordlist=wordlist.txt hash.txt
+    # or
     hashcat -m 900 -a 0 hash.txt wordlist.txt
     ```
 
 - **MD5**
 
+    Put the md5 hash into the file.
+
+    ```sh
+    echo -n '<md5-hash>' > hash.txt
+    ```
+
+    Then crack it.
+
     ```sh
     john --format=raw-md5 --wordlist=wordlist.txt hash.txt
+    # or
     hashcat -m 0 -a 0 hash.txt wordlist.txt
     ```
 
