@@ -41,17 +41,20 @@ render_with_liquid: false
 
 <br />
 
-## Use Discovery Tools
+## Tools
 
 **[SecLists](https://github.com/danielmiessler/SecLists){:target="_blank"}** is useful wordlists.  
 They are usually located in */usr/share/seclsits/* in Linux.
 
 **rockyou** is also amazing wordlist. It is located in */usr/share/wordlists/rockyou.txt*.  
 
-1. **Ffuf**
+- **Ffuf**
+
+    For bug bounty, set the rate-limiting by adding the **“-rate 1”** flag for avoiding to disrupt the website.
 
     ```sh
     ffuf -u https://vulnerable.com/FUZZ -w wordlist.txt 
+    ffuf -u http://vulnerable.com/FFUF -w wordlist.txt -rate 1
 
     # Custom header (-H)
     ffuf -H "Cookie: key=value" -u https://vulnerable.com/FUZZ -w wordlist.txt 
@@ -69,13 +72,13 @@ They are usually located in */usr/share/seclsits/* in Linux.
     ffuf -u http://vulnerable.com/FUZZ -w wordlist.txt -fs 50-300
     ```
 
-2. **Gobuster**
+- **Gobuster**
 
     ```sh
     gobuster dir -u https://vulnerable.com -w wordlist.txt
     ```
 
-3. **Dirb**
+- **Dirb**
 
     ```sh
     dirb https://vulnerable.com/
@@ -87,7 +90,7 @@ They are usually located in */usr/share/seclsits/* in Linux.
     dirb https://vulnerable.com/ -X .txt
     ```
 
-4. **FeroxBuster**
+- **FeroxBuster**
 
     **[FeroxBuster](https://github.com/epi052/feroxbuster){:target="_blank"}** is a recursive content discovery.
 
@@ -102,7 +105,7 @@ They are usually located in */usr/share/seclsits/* in Linux.
     feroxbuster -u https://vulnerable.com -H "Authorization: Bearer {token}"
     ```
 
-5. **Hakrawler**
+- **Hakrawler**
 
     **[Hakrawler](https://github.com/hakluke/hakrawler){:target="_blank"}** is a simple web crawler designed for quick discovery of endpoints and assets within a web application.
 
