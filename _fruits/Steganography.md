@@ -48,8 +48,9 @@ render_with_liquid: false
     # PNG & BMP only - https://github.com/zed-0xff/zsteg
     zsteg -a sample.png
 
-    # PDF only
-    pdfinfo example.pdf
+    # PDF
+    sudo apt install poppler-utils
+    pdfinfo sample.pdf
 
     # QR code scan
     zbarimg QR.png
