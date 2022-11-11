@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Online Tools
 
-- **[MD5 Center](https://md5.gromweb.com/){:target="_blank"}**
+- **[MD5 Center](https://md5.gromweb.com/){:target="_blank"}{:rel="noopener"}**
 
 <br />
 

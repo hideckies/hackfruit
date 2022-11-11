@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Using PadBuster
 
-**[PadBuster](https://github.com/AonCyberLabs/PadBuster){:target="_blank"}** is automated script for performing Padding Oracle attacks. It’s useful to decrypt AES.
+**[PadBuster](https://github.com/AonCyberLabs/PadBuster){:target="_blank"}{:rel="noopener"}** is automated script for performing Padding Oracle attacks. It’s useful to decrypt AES.
 
 1. **Basic Usage**
 

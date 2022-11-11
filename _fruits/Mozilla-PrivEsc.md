@@ -23,7 +23,7 @@ wget http://<target-ip>:8000/mozilla.zip
 unzip mozilla.zip
 ```
 
-To crack the profile of Firefox, use **[firefox_decrypt](https://github.com/unode/firefox_decrypt){:target="_blank"}**.
+To crack the profile of Firefox, use **[firefox_decrypt](https://github.com/unode/firefox_decrypt){:target="_blank"}{:rel="noopener"}**.
 
 ```sh
 python3 firefox_decrypt.py .mozilla/firefox/<id>.default-release

@@ -8,4 +8,4 @@ render_with_liquid: false
 
 ## Use Templates
 
-[This repository](https://github.com/mrd0x/BITB){:target="_blank"} is useful for attacking.
+[This repository](https://github.com/mrd0x/BITB){:target="_blank"}{:rel="noopener"} is useful for attacking.

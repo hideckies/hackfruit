@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Decode
 
-- ****[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}****
+- **[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}{:rel="noopener"}**
 
 <br />
 

@@ -54,7 +54,7 @@ After entering the target server, enumerate and search other networks.
 
 ## Use Proxychains
 
-**[Proxychains](https://github.com/haad/proxychains){:target="_blank"}** forces any TCP connection made by any given application to follow through proxy like TOR or any other SOCKS4, SOCKS5 or HTTP(S) proxy.
+**[Proxychains](https://github.com/haad/proxychains){:target="_blank"}{:rel="noopener"}** forces any TCP connection made by any given application to follow through proxy like TOR or any other SOCKS4, SOCKS5 or HTTP(S) proxy.
 
 1. **Examples**
 

@@ -3,10 +3,35 @@
         <a href="/">
             <img src="/assets/images/icon.png" alt="icon" id="icon" />
         </a>
+        {% if page.url contains "/fruits/" %}
+        <div id="nav-search">
+            <form action="javascript:navAction()" method="get" name="navForm" autocomplete="off">
+                <input type="text" placeholder="Search techniques, tools." id="nav-search-input">
+            </form>
+        </div>
+        {% endif %}
     </div>
     <div id="right">
-        <a href="https://github.com/hideckies/hackfruit" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/hideckies/hackfruit" target="_blank" rel="noopener">
             /Src
         </a>
     </div>
 </nav>
+
+<script>
+    if (location.href.indexOf("/fruits/") != -1) {
+        let elemNavSearchInput = document.querySelector("#nav-search-input");
+        let navQuery = elemNavSearchInput.value;
+        
+        elemNavSearchInput.addEventListener('keyup', event => {
+            navQuery = elemNavSearchInput.value;
+        });
+
+        function navAction() {
+            document.navForm.action = `/#${navQuery}`;
+            document.navForm.target = "_blank";
+            document.navForm.rel = "noopener";
+            document.navForm.submit();
+        }
+    }
+</script>

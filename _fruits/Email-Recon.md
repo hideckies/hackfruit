@@ -12,13 +12,13 @@ First off, open the message's source code, and copy it.
 
 1. **Use Online Tools**
 
-    - **[Message Header Analyzer](https://mha.azurewebsites.net/){:target="_blank"}**
+    - **[Message Header Analyzer](https://mha.azurewebsites.net/){:target="_blank"}{:rel="noopener"}**
 
         Analyses message header of email. It helps to check the phishing emails.
 
 2. **Use Softwares**
 
-    - **[PhishTool](https://www.phishtool.com/){:target="_blank"}**
+    - **[PhishTool](https://www.phishtool.com/){:target="_blank"}{:rel="noopener"}**
 
         Combines threat intelligence, OSINT, email metadata and battle tested auto-analysis pathways into one powerful phishing response platform.
 
@@ -36,12 +36,12 @@ If you got mali in which attached "suspicious" files, you need to investigate th
 
     Useful tools
 
-    - **[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}** is useful to change the cipher.
+    - **[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}{:rel="noopener"}** is useful to change the cipher.
 
 4. **Investigate the Hash**
 
     Useful tools
 
-    - **[Talos File Reputation](https://www.talosintelligence.com/talos_file_reputation){:target="_blank"}**
+    - **[Talos File Reputation](https://www.talosintelligence.com/talos_file_reputation){:target="_blank"}{:rel="noopener"}**
 
-    - **[VirusTotal](https://www.virustotal.com/gui/home/upload){:target="_blank"}**
+    - **[VirusTotal](https://www.virustotal.com/gui/home/upload){:target="_blank"}{:rel="noopener"}**

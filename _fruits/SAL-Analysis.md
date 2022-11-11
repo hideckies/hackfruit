@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Analysis
 
-**[Saleae's Logic Analyzer](https://www.saleae.com/){:target="_blank"}** is a tool for hardware analysis.  
+**[Saleae's Logic Analyzer](https://www.saleae.com/){:target="_blank"}{:rel="noopener"}** is a tool for hardware analysis.  
 Download the analyzer and run it.
 
 ```sh

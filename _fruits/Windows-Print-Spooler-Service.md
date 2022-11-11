@@ -6,7 +6,7 @@ alts: []
 render_with_liquid: false
 ---
 
-**[The proof of concept](https://github.com/cube0x0/CVE-2021-1675){:target="_blank"}** is available.
+**[The proof of concept](https://github.com/cube0x0/CVE-2021-1675){:target="_blank"}{:rel="noopener"}** is available.
 
 ## Where is the Print Spooler on Windows
 

@@ -10,7 +10,7 @@ render_with_liquid: true
 
 ## Automation
 
-- **[XSStrike](https://github.com/s0md3v/XSStrike){:target="_blank"}**
+- **[XSStrike](https://github.com/s0md3v/XSStrike){:target="_blank"}{:rel="noopener"}**
 
     XSS scanner.
 

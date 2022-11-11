@@ -121,7 +121,7 @@ render_with_liquid: false
 
 2. **Use Massscan**
 
-    **[Masscan](https://github.com/robertdavidgraham/masscan){:target="_blank"}** is a TCP port scanner.
+    **[Masscan](https://github.com/robertdavidgraham/masscan){:target="_blank"}{:rel="noopener"}** is a TCP port scanner.
 
     - **Basic Scan**
 
@@ -157,7 +157,7 @@ render_with_liquid: false
 
     - **Use Nuclei**
 
-        **[Nuclei](https://github.com/projectdiscovery/nuclei){:target="_blank"}** is a vulnerability scanner based on simple YAML based DSL. 
+        **[Nuclei](https://github.com/projectdiscovery/nuclei){:target="_blank"}{:rel="noopener"}** is a vulnerability scanner based on simple YAML based DSL. 
 
         ```sh
         nuclei -h
@@ -182,7 +182,7 @@ render_with_liquid: false
         searchsploit -m 42031
         ```
 
-    **[Exploit-DB](https://www.exploit-db.com/){:target="_blank"}** is a database of exploits.  
+    **[Exploit-DB](https://www.exploit-db.com/){:target="_blank"}{:rel="noopener"}** is a database of exploits.  
     Find the exploit and download it.  
     For example:
 

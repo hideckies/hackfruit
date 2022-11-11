@@ -58,7 +58,7 @@ render_with_liquid: false
 
     - **Crack Passphrases**
 
-        Use **[Stegseek](https://github.com/RickdeJager/stegseek){:target="_blank"}**.
+        Use **[Stegseek](https://github.com/RickdeJager/stegseek){:target="_blank"}{:rel="noopener"}**.
 
         ```sh
         # Crack using wordlists
@@ -70,7 +70,7 @@ render_with_liquid: false
 
 5. **GUI Analysis**
 
-    **[stegsolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install){:target="_blank"}** is an image analysis tool on GUI.
+    **[stegsolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install){:target="_blank"}{:rel="noopener"}** is an image analysis tool on GUI.
 
     ```
     java -jar stegsolve.jar
@@ -132,7 +132,7 @@ render_with_liquid: false
 
 - **Outguess**
 
-    **[Outguess](A steganography tool for JPG, PPM and PNM.){:target="_blank"}** is a steganography tool for JPG, PPM and PNM.
+    **[Outguess](A steganography tool for JPG, PPM and PNM.){:target="_blank"}{:rel="noopener"}** is a steganography tool for JPG, PPM and PNM.
 
     ```sh
     outguess -k "passphrase" -d hidden.txt example.jpg out.jpg
@@ -142,7 +142,7 @@ render_with_liquid: false
 
 ## npiet
 
-**[npiet](https://www.bertnase.de/npiet/){:target="_blank"}** is an interpreter for **the piet programming language**.  
+**[npiet](https://www.bertnase.de/npiet/){:target="_blank"}{:rel="noopener"}** is an interpreter for **the piet programming language**.  
 It takes as input a portable pixmap (PPM) and PNG, GIF.
 
 1. **Download and Compile**

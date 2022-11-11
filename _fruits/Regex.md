@@ -10,11 +10,11 @@ render_with_liquid: true
 
 ## Online Tools
 
-- **[RegExp Playground](https://projects.verou.me/regexplained/){:target="_blank"}**
+- **[RegExp Playground](https://projects.verou.me/regexplained/){:target="_blank"}{:rel="noopener"}**
 
     You’re able to try various patterns in this site easily.
 
-- **[RegExr](https://regexr.com/){:target="_blank"}**
+- **[RegExr](https://regexr.com/){:target="_blank"}{:rel="noopener"}**
 
     Learn, build, and test regex.
 

@@ -10,7 +10,7 @@ render_with_liquid: false
 
 - **Tplmap**
 
-    **[Tplmap](https://github.com/epinna/tplmap){:target="_blank"}** is a program for Server-Side Template Injection and Code Injection.
+    **[Tplmap](https://github.com/epinna/tplmap){:target="_blank"}{:rel="noopener"}** is a program for Server-Side Template Injection and Code Injection.
 
     ```sh
     ./tplmap.py -u http://vulnerable.com/?name=test

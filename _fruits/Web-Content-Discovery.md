@@ -43,7 +43,7 @@ render_with_liquid: false
 
 ## Tools
 
-**[SecLists](https://github.com/danielmiessler/SecLists){:target="_blank"}** is useful wordlists.  
+**[SecLists](https://github.com/danielmiessler/SecLists){:target="_blank"}{:rel="noopener"}** is useful wordlists.  
 They are usually located in */usr/share/seclsits/* in Linux.
 
 **rockyou** is also amazing wordlist. It is located in */usr/share/wordlists/rockyou.txt*.  
@@ -92,7 +92,7 @@ They are usually located in */usr/share/seclsits/* in Linux.
 
 - **FeroxBuster**
 
-    **[FeroxBuster](https://github.com/epi052/feroxbuster){:target="_blank"}** is a recursive content discovery.
+    **[FeroxBuster](https://github.com/epi052/feroxbuster){:target="_blank"}{:rel="noopener"}** is a recursive content discovery.
 
     ```sh
     feroxbuster -u https://vulnerable.com
@@ -107,7 +107,7 @@ They are usually located in */usr/share/seclsits/* in Linux.
 
 - **Hakrawler**
 
-    **[Hakrawler](https://github.com/hakluke/hakrawler){:target="_blank"}** is a simple web crawler designed for quick discovery of endpoints and assets within a web application.
+    **[Hakrawler](https://github.com/hakluke/hakrawler){:target="_blank"}{:rel="noopener"}** is a simple web crawler designed for quick discovery of endpoints and assets within a web application.
 
     ```sh
     echo https://vulnerable.com | hakrawler
@@ -123,4 +123,4 @@ Get the information of the used framework from favicon.
 curl https://vulnerable.com/images/favicon.ico | md5sum
 ```
 
-Then check what is the framework used in the website with the [OWASP Favicon Database](https://wiki.owasp.org/index.php/OWASP_favicon_database){:target="_blank"}.
+Then check what is the framework used in the website with the [OWASP Favicon Database](https://wiki.owasp.org/index.php/OWASP_favicon_database){:target="_blank"}{:rel="noopener"}.

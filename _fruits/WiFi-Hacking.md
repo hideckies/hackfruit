@@ -10,7 +10,7 @@ render_with_liquid: false
 
 1. **Online Tools**
 
-    - **[WiGLE](https://wigle.net/){:target="_blank"}**
+    - **[WiGLE](https://wigle.net/){:target="_blank"}{:rel="noopener"}**
 
         Wireless Network Mapping. If you have the BSSID, you can get the location.
 
@@ -72,7 +72,7 @@ telco:telco
 ## MAC Address Spoofing
 
 First of all, you need to use network adapter which has monitor mode on your machine.  
-**[Aircrack-ng](https://github.com/aircrack-ng/aircrack-ng){:target="_blank"}** is a complete suite of tools to assess WiFi network security.
+**[Aircrack-ng](https://github.com/aircrack-ng/aircrack-ng){:target="_blank"}{:rel="noopener"}** is a complete suite of tools to assess WiFi network security.
 
 1. **Preparation**
 
@@ -150,11 +150,11 @@ First of all, you need to use network adapter which has monitor mode on your mac
 
 ## Other Useful Tools
 
-- **[Bettercap](https://www.bettercap.org/){:target="_blank"}**
+- **[Bettercap](https://www.bettercap.org/){:target="_blank"}{:rel="noopener"}**
 
     The Swiss Army knife for 802.11, BLE, IPv4 and IPv6 networks reconnaissance and MITM attacks.
 
-- **[OUI Standards](https://standards-oui.ieee.org/oui/oui.txt){:target="_blank}"**
+- **[OUI Standards](https://standards-oui.ieee.org/oui/oui.txt){:target="_blank}{:rel="noopener"}**
 
     List of MAC OUI (Organizationally Unique Identifier). You can get the information from the BSSID.
 
