@@ -6,7 +6,7 @@ alts: [Python-PrivEsc]
 render_with_liquid: false
 ---
 
-## [CVE-2022-21699](https://github.com/advisories/GHSA-pq7m-3gw7-gq5x){:target="_blank"}
+## [CVE-2022-21699](https://github.com/advisories/GHSA-pq7m-3gw7-gq5x){:target="_blank"}{:rel="noopener"}
 
 ```sh
 # -m: file mode (rwx)

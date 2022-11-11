@@ -10,11 +10,11 @@ render_with_liquid: false
 
 1. **Use Automation Tools**
 
-    - **[LinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS){:target="_blank"}**
+    - **[LinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS){:target="_blank"}{:rel="noopener"}**
 
-    - **[Linux Exploit Suggester](https://github.com/mzet-/linux-exploit-suggester){:target="_blank"}**
+    - **[Linux Exploit Suggester](https://github.com/mzet-/linux-exploit-suggester){:target="_blank"}{:rel="noopener"}**
 
-    - **[Linux Smart Enumeration](https://github.com/diego-treitos/linux-smart-enumeration){:target="_blank"}**
+    - **[Linux Smart Enumeration](https://github.com/diego-treitos/linux-smart-enumeration){:target="_blank"}{:rel="noopener"}**
 
 2. **OS Information**
 
@@ -209,7 +209,7 @@ render_with_liquid: false
     find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
     ```
 
-    If you'll get some SUID files, research the information of them using **[GTFOBins](https://gtfobins.github.io/){:target="_blank"}**.
+    If you'll get some SUID files, research the information of them using **[GTFOBins](https://gtfobins.github.io/){:target="_blank"}{:rel="noopener"}**.
 
     - **Find**
 
@@ -284,7 +284,7 @@ render_with_liquid: false
 
 9. **Monitor Processes without Root Privileges**
 
-    Using **[pspy](https://github.com/DominicBreuker/pspy){:target="_blank"}**, you can fetch processes even if you’re not root user.
+    Using **[pspy](https://github.com/DominicBreuker/pspy){:target="_blank"}{:rel="noopener"}**, you can fetch processes even if you’re not root user.
 
     ```sh
     ./pspy -pf -i 1000
@@ -513,7 +513,7 @@ Using **"more"** command.
 
 1. **Version < 2.37 Privilege Escalation**
 
-    - **[CVE-2019-7304](https://www.exploit-db.com/exploits/46361)**
+    - **[CVE-2019-7304](https://www.exploit-db.com/exploits/46361){:target="_blank"}{:rel="noopener"}**
 
 
 <br />

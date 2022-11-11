@@ -55,15 +55,15 @@ render_with_liquid: false
 
 1. **Use KAPE**
 
-2. **Use [Autopsy](https://www.autopsy.com/){:target="_blank"}**
+2. **Use [Autopsy](https://www.autopsy.com/){:target="_blank"}{:rel="noopener"}**
 
-3. **Use [FTK Imager](https://www.exterro.com/ftk-imager){:target="_blank"}**
+3. **Use [FTK Imager](https://www.exterro.com/ftk-imager){:target="_blank"}{:rel="noopener"}**
 
 <br />
 
 ## Explore Registry Data
 
-1. **Use [Registry Viewer](https://accessdata.com/product-download-page){:target="_blank"}**
+1. **Use [Registry Viewer](https://accessdata.com/product-download-page){:target="_blank"}{:rel="noopener"}**
 
 <br />
 
@@ -79,7 +79,7 @@ render_with_liquid: false
 
 1. **Use Volatility**
 
-    **[Volatility](https://github.com/volatilityfoundation/volatility3){:target="_blank"}** extracts digital artifacts from volatile memory (RAM) samples. memory capture file is like .bin, .mem, .raw, .sav, .vmem.
+    **[Volatility](https://github.com/volatilityfoundation/volatility3){:target="_blank"}{:rel="noopener"}** extracts digital artifacts from volatile memory (RAM) samples. memory capture file is like .bin, .mem, .raw, .sav, .vmem.
 
     1. **Commands**
 

@@ -79,14 +79,14 @@ xxd ./sample | head
 
         - **Use Olevba**
 
-            Download the **[Oletools](https://github.com/decalage2/oletools){:target="_blank"}**.
+            Download the **[Oletools](https://github.com/decalage2/oletools){:target="_blank"}{:rel="noopener"}**.
 
             ```sh
             olevba example.docm
             ```
 
             Copy the above Visual Basic code.  
-            And access to **[OneCompiler](https://onecompiler.com/){:target="_blank"}**.  
+            And access to **[OneCompiler](https://onecompiler.com/){:target="_blank"}{:rel="noopener"}**.  
             Select the programming language "Visual Basic".  
             Paste the copied code to the editor.  
             Click Run.

@@ -8,7 +8,7 @@ render_with_liquid: true
 
 ## Privilege Escalation (SUID)
 
-Reference: [https://chaudhary1337.github.io/p/how-to-openssl-cap_setuid-ep-privesc-exploit/](https://chaudhary1337.github.io/p/how-to-openssl-cap_setuid-ep-privesc-exploit/){target="_blank"}
+Reference: [https://chaudhary1337.github.io/p/how-to-openssl-cap_setuid-ep-privesc-exploit/](https://chaudhary1337.github.io/p/how-to-openssl-cap_setuid-ep-privesc-exploit/){target="_blank"}{:rel="noopener"}
 
 1. **Get Capabilities**
 

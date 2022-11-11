@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Magic in CyberChef
 
-**[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}** is a swiss army knife for cryptography.  
+**[CyberChef](https://gchq.github.io/CyberChef/){:target="_blank"}{:rel="noopener"}** is a swiss army knife for cryptography.  
 Especially, **"Magic"** tool can process the given hashes automatically.  
 So it's recommended to use the "Magic" at first.
 
@@ -62,11 +62,11 @@ So it's recommended to use the "Magic" at first.
 
 - **Online Tools**
 
-    - **[Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier){:target="_blank"}**
+    - **[Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier){:target="_blank"}{:rel="noopener"}**
 
-    - **[Example Hashes](https://hashcat.net/wiki/doku.php?id=example_hashes){:target="_blank"}**
+    - **[Example Hashes](https://hashcat.net/wiki/doku.php?id=example_hashes){:target="_blank"}{:rel="noopener"}**
 
-    - **[Hash Analyzer](https://www.tunnelsup.com/hash-analyzer/){:target="_blank"}**
+    - **[Hash Analyzer](https://www.tunnelsup.com/hash-analyzer/){:target="_blank"}{:rel="noopener"}**
 
 <br />
 
@@ -192,7 +192,7 @@ Using **Python**.
 
 ## Vigenere Cipher
 
-- **[Vigenere Cipher](https://www.dcode.fr/vigenere-cipher){:target="_blank"}**
+- **[Vigenere Cipher](https://www.dcode.fr/vigenere-cipher){:target="_blank"}{:rel="noopener"}**
 
 <br />
 
@@ -200,8 +200,8 @@ Using **Python**.
 
 1. **Online Tools**
 
-    - **[CrackStation](https://crackstation.net/){:target="_blank"}**
-    - **[Hashes.com](https://hashes.com/en/decrypt/hash){:target="_blank"}**
+    - **[CrackStation](https://crackstation.net/){:target="_blank"}{:rel="noopener"}**
+    - **[Hashes.com](https://hashes.com/en/decrypt/hash){:target="_blank"}{:rel="noopener"}**
 
 2. **Cracking Tools**
 
@@ -211,7 +211,7 @@ Using **Python**.
     echo -n '4bc9ae2b9236c2ad02d81491dcb51d5f' > hash.txt
     ```
 
-    If you don't know which hash type it is, **[Example Hashes](https://hashcat.net/wiki/doku.php?id=example_hashes){:target="_blank"}** may help you.  
+    If you don't know which hash type it is, **[Example Hashes](https://hashcat.net/wiki/doku.php?id=example_hashes){:target="_blank"}{:rel="noopener"}** may help you.  
 
     For brute forcing without wordlists in Hashcat, use the following command.
 

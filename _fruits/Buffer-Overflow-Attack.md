@@ -103,7 +103,7 @@ The IP points to the next instruction to be executed.
 
     4. **Generate an Exploitable Cyclic with Pwntools**
 
-        **[Pwntools](https://github.com/Gallopsled/pwntools){:target="_blank"}** is an exploit development library.  
+        **[Pwntools](https://github.com/Gallopsled/pwntools){:target="_blank"}{:rel="noopener"}** is an exploit development library.  
         It also generates the exploitable cyclic pattern for buffer overflow attack.
 
         1. **Create a Generator Named “cyclic.py”.**

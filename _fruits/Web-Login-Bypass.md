@@ -77,7 +77,7 @@ username=*&password=%s*
 ```
 
 My favorite wordlist for it is the seclists:  
-[https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/alphanum-case-extra.txt](https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/alphanum-case-extra.txt){:target="_blank"}
+[https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/alphanum-case-extra.txt](https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/alphanum-case-extra.txt){:target="_blank"}{:rel="noopener"}
 
 <br />
 
@@ -89,11 +89,11 @@ My favorite wordlist for it is the seclists:
 
         It is often located in **"/usr/share/wordlists/rockyou.txt"** in Linux.
 
-    - **[SecLists](https://github.com/danielmiessler/SecLists){:target="_blank"}**
+    - **[SecLists](https://github.com/danielmiessler/SecLists){:target="_blank"}{:rel="noopener"}**
 
         It is often located in **"/usr/share/seclists"** in Linux.
 
-    - **[CeWL](https://github.com/digininja/CeWL){:target="_blank"}**
+    - **[CeWL](https://github.com/digininja/CeWL){:target="_blank"}{:rel="noopener"}**
 
         Generate the custom wordlist from the target web page.
     

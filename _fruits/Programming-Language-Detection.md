@@ -24,4 +24,4 @@ render_with_liquid: false
 
 - **Online decoder**
 
-    **[https://www.dcode.fr/brainfuck-language](https://www.dcode.fr/brainfuck-language){:target="_blank"}**
+    **[https://www.dcode.fr/brainfuck-language](https://www.dcode.fr/brainfuck-language){:target="_blank"}{:rel="noopener"}**

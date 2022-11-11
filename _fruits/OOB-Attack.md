@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Useful Tools
 
-- **[interactsh](https://github.com/projectdiscovery/interactsh){:target="_blank"}**
+- **[interactsh](https://github.com/projectdiscovery/interactsh){:target="_blank"}{:rel="noopener"}**
 
     Out Of Band (OOB) interaction gathering server and client library.
 

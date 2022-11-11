@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Volatility
 
-**[Volatility](https://github.com/volatilityfoundation/volatility3){:target="_blank"}** is an useful tool for memory forensics.
+**[Volatility](https://github.com/volatilityfoundation/volatility3){:target="_blank"}{:rel="noopener"}** is an useful tool for memory forensics.
 
 - **Windows**
 

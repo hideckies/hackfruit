@@ -8,7 +8,7 @@ render_with_liquid: false
 
 ## Online Tools
 
-- **[MalAPI](https://malapi.io/){:target="_blank"}**
+- **[MalAPI](https://malapi.io/){:target="_blank"}{:rel="noopener"}**
 
 <br />
 

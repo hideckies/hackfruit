@@ -68,7 +68,7 @@ nc -lvnp 4444
 
     - **Nishang**
 
-        **[Nishang](https://github.com/samratashok/nishang){:target="_blank"}** is the Offensive PowerShell for red team, penetration testing and offensive security.
+        **[Nishang](https://github.com/samratashok/nishang){:target="_blank"}{:rel="noopener"}** is the Offensive PowerShell for red team, penetration testing and offensive security.
 
         1. **Preparing the Payload in Your Local Machine**
 
@@ -161,7 +161,7 @@ nc -lvnp 4444
 
     - **Useful Tools**
 
-        - **[Weevely3](https://github.com/epinna/weevely3){:target="_blank"}**
+        - **[Weevely3](https://github.com/epinna/weevely3){:target="_blank"}{:rel="noopener"}**
 
             A web shell generator.
 
@@ -210,4 +210,4 @@ export TERM=xterm
 
 ## Pwncat
 
-**[Pwncat](https://pwncat.org/){:target="_blank"}** is a reverse and bind shell handler.
+**[Pwncat](https://pwncat.org/){:target="_blank"}{:rel="noopener"}** is a reverse and bind shell handler.

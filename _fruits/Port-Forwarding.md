@@ -10,7 +10,7 @@ render_with_liquid: true
 
 1. **Use FoxyProxy**
 
-    **[FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/){:target="_blank"}** is a browser exntension that manages a proxy.
+    **[FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/){:target="_blank"}{:rel="noopener"}** is a browser exntension that manages a proxy.
 
     Setup Proxy and activate.
 
@@ -119,7 +119,7 @@ render_with_liquid: true
 
 2. **Use Chisel**
 
-    **[Chisel](https://github.com/jpillora/chisel){:target="_blank"}** is A fast TCP/UDP tunnel over HTTP.
+    **[Chisel](https://github.com/jpillora/chisel){:target="_blank"}{:rel="noopener"}** is A fast TCP/UDP tunnel over HTTP.
 
     1. **Remote**
 

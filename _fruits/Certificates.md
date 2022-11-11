@@ -22,7 +22,7 @@ ncat --ssl-cert cert.pem --ssl-key private-key.pem <target-ip> <target-port>
 
 1. **Retrieve Private Key**
 
-    - **[RsaCtfTool](https://github.com/Ganapati/RsaCtfTool){:target="_blank"}**
+    - **[RsaCtfTool](https://github.com/Ganapati/RsaCtfTool){:target="_blank"}{:rel="noopener"}**
 
         RSA attack tool (mainly for ctf) - retreive private key from weak public key and/or uncipher data.
 
@@ -32,7 +32,7 @@ ncat --ssl-cert cert.pem --ssl-key private-key.pem <target-ip> <target-port>
 
 1. **Crack Password of PFX**
 
-    **[crackpkcs12](https://github.com/crackpkcs12/crackpkcs12){:target="_blank"}** is useful to crack password.
+    **[crackpkcs12](https://github.com/crackpkcs12/crackpkcs12){:target="_blank"}{:rel="noopener"}** is useful to crack password.
 
     ```sh
     crackpkcs12 -d wordlist.txt example.pfx

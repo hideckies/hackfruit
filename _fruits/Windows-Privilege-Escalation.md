@@ -40,7 +40,7 @@ impacket-psexec username:password@<target-ip>
 
 1. **Use Automation Tools**
 
-    - **[WinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS){:target="_blank"}**
+    - **[WinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS){:target="_blank"}{:rel="noopener"}**
 
         1. **Download the WinPEAS on Your Local Machine**
 
@@ -175,7 +175,7 @@ impacket-psexec username:password@<target-ip>
 
 7. **Use Mimikatz**
 
-    **[Mimikatz](https://github.com/gentilkiwi/mimikatz){:target="_blank"}** dumps the Windows credentials and also manages Kerberos tickets.
+    **[Mimikatz](https://github.com/gentilkiwi/mimikatz){:target="_blank"}{:rel="noopener"}** dumps the Windows credentials and also manages Kerberos tickets.
 
     1. **Start Mimikatz**
 
@@ -265,7 +265,7 @@ impacket-psexec username:password@<target-ip>
 
 9. **.NET Decompiler**
 
-    - **[ILSpy](https://github.com/icsharpcode/ILSpy){:target="_blank"}**
+    - **[ILSpy](https://github.com/icsharpcode/ILSpy){:target="_blank"}{:rel="noopener"}**
 
         .NET Decompiler with support for PDB generation, ReadyToRun, Metadata and more.
 
@@ -275,7 +275,7 @@ impacket-psexec username:password@<target-ip>
 
 1. **Refer to LOLBAS**
 
-    1. **[LOLBAS](https://lolbas-project.github.io/#){:target="_blank"}**
+    1. **[LOLBAS](https://lolbas-project.github.io/#){:target="_blank"}{:rel="noopener"}**
 
     2. **Other Commands**
 

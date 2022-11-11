@@ -10,7 +10,7 @@ render_with_liquid: false
 
 - **PHPGGC**
 
-    **[PHPGGC](https://github.com/ambionics/phpggc){:target="_blank"}** is  a library of PHP unserialize() payloads along with a tool to generate them, from command line or programmatically. 
+    **[PHPGGC](https://github.com/ambionics/phpggc){:target="_blank"}{:rel="noopener"}** is  a library of PHP unserialize() payloads along with a tool to generate them, from command line or programmatically. 
 
     ```sh
     phpggc -l
@@ -20,4 +20,4 @@ render_with_liquid: false
 
 ## Ysoserial
 
-**[Ysoserial](https://github.com/frohoff/ysoserial){:target="_blank"}** is a proof-of-concept tool for generating payloads that exploit unsafe Java object deserialization.
+**[Ysoserial](https://github.com/frohoff/ysoserial){:target="_blank"}{:rel="noopener"}** is a proof-of-concept tool for generating payloads that exploit unsafe Java object deserialization.

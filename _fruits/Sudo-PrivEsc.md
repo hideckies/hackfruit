@@ -357,7 +357,7 @@ After a short time, you will get the root shell via listener.
 
     2. **PoC**
 
-        See **[this repository](https://github.com/lockedbyte/CVE-Exploits/tree/master/CVE-2021-3156){:target="_blank"}**.
+        See **[this repository](https://github.com/lockedbyte/CVE-Exploits/tree/master/CVE-2021-3156){:target="_blank"}{:rel="noopener"}**.
 
 2. **Pwfeedback**
 
