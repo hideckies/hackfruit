@@ -25,12 +25,12 @@
         
         elemNavSearchInput.addEventListener('keyup', event => {
             navQuery = elemNavSearchInput.value;
-        });
-
-        function navAction() {
             document.navForm.action = `/#${navQuery}`;
             document.navForm.target = "_blank";
             document.navForm.rel = "noopener";
+        });
+
+        function navAction() {
             document.navForm.submit();
         }
     }
