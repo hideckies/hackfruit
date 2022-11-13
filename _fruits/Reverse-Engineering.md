@@ -1,7 +1,7 @@
 ---
 title: Reverse Engineering
 desc: Analyze and get the knowledge of executables.
-tags: [Assemble, Assembly, Binary, ELF, Exe, Ghidra, GDB, Hex, Malware, Obj, Radare, Reverse Engineering, Rizin]
+tags: [Assemble, Assembly, Binary, ELF, Engineering, Exe, Ghidra, GDB, Hex, Malware, Obj, Radare, Reverse, Rizin]
 alts: [Android-APK-Pentesting, Buffer-Overflow-Attack, Malware-Analysis, x86-Assembly]
 render_with_liquid: false
 ---
@@ -93,7 +93,7 @@ xxd ./sample | head
 
 <br />
 
-## Code Examination
+## Debuffer, Decompiler Softwares
 
 - **Ghidra**
 
@@ -105,6 +105,11 @@ xxd ./sample | head
     - If you find **“UD2 (Undefined Instruction)”** instruction in the analyzer of Ghidra, replace them with **“NOP”** by right-clicking and selecting **“patch instruction”**.
 
 - **IDA**
+
+- **[ILSpy](https://github.com/icsharpcode/ILSpy){:target="_blank"}{:rel="noopener"}**
+
+    It is used for decompiling **.NET** files.  
+    **[AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy){:target="_blank"}{:rel="noopener"}** is also available for Linux.
 
 <br />
 
