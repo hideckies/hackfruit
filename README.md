@@ -20,5 +20,5 @@ For starting local server,
 chmod +x server.sh
 ./server.sh
 # or
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
