@@ -221,6 +221,17 @@ render_with_liquid: false
         find /root -exec ls -al {} \;
         ```
 
+    - **Cputils**
+
+        If the "cputils" is set as SUID, you can copy the sensitive file to another one. 
+
+        ```sh
+        cputils
+
+        Enter the name of source file: /home/<user>/.ssh/id_rsa
+        Enter the name of target file: /tmp/id_rsa
+        ```
+
 6. **Find Writable Directories**
 
     ```sh
@@ -268,18 +279,24 @@ render_with_liquid: false
 8. **Get Sensitive Contents in Files**
 
     ```sh
-    grep root ./*
-    grep password ./*
+    # -r: recursive
+    # -n: line number
+    # -i: ignore case
+    grep -rni root ./
+    grep -rni password ./
 
     # -e: OR Searching
-    grep -e admin -e root -e credential -e password ./*
-    grep -e secret -e key /*/*
+    grep -re admin -re root -re credential -re password ./
+    grep -re secret -re key ./
 
     # -v: Exclude Searching
-    grep -v node_modules /*/*
+    grep -riv node_modules ./
+
+    # -E: regex
+    grep -riE 'flag{.*}' ./
 
     # IP Address Searching
-    grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" ./*
+    grep -rE -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" ./
     ```
 
 9. **Monitor Processes without Root Privileges**
