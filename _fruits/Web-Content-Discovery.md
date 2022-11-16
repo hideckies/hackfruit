@@ -9,9 +9,10 @@ render_with_liquid: false
 ## Manual Discovery
 
 ```sh
-# Common files
+# Files
 /robots.txt
 /security.txt
+/.well-known/security.txt
 /sitemap.xml
 /sitemaps.xml
 /main.js
@@ -19,6 +20,10 @@ render_with_liquid: false
 /js/jquery.min.js
 /js/main.js
 /js/script.js
+
+# Directories
+/admin/
+/blog/
 
 # Sensitive information
 /.env
