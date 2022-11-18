@@ -1,10 +1,20 @@
 ---
 title: Server-Side Request Forgery (SSRF)
 desc: 
-tags: [SSRF, Web]
+tags: [SSRF, Web, Webhook]
 alts: []
 render_with_liquid: false
 ---
+
+## Capture Tools
+
+If you want to capture the SSRF affections, there are some online tools available for capturing SSRF.
+
+- **[Webhook.site](https://webhook.site/){:target="_blank"}{:rel="noopener"}**
+
+- **[pingb.in](http://pingb.in/){:target="_blank"}{:rel="noopener"}**
+
+<br />
 
 ## Basic Methodology
 
