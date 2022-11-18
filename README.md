@@ -8,17 +8,19 @@ An easy search tool that finds hacking tools, commands and cheat sheets. It help
 
 ## Development
 
-For installing dependencies from the Gemfile,
+To install dependencies from the Gemfile:
 
 ```sh
 bundle install
 ```
 
-For starting local server,
+To start local server, run one of the following commands.
 
 ```sh
 chmod +x server.sh
 ./server.sh
+
 # or
+
 bundle exec jekyll serve --livereload
 ```
