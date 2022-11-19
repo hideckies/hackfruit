@@ -8,7 +8,7 @@ render_with_liquid: true
 
 ## Proxy Management
 
-1. **Use FoxyProxy**
+- **FoxyProxy**
 
     **[FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/){:target="_blank"}{:rel="noopener"}** is a browser exntension that manages a proxy.
 
@@ -35,7 +35,29 @@ render_with_liquid: true
 
 ## Port Forwarding
 
-1. **Use Socat**
+- **SSH**
+
+    If you have gained to connect the remote SSH server, you can run port forwarding.  
+    In your local machine,
+
+    ```sh
+    # -f: Background
+    # -N Do not execute remote commands
+    ssh -L <local-port>:<remote-ip>:<remote-port> remote-user@<remote-ip> -fN
+
+    # e.g.
+    ssh -L 80:10.0.0.2:80 victim@10.0.0.2 -fN
+    ```
+
+    Now when access to localhost:<local-port>, you can access to <remote-ip>:<remote-port> .
+    
+    ```sh
+    # To stop connection
+    ps aux | grep ssh
+    kill <PID>
+    ```
+
+- **Socat**
 
     1. **Install Socat in Remote Machine**
 
@@ -117,7 +139,7 @@ render_with_liquid: true
             kill %1
             ```
 
-2. **Use Chisel**
+- **Chisel**
 
     **[Chisel](https://github.com/jpillora/chisel){:target="_blank"}{:rel="noopener"}** is A fast TCP/UDP tunnel over HTTP.
 
@@ -148,25 +170,6 @@ render_with_liquid: true
         ```sh
         chisel client <listen-ip>:<listen-port> <local-port>:<target-ip>:<target-port>
         ```
-
-3. **Use SSH**
-
-    If you have gained to connect the remote SSH server, you can run port forwarding.  
-    In your local machine,
-
-    ```sh
-     -f: Background
-    # -N: Do not execute remote commands
-    ssh -L 8000:<victim-ip-for-webserver>:80 victim-user@<victim-ip-for-ssh> -fN
-    ```
-
-    Entering localhost:8000 in browser, you can access to "<victim-ip-for-webserver>:80" through <victim-ip-for-ssh>.
-    
-    ```sh
-    # To stop connection
-    ps aux | grep ssh
-    kill <PID>
-    ```
 
 <br />
 
