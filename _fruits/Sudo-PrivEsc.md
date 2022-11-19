@@ -23,7 +23,7 @@ render_with_liquid: false
 - **As Another Users**
 
     ```sh
-    sudo -su root
+    sudo su root
     sudo -u john whoami
     ```
 
