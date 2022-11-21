@@ -2,9 +2,29 @@
 ---
 @import "main";
 
+// News
+#news {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 32px;
+    z-index: 2;
+    background-color: #692220;
+}
+#news p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#news p a {
+    color: #dfdb26;
+}
+
 // Container
 #container {
-    margin: 24px auto;
+    margin: 80px auto;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -217,6 +237,7 @@ nav #right a {
 // Media query
 @media (max-width: 480px) {
     #container {
+        margin-top: 100px;
         width: 90%;
     }
 
