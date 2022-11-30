@@ -2,8 +2,6 @@
 
 An easy search tool that finds hacking tools, commands and cheat sheets. It helps cybersecurity learing and trainings, CTFs, bug bounty, ethical hacking, etc.
 
-[https://hackfruit.hdks.org/](https://hackfruit.hdks.org/)
-
 ## Status (11/22/2022)
 
 Hackfruit is now **[Exploit Notes](https://exploit-notes.hdks.org/)**.  
