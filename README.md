@@ -4,7 +4,7 @@ An easy search tool that finds hacking tools, commands and cheat sheets. It help
 
 ## Status (11/22/2022)
 
-Hackfruit is now **[Exploit Notes](https://exploit-notes.hdks.org/)**.  
+Hackfruit is now **[Exploit Notes](https://github.com/hideckies/exploit-notes)**.  
 The reason is that I wanted to change the static site generator (Jekyll -> Lume on Deno), and change the overall direction or design.
 
 <br />
